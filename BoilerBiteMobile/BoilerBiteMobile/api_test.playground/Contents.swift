@@ -9,7 +9,8 @@ var requestLocation = URL(string: address)
 
 URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
-        print(data)
+        let json = try JSONSerialization.jsonObject(with: data!, options:[])
+        print(json)
     } catch {
         print("There was an error in the api request")
         print(error)
@@ -24,7 +25,8 @@ var requestLocation2 = URL(string: address2)
 
 URLSession.shared.dataTask(with: requestLocation2!) { (data, response, error) in
     do {
-        print(data)
+        let json = try JSONSerialization.jsonObject(with: data!, options:[])
+        print(json)
     } catch {
         print("There was an error in the api request")
         print(error)
