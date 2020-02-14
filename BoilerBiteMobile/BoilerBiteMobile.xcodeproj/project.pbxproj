@@ -24,6 +24,7 @@
 		93313A6223EB1CC400D1566B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93313A6523EB1CC400D1566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93313A6723EB1CC400D1566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93EED4B823F63FAD0058875B /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				93313A5923EB1CC300D1566B /* AppDelegate.swift */,
+				93EED4B823F63FAD0058875B /* api_test.playground */,
 				93313A5B23EB1CC300D1566B /* SceneDelegate.swift */,
 				93313A5D23EB1CC300D1566B /* ContentView.swift */,
 				93313A5F23EB1CC400D1566B /* Assets.xcassets */,
