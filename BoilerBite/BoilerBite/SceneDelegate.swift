@@ -2,12 +2,20 @@
 //  SceneDelegate.swift
 //  BoilerBite
 //
+<<<<<<< HEAD
 //  Created by Uday Chaudhary on 16/02/20.
 //  Copyright © 2020 Uday Chaudhary. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
+=======
+//  Created by Isha Mahadalkar on 2/15/20.
+//  Copyright © 2020 Isha Mahadalkar. All rights reserved.
+//
+
+import UIKit
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+<<<<<<< HEAD
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
@@ -29,6 +38,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+=======
+        guard let _ = (scene as? UIWindowScene) else { return }
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

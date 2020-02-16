@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		1C1912A623F9BDC900B68CC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1912A523F9BDC900B68CC8 /* AppDelegate.swift */; };
 		1C1912A823F9BDC900B68CC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1912A723F9BDC900B68CC8 /* SceneDelegate.swift */; };
 		1C1912AA23F9BDC900B68CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1912A923F9BDC900B68CC8 /* ContentView.swift */; };
@@ -31,11 +32,37 @@
 			containerPortal = 1C19129A23F9BDC900B68CC8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1C1912A123F9BDC900B68CC8;
+=======
+		566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1523F8E66F00B14361 /* AppDelegate.swift */; };
+		566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1723F8E66F00B14361 /* SceneDelegate.swift */; };
+		566D1A1A23F8E66F00B14361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1923F8E66F00B14361 /* ViewController.swift */; };
+		566D1A1D23F8E66F00B14361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A1B23F8E66F00B14361 /* Main.storyboard */; };
+		566D1A1F23F8E67100B14361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A1E23F8E67100B14361 /* Assets.xcassets */; };
+		566D1A2223F8E67100B14361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */; };
+		566D1A2D23F8E67100B14361 /* BoilerBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A2C23F8E67100B14361 /* BoilerBiteTests.swift */; };
+		566D1A3823F8E67100B14361 /* BoilerBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		566D1A2923F8E67100B14361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 566D1A0A23F8E66F00B14361 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 566D1A1123F8E66F00B14361;
+			remoteInfo = BoilerBite;
+		};
+		566D1A3423F8E67100B14361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 566D1A0A23F8E66F00B14361 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 566D1A1123F8E66F00B14361;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			remoteInfo = BoilerBite;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		1C1912A223F9BDC900B68CC8 /* BoilerBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1912A523F9BDC900B68CC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C1912A723F9BDC900B68CC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,20 +82,48 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1C19129F23F9BDC900B68CC8 /* Frameworks */ = {
+=======
+		566D1A1223F8E66F00B14361 /* BoilerBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		566D1A1523F8E66F00B14361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		566D1A1723F8E66F00B14361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		566D1A1923F8E66F00B14361 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		566D1A1C23F8E66F00B14361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		566D1A1E23F8E67100B14361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		566D1A2123F8E67100B14361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		566D1A2323F8E67100B14361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566D1A2823F8E67100B14361 /* BoilerBiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerBiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		566D1A2C23F8E67100B14361 /* BoilerBiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilerBiteTests.swift; sourceTree = "<group>"; };
+		566D1A2E23F8E67100B14361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566D1A3323F8E67100B14361 /* BoilerBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilerBiteUITests.swift; sourceTree = "<group>"; };
+		566D1A3923F8E67100B14361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		566D1A0F23F8E66F00B14361 /* Frameworks */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		1C1912B523F9BDCD00B68CC8 /* Frameworks */ = {
+=======
+		566D1A2523F8E67100B14361 /* Frameworks */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		1C1912C023F9BDCD00B68CC8 /* Frameworks */ = {
+=======
+		566D1A3023F8E67100B14361 /* Frameworks */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,6 +133,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		1C19129923F9BDC900B68CC8 = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +151,29 @@
 				1C1912A223F9BDC900B68CC8 /* BoilerBite.app */,
 				1C1912B823F9BDCD00B68CC8 /* BoilerBiteTests.xctest */,
 				1C1912C323F9BDCD00B68CC8 /* BoilerBiteUITests.xctest */,
+=======
+		566D1A0923F8E66F00B14361 = {
+			isa = PBXGroup;
+			children = (
+				566D1A1423F8E66F00B14361 /* BoilerBite */,
+				566D1A2B23F8E67100B14361 /* BoilerBiteTests */,
+				566D1A3623F8E67100B14361 /* BoilerBiteUITests */,
+				566D1A1323F8E66F00B14361 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		566D1A1323F8E66F00B14361 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				566D1A1223F8E66F00B14361 /* BoilerBite.app */,
+				566D1A2823F8E67100B14361 /* BoilerBiteTests.xctest */,
+				566D1A3323F8E67100B14361 /* BoilerBiteUITests.xctest */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		1C1912A423F9BDC900B68CC8 /* BoilerBite */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +184,23 @@
 				1C1912B023F9BDCD00B68CC8 /* LaunchScreen.storyboard */,
 				1C1912B323F9BDCD00B68CC8 /* Info.plist */,
 				1C1912AD23F9BDCD00B68CC8 /* Preview Content */,
+=======
+		566D1A1423F8E66F00B14361 /* BoilerBite */ = {
+			isa = PBXGroup;
+			children = (
+				566D1A1523F8E66F00B14361 /* AppDelegate.swift */,
+				566D1A1723F8E66F00B14361 /* SceneDelegate.swift */,
+				566D1A1923F8E66F00B14361 /* ViewController.swift */,
+				566D1A1B23F8E66F00B14361 /* Main.storyboard */,
+				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
+				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
+				566D1A2323F8E67100B14361 /* Info.plist */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			path = BoilerBite;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		1C1912AD23F9BDCD00B68CC8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,15 +214,30 @@
 			children = (
 				1C1912BC23F9BDCD00B68CC8 /* BoilerBiteTests.swift */,
 				1C1912BE23F9BDCD00B68CC8 /* Info.plist */,
+=======
+		566D1A2B23F8E67100B14361 /* BoilerBiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				566D1A2C23F8E67100B14361 /* BoilerBiteTests.swift */,
+				566D1A2E23F8E67100B14361 /* Info.plist */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			path = BoilerBiteTests;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		1C1912C623F9BDCD00B68CC8 /* BoilerBiteUITests */ = {
 			isa = PBXGroup;
 			children = (
 				1C1912C723F9BDCD00B68CC8 /* BoilerBiteUITests.swift */,
 				1C1912C923F9BDCD00B68CC8 /* Info.plist */,
+=======
+		566D1A3623F8E67100B14361 /* BoilerBiteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */,
+				566D1A3923F8E67100B14361 /* Info.plist */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			path = BoilerBiteUITests;
 			sourceTree = "<group>";
@@ -142,6 +245,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+<<<<<<< HEAD
 		1C1912A123F9BDC900B68CC8 /* BoilerBite */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C1912CC23F9BDCD00B68CC8 /* Build configuration list for PBXNativeTarget "BoilerBite" */;
@@ -149,6 +253,15 @@
 				1C19129E23F9BDC900B68CC8 /* Sources */,
 				1C19129F23F9BDC900B68CC8 /* Frameworks */,
 				1C1912A023F9BDC900B68CC8 /* Resources */,
+=======
+		566D1A1123F8E66F00B14361 /* BoilerBite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566D1A3C23F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBite" */;
+			buildPhases = (
+				566D1A0E23F8E66F00B14361 /* Sources */,
+				566D1A0F23F8E66F00B14361 /* Frameworks */,
+				566D1A1023F8E66F00B14361 /* Resources */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			buildRules = (
 			);
@@ -156,6 +269,7 @@
 			);
 			name = BoilerBite;
 			productName = BoilerBite;
+<<<<<<< HEAD
 			productReference = 1C1912A223F9BDC900B68CC8 /* BoilerBite.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -166,10 +280,23 @@
 				1C1912B423F9BDCD00B68CC8 /* Sources */,
 				1C1912B523F9BDCD00B68CC8 /* Frameworks */,
 				1C1912B623F9BDCD00B68CC8 /* Resources */,
+=======
+			productReference = 566D1A1223F8E66F00B14361 /* BoilerBite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		566D1A2723F8E67100B14361 /* BoilerBiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566D1A3F23F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBiteTests" */;
+			buildPhases = (
+				566D1A2423F8E67100B14361 /* Sources */,
+				566D1A2523F8E67100B14361 /* Frameworks */,
+				566D1A2623F8E67100B14361 /* Resources */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				1C1912BA23F9BDCD00B68CC8 /* PBXTargetDependency */,
 			);
 			name = BoilerBiteTests;
@@ -184,20 +311,45 @@
 				1C1912BF23F9BDCD00B68CC8 /* Sources */,
 				1C1912C023F9BDCD00B68CC8 /* Frameworks */,
 				1C1912C123F9BDCD00B68CC8 /* Resources */,
+=======
+				566D1A2A23F8E67100B14361 /* PBXTargetDependency */,
+			);
+			name = BoilerBiteTests;
+			productName = BoilerBiteTests;
+			productReference = 566D1A2823F8E67100B14361 /* BoilerBiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		566D1A3223F8E67100B14361 /* BoilerBiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 566D1A4223F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBiteUITests" */;
+			buildPhases = (
+				566D1A2F23F8E67100B14361 /* Sources */,
+				566D1A3023F8E67100B14361 /* Frameworks */,
+				566D1A3123F8E67100B14361 /* Resources */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				1C1912C523F9BDCD00B68CC8 /* PBXTargetDependency */,
 			);
 			name = BoilerBiteUITests;
 			productName = BoilerBiteUITests;
 			productReference = 1C1912C323F9BDCD00B68CC8 /* BoilerBiteUITests.xctest */;
+=======
+				566D1A3523F8E67100B14361 /* PBXTargetDependency */,
+			);
+			name = BoilerBiteUITests;
+			productName = BoilerBiteUITests;
+			productReference = 566D1A3323F8E67100B14361 /* BoilerBiteUITests.xctest */;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
+<<<<<<< HEAD
 		1C19129A23F9BDC900B68CC8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
@@ -219,6 +371,29 @@
 				};
 			};
 			buildConfigurationList = 1C19129D23F9BDC900B68CC8 /* Build configuration list for PBXProject "BoilerBite" */;
+=======
+		566D1A0A23F8E66F00B14361 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Isha Mahadalkar";
+				TargetAttributes = {
+					566D1A1123F8E66F00B14361 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					566D1A2723F8E67100B14361 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 566D1A1123F8E66F00B14361;
+					};
+					566D1A3223F8E67100B14361 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 566D1A1123F8E66F00B14361;
+					};
+				};
+			};
+			buildConfigurationList = 566D1A0D23F8E66F00B14361 /* Build configuration list for PBXProject "BoilerBite" */;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,6 +401,7 @@
 				en,
 				Base,
 			);
+<<<<<<< HEAD
 			mainGroup = 1C19129923F9BDC900B68CC8;
 			productRefGroup = 1C1912A323F9BDC900B68CC8 /* Products */;
 			projectDirPath = "";
@@ -234,11 +410,22 @@
 				1C1912A123F9BDC900B68CC8 /* BoilerBite */,
 				1C1912B723F9BDCD00B68CC8 /* BoilerBiteTests */,
 				1C1912C223F9BDCD00B68CC8 /* BoilerBiteUITests */,
+=======
+			mainGroup = 566D1A0923F8E66F00B14361;
+			productRefGroup = 566D1A1323F8E66F00B14361 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				566D1A1123F8E66F00B14361 /* BoilerBite */,
+				566D1A2723F8E67100B14361 /* BoilerBiteTests */,
+				566D1A3223F8E67100B14361 /* BoilerBiteUITests */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+<<<<<<< HEAD
 		1C1912A023F9BDC900B68CC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,13 +438,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C1912B623F9BDCD00B68CC8 /* Resources */ = {
+=======
+		566D1A1023F8E66F00B14361 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566D1A2223F8E67100B14361 /* LaunchScreen.storyboard in Resources */,
+				566D1A1F23F8E67100B14361 /* Assets.xcassets in Resources */,
+				566D1A1D23F8E66F00B14361 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566D1A2623F8E67100B14361 /* Resources */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		1C1912C123F9BDCD00B68CC8 /* Resources */ = {
+=======
+		566D1A3123F8E67100B14361 /* Resources */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +471,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		1C19129E23F9BDC900B68CC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,12 +495,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1912C823F9BDCD00B68CC8 /* BoilerBiteUITests.swift in Sources */,
+=======
+		566D1A0E23F8E66F00B14361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566D1A1A23F8E66F00B14361 /* ViewController.swift in Sources */,
+				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
+				566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566D1A2423F8E67100B14361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566D1A2D23F8E67100B14361 /* BoilerBiteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566D1A2F23F8E67100B14361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566D1A3823F8E67100B14361 /* BoilerBiteUITests.swift in Sources */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+<<<<<<< HEAD
 		1C1912BA23F9BDCD00B68CC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C1912A123F9BDC900B68CC8 /* BoilerBite */;
@@ -305,14 +536,40 @@
 			isa = PBXTargetDependency;
 			target = 1C1912A123F9BDC900B68CC8 /* BoilerBite */;
 			targetProxy = 1C1912C423F9BDCD00B68CC8 /* PBXContainerItemProxy */;
+=======
+		566D1A2A23F8E67100B14361 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 566D1A1123F8E66F00B14361 /* BoilerBite */;
+			targetProxy = 566D1A2923F8E67100B14361 /* PBXContainerItemProxy */;
+		};
+		566D1A3523F8E67100B14361 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 566D1A1123F8E66F00B14361 /* BoilerBite */;
+			targetProxy = 566D1A3423F8E67100B14361 /* PBXContainerItemProxy */;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+<<<<<<< HEAD
 		1C1912B023F9BDCD00B68CC8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1C1912B123F9BDCD00B68CC8 /* Base */,
+=======
+		566D1A1B23F8E66F00B14361 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				566D1A1C23F8E66F00B14361 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				566D1A2123F8E67100B14361 /* Base */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,7 +577,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+<<<<<<< HEAD
 		1C1912CA23F9BDCD00B68CC8 /* Debug */ = {
+=======
+		566D1A3A23F8E67100B14361 /* Debug */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -370,7 +631,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,7 +645,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		1C1912CB23F9BDCD00B68CC8 /* Release */ = {
+=======
+		566D1A3B23F8E67100B14361 /* Release */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -424,7 +693,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -434,58 +707,92 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		1C1912CD23F9BDCD00B68CC8 /* Debug */ = {
+=======
+		566D1A3D23F8E67100B14361 /* Debug */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_ASSET_PATHS = "\"BoilerBite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+=======
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				INFOPLIST_FILE = BoilerBite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBite;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBite";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		1C1912CE23F9BDCD00B68CC8 /* Release */ = {
+=======
+		566D1A3E23F8E67100B14361 /* Release */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_ASSET_PATHS = "\"BoilerBite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+=======
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				INFOPLIST_FILE = BoilerBite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBite;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBite";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		1C1912D023F9BDCD00B68CC8 /* Debug */ = {
+=======
+		566D1A4023F8E67100B14361 /* Debug */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoilerBiteTests/Info.plist;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBiteTests;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBiteTests";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,20 +800,32 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		1C1912D123F9BDCD00B68CC8 /* Release */ = {
+=======
+		566D1A4123F8E67100B14361 /* Release */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoilerBiteTests/Info.plist;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBiteTests;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBiteTests";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,7 +833,11 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		1C1912D323F9BDCD00B68CC8 /* Debug */ = {
+=======
+		566D1A4323F8E67100B14361 /* Debug */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -525,7 +848,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBiteUITests;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBiteUITests";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,7 +860,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		1C1912D423F9BDCD00B68CC8 /* Release */ = {
+=======
+		566D1A4423F8E67100B14361 /* Release */ = {
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -544,7 +875,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = p.BoilerBiteUITests;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = "Isha-Mahadalkar.BoilerBiteUITests";
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,43 +890,79 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+<<<<<<< HEAD
 		1C19129D23F9BDC900B68CC8 /* Build configuration list for PBXProject "BoilerBite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C1912CA23F9BDCD00B68CC8 /* Debug */,
 				1C1912CB23F9BDCD00B68CC8 /* Release */,
+=======
+		566D1A0D23F8E66F00B14361 /* Build configuration list for PBXProject "BoilerBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566D1A3A23F8E67100B14361 /* Debug */,
+				566D1A3B23F8E67100B14361 /* Release */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		1C1912CC23F9BDCD00B68CC8 /* Build configuration list for PBXNativeTarget "BoilerBite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C1912CD23F9BDCD00B68CC8 /* Debug */,
 				1C1912CE23F9BDCD00B68CC8 /* Release */,
+=======
+		566D1A3C23F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566D1A3D23F8E67100B14361 /* Debug */,
+				566D1A3E23F8E67100B14361 /* Release */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		1C1912CF23F9BDCD00B68CC8 /* Build configuration list for PBXNativeTarget "BoilerBiteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C1912D023F9BDCD00B68CC8 /* Debug */,
 				1C1912D123F9BDCD00B68CC8 /* Release */,
+=======
+		566D1A3F23F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566D1A4023F8E67100B14361 /* Debug */,
+				566D1A4123F8E67100B14361 /* Release */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		1C1912D223F9BDCD00B68CC8 /* Build configuration list for PBXNativeTarget "BoilerBiteUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C1912D323F9BDCD00B68CC8 /* Debug */,
 				1C1912D423F9BDCD00B68CC8 /* Release */,
+=======
+		566D1A4223F8E67100B14361 /* Build configuration list for PBXNativeTarget "BoilerBiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				566D1A4323F8E67100B14361 /* Debug */,
+				566D1A4423F8E67100B14361 /* Release */,
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
+<<<<<<< HEAD
 	rootObject = 1C19129A23F9BDC900B68CC8 /* Project object */;
+=======
+	rootObject = 566D1A0A23F8E66F00B14361 /* Project object */;
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 }

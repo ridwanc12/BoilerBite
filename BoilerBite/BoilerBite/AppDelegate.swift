@@ -2,8 +2,13 @@
 //  AppDelegate.swift
 //  BoilerBite
 //
+<<<<<<< HEAD
 //  Created by Uday Chaudhary on 16/02/20.
 //  Copyright © 2020 Uday Chaudhary. All rights reserved.
+=======
+//  Created by Isha Mahadalkar on 2/15/20.
+//  Copyright © 2020 Isha Mahadalkar. All rights reserved.
+>>>>>>> 80c929a2808dbb95f8eb7ad1f9d39dc750b7ee6f
 //
 
 import UIKit
