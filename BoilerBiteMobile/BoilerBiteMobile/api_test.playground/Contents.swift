@@ -24,7 +24,23 @@ struct Hour:Decodable {
 
 struct Station:Decodable {
     var Name:String
-    var Items:[String]
+    var Items:[Item]
+}
+
+// Item has optionals for when more variables are needed in a later api request
+
+struct Item:Decodable {
+    var ID:String
+    var Name:String
+    var IsVegetarian:Bool
+    var Allergens:[Allergen]?
+    var NutritionFacts: [String]?
+    var Ingredients:String?
+}
+
+struct Allergen:Decodable {
+    var Name:String
+    var Value:Bool
 }
 
 // URL for example meal request
