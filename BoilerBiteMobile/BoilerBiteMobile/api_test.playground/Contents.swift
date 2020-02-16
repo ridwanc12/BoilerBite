@@ -1,6 +1,32 @@
 import UIKit
 import Foundation
 
+// Structs needed for meal plan api request
+
+struct Menu:Decodable {
+    var Location:String
+    var Date:String
+    var Meals:[Meal]
+}
+
+struct Meal:Decodable {
+    var ID:String
+    var Name:String
+    var Status:String
+    var Hours:Hour
+    var Stations:[Station]
+}
+
+struct Hour:Decodable {
+    var StartTime:String
+    var EndTime:String
+}
+
+struct Station:Decodable {
+    var Name:String
+    var Items:[String]
+}
+
 // URL for example meal request
 // https://api.hfs.purdue.edu/menus/v2/locations/ford/2019-02-04
 
