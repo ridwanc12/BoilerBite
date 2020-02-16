@@ -15,6 +15,7 @@
 		1C1912B223F9BDCD00B68CC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1912B023F9BDCD00B68CC8 /* LaunchScreen.storyboard */; };
 		1C1912BD23F9BDCD00B68CC8 /* BoilerBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1912BC23F9BDCD00B68CC8 /* BoilerBiteTests.swift */; };
 		1C1912C823F9BDCD00B68CC8 /* BoilerBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1912C723F9BDCD00B68CC8 /* BoilerBiteUITests.swift */; };
+		1C1912D623FA0AF900B68CC8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1912D523FA0AF900B68CC8 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1C1912C323F9BDCD00B68CC8 /* BoilerBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1912C723F9BDCD00B68CC8 /* BoilerBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilerBiteUITests.swift; sourceTree = "<group>"; };
 		1C1912C923F9BDCD00B68CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1912D523FA0AF900B68CC8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		1C19129923F9BDC900B68CC8 = {
 			isa = PBXGroup;
 			children = (
+				1C1912D523FA0AF900B68CC8 /* Default-568h@2x.png */,
 				1C1912A423F9BDC900B68CC8 /* BoilerBite */,
 				1C1912BB23F9BDCD00B68CC8 /* BoilerBiteTests */,
 				1C1912C623F9BDCD00B68CC8 /* BoilerBiteUITests */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1912B223F9BDCD00B68CC8 /* LaunchScreen.storyboard in Resources */,
+				1C1912D623FA0AF900B68CC8 /* Default-568h@2x.png in Resources */,
 				1C1912AF23F9BDCD00B68CC8 /* Preview Assets.xcassets in Resources */,
 				1C1912AC23F9BDCD00B68CC8 /* Assets.xcassets in Resources */,
 			);
