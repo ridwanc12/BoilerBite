@@ -49,6 +49,7 @@
 		566D1A3323F8E67100B14361 /* BoilerBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilerBiteUITests.swift; sourceTree = "<group>"; };
 		566D1A3923F8E67100B14361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9392072123FB839000F2A25C /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		566D1A1423F8E66F00B14361 /* BoilerBite */ = {
 			isa = PBXGroup;
 			children = (
+				9392072123FB839000F2A25C /* api_test.playground */,
 				566D1A1523F8E66F00B14361 /* AppDelegate.swift */,
 				566D1A1723F8E66F00B14361 /* SceneDelegate.swift */,
 				566D1A1923F8E66F00B14361 /* ViewController.swift */,

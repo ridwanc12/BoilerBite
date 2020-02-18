@@ -43,6 +43,39 @@ struct Allergen:Decodable {
     var Value:Bool
 }
 
+// Additional structs needed for item api request
+
+struct NutritionFact:Decodable {
+    var Name:String
+    var Value:Int
+    var LabelValue:String
+    var DailyValue:String?
+    var Ordinal:Int
+}
+
+// Some extension code to make the data print nicer
+
+extension Meal: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "Meal(ID: %@, Name: %@, Status: %@, Hours: %@, Stations: %@)", ID, Name, Status, [Hours], Stations)
+        return returnValue
+    }
+}
+
+extension Hour: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "Hour(StartTime: %@, EndTime: %@)", StartTime, EndTime)
+        return returnValue
+    }
+}
+
+extension Station: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "Station(Name: %@, Items: %@)", Name, Items)
+        return returnValue
+    }
+}
+
 // URL for example meal request
 // https://api.hfs.purdue.edu/menus/v2/locations/ford/2019-02-04
 
