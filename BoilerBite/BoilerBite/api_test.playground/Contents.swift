@@ -76,6 +76,21 @@ extension Station: CustomStringConvertible {
     }
 }
 
+
+extension Item: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "Item(ID: %@, Name: %@, IsVegetarian: %@, Allergens: %@, NutritionFacts: %@, Ingredients: %@)", ID, Name, String(IsVegetarian), Allergens ?? "", NutritionFacts ?? "", Ingredients ?? "")
+        return returnValue
+    }
+}
+
+extension Allergen: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "Allergen(Name: %@, Value: %@)", Name, String(Value))
+        return returnValue
+    }
+}
+
 // URL for example meal request
 // https://api.hfs.purdue.edu/menus/v2/locations/ford/2019-02-04
 
