@@ -97,10 +97,13 @@ extension Allergen: CustomStringConvertible {
 var address = "https://api.hfs.purdue.edu/menus/v2/locations/ford/2019-02-04"
 var requestLocation = URL(string: address)
 
+var itemID: String = ""
+
 URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
-        let json = try JSONSerialization.jsonObject(with: data!, options:[])
-        print(json)
+        let menu = try JSONDecoder().decode(Menu.self, from: data!)
+        print(menu)
+        itemID = menu.Meals[0].Stations[0].Items[0].ID
     } catch {
         print("There was an error in the api request")
         print(error)
