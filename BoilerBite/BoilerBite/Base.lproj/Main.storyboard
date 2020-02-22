@@ -164,7 +164,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign up" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWL-Ce-Hpm">
-                                <rect key="frame" x="162" y="258" width="70.666666666666657" height="26.333333333333314"/>
+                                <rect key="frame" x="162" y="258" width="70.666666666666686" height="26.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +175,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ph1-1o-zie" firstAttribute="leading" secondItem="x4S-8w-lTO" secondAttribute="leadingMargin" constant="-92" id="0Vu-Pi-84y"/>
+                            <constraint firstItem="mkO-ED-W9F" firstAttribute="trailing" secondItem="wWL-Ce-Hpm" secondAttribute="trailing" constant="142.33000000000001" id="27Z-xz-B6i"/>
                             <constraint firstItem="V2t-ai-vBt" firstAttribute="trailing" secondItem="4FX-WD-CuG" secondAttribute="trailing" id="8RB-ga-8Ck"/>
                             <constraint firstItem="pFi-5c-JoL" firstAttribute="leading" secondItem="mkO-ED-W9F" secondAttribute="leading" constant="203" id="AE0-ha-uUs"/>
                             <constraint firstItem="JEW-lS-w9U" firstAttribute="top" secondItem="V2t-ai-vBt" secondAttribute="bottom" constant="7.3333333333333144" id="Bf3-5v-Is9"/>
@@ -314,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="1550.9852216748768"/>
         </scene>
-        <!--Create Profile View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="NtG-yk-imF">
             <objects>
-                <viewController id="sIb-zm-i3w" userLabel="Create Profile View Controller" sceneMemberID="viewController">
+                <viewController id="sIb-zm-i3w" userLabel="Main Menu View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjE-0t-tkv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,6 +392,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NM-5z-fgy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="116.74876847290641"/>
+        </scene>
+        <!--Residential Menus-->
+        <scene sceneID="eaO-dO-017">
+            <objects>
+                <viewController id="yHO-tF-Ifk" userLabel="Residential Menus" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7mS-wh-cgd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="lVr-bj-cSZ">
+                                <rect key="frame" x="-115" y="-51" width="605" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-i7-8Mr">
+                                <rect key="frame" x="-10" y="44" width="395" height="710"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vni-6S-gQ6">
+                                <rect key="frame" x="203" y="72" width="161" height="141"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
+                                <rect key="frame" x="187" y="291" width="140" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Residential Menus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-ja-vdx">
+                                <rect key="frame" x="35" y="243" width="305" height="49"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mPx-kr-iQE" userLabel="earhart">
+                                <rect key="frame" x="71.91053828731674" y="360" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="earhart" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fwv-G0-n6D" userLabel="ford">
+                                <rect key="frame" x="71.91053828731674" y="423" width="229" height="44.000000000000028"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ford" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZLm-G6-ofk" userLabel="hillenbrand">
+                                <rect key="frame" x="71.91053828731674" y="483" width="229" height="44.000000000000114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="hillenbrand" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Mg-jy-L3h" userLabel="wiley">
+                                <rect key="frame" x="71" y="544" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="wiley" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
+                                <rect key="frame" x="71" y="607" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="windsor" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BZN-we-5p4" firstAttribute="top" secondItem="Vni-6S-gQ6" secondAttribute="bottom" constant="78" id="0zT-W5-oyb"/>
+                            <constraint firstItem="YlY-ja-vdx" firstAttribute="top" secondItem="Vni-6S-gQ6" secondAttribute="bottom" constant="30" id="2tq-b5-Ldc"/>
+                            <constraint firstItem="mPx-kr-iQE" firstAttribute="top" secondItem="YlY-ja-vdx" secondAttribute="bottom" constant="68" id="3DC-G5-H8H"/>
+                            <constraint firstItem="9gM-9X-ueZ" firstAttribute="trailing" secondItem="Vni-6S-gQ6" secondAttribute="trailing" constant="11" id="4aw-NJ-JPa"/>
+                            <constraint firstItem="YlY-ja-vdx" firstAttribute="leading" secondItem="9gM-9X-ueZ" secondAttribute="leading" constant="35" id="5ya-9J-dCy"/>
+                            <constraint firstItem="cOV-i7-8Mr" firstAttribute="centerX" secondItem="YlY-ja-vdx" secondAttribute="centerX" id="7es-6G-4oo"/>
+                            <constraint firstItem="9gM-9X-ueZ" firstAttribute="bottom" secondItem="cOV-i7-8Mr" secondAttribute="bottom" constant="24" id="8oO-7q-fc0"/>
+                            <constraint firstItem="9gM-9X-ueZ" firstAttribute="trailing" secondItem="BZN-we-5p4" secondAttribute="trailing" constant="48" id="8qP-IY-bM8"/>
+                            <constraint firstItem="cOV-i7-8Mr" firstAttribute="top" secondItem="9gM-9X-ueZ" secondAttribute="top" id="GAc-XK-cea"/>
+                            <constraint firstItem="BZN-we-5p4" firstAttribute="leading" secondItem="9gM-9X-ueZ" secondAttribute="leading" constant="187" id="Szx-ul-m3Z"/>
+                            <constraint firstItem="Vni-6S-gQ6" firstAttribute="leading" secondItem="9gM-9X-ueZ" secondAttribute="leading" constant="203" id="cFf-xG-weB"/>
+                            <constraint firstItem="mPx-kr-iQE" firstAttribute="top" secondItem="BZN-we-5p4" secondAttribute="bottom" constant="42" id="cGz-wd-H9A"/>
+                            <constraint firstItem="cOV-i7-8Mr" firstAttribute="leading" secondItem="7mS-wh-cgd" secondAttribute="leadingMargin" constant="-26" id="vh1-YP-lki"/>
+                            <constraint firstItem="cOV-i7-8Mr" firstAttribute="centerX" secondItem="lVr-bj-cSZ" secondAttribute="centerX" id="xkx-s8-HTx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9gM-9X-ueZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ek6-8M-i40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="116.74876847290641"/>
         </scene>
     </scenes>
     <resources>
