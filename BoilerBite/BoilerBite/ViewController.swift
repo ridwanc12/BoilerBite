@@ -13,20 +13,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Menu for Windsor 01-13-2020
         let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
-//        print(testMenu)
+
+        print("All Hours")
+        printDiningHours(menu: testMenu)
         
-//        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
-        if testMenu != nil {
-            for meal in testMenu!.Meals {
-                print(meal?.Name ?? "No Meal")
-                print(meal?.Hours ?? "No Time")
-            }
-        }
-        else {
-            print("nil in testMenu")
-        }
+        print("BLD Hours")
+        printBLDHours(menu: testMenu)
         
+        print("Late Lunch Hours")
+        printLLHours(menu: testMenu)
+        
+        let testMenu2 = getMeal(hall: "windsor", date: "2020-01-18")
+        
+        print("Weekend Meal Hours")
+        printDiningHours(menu: testMenu2)
     }
 
 

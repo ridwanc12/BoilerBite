@@ -125,19 +125,70 @@ func getMeal(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
+func printDiningHours(menu: Menu?) {
+    if menu != nil {
+        for meal in menu!.Meals {
+            print(meal?.Name ?? "No Meal")
+            print(meal?.Hours ?? "No Time")
+        }
+    }
+    else {
+        print("nil in testMenu")
+    }
+}
+
+func printBLDHours(menu: Menu?) {
+    if menu != nil {
+        for meal in menu!.Meals {
+            if (meal?.Name != nil) {
+                if(!(meal!.Name == "Late Lunch")) {
+                    print(meal?.Name ?? "No Meal")
+                    print(meal?.Hours ?? "No Time")
+                }
+            }
+        }
+    }
+    else {
+        print("nil in testMenu")
+    }
+}
+
+func printLLHours(menu: Menu?) {
+    if menu != nil {
+        for meal in menu!.Meals {
+            if (meal?.Name != nil) {
+                if(meal!.Name == "Late Lunch") {
+                    print(meal?.Name ?? "No Meal")
+                    print(meal?.Hours ?? "No Time")
+                }
+            }
+        }
+    }
+    else {
+        print("nil in testMenu")
+    }
+}
+
 func getItem(itemID: String) -> Item {
     let address = "https://api.hfs.purdue.edu/menus/v2/items/" + itemID
     let requestLocation = URL(string: address)
     
     var itemDetails: Item?
-    URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+        semaphore.signal()
     } catch {
         print("There was an error in the item api request")
         print(error)
     }
-    }.resume()
+    }
+    
+    task.resume()
+    semaphore.wait()
     
     return(itemDetails!)
 }
