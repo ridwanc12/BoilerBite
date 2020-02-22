@@ -15,6 +15,7 @@
 		566D1A2223F8E67100B14361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */; };
 		566D1A2D23F8E67100B14361 /* BoilerBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A2C23F8E67100B14361 /* BoilerBiteTests.swift */; };
 		566D1A3823F8E67100B14361 /* BoilerBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */; };
+		939207232401BD1300F2A25C /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939207222401BD1300F2A25C /* ApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		566D1A3723F8E67100B14361 /* BoilerBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilerBiteUITests.swift; sourceTree = "<group>"; };
 		566D1A3923F8E67100B14361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9392072123FB839000F2A25C /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		939207222401BD1300F2A25C /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
 				566D1A2323F8E67100B14361 /* Info.plist */,
+				939207222401BD1300F2A25C /* ApiRequest.swift */,
 			);
 			path = BoilerBite;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				566D1A1A23F8E66F00B14361 /* ViewController.swift in Sources */,
 				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
+				939207232401BD1300F2A25C /* ApiRequest.swift in Sources */,
 				566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

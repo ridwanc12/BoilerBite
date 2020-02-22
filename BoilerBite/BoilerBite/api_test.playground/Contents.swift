@@ -34,7 +34,7 @@ struct Item:Decodable {
     var Name:String
     var IsVegetarian:Bool
     var Allergens:[Allergen]?
-    var NutritionFacts: [String]?
+    var NutritionFacts: [NutritionFact]?
     var Ingredients:String?
 }
 
@@ -76,7 +76,6 @@ extension Station: CustomStringConvertible {
     }
 }
 
-
 extension Item: CustomStringConvertible {
     var description: String {
         let returnValue = String(format: "Item(ID: %@, Name: %@, IsVegetarian: %@, Allergens: %@, NutritionFacts: %@, Ingredients: %@)", ID, Name, String(IsVegetarian), Allergens ?? "", NutritionFacts ?? "", Ingredients ?? "")
@@ -113,13 +112,14 @@ URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
 // URL for example item api request
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
-var address2 = "https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435"
+var address2 = "https://api.hfs.purdue.edu/menus/v2/items/" + itemID
 var requestLocation2 = URL(string: address2)
 
 URLSession.shared.dataTask(with: requestLocation2!) { (data, response, error) in
     do {
-        let json = try JSONSerialization.jsonObject(with: data!, options:[])
-        print(json)
+        print(itemID)
+        let itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+        print(itemDetails)
     } catch {
         print("There was an error in the api request")
         print(error)
