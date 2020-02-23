@@ -13,7 +13,26 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+
+        print("All Hours")
+        let diningHours = getDiningHours(menu: testMenu)
+        print(diningHours)
+        
+        print("BLD Hours")
+        let BLDHours = getBLDHours(menu: testMenu)
+        print(BLDHours)
+        
+        print("Late Lunch Hours")
+        let LLHours = getLLHours(menu: testMenu)
+        print(LLHours)
+        
+        let testMenu2 = getMeal(hall: "windsor", date: "2020-01-18")
+        
+        print("Weekend Meal Hours")
+        let weekendHours = getDiningHours(menu: testMenu2)
+        print(weekendHours)
     }
     
     @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue) {
