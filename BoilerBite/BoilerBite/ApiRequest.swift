@@ -5,100 +5,8 @@
 //  Created by Ridwan Chowdhury on 2/22/20.
 //  Copyright © 2020 Isha Mahadalkar. All rights reserved.
 //
-
-
 import UIKit
 import Foundation
-
-// Structs needed for meal plan api request
-
-struct Menu:Decodable {
-    var Location:String?
-    var Date:String?
-    var Meals:[Meal?]
-}
-
-struct Meal:Decodable {
-    var ID:String
-    var Name:String
-    var Status:String
-    var Hours:Hour?
-    var Stations:[Station?]
-}
-
-struct Hour:Decodable {
-    var StartTime:String
-    var EndTime:String
-}
-
-struct Station:Decodable {
-    var Name:String
-    var Items:[Item]
-}
-
-// Item has optionals for when more variables are needed in a later api request
-
-struct Item:Decodable {
-    var ID:String
-    var Name:String
-    var IsVegetarian:Bool
-    var Allergens:[Allergen]?
-    var NutritionFacts: [NutritionFact]?
-    var Ingredients:String?
-}
-
-struct Allergen:Decodable {
-    var Name:String
-    var Value:Bool
-}
-
-// Additional structs needed for item api request
-
-struct NutritionFact:Decodable {
-    var Name:String
-    var Value:Int
-    var LabelValue:String
-    var DailyValue:String?
-    var Ordinal:Int
-}
-
-// Some extension code to make the data print nicer
-
-extension Meal: CustomStringConvertible {
-    var description: String {
-        let returnValue = String(format: "Meal(ID: %@, Name: %@, Status: %@, Hours: %@, Stations: %@)", ID, Name, Status, [Hours], Stations)
-        return returnValue
-    }
-}
-
-extension Hour: CustomStringConvertible {
-    var description: String {
-        let returnValue = String(format: "Hour(StartTime: %@, EndTime: %@)", StartTime, EndTime)
-        return returnValue
-    }
-}
-
-extension Station: CustomStringConvertible {
-    var description: String {
-        let returnValue = String(format: "Station(Name: %@, Items: %@)", Name, Items)
-        return returnValue
-    }
-}
-
-extension Item: CustomStringConvertible {
-    var description: String {
-        let returnValue = String(format: "Item(ID: %@, Name: %@, IsVegetarian: %@, Allergens: %@, NutritionFacts: %@, Ingredients: %@)", ID, Name, String(IsVegetarian), Allergens ?? "", NutritionFacts ?? "", Ingredients ?? "")
-        return returnValue
-    }
-}
-
-extension Allergen: CustomStringConvertible {
-    var description: String {
-        let returnValue = String(format: "Allergen(Name: %@, Value: %@)", Name, String(Value))
-        return returnValue
-    }
-}
-
 
 func getMeal(hall: String, date: String) -> Menu? {
     let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, date)
@@ -125,48 +33,45 @@ func getMeal(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
-func printDiningHours(menu: Menu?) {
+func getDiningHours(menu: Menu?) -> [Hour?] {
+    var hours: [Hour?] = []
     if menu != nil {
         for meal in menu!.Meals {
-            print(meal?.Name ?? "No Meal")
-            print(meal?.Hours ?? "No Time")
+            hours.append(meal?.Hours)
         }
     }
-    else {
-        print("nil in testMenu")
-    }
+    
+    return(hours)
 }
 
-func printBLDHours(menu: Menu?) {
+func getBLDHours(menu: Menu?) -> [Hour?] {
+    var hours: [Hour?] = []
     if menu != nil {
         for meal in menu!.Meals {
             if (meal?.Name != nil) {
                 if(!(meal!.Name == "Late Lunch")) {
-                    print(meal?.Name ?? "No Meal")
-                    print(meal?.Hours ?? "No Time")
+                    hours.append(meal?.Hours)
                 }
             }
         }
     }
-    else {
-        print("nil in testMenu")
-    }
+    
+    return(hours)
 }
 
-func printLLHours(menu: Menu?) {
+func getLLHours(menu: Menu?) -> [Hour?] {
+    var hours: [Hour?] = []
     if menu != nil {
         for meal in menu!.Meals {
             if (meal?.Name != nil) {
                 if(meal!.Name == "Late Lunch") {
-                    print(meal?.Name ?? "No Meal")
-                    print(meal?.Hours ?? "No Time")
+                    hours.append(meal?.Hours)
                 }
             }
         }
     }
-    else {
-        print("nil in testMenu")
-    }
+    
+    return(hours)
 }
 
 func getItem(itemID: String) -> Item {
