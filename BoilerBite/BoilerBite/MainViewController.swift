@@ -16,6 +16,10 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue) {
+        // Do not need to do anything
+    }
+    
 
     /*
     // MARK: - Navigation
