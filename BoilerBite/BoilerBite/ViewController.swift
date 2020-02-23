@@ -17,18 +17,22 @@ class ViewController: UIViewController {
         let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
 
         print("All Hours")
-        printDiningHours(menu: testMenu)
+        let diningHours = getDiningHours(menu: testMenu)
+        print(diningHours)
         
         print("BLD Hours")
-        printBLDHours(menu: testMenu)
+        let BLDHours = getBLDHours(menu: testMenu)
+        print(BLDHours)
         
         print("Late Lunch Hours")
-        printLLHours(menu: testMenu)
+        let LLHours = getLLHours(menu: testMenu)
+        print(LLHours)
         
         let testMenu2 = getMeal(hall: "windsor", date: "2020-01-18")
         
         print("Weekend Meal Hours")
-        printDiningHours(menu: testMenu2)
+        let weekendHours = getDiningHours(menu: testMenu2)
+        print(weekendHours)
     }
 
 
