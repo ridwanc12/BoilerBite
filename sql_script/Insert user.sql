@@ -1,5 +1,4 @@
 use boilerbite;
-
 INSERT INTO profiles (
     height,
     userEmail,
@@ -10,11 +9,11 @@ INSERT INTO profiles (
   )
 VALUES
   (
-    '175', #height
-    'smicjeremy', #email
-    'Twnyang', #username
-    '160', #weight
-    SHA1('congrats'),
-    '21' #age
+    '160',    #height
+    'smiceden', #email
+    'twneden',  #username
+    '116',    #weight
+    sha1('congrats'),  #password
+    '17'        #age
   );
   SELECT * FROM profiles;
