@@ -27,6 +27,9 @@
 		566D1A642401BBBA00B14361 /* SFMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A582401BBB900B14361 /* SFMono-Medium.otf */; };
 		566D1A652401BBBA00B14361 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A592401BBB900B14361 /* SFMono-Light.otf */; };
 		566D1A662401BBBA00B14361 /* SFMono-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */; };
+		566D1A742404354800B14361 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A732404354800B14361 /* NewAccountViewController.swift */; };
+		566D1A762404376A00B14361 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A752404376A00B14361 /* CreateProfileViewController.swift */; };
+		566D1A782404378400B14361 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A772404378400B14361 /* MenuViewController.swift */; };
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
 		9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934424033CAE00EB1B0D /* DataStructures.swift */; };
 		9344934724033CB600EB1B0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934624033CB500EB1B0D /* ViewController.swift */; };
@@ -76,6 +79,9 @@
 		566D1A582401BBB900B14361 /* SFMono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Medium.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-Medium.otf"; sourceTree = "<group>"; };
 		566D1A592401BBB900B14361 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Light.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-Light.otf"; sourceTree = "<group>"; };
 		566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-HeavyItalic.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-HeavyItalic.otf"; sourceTree = "<group>"; };
+		566D1A732404354800B14361 /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		566D1A752404376A00B14361 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		566D1A772404378400B14361 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9344934124033CA500EB1B0D /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		9344934224033CA500EB1B0D /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9344934424033CAE00EB1B0D /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
 				566D1A2323F8E67100B14361 /* Info.plist */,
+				566D1A732404354800B14361 /* NewAccountViewController.swift */,
+				566D1A752404376A00B14361 /* CreateProfileViewController.swift */,
+				566D1A772404378400B14361 /* MenuViewController.swift */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
 			);
 			path = BoilerBite;
@@ -326,10 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566D1A762404376A00B14361 /* CreateProfileViewController.swift in Sources */,
 				9344934724033CB600EB1B0D /* ViewController.swift in Sources */,
 				566D1A4D2401AD8700B14361 /* MainViewController.swift in Sources */,
 				9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */,
+				566D1A782404378400B14361 /* MenuViewController.swift in Sources */,
 				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
+				566D1A742404354800B14361 /* NewAccountViewController.swift in Sources */,
 				9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */,
 				566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */,
 			);

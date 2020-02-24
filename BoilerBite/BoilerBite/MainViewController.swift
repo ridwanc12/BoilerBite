@@ -9,10 +9,18 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Getting the username and password entered
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
         // Menu for Windsor 01-13-2020
         let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
 
@@ -35,11 +43,58 @@ class MainViewController: UIViewController {
         print(weekendHours)
     }
     
+    
+    @IBAction func loginTapped(_ sender: UIButton) {
+        
+        // Validating the Inputs from the User
+        let username: String = usernameField.text ?? ""
+        let password: String = passwordField.text ?? ""
+        
+        if username == "" || password == "" {
+            let alert = UIAlertController(title: "Error" , message: "Enter Username and Password", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                print("Username or Password Empty")
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        /*
+        if username.count < 6 || password.count < 6 {
+            let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too short!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                print("Username or Password too Short")
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        if username.count > 12 || password.count > 12{
+            let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too long!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                print("Username or Password too Long")
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+ 
+        */
+        
+        
+        
+    }
+    
+    
+    
     @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue) {
         // Do not need to do anything
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -50,4 +105,12 @@ class MainViewController: UIViewController {
     }
     */
 
+}
+
+extension MainViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
