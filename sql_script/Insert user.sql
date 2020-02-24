@@ -1,15 +1,20 @@
-INSERT INTO userprofile (
-    age,
+use boilerbite;
+
+INSERT INTO profiles (
     height,
-    user_email,
-    user_name,
-    weight
+    userEmail,
+    userName,
+    weight,
+    hashpass,
+    age
   )
 VALUES
   (
-    '4', #age
-    '2', #height
-    'er', #email
-    'we', #username
-    '4' #weight
+    '175', #height
+    'smicjeremy', #email
+    'Twnyang', #username
+    '160', #weight
+    SHA1('congrats'),
+    '21' #age
   );
+  SELECT * FROM profiles;
