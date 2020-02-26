@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
 //        diningHoursExample()
         
         // Testing meal and item requests functions in main
-        mealRequest()
+//        mealRequest()
         
     }
     
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         print(stringID)
         
         let firstItem = getItem(itemID: stringID)
-        print(firstItem ?? "No first item")
+        print(firstItem)
     }
     
     
