@@ -30,5 +30,44 @@ class BoilerBiteTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testDiningHours() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let diningHours = getDiningHours(menu: testMenu)
+        let stringHours = String(describing: diningHours)
+        
+        XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
+        
+    }
+    
+    func testBLDHours() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let BLDHours = getBLDHours(menu: testMenu)
+        let stringHours = String(describing: BLDHours)
+        
+        XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
+    }
+    
+    func testLLHours() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let LLHours = getLLHours(menu: testMenu)
+        let stringHours = String(describing: LLHours)
+        
+        XCTAssertEqual(stringHours, "[Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00))]")
+    }
+    
+    
 
 }
