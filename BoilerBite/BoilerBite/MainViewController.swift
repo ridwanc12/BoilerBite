@@ -21,6 +21,15 @@ class MainViewController: UIViewController {
         usernameField.delegate = self
         passwordField.delegate = self
         
+        // Testing dining hours functions in main
+//        diningHoursExample()
+        
+        // Testing meal and item requests functions in main
+        mealRequest()
+        
+    }
+    
+    func diningHoursExample() {
         // Menu for Windsor 01-13-2020
         let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
 
@@ -41,6 +50,11 @@ class MainViewController: UIViewController {
         print("Weekend Meal Hours")
         let weekendHours = getDiningHours(menu: testMenu2)
         print(weekendHours)
+    }
+    
+    func mealRequest() {
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        print(testMenu ?? "No menu received")
     }
     
     
