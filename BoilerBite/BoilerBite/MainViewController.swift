@@ -54,7 +54,24 @@ class MainViewController: UIViewController {
     
     func mealRequest() {
         let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
-        print(testMenu ?? "No menu received")
+        let hall = testMenu?.Location
+        let date = testMenu?.Date
+        print(hall ?? "No hall")
+        print(date ?? "No date")
+        
+        let dinner = getDinner(menu: testMenu)
+        print(dinner ?? "No dinner")
+        
+        let lunch = getLunch(menu: testMenu)
+        print(lunch ?? "No lunch")
+        
+        // NOTE: Windsor doesn't have breakfast
+        let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
+        let stringID = String(itemID ?? "No item ID")
+        print(stringID)
+        
+        let firstItem = getItem(itemID: stringID)
+        print(firstItem ?? "No first item")
     }
     
     

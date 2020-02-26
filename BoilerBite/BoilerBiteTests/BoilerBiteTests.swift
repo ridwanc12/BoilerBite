@@ -68,6 +68,62 @@ class BoilerBiteTests: XCTestCase {
         XCTAssertEqual(stringHours, "[Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00))]")
     }
     
+    func testMenuWindsorDay1() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let stringHall = String(describing: testMenu!.Location!)
+        let stringCompareHall = "Windsor"
+        XCTAssertEqual(stringHall, stringCompareHall)
+        
+        let stringDate = String(describing: testMenu!.Date!)
+        let stringCompareDate = "1/13/2020"
+        XCTAssertEqual(stringDate, stringCompareDate)
+    }
     
+    func testMenuWindsorDinnerDay1() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let dinner = getDinner(menu: testMenu)
+        
+        let stringDinner = String(describing: dinner!.Name)
+        let stringCompareDinner = "Dinner"
+        
+        XCTAssertEqual(stringDinner, stringCompareDinner)
+    }
+    
+    func testMenuWindsorLunchDay1() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let dinner = getLunch(menu: testMenu)
+        
+        let stringDinner = String(describing: dinner!.Name)
+        let stringCompareDinner = "Lunch"
+        
+        XCTAssertEqual(stringDinner, stringCompareDinner)
+    }
 
+    func testWindsorMenuFirstItem() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        // NOTE: Windsor doesn't have breakfast
+        let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
+        let stringID = String(itemID ?? "No item ID")
+        let firstItemID = "84835539-119a-4efd-b714-786015923e3c"
+        
+        XCTAssertEqual(stringID, firstItemID)
+        
+        
+    }
 }

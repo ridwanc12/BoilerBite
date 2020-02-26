@@ -33,6 +33,30 @@ func getMeal(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
+func getDinner(menu: Menu?) -> Meal? {
+    for meal in menu!.Meals {
+        if (meal?.Name != nil) {
+            if(meal!.Name == "Dinner") {
+                return meal!
+            }
+        }
+    }
+    
+    return nil
+}
+
+func getLunch(menu: Menu?) -> Meal? {
+    for meal in menu!.Meals {
+        if (meal?.Name != nil) {
+            if(meal!.Name == "Lunch") {
+                return meal!
+            }
+        }
+    }
+    
+    return nil
+}
+
 func getDiningHours(menu: Menu?) -> [Hour?] {
     var hours: [Hour?] = []
     if menu != nil {
