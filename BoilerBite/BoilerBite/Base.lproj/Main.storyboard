@@ -326,8 +326,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EGa-yG-eHe">
                                 <rect key="frame" x="203" y="28" width="161" height="141"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-pW-y1S">
-                                <rect key="frame" x="35" y="199" width="194" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Main Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-pW-y1S">
+                                <rect key="frame" x="57" y="200" width="194" height="45"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wvw-dQ-lfb"/>
@@ -337,7 +337,7 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TE9-rE-A1f" userLabel="dining court manus button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TE9-rE-A1f">
                                 <rect key="frame" x="71.91053828731674" y="360" width="228.99999999999989" height="43.999999999999957"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="dining court menus" backgroundImage="text-box">
@@ -347,21 +347,21 @@
                                     <segue destination="yHO-tF-Ifk" kind="show" id="mJJ-vo-gLl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3SI-5X-fBk" userLabel="create meal button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3SI-5X-fBk">
                                 <rect key="frame" x="71.91053828731674" y="422" width="228.99999999999989" height="44.000000000000028"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="create meal" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3FF-cT-W6u" userLabel="settings">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3FF-cT-W6u">
                                 <rect key="frame" x="71.91053828731674" y="483" width="228.99999999999989" height="44.000000000000114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="goals" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qZX-Va-Ufk" userLabel="create meal button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qZX-Va-Ufk">
                                 <rect key="frame" x="71.91053828731674" y="544.00000000000023" width="228.99999999999989" height="43.999999999999886"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="settings" backgroundImage="text-box">
@@ -377,6 +377,16 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLV-bn-iXT">
+                                <rect key="frame" x="71" y="605" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="account" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IOJ-pw-yiK" kind="show" id="bUN-NA-H20"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -414,19 +424,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-i7-8Mr">
                                 <rect key="frame" x="0.0" y="9" width="375" height="715"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vni-6S-gQ6">
-                                <rect key="frame" x="203" y="72" width="161" height="141"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vni-6S-gQ6">
+                                <rect key="frame" x="214" y="20" width="161" height="141"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
-                                <rect key="frame" x="187" y="291" width="140" height="27"/>
-                                <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="8"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Residential Menus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-ja-vdx">
-                                <rect key="frame" x="35" y="243" width="305" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Residential Menus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-ja-vdx">
+                                <rect key="frame" x="33" y="210" width="305" height="49"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -476,6 +478,14 @@
                                     <segue destination="sIb-zm-i3w" kind="show" id="jbh-Da-5zV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
+                                <rect key="frame" x="198" y="267" width="140" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -500,7 +510,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ek6-8M-i40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="116.74876847290641"/>
+            <point key="canvasLocation" x="2343" y="117"/>
+        </scene>
+        <!--User Profile-->
+        <scene sceneID="rqS-zh-h1l">
+            <objects>
+                <viewController id="IOJ-pw-yiK" userLabel="User Profile" customClass="MenuViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jS6-8T-wgE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="DnI-rw-XtE">
+                                <rect key="frame" x="-115" y="-51" width="605" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="k5c-um-D9o">
+                                <rect key="frame" x="-2" y="11" width="375" height="696"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your  account" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mup-gL-8Sb">
+                                <rect key="frame" x="63" y="212" width="132" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIm-f4-7rI">
+                                <rect key="frame" x="33" y="169" width="305" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iOk-s3-Pgs">
+                                <rect key="frame" x="71.91053828731674" y="360" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="height                     170 cm" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sUT-QT-N8C" userLabel="ford">
+                                <rect key="frame" x="71.91053828731674" y="423" width="229" height="44.000000000000028"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="weight                   75 kg " backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q5A-9p-cbR" userLabel="wiley">
+                                <rect key="frame" x="72" y="485" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="age                           21 " backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJN-ce-5ZW">
+                                <rect key="frame" x="26" y="28" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="sIb-zm-i3w" kind="show" id="d68-Lj-CRg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-Lj-xkF">
+                                <rect key="frame" x="212" y="28" width="161" height="141"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oBM-o9-cye" userLabel="hillenbrand">
+                                <rect key="frame" x="71" y="546" width="229" height="44.000000000000114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="calories                 2000" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lsB-GZ-HOr" firstAttribute="trailing" secondItem="qDh-Lj-xkF" secondAttribute="trailing" constant="11" id="G34-mZ-0Li"/>
+                            <constraint firstItem="k5c-um-D9o" firstAttribute="top" secondItem="lsB-GZ-HOr" secondAttribute="top" id="N8s-o1-oOh"/>
+                            <constraint firstItem="k5c-um-D9o" firstAttribute="centerX" secondItem="DnI-rw-XtE" secondAttribute="centerX" id="cD3-nh-L4t"/>
+                            <constraint firstItem="k5c-um-D9o" firstAttribute="leading" secondItem="jS6-8T-wgE" secondAttribute="leadingMargin" constant="-26" id="nIf-EZ-f2P"/>
+                            <constraint firstItem="lsB-GZ-HOr" firstAttribute="bottom" secondItem="k5c-um-D9o" secondAttribute="bottom" constant="24" id="pqA-tS-xQv"/>
+                            <constraint firstItem="qDh-Lj-xkF" firstAttribute="leading" secondItem="lsB-GZ-HOr" secondAttribute="leading" constant="203" id="yWu-Pv-jTU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lsB-GZ-HOr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZzS-Lc-mtz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2IN-8g-b2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="790.64039408866995"/>
         </scene>
     </scenes>
     <resources>
@@ -517,7 +617,7 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8ah-od-bQx"/>
+        <segue reference="jbh-Da-5zV"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>
