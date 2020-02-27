@@ -31,7 +31,7 @@ class  checkUser {
      * catches, else returns 0.
      */
 
-    function varifyUser($username, $pass): int{
+    function verifyUser($username, $pass): int{
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -67,7 +67,7 @@ class  checkUser {
     $name = 'Rid';
     $pass = 'rid';
     $obj = new checkUser;
-    $obj->varifyUser($name, $pass);
+    $obj->verifyUser($name, $pass);
 
 
 
