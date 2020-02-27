@@ -46,7 +46,7 @@ class  insertTable {
             $name_result = $q->fetch();
             if ($name_result != FALSE) {
                 echo nl2br("$username is taken. Please choose another username.\n");
-                exit();
+                return 0;
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -62,7 +62,7 @@ class  insertTable {
         if ($mail_result != FALSE) {
             $name = $mail_result['userName'];
             echo nl2br("$email is already registed as $name.\n");
-            exit();
+            return 0;
         }
         
         $flag = 0;
@@ -92,7 +92,7 @@ class  insertTable {
             return 0;
         }
         // Hash the password.
-        $passwrd = PASSWORD_HASH("$pass", PASSWORD_DEFAULT);
+        $passwrd = sha1($pass);
         // Insert values into array to be executed
         $task = array(
             ':username' => $username,

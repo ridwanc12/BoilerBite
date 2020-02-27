@@ -60,28 +60,20 @@ class  insertTable {
         // If negative, print message and exit().
         if ($calories_total < 0) {
             echo nl2br("Please make sure the input is non-negative.\n");
-            exit();
+            return 0;
         }
         $id = $this->findID($username);
         if ($id == 0) {
             echo nl2br("User does not exist.");
-            exit();
+            return 0;
         }
         echo nl2br("$id\n");
         $task = array(
             ':cal_total' => $calories_total,
             ':id' => $id);
-        $sql = 'INSERT INTO goals (
-                      calories_total
-                  )
-                  VALUES (
-                      :username,
-                      :email,
-                      :height,
-                      :weight,
-                      :pass,
-                      :age
-                  );';
+        $sql = 'UPDATE goals
+                    SET calories_total = :cal_total
+                  WHERE userID = :id';
  
         $q = $this->pdo->prepare($sql);
  
@@ -89,7 +81,9 @@ class  insertTable {
     }
 }
     $obj = new insertTable();
-    if ($obj->insertSingleRow('Twnyang', 'smicjeremy@hotmail.com', '170', '75', 'jeez', '21')) {
+    $name = 'Rid';
+    $cal_total = 2600;
+    if ($obj->insertCalTotal($name, $cal_total)) {
         echo "Query executed.";
     } else {
         echo "Query error.";
