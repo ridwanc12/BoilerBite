@@ -40,6 +40,8 @@ class BoilerBiteTests: XCTestCase {
         let diningHours = getDiningHours(menu: testMenu)
         let stringHours = String(describing: diningHours)
         
+        print(diningHours)
+        
         XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
         
     }
@@ -53,6 +55,8 @@ class BoilerBiteTests: XCTestCase {
         let BLDHours = getBLDHours(menu: testMenu)
         let stringHours = String(describing: BLDHours)
         
+        print(BLDHours)
+        
         XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
     }
     
@@ -65,7 +69,24 @@ class BoilerBiteTests: XCTestCase {
         let LLHours = getLLHours(menu: testMenu)
         let stringHours = String(describing: LLHours)
         
+        print(LLHours)
+        
         XCTAssertEqual(stringHours, "[Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00))]")
+    }
+    
+    func testWeekendHours() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let diningHours = getDiningHours(menu: testMenu)
+        let stringHours = String(describing: diningHours)
+        
+        print(diningHours)
+        
+        XCTAssertEqual(stringHours, "[nil, nil, nil, Optional(Hour(StartTime: 16:00:00, EndTime: 20:00:00))]")
+        
     }
     
     func testMenuWindsorDay1() {
@@ -73,6 +94,8 @@ class BoilerBiteTests: XCTestCase {
         let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
+        
+        print(testMenu ?? "No menu")
         
         let stringHall = String(describing: testMenu!.Location!)
         let stringCompareHall = "Windsor"
@@ -91,6 +114,12 @@ class BoilerBiteTests: XCTestCase {
         
         let dinner = getDinner(menu: testMenu)
         
+        print(dinner ?? "No dinner")
+        
+        let stringHall = String(describing: testMenu!.Location!)
+        let stringCompareHall = "Windsor"
+        XCTAssertEqual(stringHall, stringCompareHall)
+        
         let stringDinner = String(describing: dinner!.Name)
         let stringCompareDinner = "Dinner"
         
@@ -103,9 +132,15 @@ class BoilerBiteTests: XCTestCase {
         
         XCTAssertNotNil(testMenu)
         
-        let dinner = getLunch(menu: testMenu)
+        let lunch = getLunch(menu: testMenu)
         
-        let stringDinner = String(describing: dinner!.Name)
+        print(lunch ?? "No lunch")
+        
+        let stringHall = String(describing: testMenu!.Location!)
+        let stringCompareHall = "Windsor"
+        XCTAssertEqual(stringHall, stringCompareHall)
+        
+        let stringDinner = String(describing: lunch!.Name)
         let stringCompareDinner = "Lunch"
         
         XCTAssertEqual(stringDinner, stringCompareDinner)
@@ -117,6 +152,8 @@ class BoilerBiteTests: XCTestCase {
         
         XCTAssertNotNil(testMenu)
         
+        print(testMenu ?? "No menu")
+        
         // NOTE: Windsor doesn't have breakfast
         let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
         let stringID = String(itemID ?? "No item ID")
@@ -124,8 +161,14 @@ class BoilerBiteTests: XCTestCase {
         
         XCTAssertEqual(stringID, firstItemID)
         
+        let itemName = testMenu?.Meals[1]?.Stations[0]?.Items[0].Name
+        let stringName = String(describing: itemName)
+        let knownName = "Optional(\"Greek Saganaki Gluten Free\")"
+        XCTAssertEqual(stringName, knownName)
+        
         let firstItem = getItem(itemID: stringID)
         let firstItemContents = String(describing: firstItem)
+        print(firstItem)
         let firstItemCompare = """
 Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free, IsVegetarian: true, Allergens: (
     "Allergen(Name: Eggs, Value: true)",
