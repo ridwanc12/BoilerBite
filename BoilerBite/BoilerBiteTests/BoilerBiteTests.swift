@@ -33,7 +33,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testDiningHours() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -46,7 +46,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testBLDHours() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -58,7 +58,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testLLHours() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -70,7 +70,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testMenuWindsorDay1() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -85,7 +85,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testMenuWindsorDinnerDay1() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -99,7 +99,7 @@ class BoilerBiteTests: XCTestCase {
     
     func testMenuWindsorLunchDay1() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         
@@ -113,7 +113,7 @@ class BoilerBiteTests: XCTestCase {
 
     func testWindsorMenuFirstItem() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         
         XCTAssertNotNil(testMenu)
         

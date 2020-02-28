@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-func getMeal(hall: String, date: String) -> Menu? {
+func getMenu(hall: String, date: String) -> Menu? {
     let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, date)
     let requestLocation = URL(string: address)
     
