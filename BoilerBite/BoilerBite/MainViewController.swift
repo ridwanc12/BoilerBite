@@ -21,8 +21,17 @@ class MainViewController: UIViewController {
         usernameField.delegate = self
         passwordField.delegate = self
         
+        // Testing dining hours functions in main
+//        diningHoursExample()
+        
+        // Testing meal and item requests functions in main
+//        mealRequest()
+        
+    }
+    
+    func diningHoursExample() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
 
         print("All Hours")
         let diningHours = getDiningHours(menu: testMenu)
@@ -36,11 +45,33 @@ class MainViewController: UIViewController {
         let LLHours = getLLHours(menu: testMenu)
         print(LLHours)
         
-        let testMenu2 = getMeal(hall: "windsor", date: "2020-01-18")
+        let testMenu2 = getMenu(hall: "windsor", date: "2020-01-18")
         
         print("Weekend Meal Hours")
         let weekendHours = getDiningHours(menu: testMenu2)
         print(weekendHours)
+    }
+    
+    func mealRequest() {
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
+        let hall = testMenu?.Location
+        let date = testMenu?.Date
+        print(hall ?? "No hall")
+        print(date ?? "No date")
+        
+        let dinner = getDinner(menu: testMenu)
+        print(dinner ?? "No dinner")
+        
+        let lunch = getLunch(menu: testMenu)
+        print(lunch ?? "No lunch")
+        
+        // NOTE: Windsor doesn't have breakfast
+        let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
+        let stringID = String(itemID ?? "No item ID")
+        print(stringID)
+        
+        let firstItem = getItem(itemID: stringID)
+        print(firstItem)
     }
     
     

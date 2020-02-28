@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-func getMeal(hall: String, date: String) -> Menu? {
+func getMenu(hall: String, date: String) -> Menu? {
     let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, date)
     let requestLocation = URL(string: address)
     
@@ -31,6 +31,30 @@ func getMeal(hall: String, date: String) -> Menu? {
     semaphore.wait()
     
     return(menu)
+}
+
+func getDinner(menu: Menu?) -> Meal? {
+    for meal in menu!.Meals {
+        if (meal?.Name != nil) {
+            if(meal!.Name == "Dinner") {
+                return meal!
+            }
+        }
+    }
+    
+    return nil
+}
+
+func getLunch(menu: Menu?) -> Meal? {
+    for meal in menu!.Meals {
+        if (meal?.Name != nil) {
+            if(meal!.Name == "Lunch") {
+                return meal!
+            }
+        }
+    }
+    
+    return nil
 }
 
 func getDiningHours(menu: Menu?) -> [Hour?] {

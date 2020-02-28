@@ -32,7 +32,6 @@
 		566D1A782404378400B14361 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A772404378400B14361 /* MenuViewController.swift */; };
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
 		9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934424033CAE00EB1B0D /* DataStructures.swift */; };
-		9344934724033CB600EB1B0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934624033CB500EB1B0D /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +84,6 @@
 		9344934124033CA500EB1B0D /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		9344934224033CA500EB1B0D /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9344934424033CAE00EB1B0D /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
-		9344934624033CB500EB1B0D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 		566D1A1423F8E66F00B14361 /* BoilerBite */ = {
 			isa = PBXGroup;
 			children = (
-				9344934624033CB500EB1B0D /* ViewController.swift */,
 				9344934424033CAE00EB1B0D /* DataStructures.swift */,
 				9344934224033CA500EB1B0D /* api_test.playground */,
 				9344934124033CA500EB1B0D /* ApiRequest.swift */,
@@ -336,7 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				566D1A762404376A00B14361 /* CreateProfileViewController.swift in Sources */,
-				9344934724033CB600EB1B0D /* ViewController.swift in Sources */,
 				566D1A4D2401AD8700B14361 /* MainViewController.swift in Sources */,
 				9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */,
 				566D1A782404378400B14361 /* MenuViewController.swift in Sources */,
