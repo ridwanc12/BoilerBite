@@ -39,9 +39,11 @@ class  insertTable {
             // Check if username is in database.
             // If username is in the table display erro message and exit().
             $sql = "SELECT userName FROM profiles WHERE userName = '$username'";
+
             // Execute query to get userName.
             $q = $pdo->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);
+
             // Store fetch() result into $result.
             $name_result = $q->fetch();
             if ($name_result != FALSE) {
@@ -156,6 +158,7 @@ class  insertTable {
  
         return $q->execute($task);
     }
+
     // Function to show users in table
     function showUsers(): void {
         // Execute query to get profiles currently in the table.
@@ -191,17 +194,17 @@ class  insertTable {
             $flag = 1;
         }
         if ($flag == 0) {
-            echo nl2br("No users in the database.\n");
+            //echo nl2br("No users in the database.\n\n");
         }
     }
-} // End of functions.
+} // End of functions
 
 
     // Create new obj to run function
     $obj = new insertTable();
     $obj->showUsers();    
    
-    echo nl2br("Begin Unit Test:\n");
+    echo nl2br("Begin Unit Test for inserting new users into the database:\n");
 
     // Unit Test: Negative height
     $username = 'Rid';
@@ -214,13 +217,13 @@ class  insertTable {
                 Username: $username, Email: $email, Height: $height, Weight: $weight, Password: $pass, Age: $age\n");
     if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
         if ($obj->initializeGoal($username)) {
-            echo nl2br("Goals initialized.\n");
+            //echo nl2br("Goals initialized.\n");
         } else {
-            echo nl2br("Error when trying to initialize goals.\n");
+            //echo nl2br("Error when trying to initialize goals.\n");
         }
-        echo nl2br("User created.\n\n");
+        echo nl2br("Values inserted.\n\n");
     } else {
-        echo nl2br("User creation failed.\n\n");
+        echo nl2br("Value insertion failed.\n\n");
     }
 
     // Unit Test: Negative weight
@@ -231,16 +234,16 @@ class  insertTable {
     $pass = 'rid';
     $age = '20';
     echo nl2br("Testing when user enters a negative weight.
-                Username: $username, Email: $email, Height: $height, Weight: $weight, Password: $pass, Age: $age\n");
+                Height: $height, Weight: $weight, Age: $age\n");
     if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
         if ($obj->initializeGoal($username)) {
-            echo nl2br("Goals initialized.\n");
+            //echo nl2br("Goals initialized.\n");
         } else {
-            echo nl2br("Error when trying to initialize goals.\n");
+            //echo nl2br("Error when trying to initialize goals.\n");
         }
-        echo nl2br("User created.\n\n");
+        echo nl2br("Values inserted.\n\n");
     } else {
-        echo nl2br("User creation failed.\n\n");
+        echo nl2br("Value insertion failed.\n\n");
     }
     
     // Unit Test: Negative age
@@ -250,17 +253,17 @@ class  insertTable {
     $weight = '75';
     $pass = 'rid';
     $age = '-20';
-    echo nl2br("Testing when user enters a negative age.
-                Username: $username, Email: $email, Height: $height, Weight: $weight, Password: $pass, Age: $age\n");
+    echo nl2br("Testing when user enters a negative weight.
+                Height: $height, Weight: $weight, Age: $age\n");
     if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
         if ($obj->initializeGoal($username)) {
-            echo nl2br("Goals initialized.\n");
+            //echo nl2br("Goals initialized.\n");
         } else {
-            echo nl2br("Error when trying to initialize goals.\n");
+            //echo nl2br("Error when trying to initialize goals.\n");
         }
-        echo nl2br("User created.\n\n");
+        echo nl2br("Values inserted.\n\n");
     } else {
-        echo nl2br("User creation failed.\n\n");
+        echo nl2br("Value insertion failed.\n\n");
     }
 
     // Unit Test: All Values Negative
@@ -270,37 +273,57 @@ class  insertTable {
     $weight = '-75';
     $pass = 'rid';
     $age = '-20';
-    echo nl2br("Testing when user enters all negative values for height, weight, and age.
-                Username: $username, Email: $email, Height: $height, Weight: $weight, Password: $pass, Age: $age\n");
+    echo nl2br("Testing when user enters a negative weight.
+                Height: $height, Weight: $weight, Age: $age\n");
     if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
         if ($obj->initializeGoal($username)) {
-            echo nl2br("Goals initialized.\n");
+            //echo nl2br("Goals initialized.\n");
         } else {
-            echo nl2br("Error when trying to initialize goals.\n");
+            //echo nl2br("Error when trying to initialize goals.\n");
         }
-        echo nl2br("User created.\n\n");
+        echo nl2br("Values inserted.\n\n");
     } else {
-        echo nl2br("User creation failed.\n\n");
+        echo nl2br("Value insertion failed.\n\n");
     }
 
-    // Unit Test: All Values Valid
+    // Unit Test: All Values Greater than 0
     $username = 'Rid';
     $email = 'rid@gamil.com';
     $height = '170';
     $weight = '55';
     $pass = 'rid';
     $age = '19';
-    echo nl2br("Testing when user enters all inputs are valid.
-                Username: $username, Email: $email, Height: $height, Weight: $weight, Password: $pass, Age: $age\n");
+    echo nl2br("Testing when user enters a negative weight.
+                Height: $height, Weight: $weight, Age: $age\n");
     if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
         if ($obj->initializeGoal($username)) {
-            echo nl2br("Goals initialized.\n");
+            //echo nl2br("Goals initialized.\n");
         } else {
-            echo nl2br("Error when trying to initialize goals.\n");
+            //echo nl2br("Error when trying to initialize goals.\n");
         }
-        echo nl2br("User created.\n\n");
+        echo nl2br("Values inserted.\n\n");
     } else {
-        echo nl2br("User creation failed.\n\n");
+        echo nl2br("Value insertion failed.\n\n");
+    }
+
+    // Unit Test: All Values Equal than 0
+    $username = 'Jeremy';
+    $email = 'jeremy@gamil.com';
+    $height = '0';
+    $weight = '0';
+    $pass = 'jeremy';
+    $age = '0';
+    echo nl2br("Testing when user enters 0 for all values.
+                Height: $height, Weight: $weight, Age: $age\n");
+    if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
+        if ($obj->initializeGoal($username)) {
+            //echo nl2br("Goals initialized.\n");
+        } else {
+            //echo nl2br("Error when trying to initialize goals.\n");
+        }
+        echo nl2br("Values inserted.\n\n");
+    } else {
+        echo nl2br("Value insertion failed.\n\n");
     }
     $obj->showUsers(); 
 ?>

@@ -25,6 +25,48 @@ class  insertTable {
         // close the database connection
         $this->pdo = null;
     }
+
+    function showUsers(): void {
+        // Execute query to get profiles currently in the table.
+        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+        $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+        $sql = 'SELECT calories_total,
+                        gram_total,
+                        calorie_fat,
+                        calorie_protein,
+                        calorie_carb,
+                        gram_fat,
+                        gram_protein,
+                        gram_carb
+                    FROM goals';
+        $q = $pdo->query($sql);
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        // Print out values returned by query
+        $flag = 0;
+        while ($user = $q->fetch()) {
+            $holder = $user['calories_total'];
+            echo "calories_total: $holder, ";
+            $holder = $user['calorie_fat'];
+            echo "calories_fat: $holder, ";
+            $holder = $user['calorie_protein'];
+            echo "calories_protein: $holder, ";
+            $holder = $user['calorie_carb'];
+            echo "calories_carb: $holder, ";
+            $holder = $user['gram_total'];
+            echo nl2br("gram_total: $holder, \n");
+            $holder = $user['gram_fat'];
+            echo "gram_fat: $holder, ";
+            $holder = $user['gram_protein'];
+            echo nl2br("gram_protein: $holder ");
+            $holder = $user['gram_carb'];
+            echo nl2br("gram_carb: $holder\n\n");
+            $flag = 1;
+        }
+        if ($flag == 0) {
+            echo nl2br("No users in the database.\n\n");
+        }
+    }
+
     /* 
      * Function to find the ID of the user from the given username.
      * If the user is not in the database, the function will print error message and
@@ -69,10 +111,10 @@ class  insertTable {
         // Check if user is in the database
         $id = $this->findID($username);
         if ($id == 0) {
-            echo nl2br("User does not exist.");
+            echo nl2br("User does not exist.\n");
             return 0;
         }
-        echo nl2br("$id\n");
+        //echo nl2br("$id\n");
         // Insert value into array to 
         $task = array(
             ':cal_total' => $calories_total,
@@ -85,12 +127,44 @@ class  insertTable {
         return $q->execute($task);
     }
 }
+    // Begin unit testing
     $obj = new insertTable();
+    $obj->showUsers();
+    echo nl2br("Begin unit testing for updating desired calorie intake:\n\n");
+
+    //Testing negative input
     $name = 'Rid';
-    $cal_total = 2600;
+    $cal_total = -2600;
+    echo nl2br("Test for negative input:
+                Username: $name, Calories Total: $cal_total\n");
     if ($obj->insertCalTotal($name, $cal_total)) {
-        echo "Insert Success.";
+        echo nl2br("Update success.\n\n");
     } else {
-        echo "Query error.";
+        echo nl2br("Update failed.\n\n");
     };
-    
+
+    //Testing non-existent user
+    $name = 'Jesus';
+    $cal_total = 2600;
+    echo nl2br("Test for non-existent user:
+                Username: $name, Calories Total: $cal_total\n");
+    if ($obj->insertCalTotal($name, $cal_total)) {
+        echo nl2br("Update success.\n\n");
+    } else {
+        echo nl2br("Update failed.\n\n");
+    };
+
+    //Testing valid input
+    $name = 'Rid';
+    $cal_total = 200;
+    echo nl2br("Test for valid inputs:
+                Username: $name, Calories Total: $cal_total\n");
+    if ($obj->insertCalTotal($name, $cal_total)) {
+        echo nl2br("Update success.\n\n");
+    } else {
+        echo nl2br("Update failed.\n\n");
+    };
+
+    $obj->showUsers();
+?>   
+

@@ -1,30 +1,28 @@
 <?php
 
 class  insertTable {
+    // Database information
     const DB_HOST = 'localhost';
-
     const DB_NAME = 'boilerbite';
-
     const DB_USER = 'root';
-
     const DB_PASS = '7658389656';
 
     private $pdo = null;
-
+    // Check connection to database.
     public function __construct() {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-
         try {
             $this->pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
+    }// __construct()
 
-    }
     public function __destruct() {
         // close the database connection
         $this->pdo = null;
-    }
+    }// __destruct()
+
     /* 
      * Function to find the ID of the user from the given username.
      * If the user is not in the database, the function will print error message and
@@ -43,14 +41,54 @@ class  insertTable {
         }
 
         $result = $q->fetch();
-
         // Check if username is in database.
         // If username is not in the table $result will be FALSE.
         if ($result == FALSE) {
+            echo nl2br("Incorrect username.\n\n");
             return 0;
         }
+        // Get ID from result.
         $idFromUser = $result['userID'];
         return $idFromUser;
+    }// findID()
+
+    // Function to show users in table
+    function showUsers(): void {
+        // Execute query to get profiles currently in the table.
+        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+        $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+        $sql = 'SELECT userID,
+                        userName,
+                        userEmail,
+                        height,
+                        weight,
+                        hashPass,
+                        age
+                    FROM profiles';
+        $q = $pdo->query($sql);
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        // Print out values returned by query
+        $flag = 0;
+        while ($user = $q->fetch()) {
+            $holder = $user['userID'];
+            echo "UserID: $holder, ";
+            $holder = $user['userName'];
+            echo "Username: $holder, ";
+            $holder = $user['userEmail'];
+            echo "Email: $holder, ";
+            $holder = $user['height'];
+            echo "Height: $holder, ";
+            $holder = $user['weight'];
+            echo nl2br("Weight: $holder, \n");
+            $holder = $user['hashPass'];
+            echo "Hashed Passwrd: $holder, ";
+            $holder = $user['age'];
+            echo nl2br("Age: $holder\n\n");
+            $flag = 1;
+        }
+        if ($flag == 0) {
+            echo nl2br("No users in the database.\n\n");
+        }
     }
 
     /* 
@@ -58,7 +96,6 @@ class  insertTable {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    
     function insertCalTotal($username, $calories_total) {
         // Check if $calories_total is non-negative.
         // If negative, print message and exit().
@@ -66,14 +103,12 @@ class  insertTable {
             echo nl2br("Please make sure the input is non-negative.\n");
             return 0;
         }
-        // Check if user is in the database
         $id = $this->findID($username);
         if ($id == 0) {
-            echo nl2br("User does not exist.");
+            echo nl2br("User does not exist.\n\n");
             return 0;
         }
-        echo nl2br("$id\n");
-        // Insert value into array to 
+        //echo nl2br("$id\n");
         $task = array(
             ':cal_total' => $calories_total,
             ':id' => $id);
@@ -82,14 +117,17 @@ class  insertTable {
                   WHERE userID = :id';
  
         $q = $this->pdo->prepare($sql);
+ 
         return $q->execute($task);
-    }
+    }// insertCalTotal()
 }
+    //File entry point.
     $obj = new insertTable();
+    $
     $name = 'Rid';
-    $cal_total = 2600;
+    $cal_total = 2700;
     if ($obj->insertCalTotal($name, $cal_total)) {
-        echo "Insert Success.";
+        echo "Query executed.";
     } else {
         echo "Query error.";
     };

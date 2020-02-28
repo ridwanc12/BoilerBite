@@ -53,6 +53,30 @@ class  insertTable {
         return $idFromUser;
     }
 
+    // Function to show users in table
+    function showUsers(): void {
+        // Execute query to get profiles currently in the table.
+        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+        $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+        $sql = 'SELECT userID,                        
+                        calories_total
+                    FROM goals';
+        $q = $pdo->query($sql);
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        // Print out values returned by query
+        $flag = 0;
+        while ($user = $q->fetch()) {
+            $holder = $user['userID'];
+            echo "ID: $holder, ";
+            $holder = $user['calories_total'];
+            echo nl2br("Calories Total: $holder\n\n");
+            $flag = 1;
+        }
+        if ($flag == 0) {
+            //echo nl2br("No users in the database.\n\n");
+        }
+    }
+
     /* 
      * Function to insert a row of data based on the parameters given to the function.
      * Checks if any values of height, weight, age is negative. If contains negative values,
@@ -69,28 +93,62 @@ class  insertTable {
         // Check if user is in the database
         $id = $this->findID($username);
         if ($id == 0) {
-            echo nl2br("User does not exist.");
+            echo nl2br("Incorrect username.\n");
             return 0;
         }
-        echo nl2br("$id\n");
+        //echo nl2br("$id\n");
         // Insert value into array to 
         $task = array(
             ':cal_total' => $calories_total,
             ':id' => $id);
-        $sql = 'UPDATE goals
-                    SET calories_total = :cal_total
-                  WHERE userID = :id';
+        $sql = 'INSERT INTO goals (
+                        userID,
+                        calories_total
+                        )
+                        VALUES (
+                            :id,
+                            :cal_total
+                        )';
  
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
     }
 }
     $obj = new insertTable();
-    $name = 'Rid';
-    $cal_total = 2600;
-    if ($obj->insertCalTotal($name, $cal_total)) {
-        echo "Insert Success.";
-    } else {
-        echo "Query error.";
-    };
+    $obj->showUsers();
+    echo nl2br("Begin unit testing for inserting desired calorie intake:\n\n");
+
+    //Testing negative input
     
+    $name = 'Rid';
+    $cal_total = -2600;
+    echo nl2br("Test for negative input:
+                Username: $name, Calories Total: $cal_total\n");
+    if ($obj->insertCalTotal($name, $cal_total)) {
+        echo nl2br("Insert success.\n\n");
+    } else {
+        echo nl2br("Insert error.\n\n");
+    };
+
+    //Testing non-existent user
+    $name = 'Jesus';
+    $cal_total = 2600;
+    echo nl2br("Test for non-existent user:
+                Username: $name, Calories Total: $cal_total\n");
+    if ($obj->insertCalTotal($name, $cal_total)) {
+        echo nl2br("Insert success.\n\n");
+    } else {
+        echo nl2br("Insert error.\n\n");
+    };
+
+    //Testing valid input
+    $name = 'Rid';
+    $cal_total = 2500;
+    echo nl2br("Test for valid inputs:
+                Username: $name, Calories Total: $cal_total\n");
+    if ($obj->insertCalTotal($name, $cal_total)) {
+        echo nl2br("Insert success.\n\n");
+    } else {
+        echo nl2br("Insert error.\n\n");
+    };
+    $obj->showUsers();
