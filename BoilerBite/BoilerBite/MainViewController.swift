@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     
     func diningHoursExample() {
         // Menu for Windsor 01-13-2020
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
 
         print("All Hours")
         let diningHours = getDiningHours(menu: testMenu)
@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
         let LLHours = getLLHours(menu: testMenu)
         print(LLHours)
         
-        let testMenu2 = getMeal(hall: "windsor", date: "2020-01-18")
+        let testMenu2 = getMenu(hall: "windsor", date: "2020-01-18")
         
         print("Weekend Meal Hours")
         let weekendHours = getDiningHours(menu: testMenu2)
@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
     }
     
     func mealRequest() {
-        let testMenu = getMeal(hall: "windsor", date: "2020-01-13")
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
         let hall = testMenu?.Location
         let date = testMenu?.Date
         print(hall ?? "No hall")
