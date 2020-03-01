@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "test_schema",
+            "dialect": "MySQL",
+            "name": "Local instance MySQL80",
+            "password": "7658389656",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
