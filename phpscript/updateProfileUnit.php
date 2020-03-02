@@ -28,7 +28,7 @@ class  updateRow {
 
     /* Function to check if username and password match by comparing
      * userID selected from the table by both values. Returns 1 if userID
-     * catches, else returns 0:).
+     * catches, else returns 0.
      */
 
     function verifyUser($username, $pass): int{
