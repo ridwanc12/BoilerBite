@@ -187,4 +187,39 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         
         XCTAssertEqual(firstItemContents, firstItemCompare)
     }
+    
+    func testWindsorMenuWeekendFirstItem() {
+        // Menu for Windsor 01-18-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
+        
+        XCTAssertNotNil(testMenu)
+        print(testMenu)
+        
+        // NOTE: Windsor doesn't have breakfast, lunch, or late lunch on weekends
+        let itemID = testMenu?.Meals[3]?.Stations[0]?.Items[0].ID
+        print(itemID!)
+        
+        let stringID = String(itemID ?? "No item ID")
+        let firstItem = getItem(itemID: stringID)
+        print(firstItem)
+    }
+    
+    func testWindsorMenuWeekendFirstItemIngredients() {
+        // Menu for Windsor 01-18-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
+        
+        XCTAssertNotNil(testMenu)
+        print(testMenu)
+        
+        // NOTE: Windsor doesn't have breakfast, lunch, or late lunch on weekends
+        let itemID = testMenu?.Meals[3]?.Stations[0]?.Items[0].ID
+        print(itemID!)
+        
+        let stringID = String(itemID ?? "No item ID")
+        let firstItem = getItem(itemID: stringID)
+        print(firstItem)
+        
+        let ingredients = firstItem.Ingredients!
+        print(ingredients)
+    }
 }
