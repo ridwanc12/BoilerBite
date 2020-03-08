@@ -296,8 +296,8 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertEqual(stringName, compareName)
         
         let allergens = firstItem.Allergens!
-        print(ingredients)
+        print(allergens)
         
-        XCTAssertEqual(String(describing: type(of: ingredients)), "String")
+        XCTAssertEqual(String(describing: type(of: allergens)), "String")
     }
 }
