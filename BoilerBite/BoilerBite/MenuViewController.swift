@@ -12,7 +12,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var MenuTableView: UITableView!
     
-    let items = ["One", "Two", "Three", "Four", "Five"]
+    struct MenuItem {
+        var calories: Int
+        var name: String
+    }
+    
+    let items = [
+        MenuItem(calories: 100, name: "One"),
+        MenuItem(calories: 200, name: "Two"),
+        MenuItem(calories: 300, name: "Three"),
+        MenuItem(calories: 400, name: "Four"),
+        MenuItem(calories: 500, name: "Five"),
+    ]
+    
+    // let items = ["One", "Two", "Three", "Four", "Five"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +45,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row]
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = String(item.calories)
         return cell
     }
     
