@@ -95,7 +95,7 @@ class  checkUser {
     }
 }
     // Create new obj to run code
-    $obj = new checkUser;
+    $obj = new checkUser();
     $obj->showUsers();
 
     $name = 'Rid';
