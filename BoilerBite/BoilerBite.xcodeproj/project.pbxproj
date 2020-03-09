@@ -27,6 +27,7 @@
 		566D1A642401BBBA00B14361 /* SFMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A582401BBB900B14361 /* SFMono-Medium.otf */; };
 		566D1A652401BBBA00B14361 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A592401BBB900B14361 /* SFMono-Light.otf */; };
 		566D1A662401BBBA00B14361 /* SFMono-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */; };
+		7BE541572412FD8200CD31BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BE541562412FD8200CD31BD /* GoogleService-Info.plist */; };
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
 		9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934424033CAE00EB1B0D /* DataStructures.swift */; };
 		9344934724033CB600EB1B0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934624033CB500EB1B0D /* ViewController.swift */; };
@@ -76,6 +77,7 @@
 		566D1A582401BBB900B14361 /* SFMono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Medium.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-Medium.otf"; sourceTree = "<group>"; };
 		566D1A592401BBB900B14361 /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-Light.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-Light.otf"; sourceTree = "<group>"; };
 		566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFMono-HeavyItalic.otf"; path = "../../../../BoilerBiteAssets/Fonts/SFMono-HeavyItalic.otf"; sourceTree = "<group>"; };
+		7BE541562412FD8200CD31BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9344934124033CA500EB1B0D /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		9344934224033CA500EB1B0D /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9344934424033CAE00EB1B0D /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9344934624033CB500EB1B0D /* ViewController.swift */,
+				7BE541562412FD8200CD31BD /* GoogleService-Info.plist */,
 				9344934424033CAE00EB1B0D /* DataStructures.swift */,
 				9344934224033CA500EB1B0D /* api_test.playground */,
 				9344934124033CA500EB1B0D /* ApiRequest.swift */,
@@ -296,6 +299,7 @@
 				566D1A1F23F8E67100B14361 /* Assets.xcassets in Resources */,
 				566D1A1D23F8E66F00B14361 /* Main.storyboard in Resources */,
 				566D1A632401BBBA00B14361 /* SFMono-Semibold.otf in Resources */,
+				7BE541572412FD8200CD31BD /* GoogleService-Info.plist in Resources */,
 				566D1A5E2401BBBA00B14361 /* SFMono-LightItalic.otf in Resources */,
 				566D1A662401BBBA00B14361 /* SFMono-HeavyItalic.otf in Resources */,
 				566D1A602401BBBA00B14361 /* SFMono-RegularItalic.otf in Resources */,
