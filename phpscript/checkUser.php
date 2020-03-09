@@ -1,13 +1,13 @@
 <?php
 
 class  checkUser {
-    const DB_HOST = 'sql213.epizy.com';
+    const DB_HOST = 'localhost';
 
-    const DB_NAME = 'epiz_25279001_boilerbite';
+    const DB_NAME = 'boilerbite';
 
-    const DB_USER = 'epiz_25279001';
+    const DB_USER = 'root';
 
-    const DB_PASS = 'BoilerExpress307';
+    const DB_PASS = '7658389656';
 
     private $pdo = null;
 
@@ -33,7 +33,11 @@ class  checkUser {
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userID,
                         userName,
-                        userEmail
+                        userEmail,
+                        height,
+                        weight,
+                        hashPass,
+                        age
                     FROM profiles';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -46,6 +50,14 @@ class  checkUser {
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
             echo "Email: $holder, ";
+            $holder = $user['height'];
+            echo "Height: $holder, ";
+            $holder = $user['weight'];
+            echo nl2br("Weight: $holder, \n");
+            $holder = $user['hashPass'];
+            echo "Hashed Passwrd: $holder, ";
+            $holder = $user['age'];
+            echo nl2br("Age: $holder\n\n");
             $flag = 1;
         }
         if ($flag == 0) {
