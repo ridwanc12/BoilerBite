@@ -168,18 +168,18 @@ class  insertTable {
     $obj = new insertTable();
     $obj->showUsers();    
    
-    // Unit Test: All Values Equal to 0
-    $username = 'Jeremy';
-    $email = 'jeremy@gamil.com';
-    $pass = 'jeremy';
+    // Get values from ios application
+    $username = $_POST['userName'];
+    $email = $_POST['userEmail'];
+    $pass = $_POST['pass'];
     echo nl2br(" \nInserting:
                  Username: $username, Email: $email, Password: $pass\n");
     if ($obj->insertSingleRow($username, $email, $pass)) {
-        // if ($obj->initializeGoal($username)) {
-        //     //echo nl2br("Goals initialized.\n");
-        // } else {
-        //     //echo nl2br("Error when trying to initialize goals.\n");
-        // }
+        if ($obj->initializeGoal($username)) {
+            //echo nl2br("Goals initialized.\n");
+        } else {
+            //echo nl2br("Error when trying to initialize goals.\n");
+        }
         echo nl2br("Values inserted.\n\n");
     } else {
         echo nl2br("Value insertion failed.\n\n");
