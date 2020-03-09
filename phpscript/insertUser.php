@@ -1,13 +1,13 @@
 <?php
 
 class  insertTable {
-    const DB_HOST = '34.66.198.144';
+    const DB_HOST = 'localhost';
 
-    const DB_NAME = 'boilerbite';
+    const DB_NAME = 'id12866202_boilerbite';
 
-    const DB_USER = 'bb307';
+    const DB_USER = 'id12866202_bb307';
 
-    const DB_PASS = '';
+    const DB_PASS = 'bb307';
 
     private $pdo = null;
 
