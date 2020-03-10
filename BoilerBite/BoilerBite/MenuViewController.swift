@@ -8,12 +8,47 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
-
+class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var MenuTableView: UITableView!
+    
+    struct MenuItem {
+        var calories: Int
+        var name: String
+    }
+    
+    let items = [
+        MenuItem(calories: 100, name: "One"),
+        MenuItem(calories: 200, name: "Two"),
+        MenuItem(calories: 300, name: "Three"),
+        MenuItem(calories: 400, name: "Four"),
+        MenuItem(calories: 500, name: "Five"),
+    ]
+    
+    // let items = ["One", "Two", "Three", "Four", "Five"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = String(item.calories)
+        return cell
     }
     
 
