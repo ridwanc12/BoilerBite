@@ -298,7 +298,7 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let allergens = firstItem.Allergens!
         print(allergens)
         
-        XCTAssertEqual(String(describing: type(of: allergens)), "String")
+        XCTAssertEqual(String(describing: type(of: allergens)), "Array<Allergen>")
     }
     
     func testWindsorMenuWeekendFirstItemAllergens() {
@@ -329,6 +329,6 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let allergens = firstItem.Allergens!
         print(allergens)
         
-        XCTAssertEqual(String(describing: type(of: allergens)), "String")
+        XCTAssertEqual(String(describing: type(of: allergens)), "Array<Allergen>")
     }
 }
