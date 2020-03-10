@@ -154,7 +154,7 @@ class BoilerBiteTests: XCTestCase {
         
         print(testMenu ?? "No menu")
         
-        // NOTE: Windsor doesn't have breakfast
+        // NOTE: Windsor doesn't have breakfast on weekdays
         let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
         let stringID = String(itemID ?? "No item ID")
         let firstItemID = "84835539-119a-4efd-b714-786015923e3c"
@@ -215,7 +215,7 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertNotNil(testMenu)
         print(testMenu ?? "No menu")
         
-        // NOTE: Windsor doesn't have breakfast, lunch, or late lunch on weekends
+        // NOTE: Windsor doesn't have breakfast on weekdays
         let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
         print(itemID!)
         
@@ -277,7 +277,7 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertNotNil(testMenu)
         print(testMenu ?? "No menu")
         
-        // NOTE: Windsor doesn't have breakfast, lunch, or late lunch on weekends
+        // NOTE: Windsor doesn't have breakfast on weekdays
         let itemID = testMenu?.Meals[1]?.Stations[0]?.Items[0].ID
         print(itemID!)
         
@@ -291,6 +291,37 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let itemName = testMenu?.Meals[1]?.Stations[0]?.Items[0].Name
         let stringName = String(itemName ?? "No item name")
         let compareName = "Greek Saganaki Gluten Free"
+        print(itemName ?? "No item")
+        
+        XCTAssertEqual(stringName, compareName)
+        
+        let allergens = firstItem.Allergens!
+        print(allergens)
+        
+        XCTAssertEqual(String(describing: type(of: allergens)), "String")
+    }
+    
+    func testWindsorMenuWeekendFirstItemAllergens() {
+        // Menu for Windsor 01-18-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
+        
+        XCTAssertNotNil(testMenu)
+        print(testMenu ?? "No menu")
+        
+        // NOTE: Windsor doesn't have breakfast, lunch, or late lunch on weekends
+        let itemID = testMenu?.Meals[3]?.Stations[0]?.Items[0].ID
+        print(itemID!)
+        
+        let stringID = String(itemID ?? "No item ID")
+        let compareID = "da968774-9381-4a03-ae26-87b765fb80f6"
+        let firstItem = getItem(itemID: stringID)
+        print(firstItem)
+        
+        XCTAssertEqual(stringID, compareID)
+        
+        let itemName = testMenu?.Meals[3]?.Stations[0]?.Items[0].Name
+        let stringName = String(itemName ?? "No item name")
+        let compareName = "Jumbo Cheese Ravioli"
         print(itemName ?? "No item")
         
         XCTAssertEqual(stringName, compareName)
