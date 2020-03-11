@@ -3,11 +3,11 @@
 class  checkUser {
     const DB_HOST = 'localhost';
 
-    const DB_NAME = 'boilerbite';
+    const DB_NAME = 'id12866202_boilerbite';
 
-    const DB_USER = 'root';
+    const DB_USER = 'id12866202_bb307';
 
-    const DB_PASS = '7658389656';
+    const DB_PASS = 'bb307';
 
     private $pdo = null;
 
@@ -33,11 +33,7 @@ class  checkUser {
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userID,
                         userName,
-                        userEmail,
-                        height,
-                        weight,
-                        hashPass,
-                        age
+                        userEmail
                     FROM profiles';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -50,14 +46,6 @@ class  checkUser {
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
             echo "Email: $holder, ";
-            $holder = $user['height'];
-            echo "Height: $holder, ";
-            $holder = $user['weight'];
-            echo nl2br("Weight: $holder, \n");
-            $holder = $user['hashPass'];
-            echo "Hashed Passwrd: $holder, ";
-            $holder = $user['age'];
-            echo nl2br("Age: $holder\n\n");
             $flag = 1;
         }
         if ($flag == 0) {
@@ -74,8 +62,9 @@ class  checkUser {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+            //find user password in the database
             $sql = "SELECT hashPass FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
+            // Execute query to get password
             $q = $pdo->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -90,20 +79,23 @@ class  checkUser {
             echo nl2br("No such user.");
             return 0;
         }
+        // Get password from database
         $passFromUser = $result['hashPass'];
 
         // Get hashed password from function input.
         $passwrd = sha1($pass);
-        // echo nl2br("$passwrd
-        //             $passFromUser");
+        
+        // Check provided password against password in database
         if ($passwrd == $passFromUser) {
             echo nl2br("User found!!!!!\n");
             return 1;
+        } else {
+            echo "Incorrect username or password.";
         }
     }
 }
     // Create new obj to run code
-    $obj = new checkUser;
+    $obj = new checkUser();
     $obj->showUsers();
 
     $name = 'Rid';
