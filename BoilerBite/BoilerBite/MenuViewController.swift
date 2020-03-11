@@ -17,19 +17,24 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var name: String
     }
     
-    let items = [
-        MenuItem(calories: 100, name: "One"),
-        MenuItem(calories: 200, name: "Two"),
-        MenuItem(calories: 300, name: "Three"),
-        MenuItem(calories: 400, name: "Four"),
-        MenuItem(calories: 500, name: "Five"),
-    ]
+//    let items = [
+//        MenuItem(calories: 100, name: "One"),
+//        MenuItem(calories: 200, name: "Two"),
+//        MenuItem(calories: 300, name: "Three"),
+//        MenuItem(calories: 400, name: "Four"),
+//        MenuItem(calories: 500, name: "Five"),
+//    ]
+
+    var items: [Item] = []
     
     // let items = ["One", "Two", "Three", "Four", "Five"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13");
 
+        items = (testMenu?.Meals[1]?.Stations[0]!.Items)!
+//        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
     }
     
@@ -46,8 +51,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
         let item = items[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = String(item.calories)
+        cell.textLabel?.text = item.Name
+        cell.detailTextLabel?.text = item.ID
+//        cell.textLabel?.text = item.name
+//        cell.detailTextLabel?.text = String(item.calories)
         return cell
     }
     
