@@ -41,7 +41,7 @@ struct Item:Decodable {
     var Name:String
     var IsVegetarian:Bool
     var Allergens:[Allergen]?
-    var NutritionFacts: [NutritionFact]?
+    var Nutrition: [NutritionFact]?
     var Ingredients:String?
 }
 
@@ -50,12 +50,10 @@ struct Allergen:Decodable {
     var Value:Bool
 }
 
-// Additional structs needed for item api request
-
 struct NutritionFact:Decodable {
     var Name:String
-    var Value:Int
-    var LabelValue:String
+    var Value:Float?
+    var LabelValue:String?
     var DailyValue:String?
     var Ordinal:Int
 }
@@ -85,7 +83,7 @@ extension Station: CustomStringConvertible {
 
 extension Item: CustomStringConvertible {
     var description: String {
-        let returnValue = String(format: "Item(ID: %@, Name: %@, IsVegetarian: %@, Allergens: %@, NutritionFacts: %@, Ingredients: %@)", ID, Name, String(IsVegetarian), Allergens ?? "", NutritionFacts ?? "", Ingredients ?? "")
+        let returnValue = String(format: "Item(ID: %@, Name: %@, IsVegetarian: %@, Allergens: %@, NutritionFacts: %@, Ingredients: %@)", ID, Name, String(IsVegetarian), Allergens ?? "", Nutrition ?? "", Ingredients ?? "")
         return returnValue
     }
 }
@@ -93,6 +91,13 @@ extension Item: CustomStringConvertible {
 extension Allergen: CustomStringConvertible {
     var description: String {
         let returnValue = String(format: "Allergen(Name: %@, Value: %@)", Name, String(Value))
+        return returnValue
+    }
+}
+
+extension NutritionFact: CustomStringConvertible {
+    var description: String {
+        let returnValue = String(format: "NutritionFact(Name: %@, Value: %@, LabelValue: %@, DailyValue: %@, Ordinal: %@)", Name, String(Value ?? -1), LabelValue ?? "", DailyValue ?? "", String(Ordinal))
         return returnValue
     }
 }
