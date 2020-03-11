@@ -8,7 +8,7 @@ class  insertTable {
     const DB_USER = 'id12866202_bb307';
 
     const DB_PASS = 'bb307';
-    
+
     private $pdo = null;
 
     public function __construct() {
@@ -32,7 +32,7 @@ class  insertTable {
      * the function will print out corresponding fields and exits.    
      */
     
-    function insertSingleRow($username, $email, $height, $weight, $pass, $age) {
+    function insertSingleRow($username, $email, $pass) {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -69,25 +69,7 @@ class  insertTable {
         
         $flag = 0;
         $error = '';
-        // Check to make sure height is non-negative.
-        // Appends error message if height is negative.
-        if ($height < 0) {
-            $error = $error . "Please make sure height is non-negative.\r\n";
-            $flag = 1;
-        }
-        // Check to make sure weight is non-negative.
-        // Appends error message if weight is negative.
-        if ($weight < 0) {
-            $error = $error . "Please make sure weight is non-negative.\r\n";    
-            $flag = 1;
-        }
-        // Check to make sure age is non-negative.
-        // Appends error message if age is negative.
-        if ($age < 0) {
-            $error = $error . "Please make sure age is non-negative.\r\n";    
-            $flag = 1;
-        }
-        // If any of the above values are negative, print erro message and exit.
+        // If any of the above values are negative, print error message and exit.
         if ($flag == 1) {
             $error = $error . "Query failed.\n";
             echo nl2br("$error");
@@ -99,26 +81,17 @@ class  insertTable {
         $task = array(
             ':username' => $username,
             ':email' => $email,
-            ':height' => $height,
-            ':weight' => $weight,
-            ':pass' => $passwrd,
-            ':age' => $age);
+            ':pass' => $passwrd);
         // SQL query to inert values into profiles
         $sql = 'INSERT INTO profiles (
                       userName,
                       userEmail,
-                      height,
-                      weight,
-                      hashpass,
-                      age
+                      hashpass
                   )
                   VALUES (
                       :username,
                       :email,
-                      :height,
-                      :weight,
-                      :pass,
-                      :age
+                      :pass
                   );';
         // Prepare and execute sql query
         $q = $this->pdo->prepare($sql);
@@ -167,11 +140,8 @@ class  insertTable {
         $sql = 'SELECT userID,
                         userName,
                         userEmail,
-                        height,
-                        weight,
-                        hashPass,
-                        age
-                    FROM profiles';
+                        hashPass
+                    FROM profiles;';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
         // Print out values returned by query
@@ -183,14 +153,8 @@ class  insertTable {
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
             echo "Email: $holder, ";
-            $holder = $user['height'];
-            echo "Height: $holder, ";
-            $holder = $user['weight'];
-            echo nl2br("Weight: $holder, \n");
             $holder = $user['hashPass'];
-            echo "Hashed Passwrd: $holder, ";
-            $holder = $user['age'];
-            echo nl2br("Age: $holder\n\n");
+            echo "Passwrd: $holder\n\n";
             $flag = 1;
         }
         if ($flag == 0) {
@@ -204,16 +168,13 @@ class  insertTable {
     $obj = new insertTable();
     $obj->showUsers();    
    
-    // Unit Test: All Values Equal to 0
-    $username = 'Jeremy';
-    $email = 'jeremy@gamil.com';
-    $height = '0';
-    $weight = '0';
-    $pass = 'jeremy';
-    $age = '0';
-    echo nl2br("Testing when user enters a negative weight.
-                Username: $username, Email: $email, Height: $height, Weight: $weight, Age: $age,Password: $pass\n");
-    if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
+    // Get values from ios application
+    $username = $_POST['userName'];
+    $email = $_POST['userEmail'];
+    $pass = $_POST['pass'];
+    echo nl2br(" \nInserting:
+                 Username: $username, Email: $email, Password: $pass\n");
+    if ($obj->insertSingleRow($username, $email, $pass)) {
         if ($obj->initializeGoal($username)) {
             //echo nl2br("Goals initialized.\n");
         } else {

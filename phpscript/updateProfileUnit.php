@@ -3,11 +3,11 @@
 class  updateRow {
     const DB_HOST = 'localhost';
 
-    const DB_NAME = 'boilerbite';
+    const DB_NAME = 'id12866202_boilerbite';
 
-    const DB_USER = 'root';
+    const DB_USER = 'id12866202_bb307';
 
-    const DB_PASS = '7658389656';
+    const DB_PASS = 'bb307';
 
     private $pdo = null;
 
