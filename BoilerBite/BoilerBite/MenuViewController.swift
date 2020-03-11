@@ -36,7 +36,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         items = (testMenu?.Meals[3]?.Stations[0]!.Items)!
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
-//        print(getItem(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
     }
