@@ -31,9 +31,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let testMenu = getMenu(hall: "windsor", date: "2020-01-13");
+        let testMenu = getCurrentMenu(hall: "windsor")
 
-        items = (testMenu?.Meals[1]?.Stations[0]!.Items)!
+        items = (testMenu?.Meals[3]?.Stations[0]!.Items)!
+        
+//        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
+//        print(getItem(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
     }
@@ -52,7 +55,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
         let item = items[indexPath.row]
         cell.textLabel?.text = item.Name
-        cell.detailTextLabel?.text = item.ID
+        cell.detailTextLabel?.text = String(getItemCalories(itemID: item.ID))
 //        cell.textLabel?.text = item.name
 //        cell.detailTextLabel?.text = String(item.calories)
         return cell

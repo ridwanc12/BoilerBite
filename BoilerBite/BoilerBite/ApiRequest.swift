@@ -33,6 +33,34 @@ func getMenu(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
+func getCurrentMenu(hall: String) -> Menu? {
+    let date = String(describing: Date())
+    let first = date.components(separatedBy: " ").first
+    
+    let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, first!)
+    let requestLocation = URL(string: address)
+    
+    var menu: Menu?
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+        do {
+            menu = try JSONDecoder().decode(Menu.self, from: data!)
+            semaphore.signal()
+            //print(menu!)
+        } catch {
+            print("There was an error in the menu api request")
+            print(error)
+        }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(menu)
+}
+
 func getDinner(menu: Menu?) -> Meal? {
     for meal in menu!.Meals {
         if (meal?.Name != nil) {
@@ -109,6 +137,8 @@ func getItem(itemID: String) -> Item {
     let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+//        let prettyPrintedString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//        print(prettyPrintedString)
         semaphore.signal()
     } catch {
         print("There was an error in the item api request")
@@ -120,6 +150,32 @@ func getItem(itemID: String) -> Item {
     semaphore.wait()
     
     return(itemDetails!)
+}
+
+func getItemCalories(itemID: String) -> Int {
+    let address = "https://api.hfs.purdue.edu/menus/v2/items/" + itemID
+    let requestLocation = URL(string: address)
+    
+    var itemDetails: Item?
+    var calories: Float = 0
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+    do {
+        itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+        calories = (itemDetails?.Nutrition![1].Value)!
+        semaphore.signal()
+    } catch {
+        print("There was an error in the item api request")
+        print(error)
+    }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(Int(calories))
 }
 
 // URL for example meal request
