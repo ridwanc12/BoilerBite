@@ -27,7 +27,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var items: [Item] = []
     var meals: [Meal] = []
-    var meal: Meal
+    var stations: [Station] = []
+    
+    let sectionHeight = 27
     
     // let items = ["One", "Two", "Three", "Four", "Five"]
     
@@ -37,36 +39,83 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Menu for current day Earhart for testing
         let testMenu = getCurrentMenu(hall: "earhart")
         
+        // All meals
         meals = testMenu!.Meals as! [Meal]
-
-        // Dinner for Earhart
-        meal = testMenu!.Meals[3]!
         
-        // Test for first stations
-        items = meal.Stations[0]!.Items
+        // Stations for Earhart dinner
+        stations = meals[3].Stations as! [Station]
+        
+        // Test for first station
+        items = stations[0].Items
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
     }
     
+    // Helper function for counting number of items due to ambiguousness of count() function
+    func countItems(items: [Item]) -> Int {
+        var count = 0
+        for _ in items {
+            count += 1
+        }
+        return count
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        var count = 0
+        for _ in stations {
+            count += 1
+        }
+//        print("SectionsCount: %@", count)
+        return count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        let count = countItems(items: stations[section].Items)
+//        print("RowsCount: %@", count)
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: Int(tableView.bounds.width), height: sectionHeight))
+        view.backgroundColor = UIColor(red: 242.0/255.0, green: 182.0/255.0, blue: 97.0/255.0, alpha: 1)
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: Int(tableView.bounds.width - 30), height: sectionHeight))
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.textColor = UIColor.black
+        label.text = stations[section].Name
+        view.addSubview(label)
+        return view
+    }
+    
+    private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> Int {
+      // If we wanted to always show a section header regardless of whether or not there were rows in it,
+      // then uncomment this line below:
+//      return SectionHeaderHeight
+//        return 44
+        
+      // First check if there is a valid section of table.
+      // Then we check that for the section there is more than 1 row.
+        if (countItems(items: stations[section].Items) > 0) {
+            return sectionHeight
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+        
+        items = stations[indexPath.section].Items
+//        print(items)
         let item = items[indexPath.row]
+//        print(item)
         cell.textLabel?.text = item.Name
-        cell.detailTextLabel?.text = String(getItemCalories(itemID: item.ID))
-//        cell.textLabel?.text = item.name
-//        cell.detailTextLabel?.text = String(item.calories)
+        let calories = String(getItemCalories(itemID: item.ID))
+//        print(calories)
+        cell.detailTextLabel?.text = calories
+        
         return cell
     }
     

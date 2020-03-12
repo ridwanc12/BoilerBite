@@ -164,7 +164,13 @@ func getItemCalories(itemID: String) -> Int {
     let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
-        calories = (itemDetails?.Nutrition![1].Value)!
+        let nutrition = itemDetails?.Nutrition
+        if (nutrition != nil) {
+            calories = (itemDetails?.Nutrition![1].Value)!
+        }
+        else {
+            calories = -1
+        }
         semaphore.signal()
     } catch {
         print("There was an error in the item api request")
