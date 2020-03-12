@@ -886,9 +886,8 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bUN-NA-H20"/>
-        <segue reference="mJJ-vo-gLl"/>
-        <segue reference="d68-Lj-CRg"/>
+        <segue reference="RBJ-nK-agt"/>
+        <segue reference="jbh-Da-5zV"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>

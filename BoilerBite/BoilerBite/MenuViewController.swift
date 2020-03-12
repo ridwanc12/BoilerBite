@@ -45,8 +45,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Stations for Earhart dinner
         stations = meals[3].Stations as! [Station]
         
-        // Test for first station
-        items = stations[0].Items
+//        stations = meals[2].Stations as! [Station]
+        if (stations.isEmpty) {
+            stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
+        }
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
