@@ -111,7 +111,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        print(items)
         let item = items[indexPath.row]
 //        print(item)
-        cell.textLabel?.text = item.Name
+        cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
 //        print(calories)
