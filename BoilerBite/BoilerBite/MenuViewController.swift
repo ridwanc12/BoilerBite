@@ -93,8 +93,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> Int {
       // If we wanted to always show a section header regardless of whether or not there were rows in it,
       // then uncomment this line below:
-//      return SectionHeaderHeight
-//        return 44
+//        return sectionHeight
         
       // First check if there is a valid section of table.
       // Then we check that for the section there is more than 1 row.
@@ -105,17 +104,22 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
         
         items = stations[indexPath.section].Items
 //        print(items)
         let item = items[indexPath.row]
 //        print(item)
         cell.textLabel?.text = item.Name
+        cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
 //        print(calories)
-        cell.detailTextLabel?.text = calories
-        
+        if (calories != "-1") {
+            cell.detailTextLabel?.text = calories + " cal"
+            cell.detailTextLabel?.textColor = UIColor.darkGray
+        }
+    
         return cell
     }
     
