@@ -37,7 +37,7 @@ class  insertTable {
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
             // Check if username is in database.
-            // If username is in the table display erro message and exit().
+            // If username is in the table display error message and return.
             $sql = "SELECT userName FROM profiles WHERE userName = '$username'";
 
             // Execute query to get userName.
@@ -62,8 +62,7 @@ class  insertTable {
         // Store fetch() result into $result.
         $mail_result = $q->fetch();
         if ($mail_result != FALSE) {
-            $name = $mail_result['userName'];
-            echo nl2br("$email is already registed as $name.\n");
+            echo nl2br("$email is already registed.\n");
             return 0;
         }
         
@@ -132,6 +131,40 @@ class  insertTable {
         return $q->execute($task);
     }
 
+    // Funtion to initialize info of user
+    function initializeInfo($username) {
+        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+        try {
+            $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
+            // Execute query to get userName.
+            $q = $pdo->query($sql);
+            $q->setFetchMode(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        $result = $q->fetch();
+
+        // Check if username is in database.
+        // If username is not in the table $result will be FALSE.
+        if ($result == FALSE) {
+            return 0;
+        }
+        $id = $result['userID'];
+        $task = array(':id' => $id);
+        
+        $sql = 'INSERT INTO info (
+                        userID
+                    )
+                    VALUES (
+                        :id
+                    );';
+        $q = $this->pdo->prepare($sql);
+ 
+        return $q->execute($task);
+    }
+
     // Function to show users in table
     function showUsers(): void {
         // Execute query to get profiles currently in the table.
@@ -169,14 +202,22 @@ class  insertTable {
     $obj->showUsers();    
    
     // Get values from ios application
-    $username = $_POST['userName'];
-    $email = $_POST['userEmail'];
-    $pass = $_POST['pass'];
+    // $username = $_POST['userName'];
+    // $email = $_POST['userEmail'];
+    // $pass = $_POST['pass'];
+    $username = "Jeremy";
+    $email = "jeremy";
+    $pass = "jeremy";
     echo nl2br(" \nInserting:
                  Username: $username, Email: $email, Password: $pass\n");
     if ($obj->insertSingleRow($username, $email, $pass)) {
         if ($obj->initializeGoal($username)) {
             //echo nl2br("Goals initialized.\n");
+            if ($obj->initializeInfo($username)) {
+                echo nl2br("Info initialized\n");
+            } else {
+                echo nl2br("Something is wrong\n");
+            }
         } else {
             //echo nl2br("Error when trying to initialize goals.\n");
         }
