@@ -1,6 +1,7 @@
 <?php
 
-class  insertTable {
+class  insertTable
+{
     const DB_HOST = 'localhost';
 
     const DB_NAME = 'id12866202_boilerbite';
@@ -8,10 +9,11 @@ class  insertTable {
     const DB_USER = 'id12866202_bb307';
 
     const DB_PASS = 'bb307';
-    
+
     private $pdo = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
 
         try {
@@ -19,9 +21,9 @@ class  insertTable {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
     }
@@ -31,8 +33,9 @@ class  insertTable {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    
-    function insertSingleRow($username, $email, $height, $weight, $pass, $age) {
+
+    function insertSingleRow($username, $email, $height, $weight, $pass, $age)
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -66,7 +69,7 @@ class  insertTable {
             echo nl2br("$email is already registed as $name.\n");
             return 0;
         }
-        
+
         $flag = 0;
         $error = '';
         // Check to make sure height is non-negative.
@@ -78,13 +81,13 @@ class  insertTable {
         // Check to make sure weight is non-negative.
         // Appends error message if weight is negative.
         if ($weight < 0) {
-            $error = $error . "Please make sure weight is non-negative.\r\n";    
+            $error = $error . "Please make sure weight is non-negative.\r\n";
             $flag = 1;
         }
         // Check to make sure age is non-negative.
         // Appends error message if age is negative.
         if ($age < 0) {
-            $error = $error . "Please make sure age is non-negative.\r\n";    
+            $error = $error . "Please make sure age is non-negative.\r\n";
             $flag = 1;
         }
         // If any of the above values are negative, print erro message and exit.
@@ -102,7 +105,8 @@ class  insertTable {
             ':height' => $height,
             ':weight' => $weight,
             ':pass' => $passwrd,
-            ':age' => $age);
+            ':age' => $age
+        );
         // SQL query to inert values into profiles
         $sql = 'INSERT INTO profiles (
                       userName,
@@ -126,7 +130,8 @@ class  insertTable {
     }
 
     // Function to initialize the goals profile of the user.
-    function initializeGoal($username) {
+    function initializeGoal($username)
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -147,7 +152,7 @@ class  insertTable {
         }
         $id = $result['userID'];
         $task = array(':id' => $id);
-        
+
         $sql = 'INSERT INTO goals (
                         userID
                     )
@@ -155,12 +160,13 @@ class  insertTable {
                         :id
                     );';
         $q = $this->pdo->prepare($sql);
- 
+
         return $q->execute($task);
     }
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -200,29 +206,27 @@ class  insertTable {
 } // End of functions
 
 
-    // Create new obj to run function
-    $obj = new insertTable();
-    $obj->showUsers();    
-   
-    // Unit Test: All Values Equal to 0
-    $username = 'Jeremy';
-    $email = 'jeremy@gamil.com';
-    $height = '0';
-    $weight = '0';
-    $pass = 'jeremy';
-    $age = '0';
-    echo nl2br("Testing when user enters a negative weight.
+// Create new obj to run function
+$obj = new insertTable();
+$obj->showUsers();
+
+// Unit Test: All Values Equal to 0
+$username = 'Jeremy';
+$email = 'jeremy@gamil.com';
+$height = '0';
+$weight = '0';
+$pass = 'jeremy';
+$age = '0';
+echo nl2br("Testing when user enters a negative weight.
                 Username: $username, Email: $email, Height: $height, Weight: $weight, Age: $age,Password: $pass\n");
-    if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
-        if ($obj->initializeGoal($username)) {
-            //echo nl2br("Goals initialized.\n");
-        } else {
-            //echo nl2br("Error when trying to initialize goals.\n");
-        }
-        echo nl2br("Values inserted.\n\n");
+if ($obj->insertSingleRow($username, $email, $height, $weight, $pass, $age)) {
+    if ($obj->initializeGoal($username)) {
+        //echo nl2br("Goals initialized.\n");
     } else {
-        echo nl2br("Value insertion failed.\n\n");
+        //echo nl2br("Error when trying to initialize goals.\n");
     }
-    $obj->showUsers(); 
-?>
-    
+    echo nl2br("Values inserted.\n\n");
+} else {
+    echo nl2br("Value insertion failed.\n\n");
+}
+$obj->showUsers();

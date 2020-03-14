@@ -20,7 +20,7 @@ class  insertTable {
         }
 
     }
-    public function __destruct() {
+     public function __destruct() {
         // close the database connection
         $this->pdo = null;
     }
@@ -166,5 +166,3 @@ class  insertTable {
     };
 
     $obj->showUsers();
-?>   
-

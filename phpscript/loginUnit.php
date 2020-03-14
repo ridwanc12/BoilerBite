@@ -1,6 +1,7 @@
 <?php
 
-class  checkUser {
+class  checkUser
+{
     const DB_HOST = 'localhost';
 
     const DB_NAME = 'id12866202_boilerbite';
@@ -11,7 +12,8 @@ class  checkUser {
 
     private $pdo = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
 
         try {
@@ -19,15 +21,16 @@ class  checkUser {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
     }
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -61,7 +64,8 @@ class  checkUser {
      * catches, else returns 0.
      */
 
-    function verifyUser($username, $pass): int{
+    function verifyUser($username, $pass): int
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -96,35 +100,34 @@ class  checkUser {
         }
     }
 }
-    // Create new obj to run code
-    $obj = new checkUser;
-    $obj->showUsers();
+// Create new obj to run code
+$obj = new checkUser;
+$obj->showUsers();
 
-    echo nl2br("Begin unit testing for login:\n\n");
+echo nl2br("Begin unit testing for login:\n\n");
 
-    // Test existing user with wrong password
-    echo nl2br("Testing correct username and wrong password:\n");
-    $name = 'Rid';
-    $pass = 'jeremy';
-    $corr = 'rid';
-    echo nl2br("Username: $name
+// Test existing user with wrong password
+echo nl2br("Testing correct username and wrong password:\n");
+$name = 'Rid';
+$pass = 'jeremy';
+$corr = 'rid';
+echo nl2br("Username: $name
                 Wrong Password: $pass
                 Correct: $corr\n");
-    $obj->verifyUser($name, $pass);
+$obj->verifyUser($name, $pass);
 
-    // Test non-existent user
-    echo nl2br("Testing non-existent user:\n");
-    $name = 'Jesus';
-    $pass = 'rid';
-    echo nl2br("Username: $name
+// Test non-existent user
+echo nl2br("Testing non-existent user:\n");
+$name = 'Jesus';
+$pass = 'rid';
+echo nl2br("Username: $name
                 Password: $pass\n");
-    $obj->verifyUser($name, $pass);
+$obj->verifyUser($name, $pass);
 
-    // Test existing user with right password
-    echo nl2br("Testing correct username and password:\n");
-    $name = 'Rid';
-    $pass = 'rid';
-    echo nl2br("Username: $name
+// Test existing user with right password
+echo nl2br("Testing correct username and password:\n");
+$name = 'Rid';
+$pass = 'rid';
+echo nl2br("Username: $name
                 Correct: $corr\n");
-     $obj->verifyUser($name, $pass);
-?>
+$obj->verifyUser($name, $pass);

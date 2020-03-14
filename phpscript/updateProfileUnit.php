@@ -1,6 +1,7 @@
 <?php
 
-class  updateRow {
+class  updateRow
+{
     const DB_HOST = 'localhost';
 
     const DB_NAME = 'id12866202_boilerbite';
@@ -11,7 +12,8 @@ class  updateRow {
 
     private $pdo = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
 
         try {
@@ -19,9 +21,9 @@ class  updateRow {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
     }
@@ -31,7 +33,8 @@ class  updateRow {
      * catches, else returns 0.
      */
 
-    function verifyUser($username, $pass): int{
+    function verifyUser($username, $pass): int
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -63,7 +66,8 @@ class  updateRow {
     }
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -106,8 +110,9 @@ class  updateRow {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    
-    function updateWholeRow($username, $height, $weight, $pass, $age) {
+
+    function updateWholeRow($username, $height, $weight, $pass, $age)
+    {
         $flag = 0;
         $error = '';
 
@@ -121,14 +126,14 @@ class  updateRow {
         // Check to make sure weight is non-negative.
         // Appends error message if weight is negative.
         if ($weight < 0) {
-            $error = $error . "Please make sure weight is non-negative.\r\n";    
+            $error = $error . "Please make sure weight is non-negative.\r\n";
             $flag = 1;
         }
 
         // Check to make sure age is non-negative.
         // Appends error message if age is negative.
         if ($age < 0) {
-            $error = $error . "Please make sure age is non-negative.\r\n";    
+            $error = $error . "Please make sure age is non-negative.\r\n";
             $flag = 1;
         }
 
@@ -143,7 +148,7 @@ class  updateRow {
         $passCheck = $this->verifyUser($username, $pass);
 
         // exit() if username and password doesn't match.
-        if ($passCheck == 0){
+        if ($passCheck == 0) {
             echo nl2br("Incorrect username and password.\n");
             return 0;
         }
@@ -160,100 +165,99 @@ class  updateRow {
                         weight          = :weight,
                         age             = :age
                     WHERE  userName = :username';
- 
+
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
     }
 }
-    $obj = new updateRow();
+$obj = new updateRow();
 
-   // Show user profiles in the database
-   $obj->showUsers();
-    echo nl2br("Begin Unit test for updating Profile:\n\n");
-    
+// Show user profiles in the database
+$obj->showUsers();
+echo nl2br("Begin Unit test for updating Profile:\n\n");
 
-    // Unit Test: Negative height
-    $username = 'Rid';
-    $height = '-56';
-    $weight = '75';
-    $pass = 'rid';
-    $age = '20';
-    echo nl2br("Testing when user enters a negative height.
-                Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
-    
-    // Unit Test: Negative weight
-    $username = 'Rid';
-    $height = '56';
-    $weight = '-75';
-    $pass = 'rid';
-    $age = '20';
-    echo nl2br("Testing when user enters a negative weight.
-                Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
 
-    // Unit Test: Negative age
-    $username = 'Rid';
-    $height = '56';
-    $weight = '75';
-    $pass = 'rid';
-    $age = '-20';
-    echo nl2br("Testing when user enters a negative age.
+// Unit Test: Negative height
+$username = 'Rid';
+$height = '-56';
+$weight = '75';
+$pass = 'rid';
+$age = '20';
+echo nl2br("Testing when user enters a negative height.
                 Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
 
-    // Unit Test: All negative values
-    $username = 'Rid';
-    $height = '-56';
-    $weight = '-75';
-    $pass = 'rid';
-    $age = '-20';
-    echo nl2br("Testing when user enters all negative values.
+// Unit Test: Negative weight
+$username = 'Rid';
+$height = '56';
+$weight = '-75';
+$pass = 'rid';
+$age = '20';
+echo nl2br("Testing when user enters a negative weight.
                 Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
 
-    // Unit Test: User not in database
-    $username = 'Jesus';
-    $height = '156';
-    $weight = '75';
-    $pass = 'rid';
-    $age = '20';
-    echo nl2br("Testing when user is not present in database.
+// Unit Test: Negative age
+$username = 'Rid';
+$height = '56';
+$weight = '75';
+$pass = 'rid';
+$age = '-20';
+echo nl2br("Testing when user enters a negative age.
                 Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
 
-    // Unit Test: All values are valid
-    $username = 'Rid';
-    $height = '0';
-    $weight = '0';
-    $pass = 'rid';
-    $age = '0';
-    echo nl2br("Testing when user inputs all valid values.
+// Unit Test: All negative values
+$username = 'Rid';
+$height = '-56';
+$weight = '-75';
+$pass = 'rid';
+$age = '-20';
+echo nl2br("Testing when user enters all negative values.
                 Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
-    if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
-        echo nl2br("Query executed.\n\n");
-    } else {
-        echo nl2br("Query error.\n\n");
-    };
-    $obj->showUsers();
-?>
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
+
+// Unit Test: User not in database
+$username = 'Jesus';
+$height = '156';
+$weight = '75';
+$pass = 'rid';
+$age = '20';
+echo nl2br("Testing when user is not present in database.
+                Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
+
+// Unit Test: All values are valid
+$username = 'Rid';
+$height = '0';
+$weight = '0';
+$pass = 'rid';
+$age = '0';
+echo nl2br("Testing when user inputs all valid values.
+                Username: $username, Height: $height, Weight: $weight,\n Password: $pass, Age: $age\n");
+if ($obj->updateWholeRow($username, $height, $weight, $pass, $age)) {
+    echo nl2br("Query executed.\n\n");
+} else {
+    echo nl2br("Query error.\n\n");
+};
+$obj->showUsers();
