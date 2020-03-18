@@ -1,6 +1,7 @@
 <?php
 
-class  insertTable {
+class  insertTable
+{
     const DB_HOST = 'localhost';
 
     const DB_NAME = 'id12866202_boilerbite';
@@ -11,7 +12,8 @@ class  insertTable {
 
     private $pdo = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
 
         try {
@@ -19,9 +21,9 @@ class  insertTable {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
     }
@@ -30,7 +32,8 @@ class  insertTable {
      * If the user is not in the database, the function will print error message and
      * return 0.
      */
-    function findID($username): int{
+    function findID($username): int
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -54,7 +57,8 @@ class  insertTable {
     }
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -82,8 +86,9 @@ class  insertTable {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    
-    function insertCalTotal($username, $calories_total) {
+
+    function insertCalTotal($username, $calories_total)
+    {
         // Check if $calories_total is non-negative.
         // If negative, print message and exit().
         if ($calories_total < 0) {
@@ -100,7 +105,8 @@ class  insertTable {
         // Insert value into array to 
         $task = array(
             ':cal_total' => $calories_total,
-            ':id' => $id);
+            ':id' => $id
+        );
         $sql = 'INSERT INTO goals (
                         userID,
                         calories_total
@@ -109,46 +115,46 @@ class  insertTable {
                             :id,
                             :cal_total
                         )';
- 
+
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
     }
 }
-    $obj = new insertTable();
-    $obj->showUsers();
-    echo nl2br("Begin unit testing for inserting desired calorie intake:\n\n");
+$obj = new insertTable();
+$obj->showUsers();
+echo nl2br("Begin unit testing for inserting desired calorie intake:\n\n");
 
-    //Testing negative input
-    
-    $name = 'Rid';
-    $cal_total = -2600;
-    echo nl2br("Test for negative input:
-                Username: $name, Calories Total: $cal_total\n");
-    if ($obj->insertCalTotal($name, $cal_total)) {
-        echo nl2br("Insert success.\n\n");
-    } else {
-        echo nl2br("Insert error.\n\n");
-    };
+//Testing negative input
 
-    //Testing non-existent user
-    $name = 'Jesus';
-    $cal_total = 2600;
-    echo nl2br("Test for non-existent user:
+$name = 'Rid';
+$cal_total = -2600;
+echo nl2br("Test for negative input:
                 Username: $name, Calories Total: $cal_total\n");
-    if ($obj->insertCalTotal($name, $cal_total)) {
-        echo nl2br("Insert success.\n\n");
-    } else {
-        echo nl2br("Insert error.\n\n");
-    };
+if ($obj->insertCalTotal($name, $cal_total)) {
+    echo nl2br("Insert success.\n\n");
+} else {
+    echo nl2br("Insert error.\n\n");
+};
 
-    //Testing valid input
-    $name = 'Rid';
-    $cal_total = 2500;
-    echo nl2br("Test for valid inputs:
+//Testing non-existent user
+$name = 'Jesus';
+$cal_total = 2600;
+echo nl2br("Test for non-existent user:
                 Username: $name, Calories Total: $cal_total\n");
-    if ($obj->insertCalTotal($name, $cal_total)) {
-        echo nl2br("Insert success.\n\n");
-    } else {
-        echo nl2br("Insert error.\n\n");
-    };
-    $obj->showUsers();
+if ($obj->insertCalTotal($name, $cal_total)) {
+    echo nl2br("Insert success.\n\n");
+} else {
+    echo nl2br("Insert error.\n\n");
+};
+
+//Testing valid input
+$name = 'Rid';
+$cal_total = 2500;
+echo nl2br("Test for valid inputs:
+                Username: $name, Calories Total: $cal_total\n");
+if ($obj->insertCalTotal($name, $cal_total)) {
+    echo nl2br("Insert success.\n\n");
+} else {
+    echo nl2br("Insert error.\n\n");
+};
+$obj->showUsers();

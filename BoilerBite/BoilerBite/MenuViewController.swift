@@ -25,9 +25,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        MenuItem(calories: 500, name: "Five"),
 //    ]
 
+
     var items: [Item] = []
     
     // let items = ["One", "Two", "Three", "Four", "Five"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -60,7 +63,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-
     /*
     // MARK: - Navigation
 

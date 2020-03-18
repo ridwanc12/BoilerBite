@@ -1,6 +1,7 @@
 <?php
 
-class  updateRow {
+class  updateRow
+{
     const DB_HOST = 'localhost';
 
     const DB_NAME = 'id12866202_boilerbite';
@@ -11,7 +12,8 @@ class  updateRow {
 
     private $pdo = null;
 
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
 
         try {
@@ -19,9 +21,9 @@ class  updateRow {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
     }
@@ -63,7 +65,8 @@ class  updateRow {
     // }
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -92,7 +95,8 @@ class  updateRow {
         }
     }
 
-    function findID($username): int{
+    function findID($username): int
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -120,8 +124,9 @@ class  updateRow {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    
-    function updateWholeRow($username, $height, $weight, $age) {
+
+    function updateWholeRow($username, $height, $weight, $age)
+    {
         $flag = 0;
         $error = '';
 
@@ -135,14 +140,14 @@ class  updateRow {
         // Check to make sure weight is non-negative.
         // Appends error message if weight is negative.
         if ($weight < 0) {
-            $error = $error . "Please make sure weight is non-negative.\r\n";    
+            $error = $error . "Please make sure weight is non-negative.\r\n";
             $flag = 1;
         }
 
         // Check to make sure age is non-negative.
         // Appends error message if age is negative.
         if ($age < 0) {
-            $error = $error . "Please make sure age is non-negative.\r\n";    
+            $error = $error . "Please make sure age is non-negative.\r\n";
             $flag = 1;
         }
 
@@ -168,26 +173,25 @@ class  updateRow {
                         weight          = :weight,
                         age             = :age
                     WHERE  userID = :userID';
- 
+
         $q = $this->pdo->prepare($sql);
         if ($q->execute($task)) {
             echo nl2br("User info UPDATED.\n\n");
         }
     }
 }
-    $obj = new updateRow();
+$obj = new updateRow();
 
-   // Show user profiles in the database
-    $obj->showUsers();
-    echo nl2br("Begin Unit test for updating Profile:\n\n");
+// Show user profiles in the database
+$obj->showUsers();
+echo nl2br("Begin Unit test for updating Profile:\n\n");
 
-    $username = 'Rid';
-    $height = '180';
-    $weight = '130';
-    $age = '20';
-    echo nl2br("Testing when all values are valid:
+$username = 'Rid';
+$height = '180';
+$weight = '130';
+$age = '20';
+echo nl2br("Testing when all values are valid:
                 Height: $height, Weight: $weight, Age: $age\n");
-    $obj->updateWholeRow($username, $height, $weight, $age);
+$obj->updateWholeRow($username, $height, $weight, $age);
 
-    $obj->showUsers();
-?>
+$obj->showUsers();
