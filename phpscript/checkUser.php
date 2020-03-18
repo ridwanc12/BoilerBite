@@ -101,3 +101,12 @@ class  checkUser {
     $name = 'Rid';
     $pass = 'rid';
     $obj->verifyUser($name, $pass);
+?>
+
+<html>
+    <head>
+        <title>
+            checkUser
+        </title>
+    </head>
+</html>

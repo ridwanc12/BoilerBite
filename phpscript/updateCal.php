@@ -156,3 +156,12 @@ if ($obj->insertCalTotal($name, $cal_total)) {
 };
 
 $obj->showUsers();
+?>
+
+<html>
+    <head>
+        <title>
+            updateCal
+        </title>
+    </head>
+</html>

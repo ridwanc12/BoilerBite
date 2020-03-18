@@ -233,3 +233,12 @@ if ($obj->insertSingleRow($username, $email, $pass)) {
     echo nl2br("Value insertion failed.\n\n");
 }
 $obj->showUsers();
+?>
+
+<html>
+    <head>
+        <title>
+            insertUser
+        </title>
+    </head>
+</html>

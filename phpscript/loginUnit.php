@@ -131,3 +131,13 @@ $pass = 'rid';
 echo nl2br("Username: $name
                 Correct: $corr\n");
 $obj->verifyUser($name, $pass);
+?>
+
+<html>
+    <head>
+        <title>
+            loginUnit
+        </title>
+    </head>
+</html>
+

@@ -158,3 +158,12 @@ if ($obj->insertCalTotal($name, $cal_total)) {
     echo nl2br("Insert error.\n\n");
 };
 $obj->showUsers();
+?>
+
+<html>
+    <head>
+        <title>
+            insertCal
+        </title>
+    </head>
+</html>

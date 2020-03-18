@@ -66,11 +66,7 @@ class  insertTable
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userID,
                         userName,
-                        userEmail,
-                        height,
-                        weight,
-                        hashPass,
-                        age
+                        userEmail
                     FROM profiles';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -83,14 +79,6 @@ class  insertTable
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
             echo "Email: $holder, ";
-            $holder = $user['height'];
-            echo "Height: $holder, ";
-            $holder = $user['weight'];
-            echo nl2br("Weight: $holder, \n");
-            $holder = $user['hashPass'];
-            echo "Hashed Passwrd: $holder, ";
-            $holder = $user['age'];
-            echo nl2br("Age: $holder\n\n");
             $flag = 1;
         }
         if ($flag == 0) {
@@ -139,3 +127,12 @@ if ($obj->insertCalTotal($name, $cal_total)) {
 } else {
     echo "Query error.";
 };
+?>
+
+<html>
+    <head>
+        <title>
+            updateGoals
+        </title>
+    </head>
+</html>

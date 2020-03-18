@@ -98,3 +98,12 @@ if ($obj->insertCalTotal($name, $cal_total)) {
 } else {
     echo "Query error.";
 };
+?>
+
+<html>
+    <head>
+        <title>
+            insertGoals
+        </title>
+    </head>
+</html>

@@ -221,3 +221,12 @@ echo nl2br("Testing when all values are valid:
                 Height: $height, Weight: $weight, Age: $age\n");
 //INSERT into info table based on $username
 $obj->insertSingleRow($username, $height, $weight, $age);
+?>
+
+<html>
+    <head>
+        <title>
+            insertInfoUnit
+        </title>
+    </head>
+</html>
