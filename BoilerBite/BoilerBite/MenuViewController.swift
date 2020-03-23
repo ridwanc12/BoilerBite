@@ -43,9 +43,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         meals = testMenu!.Meals as! [Meal]
         
         // Stations for Earhart dinner
-        stations = meals[3].Stations as! [Station]
         
-//        stations = meals[2].Stations as! [Station]
+        // Earhart doesn't serve this Meal
+//        stations = meals[3].Stations as! [Station]
+        
+        stations = meals[1].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
