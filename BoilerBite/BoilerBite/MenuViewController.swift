@@ -37,7 +37,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         // Menu for current day Earhart for testing
-        let testMenu = getCurrentMenu(hall: "earhart")
+        let testMenu = getFirstDayMenu(hall: "earhart")
         
         // All meals
         meals = testMenu!.Meals as! [Meal]
