@@ -90,6 +90,11 @@ class NewAccountViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        // load data into database UC
+        //databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
+        
+        // end loading UC
+        
     }
     
     // Action function for when the Back button is pressed
@@ -122,3 +127,102 @@ extension NewAccountViewController : UITextFieldDelegate {
         return true
     }
 }
+
+func databaseRequest_signup(username: String, firstname: String, lastname: String, height: String, weight: String, age: String, password: String) {
+    let semaphore = DispatchSemaphore (value: 0)
+
+    //let username: String = usernameField.text ?? ""
+    //let password: String = passwordField.text ?? ""
+    
+    // user changed to username
+    
+    let urlString = String(format: "http://10.186.149.176/MyWebService/api/signup_createteam.php?username=%@&firstname=%@&lastname=%@&height=%@&weight=%@&age=%@&password=%@", username, firstname, lastname, height, weight, age, password)
+    var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+    
+    request.httpMethod = "POST"
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+        return
+      }
+      print(String(data: data, encoding: .utf8)!)
+      semaphore.signal()
+    }
+
+    task.resume()
+    semaphore.wait()
+
+}
+
+// for inserting calories and username
+
+/*
+ import Foundation
+
+ var semaphore = DispatchSemaphore (value: 0)
+
+ var request = URLRequest(url: URL(string: "http://10.192.122.81/MyWebService/api/calorie_update.php?username=uday&calories=2300")!,timeoutInterval: Double.infinity)
+ request.httpMethod = "POST"
+
+ let task = URLSession.shared.dataTask(with: request) { data, response, error in
+   guard let data = data else {
+     print(String(describing: error))
+     return
+   }
+   print(String(data: data, encoding: .utf8)!)
+   semaphore.signal()
+ }
+
+ task.resume()
+ semaphore.wait()
+
+ */
+
+// for updating calories
+
+/*
+ import Foundation
+
+ var semaphore = DispatchSemaphore (value: 0)
+
+ var request = URLRequest(url: URL(string: "http://10.192.122.81/MyWebService/api/change_calorie.php?username=uday&calories=2400")!,timeoutInterval: Double.infinity)
+ request.httpMethod = "POST"
+
+ let task = URLSession.shared.dataTask(with: request) { data, response, error in
+   guard let data = data else {
+     print(String(describing: error))
+     return
+   }
+   print(String(data: data, encoding: .utf8)!)
+   semaphore.signal()
+ }
+
+ task.resume()
+ semaphore.wait()
+
+ */
+
+// updating the info
+
+/*
+ import Foundation
+
+ var semaphore = DispatchSemaphore (value: 0)
+
+ var request = URLRequest(url: URL(string: "http://10.192.122.81/MyWebService/api/update_info.php?username=uc&height=170&weight=69&age=20")!,timeoutInterval: Double.infinity)
+ request.httpMethod = "POST"
+
+ let task = URLSession.shared.dataTask(with: request) { data, response, error in
+   guard let data = data else {
+     print(String(describing: error))
+     return
+   }
+   print(String(data: data, encoding: .utf8)!)
+   semaphore.signal()
+ }
+
+ task.resume()
+ semaphore.wait()
+
+ */

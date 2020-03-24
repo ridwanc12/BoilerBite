@@ -25,6 +25,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        MenuItem(calories: 500, name: "Five"),
 //    ]
 
+
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
@@ -32,6 +33,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let sectionHeight = 27
     
     // let items = ["One", "Two", "Three", "Four", "Five"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +129,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-
     /*
     // MARK: - Navigation
 
