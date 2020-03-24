@@ -33,6 +33,31 @@ func getMenu(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
+func getFirstDayMenu(hall: String) -> Menu? {
+    let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, "2020-01-13")
+    let requestLocation = URL(string: address)
+    
+    var menu: Menu?
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+        do {
+            menu = try JSONDecoder().decode(Menu.self, from: data!)
+            semaphore.signal()
+            //print(menu!)
+        } catch {
+            print("There was an error in the menu api request")
+            print(error)
+        }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(menu)
+}
+
 func getCurrentMenu(hall: String) -> Menu? {
     let date = String(describing: Date())
     let first = date.components(separatedBy: " ").first
