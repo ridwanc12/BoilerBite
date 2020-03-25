@@ -58,6 +58,8 @@ func getFirstDayMenu(hall: String) -> Menu? {
     return(menu)
 }
 
+// Note: This function is currently not useful due to quarantine
+// Thanks COVID
 func getCurrentMenu(hall: String) -> Menu? {
     let date = String(describing: Date())
     let first = date.components(separatedBy: " ").first
