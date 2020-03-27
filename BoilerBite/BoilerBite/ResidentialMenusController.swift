@@ -10,6 +10,7 @@ import SwiftUI
 
 class ResidentialMenusController: UIViewController {
     
+    // Variable for chosen hall
     var chosenHall: String = "earhart"
     
     // MARK: Properties
