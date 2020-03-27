@@ -63,8 +63,10 @@ class  insertTable
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userID,                        
-                        calories_total
-                    FROM goals';
+                        total_calorie,
+                        food_name,
+                        date
+                    FROM progress';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
         // Print out values returned by query
@@ -72,10 +74,12 @@ class  insertTable
         while ($user = $q->fetch()) {
             $holder = $user['userID'];
             echo "ID: $holder, ";
-            $holder = $user['calories_total'];
-            echo nl2br("Calories Total: $holder");
+            $holder = $user['total_calorie'];
+            echo nl2br("Calories Total: $holder, ");
             $holder = $user['food_name'];
-            echo nl2br("Food: $holder\n\n");
+            echo nl2br("Food: $holder, ");
+            $holder = $user['date'];
+            echo nl2br("Time: $holder\n\n");
             $flag = 1;
         }
         if ($flag == 0) {
@@ -150,7 +154,7 @@ $obj->showUsers();
 echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
-if ($obj->insertFood("Mac n Cheese", 500, 123, 123, 123, 123, 123)) {
+if ($obj->insertFood("Jeremy", "Mac n Cheese", 500, 123, 123, 123, 123, 123)) {
     echo nl2br("Food inserted.\n");
 } else {
     echo nl2br("Failed.\n");
