@@ -62,11 +62,11 @@ class  insertTable
      * the function will print out corresponding fields and exits.    
      */
 
-    function insertCalTotal($username, $calories_total)
+    function insertCalTotal($username, $cal_total, $cal_fat, $g_fat, $g_protein, $g_carb)
     {
         // Check if $calories_total is non-negative.
         // If negative, print message and exit().
-        if ($calories_total < 0) {
+        if ($cal_total < 0) {
             echo nl2br("Please make sure the input is non-negative.\n");
             return 0;
         }
@@ -79,31 +79,48 @@ class  insertTable
         echo nl2br("$id\n");
         // Insert value into array to 
         $task = array(
-            ':cal_total' => $calories_total,
+            ':cal_total' => $cal_total,
+            ':cal_fat' => $cal_fat,
+            ':g_fat' => $g_fat,
+            ':g_protein' => $g_protein,
+            ':g_carb' => $g_carb,
             ':id' => $id
         );
         $sql = 'UPDATE goals
-                    SET calories_total = :cal_total
+                    SET calories_total = :cal_total,
+                        calorie_fat = :cal_fat,
+                        gram_fat = :g_fat,
+                        gram_protein = :g_protein,
+                        gram_carb = :g_carb
                   WHERE userID = :id';
 
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
     }
 }
+
 $obj = new insertTable();
-$name = 'Rid';
+$username = $_POST['userName'];
+$total_cal = $_POST['total_calorie'];
+$cal_fat = $_POST['calorie_fat'];
+$g_fat = $_POST['gram_fat'];
+$g_protein = $_POST['gram_protein'];
+$g_carb = $_POST['gram_carbs'];
 $cal_total = 2600;
-if ($obj->insertCalTotal($name, $cal_total)) {
+if ($obj->insertCalTotal($username, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo "Insert Success.";
 } else {
     echo "Query error.";
 };
+
 ?>
 
 <html>
-    <head>
-        <title>
-            insertGoals
-        </title>
-    </head>
+
+<head>
+    <title>
+        insertGoals
+    </title>
+</head>
+
 </html>
