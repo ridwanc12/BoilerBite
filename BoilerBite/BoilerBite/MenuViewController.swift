@@ -13,6 +13,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var MenuTableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
     
+    
 
     var items: [Item] = []
     var meals: [Meal] = []
@@ -28,7 +29,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        diningHallLabel.text = diningHall.capitalizingFirstLetter()
+        diningHallLabel?.text = diningHall.capitalizingFirstLetter()
         
         // Menu for current day Earhart for testing
         let testMenu = getFirstDayMenu(hall: diningHall)

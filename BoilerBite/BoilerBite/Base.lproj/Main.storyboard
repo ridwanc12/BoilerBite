@@ -464,7 +464,7 @@
         <!--Residential Menus-->
         <scene sceneID="eaO-dO-017">
             <objects>
-                <viewController id="yHO-tF-Ifk" userLabel="Residential Menus" customClass="MenuViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yHO-tF-Ifk" userLabel="Residential Menus" customClass="ResidentialMenusController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7mS-wh-cgd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -491,6 +491,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="earhartButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="gqg-Hd-Skt"/>
                                     <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="d9h-Ni-4aC"/>
                                 </connections>
                             </button>
@@ -500,6 +501,10 @@
                                 <state key="normal" title="ford" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="fordButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="CCY-of-8Oq"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="BMr-r3-3YJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZLm-G6-ofk" userLabel="hillenbrand">
                                 <rect key="frame" x="71.91053828731674" y="483" width="229" height="44.000000000000114"/>
@@ -507,6 +512,10 @@
                                 <state key="normal" title="hillenbrand" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="hillenbrandButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="qY4-vh-Gay"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="JcX-fG-Q0E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Mg-jy-L3h" userLabel="wiley">
                                 <rect key="frame" x="71" y="544" width="229" height="44"/>
@@ -514,6 +523,10 @@
                                 <state key="normal" title="wiley" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="wileyButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="oCL-Gg-y8A"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="9cj-xK-1xq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
                                 <rect key="frame" x="71" y="607" width="229" height="44"/>
@@ -521,6 +534,10 @@
                                 <state key="normal" title="windsor" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="windsorButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="r8h-35-STd"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="mg5-DD-EA8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
                                 <rect key="frame" x="195" y="267" width="140" height="27"/>
@@ -777,6 +794,7 @@
                     <navigationItem key="navigationItem" id="zcO-X8-f7A"/>
                     <connections>
                         <outlet property="MenuTableView" destination="tSA-Wo-lGV" id="JAF-Fd-djw"/>
+                        <outlet property="diningHallLabel" destination="iLD-jZ-toW" id="CZq-EU-yVd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sS-Bn-tqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1007,6 +1025,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cwh-ey-aFg"/>
+        <segue reference="mg5-DD-EA8"/>
         <segue reference="RBJ-nK-agt"/>
         <segue reference="jbh-Da-5zV"/>
         <segue reference="MXM-w3-3cX"/>

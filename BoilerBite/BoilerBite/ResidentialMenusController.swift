@@ -20,13 +20,13 @@ class ResidentialMenusController: UIViewController {
     @IBAction func fordButton(_ sender: UIButton) {
         chosenHall = "ford"
     }
-    @IBAction func hillenbrandButton(_ sender: Any) {
+    @IBAction func hillenbrandButton(_ sender: UIButton) {
         chosenHall = "hillenbrand"
     }
-    @IBAction func wileyButton(_ sender: Any) {
+    @IBAction func wileyButton(_ sender: UIButton) {
         chosenHall = "wiley"
     }
-    @IBAction func windsorButton(_ sender: Any) {
+    @IBAction func windsorButton(_ sender: UIButton) {
         chosenHall = "windsor"
     }
     
