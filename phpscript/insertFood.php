@@ -154,7 +154,15 @@ $obj->showUsers();
 echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
-if ($obj->insertFood("Jeremy", "Mac n Cheese", 500, 123, 123, 123, 123, 123)) {
+$username = $_POST['userName'];
+$food = $_POST['food_name'];
+$total_cal = $_POST['total_calorie'];
+$cal_fat = $_POST['calorie_fat'];
+$g_fat = $_POST['gram_fat'];
+$g_protein = $_POST['gram_protein'];
+$g_carb = $_POST['gram_carbs'];
+
+if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo nl2br("Food inserted.\n");
 } else {
     echo nl2br("Failed.\n");
