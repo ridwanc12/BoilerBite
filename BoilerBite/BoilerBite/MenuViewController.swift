@@ -11,24 +11,14 @@ import UIKit
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var MenuTableView: UITableView!
+    @IBOutlet weak var diningHallLabel: UILabel!
     
-    struct MenuItem {
-        var calories: Int
-        var name: String
-    }
-    
-//    let items = [
-//        MenuItem(calories: 100, name: "One"),
-//        MenuItem(calories: 200, name: "Two"),
-//        MenuItem(calories: 300, name: "Three"),
-//        MenuItem(calories: 400, name: "Four"),
-//        MenuItem(calories: 500, name: "Five"),
-//    ]
-
 
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    
+    var diningHall: String = "earhart"
     
     let sectionHeight = 27
     
@@ -38,13 +28,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        diningHallLabel.text = diningHall.capitalizingFirstLetter()
+        
         // Menu for current day Earhart for testing
-        let testMenu = getFirstDayMenu(hall: "earhart")
+        let testMenu = getFirstDayMenu(hall: diningHall)
         
         // All meals
         meals = testMenu!.Meals as! [Meal]
         
-        // Stations for Earhart dinner
+        // Stations for dining hall dinner
         
         // Earhart doesn't serve this Meal
 //        stations = meals[3].Stations as! [Station]
@@ -140,3 +132,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
 
 }
+
+extension String {
+       func capitalizingFirstLetter() -> String {
+           return prefix(1).capitalized + dropFirst()
+       }
+
+       mutating func capitalizeFirstLetter() {
+           self = self.capitalizingFirstLetter()
+       }
+   }
