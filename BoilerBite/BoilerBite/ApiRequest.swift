@@ -216,6 +216,7 @@ func getItemCalories(itemID: String) -> Int {
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
 // itemID = menu.Meals[0].Stations[0].Items[0].ID
+// Function to 
 func insertUser(){
     let name = "Isha"
     let mail = "isha@gmail.com"

@@ -69,14 +69,6 @@ class  insertTable
             return 0;
         }
 
-        $flag = 0;
-        $error = '';
-        // If any of the above values are negative, print error message and exit.
-        if ($flag == 1) {
-            $error = $error . "Query failed.\n";
-            echo nl2br("$error");
-            return 0;
-        }
         // Hash the password.
         $passwrd = sha1($pass);
         // Insert values into array to be executed
@@ -184,6 +176,7 @@ class  insertTable
                     FROM profiles;';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
+
         // Print out values returned by query
         $flag = 0;
         while ($user = $q->fetch()) {
@@ -236,9 +229,11 @@ $obj->showUsers();
 ?>
 
 <html>
-    <head>
-        <title>
-            insertUser
-        </title>
-    </head>
+
+<head>
+    <title>
+        insertUser
+    </title>
+</head>
+
 </html>
