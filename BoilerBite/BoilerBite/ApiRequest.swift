@@ -216,3 +216,28 @@ func getItemCalories(itemID: String) -> Int {
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
 // itemID = menu.Meals[0].Stations[0].Items[0].ID
+func insertUser(){
+    let name = "Isha"
+    let mail = "isha@gmail.com"
+    let pass = "isha"
+    let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    request.httpMethod = "POST"
+    let postString = "userName=\(name)&userEmail=\(mail)&pass=\(pass)"
+    request.httpBody = postString.data(using: String.Encoding.utf8)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        print("response = \(response)")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        print("responseString = \(responseString)")
+    }
+    task.resume()
+}
