@@ -491,7 +491,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="earhartButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="gqg-Hd-Skt"/>
+                                    <action selector="buttonEarhart:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="igD-LM-EZB"/>
                                     <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="d9h-Ni-4aC"/>
                                 </connections>
                             </button>
@@ -502,7 +502,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="fordButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="CCY-of-8Oq"/>
+                                    <action selector="buttonFord:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="F0h-VC-cpn"/>
                                     <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="BMr-r3-3YJ"/>
                                 </connections>
                             </button>
@@ -513,7 +513,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="hillenbrandButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="qY4-vh-Gay"/>
+                                    <action selector="buttonHillenbrand:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="Gzx-ks-PVp"/>
                                     <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="JcX-fG-Q0E"/>
                                 </connections>
                             </button>
@@ -524,8 +524,8 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="wileyButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="oCL-Gg-y8A"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="9cj-xK-1xq"/>
+                                    <action selector="buttonWiley:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="hTt-ZX-bOr"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="j0n-al-1j2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
@@ -535,8 +535,8 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="windsorButton:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="r8h-35-STd"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="mg5-DD-EA8"/>
+                                    <action selector="buttonWindsor:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="3Kf-D8-zA1"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="U69-tf-jAK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
@@ -1025,9 +1025,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cwh-ey-aFg"/>
-        <segue reference="mg5-DD-EA8"/>
+        <segue reference="U69-tf-jAK"/>
         <segue reference="RBJ-nK-agt"/>
         <segue reference="jbh-Da-5zV"/>
-        <segue reference="MXM-w3-3cX"/>
+        <segue reference="1A1-wO-hVh"/>
     </inferredMetricsTieBreakers>
 </document>

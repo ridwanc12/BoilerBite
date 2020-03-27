@@ -14,21 +14,22 @@ class ResidentialMenusController: UIViewController {
     var chosenHall: String = "earhart"
     
     // MARK: Properties
-    @IBAction func earhartButton(_ sender: UIButton) {
+    @IBAction func buttonEarhart(_ sender: UIButton) {
         chosenHall = "earhart"
     }
-    @IBAction func fordButton(_ sender: UIButton) {
+    @IBAction func buttonFord(_ sender: UIButton) {
         chosenHall = "ford"
     }
-    @IBAction func hillenbrandButton(_ sender: UIButton) {
+    @IBAction func buttonHillenbrand(_ sender: UIButton) {
         chosenHall = "hillenbrand"
     }
-    @IBAction func wileyButton(_ sender: UIButton) {
+    @IBAction func buttonWiley(_ sender: UIButton) {
         chosenHall = "wiley"
     }
-    @IBAction func windsorButton(_ sender: UIButton) {
+    @IBAction func buttonWindsor(_ sender: UIButton) {
         chosenHall = "windsor"
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad();
