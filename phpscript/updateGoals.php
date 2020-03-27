@@ -1,6 +1,7 @@
 <?php
 
-class  insertTable {
+class  insertTable
+{
     // Database information
     const DB_HOST = 'localhost';
 
@@ -11,26 +12,29 @@ class  insertTable {
     const DB_PASS = 'bb307';
     private $pdo = null;
     // Check connection to database.
-    public function __construct() {
+    public function __construct()
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $this->pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-    }// __construct()
+    } // __construct()
 
-    public function __destruct() {
+    public function __destruct()
+    {
         // close the database connection
         $this->pdo = null;
-    }// __destruct()
+    } // __destruct()
 
     /* 
      * Function to find the ID of the user from the given username.
      * If the user is not in the database, the function will print error message and
      * return 0.
      */
-    function findID($username): int{
+    function findID($username): int
+    {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -52,20 +56,17 @@ class  insertTable {
         // Get ID from result.
         $idFromUser = $result['userID'];
         return $idFromUser;
-    }// findID()
+    } // findID()
 
     // Function to show users in table
-    function showUsers(): void {
+    function showUsers(): void
+    {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userID,
                         userName,
-                        userEmail,
-                        height,
-                        weight,
-                        hashPass,
-                        age
+                        userEmail
                     FROM profiles';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -78,14 +79,6 @@ class  insertTable {
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
             echo "Email: $holder, ";
-            $holder = $user['height'];
-            echo "Height: $holder, ";
-            $holder = $user['weight'];
-            echo nl2br("Weight: $holder, \n");
-            $holder = $user['hashPass'];
-            echo "Hashed Passwrd: $holder, ";
-            $holder = $user['age'];
-            echo nl2br("Age: $holder\n\n");
             $flag = 1;
         }
         if ($flag == 0) {
@@ -98,7 +91,8 @@ class  insertTable {
      * Checks if any values of height, weight, age is negative. If contains negative values,
      * the function will print out corresponding fields and exits.    
      */
-    function insertCalTotal($username, $calories_total) {
+    function insertCalTotal($username, $calories_total)
+    {
         // Check if $calories_total is non-negative.
         // If negative, print message and exit().
         if ($calories_total < 0) {
@@ -113,24 +107,32 @@ class  insertTable {
         //echo nl2br("$id\n");
         $task = array(
             ':cal_total' => $calories_total,
-            ':id' => $id);
+            ':id' => $id
+        );
         $sql = 'UPDATE goals
                     SET calories_total = :cal_total
                   WHERE userID = :id';
- 
+
         $q = $this->pdo->prepare($sql);
- 
+
         return $q->execute($task);
-    }// insertCalTotal()
+    } // insertCalTotal()
 }
-    //File entry point.
-    $obj = new insertTable();
-    $
-    $name = 'Rid';
-    $cal_total = 2700;
-    if ($obj->insertCalTotal($name, $cal_total)) {
-        echo "Query executed.";
-    } else {
-        echo "Query error.";
-    };
-    
+//File entry point.
+$obj = new insertTable();
+$$name = 'Rid';
+$cal_total = 2700;
+if ($obj->insertCalTotal($name, $cal_total)) {
+    echo "Query executed.";
+} else {
+    echo "Query error.";
+};
+?>
+
+<html>
+    <head>
+        <title>
+            updateGoals
+        </title>
+    </head>
+</html>
