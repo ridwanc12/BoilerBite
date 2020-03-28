@@ -185,14 +185,10 @@ $obj = new insertTable();
 $obj->showUsers();
 
 // Get values from ios application
-// $username = $_POST['userName'];
-// $email = $_POST['userEmail'];
-// $pass = $_POST['pass'];
-$username = "Jeremy";
-$email = "jeremy";
-$pass = "rid";
-echo nl2br(" \nInserting:
-                 Username: $username, Email: $email, Password: $pass\n");
+$username = $_POST['userName'];
+$pass = $_POST['pass'];
+echo nl2br(" \nRemoving:
+                 Username: $username, Password: $pass\n");
 if ($obj->removeUser($username, $pass)) {
     if ($obj->initializeGoal($username)) {
         //echo nl2br("Goals initialized.\n");

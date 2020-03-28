@@ -216,7 +216,7 @@ func getItemCalories(itemID: String) -> Int {
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
 // itemID = menu.Meals[0].Stations[0].Items[0].ID
-// Function to 
+// Function to test php script to insert new user
 func insertUser(){
     let name = "Isha"
     let mail = "isha@gmail.com"
@@ -224,7 +224,63 @@ func insertUser(){
     let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
+    // Send values to php script
     let postString = "userName=\(name)&userEmail=\(mail)&pass=\(pass)"
+    request.httpBody = postString.data(using: String.Encoding.utf8)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        print("response = \(response)")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        print("responseString = \(responseString)")
+    }
+    task.resume()
+}
+
+// Function to test php script to delete user from database
+func deleteUser(){
+    let name = "Isha"
+    let pass = "isha"
+    let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    request.httpMethod = "POST"
+    // Send values to php script
+    let postString = "userName=\(name)&pass=\(pass)"
+    request.httpBody = postString.data(using: String.Encoding.utf8)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        print("response = \(response)")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        print("responseString = \(responseString)")
+    }
+    task.resume()
+}
+
+// Function to add food item to progress table
+func insertFood(){
+    let name = "Isha"
+    let mail = "isha@gmail.com"
+    let pass = "isha"
+    let link = "https://boilerbite.000webhostapp.com/php/insertFood.php"
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    request.httpMethod = "POST"
+    // Send values to php script
+    let postString = "userName=\(name)&food_name=\(pass)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carb=\(g_carb)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
