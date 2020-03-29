@@ -410,6 +410,9 @@
                                 <state key="normal" title="settings" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="e40-1h-wAX" kind="presentation" modalPresentationStyle="fullScreen" id="U10-p6-8x8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="guide to healthy eating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bP-5U-QWR">
                                 <rect key="frame" x="30" y="263" width="220" height="27"/>
@@ -419,16 +422,6 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLV-bn-iXT">
-                                <rect key="frame" x="71" y="605" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="account" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="bUN-NA-H20"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzE-pW-y1S">
                                 <rect key="frame" x="56" y="219" width="194" height="45"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
@@ -644,7 +637,7 @@
                                 <rect key="frame" x="26" y="72" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="d68-Lj-CRg"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" modalPresentationStyle="fullScreen" id="O4y-7l-SDx"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-Lj-xkF">
@@ -683,7 +676,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IN-8g-b2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="816"/>
+            <point key="canvasLocation" x="1231" y="1569"/>
         </scene>
         <!--Windsor Late Lunch Individual Menu-->
         <scene sceneID="eaj-IB-iRo">
@@ -1029,6 +1022,116 @@
             </objects>
             <point key="canvasLocation" x="2280.8000000000002" y="815.76354679802955"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="qWF-vH-BAI">
+            <objects>
+                <viewController id="e40-1h-wAX" userLabel="Settings" customClass="ResidentialMenusController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kBg-Ix-WeO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="WcW-OG-uCX">
+                                <rect key="frame" x="-115" y="-51" width="605" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="8KR-72-6Ua">
+                                <rect key="frame" x="0.0" y="64" width="375" height="714"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-45-kdk">
+                                <rect key="frame" x="95" y="234" width="152" height="40"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="deQ-xF-ZpZ" userLabel="earhart">
+                                <rect key="frame" x="71.91053828731674" y="360" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="update goals" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonEarhart:" destination="e40-1h-wAX" eventType="touchUpInside" id="Fhw-73-Yf2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lZL-WO-RTp" userLabel="ford">
+                                <rect key="frame" x="71.91053828731674" y="424" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="update profile" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonFord:" destination="e40-1h-wAX" eventType="touchUpInside" id="uPx-ly-bgm"/>
+                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="jWp-Wm-f48"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lle-Re-vUT" userLabel="hillenbrand">
+                                <rect key="frame" x="71.91053828731674" y="484" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="change password" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonHillenbrand:" destination="e40-1h-wAX" eventType="touchUpInside" id="UlW-Ss-Cgk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRm-8p-gHo" userLabel="wiley">
+                                <rect key="frame" x="71" y="544" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logout" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonWiley:" destination="e40-1h-wAX" eventType="touchUpInside" id="YiU-5e-sJE"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3YG-K3-LIF">
+                                <rect key="frame" x="227" y="77" width="132" height="141"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y34-af-JkU">
+                                <rect key="frame" x="18" y="79" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="RsC-dL-WKO"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="9bC-YL-4KN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="update your settings" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-55-rjT">
+                                <rect key="frame" x="30" y="267" width="198" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XgJ-45-kdk" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="95" id="6m8-Xx-5rO"/>
+                            <constraint firstItem="F6S-55-rjT" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="30" id="8w1-fb-b0r"/>
+                            <constraint firstItem="3YG-K3-LIF" firstAttribute="trailing" secondItem="kBg-Ix-WeO" secondAttribute="trailingMargin" id="ChJ-Sc-Fzx"/>
+                            <constraint firstItem="8KR-72-6Ua" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" id="FoW-2w-Fcq"/>
+                            <constraint firstItem="3YG-K3-LIF" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="33" id="HC6-Ac-afw"/>
+                            <constraint firstItem="Y34-af-JkU" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="18" id="L3t-He-vWA"/>
+                            <constraint firstItem="8KR-72-6Ua" firstAttribute="centerX" secondItem="WcW-OG-uCX" secondAttribute="centerX" id="NRb-Ru-9XW"/>
+                            <constraint firstItem="8KR-72-6Ua" firstAttribute="bottom" secondItem="xmy-Jy-EYA" secondAttribute="bottom" id="gTC-I2-Lof"/>
+                            <constraint firstItem="Y34-af-JkU" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="35" id="kPs-lm-KW9"/>
+                            <constraint firstItem="8KR-72-6Ua" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="20" id="m0C-MP-Hdu"/>
+                            <constraint firstItem="xmy-Jy-EYA" firstAttribute="trailing" secondItem="XgJ-45-kdk" secondAttribute="trailing" constant="128" id="yXa-iy-KbT"/>
+                            <constraint firstItem="XgJ-45-kdk" firstAttribute="top" secondItem="3YG-K3-LIF" secondAttribute="bottom" constant="16" id="z27-eZ-lKg"/>
+                            <constraint firstItem="deQ-xF-ZpZ" firstAttribute="top" secondItem="F6S-55-rjT" secondAttribute="bottom" constant="66" id="zlJ-Nn-G4T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xmy-Jy-EYA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H28-Xd-lqz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zsp-S7-cBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="816"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg" width="375" height="812"/>
@@ -1044,11 +1147,11 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B6r-wJ-BKr"/>
-        <segue reference="Cwh-ey-aFg"/>
+        <segue reference="O4y-7l-SDx"/>
+        <segue reference="b4N-GZ-P1C"/>
         <segue reference="U69-tf-jAK"/>
-        <segue reference="RBJ-nK-agt"/>
-        <segue reference="d68-Lj-CRg"/>
+        <segue reference="mJJ-vo-gLl"/>
+        <segue reference="9bC-YL-4KN"/>
         <segue reference="1A1-wO-hVh"/>
     </inferredMetricsTieBreakers>
 </document>
