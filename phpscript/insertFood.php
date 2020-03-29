@@ -27,34 +27,6 @@ class  insertTable
         // close the database connection
         $this->pdo = null;
     }
-    /* 
-     * Function to find the ID of the user from the given username.
-     * If the user is not in the database, the function will print error message and
-     * return 0.
-     */
-    function findID($username): int
-    {
-        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-        try {
-            $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
-            $q = $pdo->query($sql);
-            $q->setFetchMode(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        $result = $q->fetch();
-
-        // Check if username is in database.
-        // If username is not in the table $result will be FALSE.
-        if ($result == FALSE) {
-            return 0;
-        }
-        $idFromUser = $result['userID'];
-        return $idFromUser;
-    }
 
     // Function to show users in table
     function showUsers(): void
@@ -62,8 +34,7 @@ class  insertTable
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-        $sql = 'SELECT userID,                        
-                        total_calorie,
+        $sql = 'SELECT  total_calorie,
                         food_name,
                         date
                     FROM progress';
@@ -72,8 +43,6 @@ class  insertTable
         // Print out values returned by query
         $flag = 0;
         while ($user = $q->fetch()) {
-            $holder = $user['userID'];
-            echo "ID: $holder, ";
             $holder = $user['total_calorie'];
             echo nl2br("Calories Total: $holder, ");
             $holder = $user['food_name'];
@@ -88,9 +57,7 @@ class  insertTable
     }
 
     /* 
-     * Function to insert a row of data based on the parameters given to the function.
-     * Checks if any values of height, weight, age is negative. If contains negative values,
-     * the function will print out corresponding fields and exits.    
+     * Function to insert a row of data based on the parameters given to the function.    
      */
 
     function insertFood(
@@ -109,16 +76,29 @@ class  insertTable
             return 0;
         }
         // Check if user is in the database
-        $id = $this->findID($username);
-        if ($id == 0) {
-            echo nl2br("Incorrect username.\n");
-            return 0;
-        } else {
-        }
+        //$id = $this->findID($username);
+
         //echo nl2br("$id\n");
+
+        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+        $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+        $sql = 'SELECT  userName
+                    FROM profiles';
+        $q = $pdo->query($sql);
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Check if query returned results
+        $user = $q->fetch();
+        if (!$user) {
+            echo nl2br("No such user.\n\n");
+            return;
+        } else {
+            echo nl2br("user found.\n\n");
+        }
+
         // Insert value into array to 
         $task = array(
-            ':id' => $id,
+            ':name' => $username,
             ':food' => $food,
             ':cal_total' => $total_calorie,
             ':cal_fat' => $calorie_fat,
@@ -127,7 +107,7 @@ class  insertTable
             ':g_carbs' => $gram_carbs
         );
         $sql = 'INSERT INTO progress (
-                        userID,
+                        userName,
                         food_name,
                         total_calorie,
                         calorie_fat,
@@ -136,7 +116,7 @@ class  insertTable
                         gram_carbs
                         )
                         VALUES (
-                            :id,
+                            :name,
                             :food,
                             :cal_total,
                             :cal_fat,
@@ -154,20 +134,19 @@ $obj->showUsers();
 echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
-$username = $_POST['userName'];
-$food = $_POST['food_name'];
-$total_cal = $_POST['total_calorie'];
-$cal_fat = $_POST['calorie_fat'];
-$g_fat = $_POST['gram_fat'];
-$g_protein = $_POST['gram_protein'];
-$g_carb = $_POST['gram_carbs'];
+$username = "Jeremy"; //$_POST['userName'];
+$food = "mac"; //$_POST['food_name'];
+$total_cal = "123"; //$_POST['total_calorie'];
+$cal_fat = "123"; //$_POST['calorie_fat'];
+$g_fat = "123"; //$_POST['gram_fat'];
+$g_protein = "123"; //$_POST['gram_protein'];
+$g_carb = "123"; //$_POST['gram_carbs'];
 
 if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo nl2br("Food inserted.\n");
 } else {
     echo nl2br("Failed.\n");
 }
-
 
 $obj->showUsers();
 
