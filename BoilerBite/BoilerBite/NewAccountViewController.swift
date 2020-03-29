@@ -20,6 +20,7 @@ class NewAccountViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        deleteUser(name: "Rid", pass: "rid")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
