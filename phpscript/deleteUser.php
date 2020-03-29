@@ -49,102 +49,30 @@ class  insertTable
 
             // Store fetch() result into $result.
             $pass_result = $q->fetch();
+            // Check if query returned values
             if ($pass_result) {
+                // Store result into $holder to check with password provided
                 $holder = $pass_result['hashPass'];
                 echo "$holder";
             } else {
+                // Return function since query returned nothing
                 echo nl2br("\nNo such user.\n");
                 return;
             }
+            // Obtain the hashed version of the provided password
             $pass = sha1($pass);
+            // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
                 $sql = "DELETE FROM profiles WHERE userName = :name";
                 $delete = $this->pdo->prepare($sql);
                 $delete->bindValue(':name', $username);
                 $delete->execute();
-            } else
-            {
+            } else {
                 echo nl2br("Incorrect password.");
             }
-
-            
-
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
-        
-
-    }
-
-    // Function to initialize the goals profile of the user.
-    function initializeGoal($username)
-    {
-        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-        try {
-            $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
-            $q = $pdo->query($sql);
-            $q->setFetchMode(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        $result = $q->fetch();
-
-        // Check if username is in database.
-        // If username is not in the table $result will be FALSE.
-        if ($result == FALSE) {
-            return 0;
-        }
-        $id = $result['userID'];
-        $task = array(':id' => $id);
-
-        $sql = 'INSERT INTO goals (
-                        userID
-                    )
-                    VALUES (
-                        :id
-                    );';
-        $q = $this->pdo->prepare($sql);
-
-        return $q->execute($task);
-    }
-
-    // Funtion to initialize info of user
-    function initializeInfo($username)
-    {
-        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-        try {
-            $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
-            $q = $pdo->query($sql);
-            $q->setFetchMode(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        $result = $q->fetch();
-
-        // Check if username is in database.
-        // If username is not in the table $result will be FALSE.
-        if ($result == FALSE) {
-            return 0;
-        }
-        $id = $result['userID'];
-        $task = array(':id' => $id);
-
-        $sql = 'INSERT INTO info (
-                        userID
-                    )
-                    VALUES (
-                        :id
-                    );';
-        $q = $this->pdo->prepare($sql);
-
-        return $q->execute($task);
     }
 
     // Function to show users in table
@@ -153,8 +81,7 @@ class  insertTable
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-        $sql = 'SELECT userID,
-                        userName,
+        $sql = 'SELECT  userName,
                         userEmail,
                         hashPass
                     FROM profiles;';
@@ -163,8 +90,6 @@ class  insertTable
         // Print out values returned by query
         $flag = 0;
         while ($user = $q->fetch()) {
-            $holder = $user['userID'];
-            echo "UserID: $holder, ";
             $holder = $user['userName'];
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
@@ -190,27 +115,20 @@ $pass = $_POST['pass'];
 echo nl2br(" \nRemoving:
                  Username: $username, Password: $pass\n");
 if ($obj->removeUser($username, $pass)) {
-    if ($obj->initializeGoal($username)) {
-        //echo nl2br("Goals initialized.\n");
-        if ($obj->initializeInfo($username)) {
-            echo nl2br("Info initialized\n");
-        } else {
-            echo nl2br("Something is wrong\n");
-        }
-    } else {
-        //echo nl2br("Error when trying to initialize goals.\n");
-    }
-    echo nl2br("Values inserted.\n\n");
+    echo nl2br("$username deleted.\n\n");
 } else {
-    echo nl2br("Value insertion failed.\n\n");
+    echo nl2br("User deletion failed.\n\n");
 }
+
 $obj->showUsers();
 ?>
 
 <html>
-    <head>
-        <title>
-            deleteUser
-        </title>
-    </head>
+
+<head>
+    <title>
+        deleteUser
+    </title>
+</head>
+
 </html>
