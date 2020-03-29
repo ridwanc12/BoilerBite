@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -359,7 +359,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="NtG-yk-imF">
             <objects>
-                <viewController id="sIb-zm-i3w" userLabel="Main Menu View Controller" customClass="MenuViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sIb-zm-i3w" userLabel="Main Menu View Controller" customClass="ResidentialMenusController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjE-0t-tkv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1066,7 +1066,7 @@
         <!--Settings-->
         <scene sceneID="qWF-vH-BAI">
             <objects>
-                <viewController id="e40-1h-wAX" userLabel="Settings" customClass="ResidentialMenusController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e40-1h-wAX" userLabel="Settings" customClass="SettingsViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kBg-Ix-WeO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1086,47 +1086,6 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="deQ-xF-ZpZ" userLabel="earhart">
-                                <rect key="frame" x="71.91053828731674" y="360" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="update goals" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonEarhart:" destination="e40-1h-wAX" eventType="touchUpInside" id="Fhw-73-Yf2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lZL-WO-RTp" userLabel="ford">
-                                <rect key="frame" x="71.91053828731674" y="424" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="update profile" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonFord:" destination="e40-1h-wAX" eventType="touchUpInside" id="uPx-ly-bgm"/>
-                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="jWp-Wm-f48"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lle-Re-vUT" userLabel="hillenbrand">
-                                <rect key="frame" x="71.91053828731674" y="484" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="change password" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonHillenbrand:" destination="e40-1h-wAX" eventType="touchUpInside" id="UlW-Ss-Cgk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRm-8p-gHo" userLabel="wiley">
-                                <rect key="frame" x="71" y="544" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="logout" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonWiley:" destination="e40-1h-wAX" eventType="touchUpInside" id="YiU-5e-sJE"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3YG-K3-LIF">
                                 <rect key="frame" x="227" y="77" width="132" height="141"/>
                             </imageView>
@@ -1148,28 +1107,74 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lZL-WO-RTp">
+                                <rect key="frame" x="73" y="339" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="update profile" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonFord:" destination="e40-1h-wAX" eventType="touchUpInside" id="uPx-ly-bgm"/>
+                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="jWp-Wm-f48"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lle-Re-vUT">
+                                <rect key="frame" x="73" y="399" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="change password" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonHillenbrand:" destination="e40-1h-wAX" eventType="touchUpInside" id="UlW-Ss-Cgk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRm-8p-gHo" userLabel="delete account">
+                                <rect key="frame" x="72" y="459" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="delete account" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonWiley:" destination="e40-1h-wAX" eventType="touchUpInside" id="YiU-5e-sJE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgw-ah-NDp" userLabel="logout">
+                                <rect key="frame" x="73" y="520" width="229" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logout" backgroundImage="text-box">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c4g-mG-9hk" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="XnR-sV-0Vq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XgJ-45-kdk" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="95" id="6m8-Xx-5rO"/>
-                            <constraint firstItem="F6S-55-rjT" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="30" id="8w1-fb-b0r"/>
                             <constraint firstItem="3YG-K3-LIF" firstAttribute="trailing" secondItem="kBg-Ix-WeO" secondAttribute="trailingMargin" id="ChJ-Sc-Fzx"/>
                             <constraint firstItem="8KR-72-6Ua" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" id="FoW-2w-Fcq"/>
                             <constraint firstItem="3YG-K3-LIF" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="33" id="HC6-Ac-afw"/>
                             <constraint firstItem="Y34-af-JkU" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="18" id="L3t-He-vWA"/>
                             <constraint firstItem="8KR-72-6Ua" firstAttribute="centerX" secondItem="WcW-OG-uCX" secondAttribute="centerX" id="NRb-Ru-9XW"/>
+                            <constraint firstItem="F6S-55-rjT" firstAttribute="leading" secondItem="xmy-Jy-EYA" secondAttribute="leading" constant="30" id="dBw-qt-JYD"/>
                             <constraint firstItem="8KR-72-6Ua" firstAttribute="bottom" secondItem="xmy-Jy-EYA" secondAttribute="bottom" id="gTC-I2-Lof"/>
                             <constraint firstItem="Y34-af-JkU" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="35" id="kPs-lm-KW9"/>
                             <constraint firstItem="8KR-72-6Ua" firstAttribute="top" secondItem="xmy-Jy-EYA" secondAttribute="top" constant="20" id="m0C-MP-Hdu"/>
+                            <constraint firstItem="lZL-WO-RTp" firstAttribute="top" secondItem="F6S-55-rjT" secondAttribute="bottom" constant="45" id="mqO-4K-6A2"/>
                             <constraint firstItem="xmy-Jy-EYA" firstAttribute="trailing" secondItem="XgJ-45-kdk" secondAttribute="trailing" constant="128" id="yXa-iy-KbT"/>
                             <constraint firstItem="XgJ-45-kdk" firstAttribute="top" secondItem="3YG-K3-LIF" secondAttribute="bottom" constant="16" id="z27-eZ-lKg"/>
-                            <constraint firstItem="deQ-xF-ZpZ" firstAttribute="top" secondItem="F6S-55-rjT" secondAttribute="bottom" constant="66" id="zlJ-Nn-G4T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xmy-Jy-EYA"/>
                     </view>
                     <navigationItem key="navigationItem" id="H28-Xd-lqz"/>
+                    <connections>
+                        <outlet property="deleteAccountButton" destination="MRm-8p-gHo" id="U6Y-rG-dhi"/>
+                        <outlet property="logoutButton" destination="mgw-ah-NDp" id="ppX-La-dg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsp-S7-cBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="c4g-mG-9hk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1231" y="816"/>
         </scene>
@@ -1189,8 +1194,7 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B6r-wJ-BKr"/>
-        <segue reference="O4y-7l-SDx"/>
+        <segue reference="U10-p6-8x8"/>
         <segue reference="b4N-GZ-P1C"/>
         <segue reference="U69-tf-jAK"/>
         <segue reference="mJJ-vo-gLl"/>
