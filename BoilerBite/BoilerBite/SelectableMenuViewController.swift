@@ -100,8 +100,8 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          // let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as? MenuTableViewCell
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
+           let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as! MenuTableViewCell
+          //  let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell") as! MenuTableViewCell
 
             items = stations[indexPath.section].Items
         //  print(items)
@@ -121,6 +121,19 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
 
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        
+//        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+//            if cell.accessoryType == .checkmark {
+//                cell.accessoryType = .none
+//            }
+//            else {
+//                cell.accessoryType = .checkmark
+//            }
+//        }
+//    }
     
 
     /*
