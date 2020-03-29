@@ -27,6 +27,34 @@ class  insertTable
         // close the database connection
         $this->pdo = null;
     }
+    /* 
+     * Function to find the ID of the user from the given username.
+     * If the user is not in the database, the function will print error message and
+     * return 0.
+     */
+    // function findID($username): int
+    // {
+    //     $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
+    //     try {
+    //         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
+    //         $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
+    //         // Execute query to get userName.
+    //         $q = $pdo->query($sql);
+    //         $q->setFetchMode(PDO::FETCH_ASSOC);
+    //     } catch (PDOException $e) {
+    //         echo $e->getMessage();
+    //     }
+
+    //     $result = $q->fetch();
+
+    //     // Check if username is in database.
+    //     // If username is not in the table $result will be FALSE.
+    //     if ($result == FALSE) {
+    //         return 0;
+    //     }
+    //     $idFromUser = $result['userID'];
+    //     return $idFromUser;
+    // }
 
     // Function to show users in table
     function showUsers(): void
@@ -57,7 +85,9 @@ class  insertTable
     }
 
     /* 
-     * Function to insert a row of data based on the parameters given to the function.    
+     * Function to insert a row of data based on the parameters given to the function.
+     * Checks if any values of height, weight, age is negative. If contains negative values,
+     * the function will print out corresponding fields and exits.    
      */
 
     function insertFood(
@@ -141,6 +171,14 @@ $cal_fat = "123"; //$_POST['calorie_fat'];
 $g_fat = "123"; //$_POST['gram_fat'];
 $g_protein = "123"; //$_POST['gram_protein'];
 $g_carb = "123"; //$_POST['gram_carbs'];
+
+$username = $_POST['userName'];
+$food = $_POST['food_name'];
+$total_cal = $_POST['total_calorie'];
+$cal_fat = $_POST['calorie_fat'];
+$g_fat = $_POST['gram_fat'];
+$g_protein =  $_POST['gram_protein'];
+$g_carb = $_POST['gram_carbs'];
 
 if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo nl2br("Food inserted.\n");
