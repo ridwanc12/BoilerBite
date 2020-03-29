@@ -133,6 +133,9 @@ $obj = new insertTable();
 // Get values from ios application
 $username = "Jeremy"; //$_POST['userName'];
 $pass = "jeremy"; //$_POST['pass'];
+
+$username = $_POST['userName'];
+$pass = $_POST['pass'];
 //echo nl2br(" \nRemoving:
 //Username: $username, Password: $pass\n");
 if ($obj->removeUser($username, $pass)) {

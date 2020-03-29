@@ -66,8 +66,12 @@ func deleteUser(name: String, pass: String){
     task.resume()
 }
 
+// Can use functions like the following
+//insertUser(name: "Rid", mail: "rid", pass: "rid")
+//insertFood(name: "Rid", food: "Protein", cal_total: 1234)
+
 // Function to add food item to progress table
-func insertFood(name: String, pass: String, cal_total: Int){
+func insertFood(name: String, food: String, cal_total: Int){
 //    let name = "Isha"
 //    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/insertFood.php"
@@ -81,7 +85,7 @@ func insertFood(name: String, pass: String, cal_total: Int){
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
-    let postString = "userName=\(name)&food_name=\(pass)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carbs=\(g_carb)"
+    let postString = "userName=\(name)&food_name=\(food)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carbs=\(g_carbs)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
