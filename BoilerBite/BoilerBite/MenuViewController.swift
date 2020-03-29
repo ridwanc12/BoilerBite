@@ -28,9 +28,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let testMenu = getCurrentMenu(hall: "windsor")
+        //let testMenu = getCurrentMenu(hall: "windsor")
 
-        items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
+        //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
         
         diningHallLabel?.text = diningHall.capitalizingFirstLetter()
         

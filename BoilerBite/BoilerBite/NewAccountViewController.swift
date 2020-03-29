@@ -89,6 +89,7 @@ class NewAccountViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }
+        //print("hashpass1 : ", password)
         
         // load data into database UC
         databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
@@ -99,6 +100,7 @@ class NewAccountViewController: UIViewController {
     
     // Action function for when the Back button is pressed
     @IBAction func backTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "inputUserName", sender: self)
     }
     
     // Hide the Number Pad when clicked on the screen
@@ -108,15 +110,20 @@ class NewAccountViewController: UIViewController {
         ageField.resignFirstResponder()
     }
 
-    /*
-    // MARK: - Navigation
+    
+     //MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "inputUserName"){
+                let displayVC = segue.destination as! CreateProfileViewController
+            displayVC.username = username
+        }
     }
-    */
+ */
+    
 
 }
 
@@ -136,7 +143,9 @@ func databaseRequest_signup(username: String, firstname: String, lastname: Strin
     
     // user changed to username
     
-    let urlString = String(format: "http://boilerbite.000webhostapp.com/php/signup_createteam.php?userName=%@&firstname=%@&lastname%@&height=%@&weight=%@&age=%@&password=%@", username, firstname, lastname, height, weight, age, password)
+    //print("hashpass2 : ", password)
+    
+    let urlString = String(format: "http://boilerbite.000webhostapp.com/php/signup_createteam.php?userName=%@&firstName=%@&lastName%@&height=%@&weight=%@&age=%@&password=%@", username, firstname, lastname, height, weight, age, password)
     var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
     
     request.httpMethod = "POST"

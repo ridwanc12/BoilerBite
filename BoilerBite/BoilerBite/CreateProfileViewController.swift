@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateProfileViewController: UIViewController {
+    
+    //var username = String?
 
     @IBOutlet weak var caloriesField: UITextField!
     
@@ -17,6 +19,7 @@ class CreateProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // Getting the macros entered
+        //nameLabel.text = username
         caloriesField.delegate = self
     }
     
@@ -48,6 +51,40 @@ class CreateProfileViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }
+        
+        let username:String = "qwertyuiop"
+        calorie_input(calories:calories, username:username);
+    }
+    
+    func calorie_input(calories: Int ,username: String) {
+        let semaphore = DispatchSemaphore (value: 0)
+
+        //let username: String = usernameField.text ?? ""
+        //let password: String = passwordField.text ?? ""
+        
+        // user changed to username
+        //let username = "sssssss"
+        print("calories: " ,calories)
+        print("username: " ,username)
+        
+        //let urlString = String(format: "http://boilerbite.000webhostapp.com/php/calorie_update.php?username=%@&calories=%@", username, calories)
+        let urlString = String(format: "http://boilerbite.000webhostapp.com/php/calorie_update.php?userName=qwertyuiop&calories_total=150")
+        
+        var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+        
+        request.httpMethod = "POST"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
+          semaphore.signal()
+        }
+
+        task.resume()
+        semaphore.wait()
     }
     
     // Hide the Number Pad when clicked on the screen

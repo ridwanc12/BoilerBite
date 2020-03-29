@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dhN-qy-dw3">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -151,7 +151,7 @@
                                 <state key="normal" image="create-button"/>
                                 <connections>
                                     <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="ShU-rl-cVH"/>
-                                    <segue destination="WtK-h3-W0x" kind="presentation" modalPresentationStyle="fullScreen" id="vfc-p1-0Ri"/>
+                                    <segue destination="WtK-h3-W0x" kind="presentation" identifier="inputUserName" modalPresentationStyle="fullScreen" id="vfc-p1-0Ri"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="first name" textAlignment="center" minimumFontSize="17" background="text-box" translatesAutoresizingMaskIntoConstraints="NO" id="V2t-ai-vBt">
@@ -1044,17 +1044,10 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
+        <segue reference="Cwh-ey-aFg"/>
+        <segue reference="U69-tf-jAK"/>
         <segue reference="mJJ-vo-gLl"/>
         <segue reference="d68-Lj-CRg"/>
         <segue reference="MXM-w3-3cX"/>
-=======
-        <segue reference="B6r-wJ-BKr"/>
-        <segue reference="Cwh-ey-aFg"/>
-        <segue reference="U69-tf-jAK"/>
-        <segue reference="RBJ-nK-agt"/>
-        <segue reference="bo1-yk-fKi"/>
-        <segue reference="1A1-wO-hVh"/>
->>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
     </inferredMetricsTieBreakers>
 </document>
