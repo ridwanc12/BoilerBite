@@ -164,13 +164,13 @@ $obj->showUsers();
 echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
-$username = "Jeremy"; //$_POST['userName'];
-$food = "mac"; //$_POST['food_name'];
-$total_cal = "123"; //$_POST['total_calorie'];
-$cal_fat = "123"; //$_POST['calorie_fat'];
-$g_fat = "123"; //$_POST['gram_fat'];
-$g_protein = "123"; //$_POST['gram_protein'];
-$g_carb = "123"; //$_POST['gram_carbs'];
+// $username = "Jeremy"; //$_POST['userName'];
+// $food = "mac"; //$_POST['food_name'];
+// $total_cal = "123"; //$_POST['total_calorie'];
+// $cal_fat = "123"; //$_POST['calorie_fat'];
+// $g_fat = "123"; //$_POST['gram_fat'];
+// $g_protein = "123"; //$_POST['gram_protein'];
+// $g_carb = "123"; //$_POST['gram_carbs'];
 
 $username = $_POST['userName'];
 $food = $_POST['food_name'];

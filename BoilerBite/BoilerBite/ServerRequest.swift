@@ -76,12 +76,12 @@ func insertFood(name: String, pass: String, cal_total: Int){
     let cal_fat = 0;
     let g_fat = 0;
     let g_protein = 0;
-    let g_carb = 0;
+    let g_carbs = 0;
     
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
-    let postString = "userName=\(name)&food_name=\(pass)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carb=\(g_carb)"
+    let postString = "userName=\(name)&food_name=\(pass)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carbs=\(g_carb)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
