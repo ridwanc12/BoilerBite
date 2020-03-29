@@ -58,6 +58,8 @@ func getFirstDayMenu(hall: String) -> Menu? {
     return(menu)
 }
 
+// Note: This function is currently not useful due to quarantine
+// Thanks COVID
 func getCurrentMenu(hall: String) -> Menu? {
     let date = String(describing: Date())
     let first = date.components(separatedBy: " ").first
@@ -216,11 +218,10 @@ func getItemCalories(itemID: String) -> Int {
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
 // itemID = menu.Meals[0].Stations[0].Items[0].ID
-// Function to test php script to insert new user
-func insertUser(){
-    let name = "Isha"
-    let mail = "isha@gmail.com"
-    let pass = "isha"
+func insertUser(name: String, mail: String, pass: String){
+//    let name = "Isha"
+//    let mail = "isha@gmail.com"
+//    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
@@ -236,10 +237,10 @@ func insertUser(){
             return
         }
 
-        print("response = \(response)")
+        print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(responseString)")
+        print("responseString = \(String(describing: responseString))")
     }
     task.resume()
 }

@@ -11,24 +11,15 @@ import UIKit
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var MenuTableView: UITableView!
+    @IBOutlet weak var diningHallLabel: UILabel!
     
-    struct MenuItem {
-        var calories: Int
-        var name: String
-    }
     
-//    let items = [
-//        MenuItem(calories: 100, name: "One"),
-//        MenuItem(calories: 200, name: "Two"),
-//        MenuItem(calories: 300, name: "Three"),
-//        MenuItem(calories: 400, name: "Four"),
-//        MenuItem(calories: 500, name: "Five"),
-//    ]
-
 
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    
+    var diningHall: String = "earhart"
     
     let sectionHeight = 27
     
@@ -37,14 +28,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let testMenu = getCurrentMenu(hall: "windsor")
+
+        //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
+        
+        diningHallLabel?.text = diningHall.capitalizingFirstLetter()
         
         // Menu for current day Earhart for testing
-        let testMenu = getFirstDayMenu(hall: "earhart")
+        let testMenu = getFirstDayMenu(hall: diningHall)
         
         // All meals
         meals = testMenu!.Meals as! [Meal]
         
-        // Stations for Earhart dinner
+        // Stations for dining hall dinner
         
         // Earhart doesn't serve this Meal
 //        stations = meals[3].Stations as! [Station]
@@ -53,6 +49,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
+//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
@@ -121,9 +118,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
 //        print(calories)
-        if (calories != "-1") {
+        
+        if (calories != "-1" && calories != "0") {
             cell.detailTextLabel?.text = calories + " cal"
             cell.detailTextLabel?.textColor = UIColor.darkGray
+        }
+        else {
+            cell.detailTextLabel?.text = nil
         }
     
         return cell
@@ -140,3 +141,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
 
 }
+
+extension String {
+       func capitalizingFirstLetter() -> String {
+           return prefix(1).capitalized + dropFirst()
+       }
+
+       mutating func capitalizeFirstLetter() {
+           self = self.capitalizingFirstLetter()
+       }
+   }
