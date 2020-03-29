@@ -1,60 +1,64 @@
 //
-//  MenuViewController.swift
+//  SelectableMenuViewController.swift
 //  BoilerBite
 //
-//  Created by Isha Mahadalkar on 2/24/20.
+//  Created by Isha Mahadalkar on 3/26/20.
 //  Copyright © 2020 Isha Mahadalkar. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SelectableMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var MenuTableView: UITableView!
-    @IBOutlet weak var diningHallLabel: UILabel!
+    @IBOutlet weak var createMealButton: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalLabel: UILabel!
     
-
+    // Var to store the running total
+    var totalcalories = 0
+    
+    struct MenuItem {
+        var calories: Int
+        var name: String
+    }
+    
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
-    
-    var diningHall: String = "earhart"
-    
-    let sectionHeight = 27
-    
-    // let items = ["One", "Two", "Three", "Four", "Five"]
 
+    let sectionHeight = 27
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let testMenu = getCurrentMenu(hall: "windsor")
-
-        items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
-        
-        diningHallLabel?.text = diningHall.capitalizingFirstLetter()
-        
         // Menu for current day Earhart for testing
-        let testMenu = getFirstDayMenu(hall: diningHall)
-        
+        let testMenu = getFirstDayMenu(hall: "earhart")
+
         // All meals
         meals = testMenu!.Meals as! [Meal]
-        
-        // Stations for dining hall dinner
-        
+                
+        // Stations for Earhart dinner
+                
         // Earhart doesn't serve this Meal
-//        stations = meals[3].Stations as! [Station]
-        
+        //        stations = meals[3].Stations as! [Station]
+                
         stations = meals[1].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
-//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
+
+        // print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
+        // items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         
-//        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
-//        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
+
     }
+    
+    // Function for the Create Button
+    @IBAction func next(_ sender: Any) {
+        
+    }
+      
     
     // Helper function for counting number of items due to ambiguousness of count() function
     func countItems(items: [Item]) -> Int {
@@ -71,14 +75,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         for _ in stations {
             count += 1
         }
-//        print("SectionsCount: %@", count)
+        // print("SectionsCount: %@", count)
         return count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         let count = countItems(items: stations[section].Items)
-//        print("RowsCount: %@", count)
+        // print("RowsCount: %@", count)
         return count
     }
     
@@ -97,7 +101,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
       // If we wanted to always show a section header regardless of whether or not there were rows in it,
       // then uncomment this line below:
 //        return sectionHeight
-        
+
       // First check if there is a valid section of table.
       // Then we check that for the section there is more than 1 row.
         if (countItems(items: stations[section].Items) > 0) {
@@ -107,18 +111,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as! MenuTableViewCell
+//      let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell") as! MenuTableViewCell
+
         items = stations[indexPath.section].Items
-//        print(items)
+        //  print(items)
+
         let item = items[indexPath.row]
-//        print(item)
+
+        //  print(item)
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
-        let calories = String(getItemCalories(itemID: item.ID))
-//        print(calories)
-        
+            let calories = String(getItemCalories(itemID: item.ID))
+
+        //  print(calories)
         if (calories != "-1" && calories != "0") {
             cell.detailTextLabel?.text = calories + " cal"
             cell.detailTextLabel?.textColor = UIColor.darkGray
@@ -126,10 +132,54 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             cell.detailTextLabel?.text = nil
         }
-    
+
         return cell
     }
     
+    // Function to add the calories of the current item to the running total when a row is selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // let cell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
+        
+        // Finding the calories
+        items = stations[indexPath.section].Items
+        let item = items[indexPath.row]
+        var calories = String(getItemCalories(itemID: item.ID))
+        if (calories == "-1") {
+            calories = "0"
+        }
+        
+        // Add to the running total
+        totalcalories += Int(calories) ?? 0
+        
+        // print("TotalCalories: %@", totalcalories)
+        
+        // Printing to the label
+        let text = String(totalcalories);
+        totalLabel.text = text + " cal"
+        totalLabel.textColor = UIColor.darkGray
+    }
+    
+    // Function to remove the calories of the current item from the running total when a row is deselected
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        // Finding the calories
+        items = stations[indexPath.section].Items
+        let item = items[indexPath.row]
+        var calories = String(getItemCalories(itemID: item.ID))
+        if (calories == "-1") {
+            calories = "0"
+        }
+        
+        // Add to the running total
+        totalcalories -= Int(calories) ?? 0
+        
+        // Printing to the label
+        let text = String(totalcalories);
+        totalLabel.text = text + " cal"
+        totalLabel.textColor = UIColor.darkGray
+    }
+
     /*
     // MARK: - Navigation
 
@@ -141,13 +191,3 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
 
 }
-
-extension String {
-       func capitalizingFirstLetter() -> String {
-           return prefix(1).capitalized + dropFirst()
-       }
-
-       mutating func capitalizeFirstLetter() {
-           self = self.capitalizingFirstLetter()
-       }
-   }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5661A328242BDFA800FC77A0 /* SelectableMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */; };
 		566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1523F8E66F00B14361 /* AppDelegate.swift */; };
 		566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1723F8E66F00B14361 /* SceneDelegate.swift */; };
 		566D1A1D23F8E66F00B14361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A1B23F8E66F00B14361 /* Main.storyboard */; };
@@ -17,14 +18,14 @@
 		566D1A4D2401AD8700B14361 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A4C2401AD8700B14361 /* MainViewController.swift */; };
 		566D1A5B2401BBBA00B14361 /* SFMono-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A4F2401BBB900B14361 /* SFMono-Heavy.otf */; };
 		566D1A5C2401BBBA00B14361 /* SFMono-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A502401BBB900B14361 /* SFMono-SemiboldItalic.otf */; };
-		566D1A5D2401BBBA00B14361 /*  in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A512401BBB900B14361 /*  */; };
+		566D1A5D2401BBBA00B14361 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A512401BBB900B14361 /* SFMono-Regular.otf */; };
 		566D1A5E2401BBBA00B14361 /* SFMono-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A522401BBB900B14361 /* SFMono-LightItalic.otf */; };
 		566D1A5F2401BBBA00B14361 /* SFMono-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A532401BBB900B14361 /* SFMono-BoldItalic.otf */; };
-		566D1A602401BBBA00B14361 /*  in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A542401BBB900B14361 /*  */; };
+		566D1A602401BBBA00B14361 /* SFMono-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A542401BBB900B14361 /* SFMono-RegularItalic.otf */; };
 		566D1A612401BBBA00B14361 /* SFMono-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A552401BBB900B14361 /* SFMono-MediumItalic.otf */; };
 		566D1A622401BBBA00B14361 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A562401BBB900B14361 /* SFMono-Bold.otf */; };
-		566D1A632401BBBA00B14361 /*  in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A572401BBB900B14361 /*  */; };
-		566D1A642401BBBA00B14361 /*  in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A582401BBB900B14361 /*  */; };
+		566D1A632401BBBA00B14361 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A572401BBB900B14361 /* SFMono-Semibold.otf */; };
+		566D1A642401BBBA00B14361 /* SFMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A582401BBB900B14361 /* SFMono-Medium.otf */; };
 		566D1A652401BBBA00B14361 /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A592401BBB900B14361 /* SFMono-Light.otf */; };
 		566D1A662401BBBA00B14361 /* SFMono-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */; };
 		566D1A742404354800B14361 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A732404354800B14361 /* NewAccountViewController.swift */; };
@@ -33,6 +34,7 @@
 		566D1A842408B0D700B14361 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A832408B0D700B14361 /* MenuTableViewCell.swift */; };
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
 		9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934424033CAE00EB1B0D /* DataStructures.swift */; };
+		9344934B242DAA7D00EB1B0D /* ResidentialMenusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableMenuViewController.swift; sourceTree = "<group>"; };
 		566D1A1223F8E66F00B14361 /* BoilerBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566D1A1523F8E66F00B14361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566D1A1723F8E66F00B14361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		9344934124033CA500EB1B0D /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		9344934224033CA500EB1B0D /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9344934424033CAE00EB1B0D /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialMenusController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +147,14 @@
 				566D1A4C2401AD8700B14361 /* MainViewController.swift */,
 				566D1A1723F8E66F00B14361 /* SceneDelegate.swift */,
 				566D1A1B23F8E66F00B14361 /* Main.storyboard */,
+				9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */,
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
 				566D1A2323F8E67100B14361 /* Info.plist */,
 				566D1A732404354800B14361 /* NewAccountViewController.swift */,
 				566D1A752404376A00B14361 /* CreateProfileViewController.swift */,
 				566D1A772404378400B14361 /* MenuViewController.swift */,
+				5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */,
 				566D1A832408B0D700B14361 /* MenuTableViewCell.swift */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
 			);
@@ -182,11 +188,11 @@
 				566D1A5A2401BBB900B14361 /* SFMono-HeavyItalic.otf */,
 				566D1A592401BBB900B14361 /* SFMono-Light.otf */,
 				566D1A522401BBB900B14361 /* SFMono-LightItalic.otf */,
-				566D1A582401BBB900B14361 /*  */,
+				566D1A582401BBB900B14361 /* SFMono-Medium.otf */,
 				566D1A552401BBB900B14361 /* SFMono-MediumItalic.otf */,
-				566D1A512401BBB900B14361 /*  */,
-				566D1A542401BBB900B14361 /*  */,
-				566D1A572401BBB900B14361 /*  */,
+				566D1A512401BBB900B14361 /* SFMono-Regular.otf */,
+				566D1A542401BBB900B14361 /* SFMono-RegularItalic.otf */,
+				566D1A572401BBB900B14361 /* SFMono-Semibold.otf */,
 				566D1A502401BBB900B14361 /* SFMono-SemiboldItalic.otf */,
 			);
 			path = Fonts;
@@ -296,7 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566D1A5D2401BBBA00B14361 /*  in Resources */,
+				566D1A5D2401BBBA00B14361 /* SFMono-Regular.otf in Resources */,
 				566D1A622401BBBA00B14361 /* SFMono-Bold.otf in Resources */,
 				566D1A2223F8E67100B14361 /* LaunchScreen.storyboard in Resources */,
 				566D1A612401BBBA00B14361 /* SFMono-MediumItalic.otf in Resources */,
@@ -304,13 +310,13 @@
 				566D1A5C2401BBBA00B14361 /* SFMono-SemiboldItalic.otf in Resources */,
 				566D1A1F23F8E67100B14361 /* Assets.xcassets in Resources */,
 				566D1A1D23F8E66F00B14361 /* Main.storyboard in Resources */,
-				566D1A632401BBBA00B14361 /*  in Resources */,
+				566D1A632401BBBA00B14361 /* SFMono-Semibold.otf in Resources */,
 				566D1A5E2401BBBA00B14361 /* SFMono-LightItalic.otf in Resources */,
 				566D1A662401BBBA00B14361 /* SFMono-HeavyItalic.otf in Resources */,
-				566D1A602401BBBA00B14361 /*  in Resources */,
+				566D1A602401BBBA00B14361 /* SFMono-RegularItalic.otf in Resources */,
 				566D1A5B2401BBBA00B14361 /* SFMono-Heavy.otf in Resources */,
 				566D1A652401BBBA00B14361 /* SFMono-Light.otf in Resources */,
-				566D1A642401BBBA00B14361 /*  in Resources */,
+				566D1A642401BBBA00B14361 /* SFMono-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +346,12 @@
 				9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */,
 				566D1A782404378400B14361 /* MenuViewController.swift in Sources */,
 				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
+				9344934B242DAA7D00EB1B0D /* ResidentialMenusController.swift in Sources */,
 				566D1A842408B0D700B14361 /* MenuTableViewCell.swift in Sources */,
 				566D1A742404354800B14361 /* NewAccountViewController.swift in Sources */,
 				9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */,
 				566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */,
+				5661A328242BDFA800FC77A0 /* SelectableMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

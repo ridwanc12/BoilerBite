@@ -56,7 +56,7 @@ class  checkUser {
     /* Function to check if username and password match by comparing
      * userID selected from the table by both values. Returns 1 if userID
      * catches, else returns 0.
-     */
+     */ 
 
     function verifyUser($username, $pass): int{
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
@@ -101,6 +101,12 @@ class  checkUser {
     $name = 'Rid';
     $pass = 'rid';
     $obj->verifyUser($name, $pass);
-
-
 ?>
+
+<html>
+    <head>
+        <title>
+            checkUser
+        </title>
+    </head>
+</html>

@@ -33,6 +33,33 @@ func getMenu(hall: String, date: String) -> Menu? {
     return(menu)
 }
 
+func getFirstDayMenu(hall: String) -> Menu? {
+    let address = String(format: "https://api.hfs.purdue.edu/menus/v2/locations/%@/%@", hall, "2020-01-13")
+    let requestLocation = URL(string: address)
+    
+    var menu: Menu?
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+        do {
+            menu = try JSONDecoder().decode(Menu.self, from: data!)
+            semaphore.signal()
+            //print(menu!)
+        } catch {
+            print("There was an error in the menu api request")
+            print(error)
+        }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(menu)
+}
+
+// Note: This function is currently not useful due to quarantine
+// Thanks COVID
 func getCurrentMenu(hall: String) -> Menu? {
     let date = String(describing: Date())
     let first = date.components(separatedBy: " ").first
@@ -164,7 +191,13 @@ func getItemCalories(itemID: String) -> Int {
     let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
     do {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
-        calories = (itemDetails?.Nutrition![1].Value)!
+        let nutrition = itemDetails?.Nutrition
+        if (nutrition != nil) {
+            calories = (itemDetails?.Nutrition![1].Value)!
+        }
+        else {
+            calories = -1
+        }
         semaphore.signal()
     } catch {
         print("There was an error in the item api request")
@@ -185,3 +218,28 @@ func getItemCalories(itemID: String) -> Int {
 // https://api.hfs.purdue.edu/menus/v2/items/6c883ba0-e283-4086-ab01-e181a6615435
 
 // itemID = menu.Meals[0].Stations[0].Items[0].ID
+func insertUser(name: String, mail: String, pass: String){
+//    let name = "Isha"
+//    let mail = "isha@gmail.com"
+//    let pass = "isha"
+    let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    request.httpMethod = "POST"
+    let postString = "userName=\(name)&userEmail=\(mail)&pass=\(pass)"
+    request.httpBody = postString.data(using: String.Encoding.utf8)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        print("response = \(String(describing: response))")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        print("responseString = \(String(describing: responseString))")
+    }
+    task.resume()
+}

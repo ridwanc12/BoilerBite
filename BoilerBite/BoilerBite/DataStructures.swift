@@ -101,3 +101,19 @@ extension NutritionFact: CustomStringConvertible {
         return returnValue
     }
 }
+
+// Data structure for database
+
+struct User: Decodable {
+    var ID:Int
+    var username:String
+    var userEmail:String
+    var password:String
+}
+
+struct UserInfo: Decodable {
+    var ID:Int
+    var height:Int
+    var weight:Int
+    var age:Int
+}
