@@ -883,6 +883,23 @@
                                     <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="Cwh-ey-aFg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="32c-pM-iKp" userLabel="create_button">
+                                <rect key="frame" x="32" y="708" width="143" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="create-meal-button"/>
+                                <connections>
+                                    <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="kdj-so-8bS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 cal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-wS-HDR">
+                                <rect key="frame" x="196" y="713" width="137" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -902,7 +919,9 @@
                         <viewLayoutGuide key="safeArea" id="8zS-fk-EqQ"/>
                     </view>
                     <connections>
+                        <outlet property="createMealButton" destination="32c-pM-iKp" id="PPS-OO-5pT"/>
                         <outlet property="tableView" destination="LFe-E7-32V" id="spZ-K0-OiF"/>
+                        <outlet property="totalLabel" destination="sC5-wS-HDR" id="Hfv-qr-6fc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZv-7u-bbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1014,6 +1033,7 @@
     <resources>
         <image name="bg" width="375" height="812"/>
         <image name="create-button" width="124" height="71"/>
+        <image name="create-meal-button" width="197" height="71"/>
         <image name="enter-button" width="124" height="71"/>
         <image name="login-button" width="124" height="71"/>
         <image name="logo" width="132" height="141"/>
@@ -1024,10 +1044,11 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="B6r-wJ-BKr"/>
         <segue reference="Cwh-ey-aFg"/>
         <segue reference="U69-tf-jAK"/>
         <segue reference="RBJ-nK-agt"/>
-        <segue reference="jbh-Da-5zV"/>
+        <segue reference="d68-Lj-CRg"/>
         <segue reference="1A1-wO-hVh"/>
     </inferredMetricsTieBreakers>
 </document>

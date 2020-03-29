@@ -10,8 +10,13 @@ import UIKit
 
 class SelectableMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
+    @IBOutlet weak var createMealButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalLabel: UILabel!
+    
+    // Var to store the running total
+    var totalcalories = 0
     
     struct MenuItem {
         var calories: Int
@@ -48,6 +53,11 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Do any additional setup after loading the view.
 
     }
+    
+    // Function for the Create Button
+    @IBAction func next(_ sender: Any) {
+    }
+      
     
     // Helper function for counting number of items due to ambiguousness of count() function
     func countItems(items: [Item]) -> Int {
@@ -122,19 +132,43 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
-//            if cell.accessoryType == .checkmark {
-//                cell.accessoryType = .none
-//            }
-//            else {
-//                cell.accessoryType = .checkmark
-//            }
-//        }
-//    }
+    // Function to add the calories of the current item to the running total when a row is selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // let cell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
+        
+        // Finding the calories
+        items = stations[indexPath.section].Items
+        let item = items[indexPath.row]
+        let calories = String(getItemCalories(itemID: item.ID))
+        
+        // Add to the running total
+        totalcalories += Int(calories) ?? 0
+        
+        // print("TotalCalories: %@", totalcalories)
+        
+        // Printing to the label
+        let text = String(totalcalories);
+        totalLabel.text = text + " cal"
+        totalLabel.textColor = UIColor.darkGray
+    }
     
+    // Function to remove the calories of the current item from the running total when a row is deselected
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        // Finding the calories
+        items = stations[indexPath.section].Items
+        let item = items[indexPath.row]
+        let calories = String(getItemCalories(itemID: item.ID))
+        
+        // Add to the running total
+        totalcalories -= Int(calories) ?? 0
+        
+        // Printing to the label
+        let text = String(totalcalories);
+        totalLabel.text = text + " cal"
+        totalLabel.textColor = UIColor.darkGray
+    }
 
     /*
     // MARK: - Navigation
