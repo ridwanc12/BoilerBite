@@ -34,7 +34,7 @@ class  insertTable
      * the function will print out corresponding fields and exits.    
      */
 
-    function insertSingleRow($username, $email, $pass)
+    function insertUser($username, $email, $pass)
     {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
@@ -69,14 +69,6 @@ class  insertTable
             return 0;
         }
 
-        $flag = 0;
-        $error = '';
-        // If any of the above values are negative, print error message and exit.
-        if ($flag == 1) {
-            $error = $error . "Query failed.\n";
-            echo nl2br("$error");
-            return 0;
-        }
         // Hash the password.
         $passwrd = sha1($pass);
         // Insert values into array to be executed
@@ -107,29 +99,17 @@ class  insertTable
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
-            $q = $pdo->query($sql);
-            $q->setFetchMode(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
 
-        $result = $q->fetch();
-
-        // Check if username is in database.
-        // If username is not in the table $result will be FALSE.
-        if ($result == FALSE) {
-            return 0;
-        }
-        $id = $result['userID'];
-        $task = array(':id' => $id);
+        $task = array(':name' => $username);
 
         $sql = 'INSERT INTO goals (
-                        userID
+                        userName
                     )
                     VALUES (
-                        :id
+                        :name
                     );';
         $q = $this->pdo->prepare($sql);
 
@@ -142,29 +122,17 @@ class  insertTable
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-            $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-            // Execute query to get userName.
-            $q = $pdo->query($sql);
-            $q->setFetchMode(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
 
-        $result = $q->fetch();
-
-        // Check if username is in database.
-        // If username is not in the table $result will be FALSE.
-        if ($result == FALSE) {
-            return 0;
-        }
-        $id = $result['userID'];
-        $task = array(':id' => $id);
+        $task = array(':name' => $username);
 
         $sql = 'INSERT INTO info (
-                        userID
+                        userName
                     )
                     VALUES (
-                        :id
+                        :name
                     );';
         $q = $this->pdo->prepare($sql);
 
@@ -177,18 +145,16 @@ class  insertTable
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-        $sql = 'SELECT userID,
-                        userName,
+        $sql = 'SELECT  userName,
                         userEmail,
                         hashPass
                     FROM profiles;';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
+
         // Print out values returned by query
         $flag = 0;
         while ($user = $q->fetch()) {
-            $holder = $user['userID'];
-            echo "UserID: $holder, ";
             $holder = $user['userName'];
             echo "Username: $holder, ";
             $holder = $user['userEmail'];
@@ -217,16 +183,16 @@ $email = "jeremy";
 $pass = "jeremy";
 echo nl2br(" \nInserting:
                  Username: $username, Email: $email, Password: $pass\n");
-if ($obj->insertSingleRow($username, $email, $pass)) {
+if ($obj->insertUser($username, $email, $pass)) {
     if ($obj->initializeGoal($username)) {
-        //echo nl2br("Goals initialized.\n");
+        echo nl2br("Goals initialized.\n");
         if ($obj->initializeInfo($username)) {
             echo nl2br("Info initialized\n");
         } else {
             echo nl2br("Something is wrong\n");
         }
     } else {
-        //echo nl2br("Error when trying to initialize goals.\n");
+        echo nl2br("Error when trying to initialize goals.\n");
     }
     echo nl2br("Values inserted.\n\n");
 } else {
@@ -236,9 +202,11 @@ $obj->showUsers();
 ?>
 
 <html>
-    <head>
-        <title>
-            insertUser
-        </title>
-    </head>
+
+<head>
+    <title>
+        insertUser
+    </title>
+</head>
+
 </html>
