@@ -35,7 +35,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         let testMenu = getCurrentMenu(hall: "windsor")
 
-        items = (testMenu?.Meals[3]?.Stations[0]!.Items)!
+        //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
