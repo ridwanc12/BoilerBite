@@ -94,6 +94,9 @@ class NewAccountViewController: UIViewController {
         // load data into database UC
         databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
         
+        global_username = username
+        global_password = password
+        
         // end loading UC
         
     }

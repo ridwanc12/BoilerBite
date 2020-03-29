@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 
+var global_username: String = "Not logged in"
+var global_password: String = "Not logged in"
+
 func insertUser(name: String, mail: String, pass: String){
 //    let name = "Isha"
 //    let mail = "isha@gmail.com"
