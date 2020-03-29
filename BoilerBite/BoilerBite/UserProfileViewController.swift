@@ -9,7 +9,20 @@
 import UIKit
 
 class UserProfileViewController: UIViewController {
-
+    
+    // Outlet for the Name (First Last) displayed at the top of the screen
+    // Which should be updated to show the name of the current user
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    // Outlets for the user information
+    @IBOutlet weak var heightText: UITextField!
+    @IBOutlet weak var weightText: UITextField!
+    @IBOutlet weak var ageText: UITextField!
+    @IBOutlet weak var caloriesText: UITextField!
+    
+    // Outlet for the Update Button
+    @IBOutlet weak var updateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
