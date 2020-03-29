@@ -114,7 +114,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
 //        print(calories)
-        if (calories != "-1") {
+        if (calories != "-1" && calories != "0") {
             cell.detailTextLabel?.text = calories + " cal"
             cell.detailTextLabel?.textColor = UIColor.darkGray
         }

@@ -110,7 +110,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as! MenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as! MenuTableViewCell
           //  let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell") as! MenuTableViewCell
 
             items = stations[indexPath.section].Items
@@ -124,10 +124,13 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             let calories = String(getItemCalories(itemID: item.ID))
 
         //  print(calories)
-            if (calories != "-1") {
-                cell.detailTextLabel?.text = calories + " cal"
-                cell.detailTextLabel?.textColor = UIColor.darkGray
-            }
+        if (calories != "-1" && calories != "0") {
+            cell.detailTextLabel?.text = calories + " cal"
+            cell.detailTextLabel?.textColor = UIColor.darkGray
+        }
+        else {
+            cell.detailTextLabel?.text = nil
+        }
 
         return cell
     }
@@ -140,7 +143,10 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Finding the calories
         items = stations[indexPath.section].Items
         let item = items[indexPath.row]
-        let calories = String(getItemCalories(itemID: item.ID))
+        var calories = String(getItemCalories(itemID: item.ID))
+        if (calories == "-1") {
+            calories = "0"
+        }
         
         // Add to the running total
         totalcalories += Int(calories) ?? 0
@@ -159,7 +165,10 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Finding the calories
         items = stations[indexPath.section].Items
         let item = items[indexPath.row]
-        let calories = String(getItemCalories(itemID: item.ID))
+        var calories = String(getItemCalories(itemID: item.ID))
+        if (calories == "-1") {
+            calories = "0"
+        }
         
         // Add to the running total
         totalcalories -= Int(calories) ?? 0
