@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -182,7 +181,11 @@ class MainViewController: UIViewController {
         
         // user changed to username
         
-        let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
+        //let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
+        
+        let urlString = String(format: "https://boilerbite.000webhostapp.com/php/signup_createteam.php?name=%@&memeber=%@", user, password);
+        global_username = user
+        global_password = password
         var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -193,6 +196,16 @@ class MainViewController: UIViewController {
             print(String(describing: error))
             return
           }
+          do {
+              if let json = try JSONSerialization.jsonObject(with: data) as? [String: String], let name = json["name"] {
+                  print("name = \(name)")   // if everything is good, you'll see "William"
+              }
+          } catch let parseError {
+              print("parsing error: \(parseError)")
+              //let responseString = String(data: data, encoding: .utf8)
+              //print("raw response: \(responseString)")
+          }
+            
           print(String(data: data, encoding: .utf8)!)
           semaphore.signal()
         }

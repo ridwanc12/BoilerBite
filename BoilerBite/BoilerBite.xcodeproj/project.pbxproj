@@ -35,6 +35,7 @@
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
 		9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934424033CAE00EB1B0D /* DataStructures.swift */; };
 		9344934B242DAA7D00EB1B0D /* ResidentialMenusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */; };
+		9344934D24312FE000EB1B0D /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934C24312FE000EB1B0D /* ServerRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		9344934224033CA500EB1B0D /* api_test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = api_test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9344934424033CAE00EB1B0D /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialMenusController.swift; sourceTree = "<group>"; };
+		9344934C24312FE000EB1B0D /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,17 +145,18 @@
 				9344934424033CAE00EB1B0D /* DataStructures.swift */,
 				9344934224033CA500EB1B0D /* api_test.playground */,
 				9344934124033CA500EB1B0D /* ApiRequest.swift */,
+				9344934C24312FE000EB1B0D /* ServerRequest.swift */,
 				566D1A1523F8E66F00B14361 /* AppDelegate.swift */,
 				566D1A4C2401AD8700B14361 /* MainViewController.swift */,
 				566D1A1723F8E66F00B14361 /* SceneDelegate.swift */,
+				566D1A772404378400B14361 /* MenuViewController.swift */,
+				566D1A732404354800B14361 /* NewAccountViewController.swift */,
 				566D1A1B23F8E66F00B14361 /* Main.storyboard */,
 				9344934A242DAA7C00EB1B0D /* ResidentialMenusController.swift */,
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
 				566D1A2323F8E67100B14361 /* Info.plist */,
-				566D1A732404354800B14361 /* NewAccountViewController.swift */,
 				566D1A752404376A00B14361 /* CreateProfileViewController.swift */,
-				566D1A772404378400B14361 /* MenuViewController.swift */,
 				5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */,
 				566D1A832408B0D700B14361 /* MenuTableViewCell.swift */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
@@ -347,6 +350,7 @@
 				566D1A782404378400B14361 /* MenuViewController.swift in Sources */,
 				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
 				9344934B242DAA7D00EB1B0D /* ResidentialMenusController.swift in Sources */,
+				9344934D24312FE000EB1B0D /* ServerRequest.swift in Sources */,
 				566D1A842408B0D700B14361 /* MenuTableViewCell.swift in Sources */,
 				566D1A742404354800B14361 /* NewAccountViewController.swift in Sources */,
 				9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */,

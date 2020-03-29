@@ -12,8 +12,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var MenuTableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
-    
-    
 
     var items: [Item] = []
     var meals: [Meal] = []
@@ -28,6 +26,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let testMenu = getCurrentMenu(hall: "windsor")
+
+        //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
         
         diningHallLabel?.text = diningHall.capitalizingFirstLetter()
         
@@ -46,6 +47,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
+//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
@@ -114,9 +116,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
 //        print(calories)
+        
         if (calories != "-1" && calories != "0") {
             cell.detailTextLabel?.text = calories + " cal"
             cell.detailTextLabel?.textColor = UIColor.darkGray
+        }
+        else {
+            cell.detailTextLabel?.text = nil
         }
     
         return cell

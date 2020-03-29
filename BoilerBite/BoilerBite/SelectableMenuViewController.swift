@@ -35,17 +35,17 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         let testMenu = getFirstDayMenu(hall: "earhart")
 
         // All meals
-                meals = testMenu!.Meals as! [Meal]
+        meals = testMenu!.Meals as! [Meal]
                 
-                // Stations for Earhart dinner
+        // Stations for Earhart dinner
                 
-                // Earhart doesn't serve this Meal
+        // Earhart doesn't serve this Meal
         //        stations = meals[3].Stations as! [Station]
                 
-                stations = meals[1].Stations as! [Station]
-                if (stations.isEmpty) {
-                    stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
-                }
+        stations = meals[1].Stations as! [Station]
+        if (stations.isEmpty) {
+            stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
+        }
 
         // print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
         // items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
@@ -56,6 +56,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     // Function for the Create Button
     @IBAction func next(_ sender: Any) {
+        
     }
       
     
@@ -97,26 +98,26 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> Int {
-          // If we wanted to always show a section header regardless of whether or not there were rows in it,
-          // then uncomment this line below:
-    //        return sectionHeight
+      // If we wanted to always show a section header regardless of whether or not there were rows in it,
+      // then uncomment this line below:
+//        return sectionHeight
 
-          // First check if there is a valid section of table.
-          // Then we check that for the section there is more than 1 row.
-            if (countItems(items: stations[section].Items) > 0) {
-                return sectionHeight
-            }
-            return 0
+      // First check if there is a valid section of table.
+      // Then we check that for the section there is more than 1 row.
+        if (countItems(items: stations[section].Items) > 0) {
+            return sectionHeight
         }
+        return 0
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath) as! MenuTableViewCell
-          //  let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell") as! MenuTableViewCell
+//      let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell") as! MenuTableViewCell
 
-            items = stations[indexPath.section].Items
+        items = stations[indexPath.section].Items
         //  print(items)
 
-            let item = items[indexPath.row]
+        let item = items[indexPath.row]
 
         //  print(item)
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
