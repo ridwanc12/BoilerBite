@@ -63,7 +63,26 @@ class  insertTable
             $pass = sha1($pass);
             // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
+                // Delete user from profiles
                 $sql = "DELETE FROM profiles WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                // Delete user from goals
+                $sql = "DELETE FROM goals WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                //Delete user from info
+                $sql = "DELETE FROM info WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                // Delete user from progress
+                $sql = "DELETE FROM progress WHERE userName = :name";
                 $delete = $this->pdo->prepare($sql);
                 $delete->bindValue(':name', $username);
                 $delete->execute();
