@@ -246,9 +246,9 @@ func insertUser(name: String, mail: String, pass: String){
 }
 
 // Function to test php script to delete user from database
-func deleteUser(){
-    let name = "Isha"
-    let pass = "isha"
+func deleteUser(name: String, pass: String){
+//    let name = "Isha"
+//    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
@@ -264,20 +264,26 @@ func deleteUser(){
             return
         }
 
-        print("response = \(response)")
+        print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(responseString)")
+        print("responseString = \(String(describing: responseString))")
     }
     task.resume()
 }
 
 // Function to add food item to progress table
-func insertFood(){
-    let name = "Isha"
-    let mail = "isha@gmail.com"
-    let pass = "isha"
+func insertFood(name: String, pass: String, cal_total: Int){
+//    let name = "Isha"
+//    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/insertFood.php"
+    
+//    let cal_total = 0;
+    let cal_fat = 0;
+    let g_fat = 0;
+    let g_protein = 0;
+    let g_carb = 0;
+    
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
@@ -292,10 +298,10 @@ func insertFood(){
             return
         }
 
-        print("response = \(response)")
+        print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(responseString)")
+        print("responseString = \(String(describing: responseString))")
     }
     task.resume()
 }
