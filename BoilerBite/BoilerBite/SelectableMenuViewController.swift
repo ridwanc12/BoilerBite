@@ -17,6 +17,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     // Var to store the running total
     var totalcalories = 0
+    var itemList: [String: Int] = [:]
     
     struct MenuItem {
         var calories: Int
@@ -55,8 +56,16 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     // Function for the Create Button
-    @IBAction func next(_ sender: Any) {
-        
+    @IBAction func createMealButton(_ sender: Any) {
+//        global_username = "test1"
+//        let food_name = itemList.first?.value
+        print("meal button")
+//        print(food_name!)
+        for (key, value) in itemList {
+            insertFood(name: global_username, food: key, cal_total: value)
+        }
+//        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        totalcalories = 0
     }
       
     
@@ -144,10 +153,15 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Finding the calories
         items = stations[indexPath.section].Items
         let item = items[indexPath.row]
+        let item_name = item.Name
+        print(item_name)
         var calories = String(getItemCalories(itemID: item.ID))
         if (calories == "-1") {
             calories = "0"
         }
+        
+        // Add item and calories to dictionary of items
+        itemList[item_name] = Int(calories)
         
         // Add to the running total
         totalcalories += Int(calories) ?? 0
@@ -166,10 +180,14 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Finding the calories
         items = stations[indexPath.section].Items
         let item = items[indexPath.row]
+        let item_name = item.Name
         var calories = String(getItemCalories(itemID: item.ID))
         if (calories == "-1") {
             calories = "0"
         }
+        
+        // Add item and calories to dictionary of items
+        itemList[item_name] = Int(calories)
         
         // Add to the running total
         totalcalories -= Int(calories) ?? 0

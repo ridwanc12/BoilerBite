@@ -119,14 +119,14 @@ class  insertTable
 
         // Check if query returned results
         $user = $q->fetch();
-        if (!$user) {
+        if ($user == false) {
             echo nl2br("No such user.\n\n");
             return;
         } else {
             echo nl2br("user found.\n\n");
         }
 
-        // Insert value into array to 
+        //Insert value into array to 
         $task = array(
             ':name' => $username,
             ':food' => $food,
@@ -159,6 +159,7 @@ class  insertTable
         return $q->execute($task);
     }
 }
+
 $obj = new insertTable();
 $obj->showUsers();
 echo nl2br("Begin unit testing for inserting food item:\n\n");
