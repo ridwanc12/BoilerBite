@@ -74,9 +74,9 @@ func deleteUser(name: String, pass: String){
 func insertFood(name: String, food: String, cal_total: Int){
 //    let name = "Isha"
 //    let pass = "isha"
+//    let cal_total = 0;
     let link = "https://boilerbite.000webhostapp.com/php/insertFood.php"
     
-//    let cal_total = 0;
     let cal_fat = 0;
     let g_fat = 0;
     let g_protein = 0;
