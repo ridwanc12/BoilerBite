@@ -53,7 +53,7 @@ class  insertTable
             if ($pass_result) {
                 // Store result into $holder to check with password provided
                 $holder = $pass_result['hashPass'];
-                echo "$holder";
+                //echo "$holder";
             } else {
                 // Return function since query returned nothing
                 echo nl2br("\nNo such user.\n");
@@ -63,7 +63,26 @@ class  insertTable
             $pass = sha1($pass);
             // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
+                // Delete user from profiles
                 $sql = "DELETE FROM profiles WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                // Delete user from goals
+                $sql = "DELETE FROM goals WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                //Delete user from info
+                $sql = "DELETE FROM info WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                // Delete user from progress
+                $sql = "DELETE FROM progress WHERE userName = :name";
                 $delete = $this->pdo->prepare($sql);
                 $delete->bindValue(':name', $username);
                 $delete->execute();
@@ -71,8 +90,10 @@ class  insertTable
                 echo nl2br("Incorrect password.");
             }
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
+            return false;
         }
+        return true;
     }
 
     // Function to show users in table
@@ -107,20 +128,23 @@ class  insertTable
 
 // Create new obj to run function
 $obj = new insertTable();
-$obj->showUsers();
+//$obj->showUsers();
 
 // Get values from ios application
+$username = "Jeremy"; //$_POST['userName'];
+$pass = "jeremy"; //$_POST['pass'];
+
 $username = $_POST['userName'];
 $pass = $_POST['pass'];
-echo nl2br(" \nRemoving:
-                 Username: $username, Password: $pass\n");
+//echo nl2br(" \nRemoving:
+//Username: $username, Password: $pass\n");
 if ($obj->removeUser($username, $pass)) {
-    echo nl2br("$username deleted.\n\n");
+    echo nl2br("User deleted.\n");
 } else {
-    echo nl2br("User deletion failed.\n\n");
+    echo nl2br("User deletion failed.\n");
 }
 
-$obj->showUsers();
+//$obj->showUsers();
 ?>
 
 <html>

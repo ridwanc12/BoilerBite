@@ -175,12 +175,12 @@ $obj = new insertTable();
 $obj->showUsers();
 
 // Get values from ios application
-// $username = $_POST['userName'];
-// $email = $_POST['userEmail'];
-// $pass = $_POST['pass'];
-$username = "Jeremy";
-$email = "jeremy";
-$pass = "jeremy";
+$username = $_POST['userName'];
+$email = $_POST['userEmail'];
+$pass = $_POST['pass'];
+// $username = "Jeremy";
+// $email = "jeremy";
+// $pass = "jeremy";
 echo nl2br(" \nInserting:
                  Username: $username, Email: $email, Password: $pass\n");
 if ($obj->insertUser($username, $email, $pass)) {
