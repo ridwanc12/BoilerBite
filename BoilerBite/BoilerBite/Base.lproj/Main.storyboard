@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -359,7 +359,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="NtG-yk-imF">
             <objects>
-                <viewController id="sIb-zm-i3w" userLabel="Main Menu View Controller" customClass="ResidentialMenusController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sIb-zm-i3w" userLabel="Main Menu View Controller" customClass="MainMenuViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjE-0t-tkv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -922,7 +922,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="create-meal-button"/>
                                 <connections>
+                                    <action selector="createMealButton:" destination="5Qo-tK-luH" eventType="touchUpInside" id="Orw-YN-M6t"/>
                                     <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="kdj-so-8bS"/>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="0E4-5U-m3p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 cal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-wS-HDR">
@@ -1114,7 +1116,6 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonFord:" destination="e40-1h-wAX" eventType="touchUpInside" id="uPx-ly-bgm"/>
                                     <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="jWp-Wm-f48"/>
                                 </connections>
                             </button>
@@ -1124,9 +1125,6 @@
                                 <state key="normal" title="change password" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="buttonHillenbrand:" destination="e40-1h-wAX" eventType="touchUpInside" id="UlW-Ss-Cgk"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRm-8p-gHo" userLabel="delete account">
                                 <rect key="frame" x="72" y="459" width="229" height="44"/>
@@ -1135,7 +1133,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonWiley:" destination="e40-1h-wAX" eventType="touchUpInside" id="YiU-5e-sJE"/>
+                                    <action selector="deleteButton:" destination="e40-1h-wAX" eventType="touchUpInside" id="M7J-78-mCx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgw-ah-NDp" userLabel="logout">
@@ -1145,6 +1143,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="logoutButton:" destination="e40-1h-wAX" eventType="touchUpInside" id="lc4-1q-7UA"/>
                                     <segue destination="c4g-mG-9hk" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="XnR-sV-0Vq"/>
                                 </connections>
                             </button>
@@ -1168,10 +1167,6 @@
                         <viewLayoutGuide key="safeArea" id="xmy-Jy-EYA"/>
                     </view>
                     <navigationItem key="navigationItem" id="H28-Xd-lqz"/>
-                    <connections>
-                        <outlet property="deleteAccountButton" destination="MRm-8p-gHo" id="U6Y-rG-dhi"/>
-                        <outlet property="logoutButton" destination="mgw-ah-NDp" id="ppX-La-dg7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsp-S7-cBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="c4g-mG-9hk" userLabel="Exit" sceneMemberID="exit"/>
