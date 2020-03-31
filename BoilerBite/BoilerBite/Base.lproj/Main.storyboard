@@ -672,6 +672,7 @@
                                 <state key="normal" image="update-button"/>
                                 <connections>
                                     <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="7LZ-YO-qZ1"/>
+                                    <action selector="enterTapped:" destination="IOJ-pw-yiK" eventType="touchUpInside" id="bGX-bM-XtC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -711,7 +712,7 @@
                         <outlet property="caloriesText" destination="Xlg-EL-uEd" id="FY2-Lp-Bia"/>
                         <outlet property="heightText" destination="EvH-Tq-0zM" id="MlF-N1-X5V"/>
                         <outlet property="nameLabel" destination="KIm-f4-7rI" id="Mrk-Zr-XV6"/>
-                        <outlet property="updateButton" destination="wjx-g4-IT8" id="w85-i6-A32"/>
+                        <outlet property="updateButton" destination="wjx-g4-IT8" id="Gb4-Um-UYJ"/>
                         <outlet property="weightText" destination="L2q-lV-U4M" id="2a8-Af-x5p"/>
                     </connections>
                 </viewController>
@@ -1190,7 +1191,7 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U10-p6-8x8"/>
+        <segue reference="O4y-7l-SDx"/>
         <segue reference="b4N-GZ-P1C"/>
         <segue reference="U69-tf-jAK"/>
         <segue reference="mJJ-vo-gLl"/>

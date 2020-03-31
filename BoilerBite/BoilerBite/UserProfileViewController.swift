@@ -23,6 +23,7 @@ class UserProfileViewController: UIViewController {
     // Outlet for the Update Button
     @IBOutlet weak var updateButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
