@@ -12,14 +12,68 @@ class SettingsViewController: UIViewController {
 
     // Outlets for the Delete Account and Logout Button
     
-    @IBOutlet weak var deleteAccountButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
+    
+    @IBAction func deleteButton(_ sender: UIButton) {
+//        showInputDialog()
+        global_username = "ridwan"
+        global_password = "ridwan"
+        deleteUser(name: global_username, pass: global_password)
+        print("Delete action performed")
+        global_username = "Not logged in"
+        global_password = "Not logged in"
+    }
+    
+    @IBAction func logoutButton(_ sender: UIButton) {
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
+    func showInputDialog() {
+        //Creating UIAlertController and
+        //Setting title and message for the alert dialog
+        let alertController = UIAlertController(title: "Enter login information", message: "Enter your username and password", preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+            
+            //getting the input values from user
+            let username = alertController.textFields?[0].text
+            let password = alertController.textFields?[1].text
+            
+            
+            if (username! != "" && password! != "") {
+                print(username!)
+                print(password!)
+            }
+            else {
+                print("nay")
+            }
+            
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Username"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Password"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
