@@ -109,7 +109,7 @@ func insertFood(name: String, food: String, cal_total: Int){
             return
         }
 
-        print("response = \(String(describing: response))")
+        //print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         print("responseString = \(String(describing: responseString))")
