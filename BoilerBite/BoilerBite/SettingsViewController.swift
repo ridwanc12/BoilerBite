@@ -15,8 +15,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction func deleteButton(_ sender: UIButton) {
 //        showInputDialog()
-        global_username = "ridwan"
-        global_password = "ridwan"
+//        global_username = "ridwan"
+//        global_password = "ridwan"
+        let incorrect_pass = global_password + global_username
+        
+        deleteUser(name: global_username, pass: incorrect_pass)
+        sleep(1)
         deleteUser(name: global_username, pass: global_password)
         print("Delete action performed")
         global_username = "Not logged in"
