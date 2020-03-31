@@ -36,7 +36,7 @@ class NewAccountViewController: UIViewController {
     @IBAction func createTapped(_ sender: Any) {
         let username: String = usernameField.text ?? ""
         let firstname: String = firstnameField.text ?? ""
-        let lastname: String = ""
+        let lastname: String = "lastname"
         let height: Int = Int(heightField.text ?? "0") ?? 0
         let weight: Int = Int(weightField.text ?? "0") ?? 0
         let age: Int = Int(ageField.text ?? "0") ?? 0
@@ -96,7 +96,7 @@ class NewAccountViewController: UIViewController {
         var arg = 0
         // load data into database UC
         if ( flag == 0) {
-        arg = databaseRequest_signup(username: username, firstname: firstname, lastname: "", height: String(height), weight: String(weight), age: String(age), password: password)
+        arg = databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
         
         global_username = username
         global_password = password
@@ -122,10 +122,10 @@ class NewAccountViewController: UIViewController {
         
     }
     
-    // Action function for when the Back button is pressed
-    @IBAction func backTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "inputUserName", sender: self)
-    }
+//    // Action function for when the Back button is pressed
+//    @IBAction func backTapped(_ sender: Any) {
+//        self.performSegue(withIdentifier: "inputUserName", sender: self)
+//    }
     
     // Hide the Number Pad when clicked on the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
