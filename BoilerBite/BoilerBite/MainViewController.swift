@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        insertUser(name: "Ian", mail: "Ian", pass: "ian")
+//        insertFood(name: "Ian", food: "Protein", cal_total: 1324)
         
         // Getting the username and password entered
         usernameField.delegate = self
@@ -116,6 +118,8 @@ class MainViewController: UIViewController {
         
         if flag == 0 {
             databaseRequest4(user: username, password: password) // added by uc
+            global_username = username
+            global_password = password
         }
         
         /*
@@ -184,8 +188,6 @@ class MainViewController: UIViewController {
         //let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
         
         let urlString = String(format: "https://boilerbite.000webhostapp.com/php/signup_createteam.php?name=%@&memeber=%@", user, password);
-        global_username = user
-        global_password = password
         var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
