@@ -12,7 +12,6 @@ class NewAccountViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
-    @IBOutlet weak var lastnameField: UITextField!
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -27,7 +26,6 @@ class NewAccountViewController: UIViewController {
         usernameField.delegate = self
         passwordField.delegate = self
         firstnameField.delegate = self
-        lastnameField.delegate = self
         heightField.delegate = self
         weightField.delegate = self
         ageField.delegate = self
@@ -38,7 +36,7 @@ class NewAccountViewController: UIViewController {
     @IBAction func createTapped(_ sender: Any) {
         let username: String = usernameField.text ?? ""
         let firstname: String = firstnameField.text ?? ""
-        let lastname: String = lastnameField.text ?? ""
+        let lastname: String = ""
         let height: Int = Int(heightField.text ?? "0") ?? 0
         let weight: Int = Int(weightField.text ?? "0") ?? 0
         let age: Int = Int(ageField.text ?? "0") ?? 0
@@ -98,7 +96,7 @@ class NewAccountViewController: UIViewController {
         var arg = 0
         // load data into database UC
         if ( flag == 0) {
-        arg = databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
+        arg = databaseRequest_signup(username: username, firstname: firstname, lastname: "", height: String(height), weight: String(weight), age: String(age), password: password)
         
         global_username = username
         global_password = password
@@ -187,7 +185,7 @@ func databaseRequest_signup(username: String, firstname: String, lastname: Strin
       print("data is ovverated")
       //print(String(data:data))
        let str = String(data: data, encoding: .utf8)
-       print("printing:" , str)
+        print("printing:" , str)
        if(str == "\n\n1") {
          print("llllloooolllll")
            arg = 1
