@@ -117,10 +117,23 @@ class MainViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        var arg = 0;
         if flag == 0 {
-            databaseRequest4(user: username, password: password) // added by uc
+            arg = databaseRequest4(user: username, password: password) // added by uc
             global_username = username
             global_password = password
+        }
+        
+        if arg == 0 {
+            flag = 1;
+            let alert = UIAlertController(title: "Error" , message: "Wrong password or username", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                print("Wrong password or username")
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
         
         /*
@@ -178,9 +191,10 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func databaseRequest4(user: String, password: String) {
+    func databaseRequest4(user: String, password: String) -> Int {
         let semaphore = DispatchSemaphore (value: 0)
-
+        
+        var arg = 0;
         //let username: String = usernameField.text ?? ""
         //let password: String = passwordField.text ?? ""
         
@@ -188,7 +202,7 @@ class MainViewController: UIViewController {
         
         //let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
         
-        let urlString = String(format: "https://boilerbite.000webhostapp.com/php/signup_createteam.php?name=%@&memeber=%@", user, password);
+        let urlString = String(format: "https://boilerbite.000webhostapp.com/php/createteam.php?userName=%@&hashPass=%@", user, password);
         var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -199,22 +213,53 @@ class MainViewController: UIViewController {
             print(String(describing: error))
             return
           }
-          do {
+          /*do {
               if let json = try JSONSerialization.jsonObject(with: data) as? [String: String], let name = json["name"] {
-                  print("name = \(name)")   // if everything is good, you'll see "William"
+                  //print("name = \(name)")   // if everything is good, you'll see "William"
               }
           } catch let parseError {
               print("parsing error: \(parseError)")
               //let responseString = String(data: data, encoding: .utf8)
               //print("raw response: \(responseString)")
-          }
+          }*/
             
-          print(String(data: data, encoding: .utf8)!)
+            /*do{
+                if let jsonData=try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
+                    print(jsonData)
+                    let success=jsonData.value(forKey: "success") as! Bool
+                    if success{
+                        print("login succeded")
+                        //request_completed(true)
+                        return
+                     }else{
+                        print("login failed")
+                        //request_completed(false)
+                        return
+                    }
+                }else{
+                    print("could not parse json")
+                    //request_completed(false)
+                }
+            }catch{
+                print("request failed")
+                //request_completed(false)
+            }
+ */
+         
+           print(String(data: data, encoding: .utf8)!)
+           print("data is ovverated")
+           //print(String(data:data))
+            let str = String(data: data, encoding: .utf8)
+            print("printing:" , str)
+            if(str == "\n\n1") {
+              print("llllloooolllll")
+                arg = 1
+            }
           semaphore.signal()
         }
-
         task.resume()
         semaphore.wait()
+        return arg;
     }
     
     /*

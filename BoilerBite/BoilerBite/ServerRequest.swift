@@ -11,6 +11,10 @@ import Foundation
 
 var global_username: String = "Not logged in"
 var global_password: String = "Not logged in"
+var global_height: Int = 0
+var global_weight: Int = 0
+var global_age: Int = 0
+var global_calories: Int = 0
 
 func insertUser(name: String, mail: String, pass: String){
 //    let name = "Isha"

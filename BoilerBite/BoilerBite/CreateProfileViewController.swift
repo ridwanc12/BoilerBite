@@ -52,8 +52,9 @@ class CreateProfileViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
-        let username:String = "qwertyuiop"
-        calorie_input(calories:calories, username:username);
+        //let username:String = "qwertyuiop"
+        global_calories = calories
+        calorie_input(calories:calories, username:global_username);
     }
     
     func calorie_input(calories: Int ,username: String) {
@@ -64,11 +65,13 @@ class CreateProfileViewController: UIViewController {
         
         // user changed to username
         //let username = "sssssss"
-        print("calories: " ,calories)
-        print("username: " ,username)
+        //print("calories: " ,calories)
+        //print("username: " ,username)
         
-        //let urlString = String(format: "http://boilerbite.000webhostapp.com/php/calorie_update.php?username=%@&calories=%@", username, calories)
-        let urlString = String(format: "http://boilerbite.000webhostapp.com/php/calorie_update.php?userName=qwertyuiop&calories_total=150")
+        //let userr:String = String(global_username ?? "0") ?? "ss"
+        //let calories: Int = Int(caloriesField.text ?? "0") ?? 0
+        
+        let urlString = String(format: "http://boilerbite.000webhostapp.com/php/calorie_update.php?userName=%@&calories_total=%@", global_username, String(calories))
         
         var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
         
