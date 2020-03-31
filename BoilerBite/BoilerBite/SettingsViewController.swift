@@ -14,7 +14,13 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func deleteButton(_ sender: UIButton) {
-        showInputDialog()
+//        showInputDialog()
+        global_username = "ridwan"
+        global_password = "ridwan"
+        deleteUser(name: global_username, pass: global_password)
+        print("Delete action performed")
+        global_username = "Not logged in"
+        global_password = "Not logged in"
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
@@ -42,9 +48,7 @@ class SettingsViewController: UIViewController {
             
             if (username! != "" && password! != "") {
                 print(username!)
-                print("ye")
                 print(password!)
-                print("ezus")
             }
             else {
                 print("nay")

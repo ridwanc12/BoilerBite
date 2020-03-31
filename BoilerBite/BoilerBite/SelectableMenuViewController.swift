@@ -17,7 +17,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     // Var to store the running total
     var totalcalories = 0
-    var itemList: [String: String] = [:]
+    var itemList: [String: Int] = [:]
     
     struct MenuItem {
         var calories: Int
@@ -57,11 +57,14 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     // Function for the Create Button
     @IBAction func createMealButton(_ sender: Any) {
-        global_username = "Rid"
+//        global_username = "test1"
 //        let food_name = itemList.first?.value
         print("meal button")
 //        print(food_name!)
-        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        for (key, value) in itemList {
+            insertFood(name: global_username, food: key, cal_total: value)
+        }
+//        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }
       
@@ -158,7 +161,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         // Add item and calories to dictionary of items
-        itemList[item_name] = calories
+        itemList[item_name] = Int(calories)
         
         // Add to the running total
         totalcalories += Int(calories) ?? 0
@@ -184,7 +187,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         }
         
         // Add item and calories to dictionary of items
-        itemList[item_name] = calories
+        itemList[item_name] = Int(calories)
         
         // Add to the running total
         totalcalories -= Int(calories) ?? 0

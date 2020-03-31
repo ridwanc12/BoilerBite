@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        insertUser(name: "Ian", mail: "Ian", pass: "ian")
+//        insertFood(name: "Ian", food: "Protein", cal_total: 1324)
         
         // Getting the username and password entered
         usernameField.delegate = self

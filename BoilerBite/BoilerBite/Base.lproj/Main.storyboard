@@ -1135,6 +1135,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deleteButton:" destination="e40-1h-wAX" eventType="touchUpInside" id="M7J-78-mCx"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="X4G-3S-fwh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mgw-ah-NDp" userLabel="logout">
@@ -1196,5 +1197,6 @@
         <segue reference="mJJ-vo-gLl"/>
         <segue reference="bo1-yk-fKi"/>
         <segue reference="1A1-wO-hVh"/>
+        <segue reference="X4G-3S-fwh"/>
     </inferredMetricsTieBreakers>
 </document>
