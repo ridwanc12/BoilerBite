@@ -1,5 +1,6 @@
 <?php
 
+
 class  insertTable
 {
     const DB_HOST = 'localhost';
@@ -9,6 +10,8 @@ class  insertTable
     const DB_USER = 'id12866202_bb307';
 
     const DB_PASS = 'bb307';
+
+    
 
     private $pdo = null;
 
@@ -34,8 +37,15 @@ class  insertTable
      * the function will print out corresponding fields and exits.    
      */
 
-    function removeUser($username, $pass)
+    function removeUser($username, $pass) : Int
     {
+        $WRONG_PASS = 0;
+
+        $NO_USER = 2;
+
+        $DELETED = 1;
+
+        $CONNECTION_ERR = -1;
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         try {
             $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -57,10 +67,10 @@ class  insertTable
             } else {
                 // Return function since query returned nothing
                 echo nl2br("\nNo such user.\n");
-                return;
+                return $NO_USER;
             }
             // Obtain the hashed version of the provided password
-            $pass = sha1($pass);
+            //$pass = sha1($pass);
             // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
                 // Delete user from profiles
@@ -88,12 +98,13 @@ class  insertTable
                 $delete->execute();
             } else {
                 echo nl2br("Incorrect password.");
+                return $WRONG_PASS;
             }
         } catch (PDOException $e) {
             //echo $e->getMessage();
-            return false;
+            return $CONNECTION_ERR;
         }
-        return true;
+        return $DELETED;
     }
 
     // Function to show users in table
@@ -138,10 +149,20 @@ $username = $_POST['userName'];
 $pass = $_POST['pass'];
 //echo nl2br(" \nRemoving:
 //Username: $username, Password: $pass\n");
-if ($obj->removeUser($username, $pass)) {
+$WRONG_PASS = 0;
+$NO_USER = 2;
+$DELETED = 1;
+$CONNECTION_ERR = -1;
+
+$value = $obj->removeUser($username, $pass);
+if ($value == $DELETED) {
     echo nl2br("User deleted.\n");
+} else if ($value == $NO_USER){
+    echo nl2br("User not in database.\n");
+} else if ($value == $WRONG_PASS) {
+    echo nl2br("Incorrect password\n");
 } else {
-    echo nl2br("User deletion failed.\n");
+    echo ("Connection error.");
 }
 
 //$obj->showUsers();
