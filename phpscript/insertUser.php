@@ -70,12 +70,12 @@ class  insertTable
         }
 
         // Hash the password.
-        $passwrd = sha1($pass);
+        //$passwrd = sha1($pass);
         // Insert values into array to be executed
         $task = array(
             ':username' => $username,
             ':email' => $email,
-            ':pass' => $passwrd
+            ':pass' => $pass
         );
         // SQL query to inert values into profiles
         $sql = 'INSERT INTO profiles (
@@ -172,7 +172,7 @@ class  insertTable
 
 // Create new obj to run function
 $obj = new insertTable();
-$obj->showUsers();
+//$obj->showUsers();
 
 // Get values from ios application
 $username = $_POST['userName'];
@@ -181,8 +181,8 @@ $pass = $_POST['pass'];
 // $username = "Jeremy";
 // $email = "jeremy";
 // $pass = "jeremy";
-echo nl2br(" \nInserting:
-                 Username: $username, Email: $email, Password: $pass\n");
+// echo nl2br(" \nInserting:
+//                  Username: $username, Email: $email, Password: $pass\n");
 if ($obj->insertUser($username, $email, $pass)) {
     if ($obj->initializeGoal($username)) {
         echo nl2br("Goals initialized.\n");
@@ -198,15 +198,15 @@ if ($obj->insertUser($username, $email, $pass)) {
 } else {
     echo nl2br("Value insertion failed.\n\n");
 }
-$obj->showUsers();
+//$obj->showUsers();
 ?>
 
-<html>
+<!--<html>-->
 
-<head>
-    <title>
-        insertUser
-    </title>
-</head>
+<!--<head>-->
+<!--    <title>-->
+<!--        insertUser-->
+<!--    </title>-->
+<!--</head>-->
 
-</html>
+<!--</html>-->
