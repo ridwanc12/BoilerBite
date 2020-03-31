@@ -45,8 +45,10 @@ class NewAccountViewController: UIViewController {
         let password: String = passwordField.text ?? ""
         
         // Validating the Inputs from the User
+        var flag = 0;
         
         if username == "" || password == "" || firstname == "" || lastname == "" || height == 0 || weight == 0 || age == 0 {
+            flag = 1;
             let alert = UIAlertController(title: "Error" , message: "Enter all information!", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK" , style: .default) { (action) in
@@ -60,6 +62,7 @@ class NewAccountViewController: UIViewController {
         // TODO: Check if the username already exists
         
         if username.count < 6 || password.count < 6 {
+            flag  = 1;
             let alert = UIAlertController(title: "Error" , message: "Username/Password too short!", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK" , style: .default) { (action) in
@@ -70,6 +73,7 @@ class NewAccountViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         if username.count > 12 || password.count > 12 {
+            flag = 1;
             let alert = UIAlertController(title: "Error" , message: "Username/Password too long!", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK" , style: .default) { (action) in
@@ -80,6 +84,7 @@ class NewAccountViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         if height < 0 || weight < 0 || age < 0 {
+            flag = 1;
             let alert = UIAlertController(title: "Error" , message: "Enter a valid Height/Weight/Age", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK" , style: .default) { (action) in
@@ -90,12 +95,30 @@ class NewAccountViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         //print("hashpass1 : ", password)
-        
+        var arg = 0
         // load data into database UC
-        databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
+        if ( flag == 0) {
+        arg = databaseRequest_signup(username: username, firstname: firstname, lastname: lastname, height: String(height), weight: String(weight), age: String(age), password: password)
         
         global_username = username
         global_password = password
+        global_height = height
+        global_weight = weight
+        global_age = age
+        }
+        
+        if (arg == 0) {
+            flag = 1;
+            let alert = UIAlertController(title: "Error" , message: "Username already in use", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                print("Username already in use")
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        //global_calories = calorie
         
         // end loading UC
         
@@ -138,9 +161,9 @@ extension NewAccountViewController : UITextFieldDelegate {
     }
 }
 
-func databaseRequest_signup(username: String, firstname: String, lastname: String, height: String, weight: String, age: String, password: String) {
+func databaseRequest_signup(username: String, firstname: String, lastname: String, height: String, weight: String, age: String, password: String) -> Int {
     let semaphore = DispatchSemaphore (value: 0)
-
+    var arg = 0
     //let username: String = usernameField.text ?? ""
     //let password: String = passwordField.text ?? ""
     
@@ -153,17 +176,27 @@ func databaseRequest_signup(username: String, firstname: String, lastname: Strin
     
     request.httpMethod = "POST"
 
+    global_username = username
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data else {
         print(String(describing: error))
         return
       }
       print(String(data: data, encoding: .utf8)!)
+      print(String(data: data, encoding: .utf8)!)
+      print("data is ovverated")
+      //print(String(data:data))
+       let str = String(data: data, encoding: .utf8)
+       print("printing:" , str)
+       if(str == "\n\n1") {
+         print("llllloooolllll")
+           arg = 1
+       }
       semaphore.signal()
     }
-
     task.resume()
     semaphore.wait()
+    return arg
 }
 
 // for inserting calories and username
