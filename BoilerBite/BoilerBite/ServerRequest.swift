@@ -58,10 +58,13 @@ func deleteUser(name: String, pass: String){
             return
         }
 
-        print("response = \(String(describing: response))")
-
-        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
+        if (responseString?.contains("User deletion failed."))! {
+            print("user not deleted")
+        } else {
+            print("deleted")
+        }
+        //print("responseString = \(String(describing: responseString))")
     }
     task.resume()
 }

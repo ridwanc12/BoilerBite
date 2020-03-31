@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 //        insertUser(name: "Ian", mail: "Ian", pass: "ian")
 //        insertFood(name: "Ian", food: "Protein", cal_total: 1324)
-        
+//        deleteUser(name: "Eden", pass: "eden")
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
