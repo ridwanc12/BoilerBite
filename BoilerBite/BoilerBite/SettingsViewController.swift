@@ -28,6 +28,8 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
+        global_username = ""
+        global_password = ""
     }
 
     

@@ -211,6 +211,38 @@ func getItemCalories(itemID: String) -> Int {
     return(Int(calories))
 }
 
+func getItemNutrition(itemID: String) -> [NutritionFact] {
+    let address = "https://api.hfs.purdue.edu/menus/v2/items/" + itemID
+    let requestLocation = URL(string: address)
+    
+    var itemDetails: Item?
+    var nutritionFinal: [NutritionFact] = []
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+    do {
+        itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+        let nutrition = itemDetails?.Nutrition
+        if (nutrition != nil) {
+            nutritionFinal = itemDetails!.Nutrition!
+        }
+        else {
+//            nutritionFinal = []
+        }
+        semaphore.signal()
+    } catch {
+        print("There was an error in the item api request")
+        print(error)
+    }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(nutritionFinal)
+}
+
 // URL for example meal request
 // https://api.hfs.purdue.edu/menus/v2/locations/ford/2019-02-04
 
