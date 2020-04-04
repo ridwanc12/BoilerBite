@@ -534,7 +534,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="Sq9-gd-SfX"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="j0G-wN-WaV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -614,7 +614,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="update-button"/>
                                 <connections>
-                                    <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="7LZ-YO-qZ1"/>
                                     <action selector="updateTapped:" destination="IOJ-pw-yiK" eventType="touchUpInside" id="aFN-aX-2zg"/>
                                     <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="lcQ-fv-IgZ"/>
                                 </connections>
@@ -703,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IN-8g-b2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="1568.7192118226601"/>
+            <point key="canvasLocation" x="1196" y="1569"/>
         </scene>
         <!--Windsor Late Lunch Individual Menu-->
         <scene sceneID="eaj-IB-iRo">
@@ -909,7 +908,6 @@
                                 <state key="normal" backgroundImage="create-meal-button"/>
                                 <connections>
                                     <action selector="createMealButton:" destination="5Qo-tK-luH" eventType="touchUpInside" id="Orw-YN-M6t"/>
-                                    <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="kdj-so-8bS"/>
                                     <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="0E4-5U-m3p"/>
                                 </connections>
                             </button>
@@ -1197,6 +1195,9 @@
                                 <state key="normal" title="lunch" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="F1j-3H-Int"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5CP-i5-xi6">
                                 <rect key="frame" x="71.91053828731674" y="484" width="229" height="44"/>
@@ -1267,7 +1268,7 @@
         <!--Update Password-->
         <scene sceneID="ANi-Oq-oTD">
             <objects>
-                <viewController id="zO6-85-c3g" userLabel="Update Password" customClass="UserProfileViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zO6-85-c3g" userLabel="Update Password" customClass="UpdatePasswordViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OwK-Vm-8zA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1349,8 +1350,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="update-button"/>
                                 <connections>
-                                    <action selector="createTapped:" destination="dhN-qy-dw3" eventType="touchUpInside" id="r3h-BN-K3k"/>
-                                    <action selector="updateTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="2dW-c8-0VP"/>
+                                    <action selector="updateTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="e5q-9r-gR9"/>
                                     <segue destination="zO6-85-c3g" kind="presentation" modalPresentationStyle="fullScreen" id="fMJ-iq-eM5"/>
                                 </connections>
                             </button>
@@ -1384,9 +1384,12 @@
                     <navigationItem key="navigationItem" id="ZoW-Es-uxU"/>
                     <connections>
                         <outlet property="ageText" destination="QaD-0c-Y7Y" id="Ru7-eh-dGQ"/>
+                        <outlet property="currentPassword" destination="1yY-vO-2mK" id="pcY-Bh-IM8"/>
                         <outlet property="heightText" destination="ATn-qx-n3d" id="6Ci-kK-JDM"/>
-                        <outlet property="nameLabel" destination="kgD-Cf-I4L" id="7na-Z2-kKP"/>
+                        <outlet property="nameLabel" destination="dSM-EG-voU" id="QPh-qB-7Lf"/>
+                        <outlet property="newPasswordText" destination="QaD-0c-Y7Y" id="niI-2q-CUQ"/>
                         <outlet property="updateButton" destination="jNy-sj-cL4" id="Sxy-sT-K8w"/>
+                        <outlet property="usernameText" destination="ATn-qx-n3d" id="aT4-FI-LK1"/>
                         <outlet property="weightText" destination="1yY-vO-2mK" id="JRy-FL-ENp"/>
                     </connections>
                 </viewController>
@@ -1410,12 +1413,14 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sq9-gd-SfX"/>
+        <segue reference="vfc-p1-0Ri"/>
+        <segue reference="j0G-wN-WaV"/>
         <segue reference="agK-Cd-LIU"/>
-        <segue reference="b4N-GZ-P1C"/>
+        <segue reference="Cwh-ey-aFg"/>
         <segue reference="U69-tf-jAK"/>
-        <segue reference="9bC-YL-4KN"/>
-        <segue reference="1A1-wO-hVh"/>
-        <segue reference="X4G-3S-fwh"/>
+        <segue reference="F1j-3H-Int"/>
+        <segue reference="0E4-5U-m3p"/>
+        <segue reference="MXM-w3-3cX"/>
+        <segue reference="M2K-c7-52P"/>
     </inferredMetricsTieBreakers>
 </document>
