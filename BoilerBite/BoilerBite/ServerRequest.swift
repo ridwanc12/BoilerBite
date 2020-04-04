@@ -35,7 +35,7 @@ func insertUser(name: String, mail: String, pass: String){
             return
         }
 
-        print("response = \(String(describing: response))")
+        //print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         print("responseString = \(String(describing: responseString))")
@@ -44,7 +44,7 @@ func insertUser(name: String, mail: String, pass: String){
 }
 
 // Function to test php script to delete user from database
-func deleteUser(name: String, pass: String){
+func deleteUser(name: String, pass: String) {
 //    let name = "Isha"
 //    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
@@ -54,6 +54,7 @@ func deleteUser(name: String, pass: String){
     let postString = "userName=\(name)&pass=\(pass)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
+    
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
 
@@ -62,12 +63,20 @@ func deleteUser(name: String, pass: String){
             return
         }
 
-        print("response = \(String(describing: response))")
-
-        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
+        let response = String(describing: responseString)
+        print(response)
+        if (response.contains("User not in database.")) {
+            print("No such user")
+        } else if (response.contains("password")){
+            print("Incorrect password")
+        } else {
+            print("User deleted")
+        }
+        //print("responseString = ")
     }
     task.resume()
+    
 }
 
 // Can use functions like the following
@@ -100,7 +109,7 @@ func insertFood(name: String, food: String, cal_total: Int){
             return
         }
 
-        print("response = \(String(describing: response))")
+        //print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         print("responseString = \(String(describing: responseString))")

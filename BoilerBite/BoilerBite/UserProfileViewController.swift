@@ -88,8 +88,6 @@ class UserProfileViewController: UIViewController , UITextFieldDelegate{
         global_age = age
         global_calories = calories
         
-        reload();
-        
     }
     
 
@@ -183,8 +181,4 @@ func update_calories(username: String, calories: Int) {
     task.resume()
     semaphore.wait()
     //return arg
-}
-
-func reload() {
-    
 }

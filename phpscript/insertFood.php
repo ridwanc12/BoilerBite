@@ -27,34 +27,6 @@ class  insertTable
         // close the database connection
         $this->pdo = null;
     }
-    /* 
-     * Function to find the ID of the user from the given username.
-     * If the user is not in the database, the function will print error message and
-     * return 0.
-     */
-    // function findID($username): int
-    // {
-    //     $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-    //     try {
-    //         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-    //         $sql = "SELECT userID FROM profiles WHERE userName = '$username'";
-    //         // Execute query to get userName.
-    //         $q = $pdo->query($sql);
-    //         $q->setFetchMode(PDO::FETCH_ASSOC);
-    //     } catch (PDOException $e) {
-    //         echo $e->getMessage();
-    //     }
-
-    //     $result = $q->fetch();
-
-    //     // Check if username is in database.
-    //     // If username is not in the table $result will be FALSE.
-    //     if ($result == FALSE) {
-    //         return 0;
-    //     }
-    //     $idFromUser = $result['userID'];
-    //     return $idFromUser;
-    // }
 
     // Function to show users in table
     function showUsers(): void
@@ -120,10 +92,10 @@ class  insertTable
         // Check if query returned results
         $user = $q->fetch();
         if ($user == false) {
-            echo nl2br("No such user.\n\n");
+            //echo nl2br("No such user.\n\n");
             return;
         } else {
-            echo nl2br("user found.\n\n");
+            //echo nl2br("user found.\n\n");
         }
 
         //Insert value into array to 
@@ -161,8 +133,8 @@ class  insertTable
 }
 
 $obj = new insertTable();
-$obj->showUsers();
-echo nl2br("Begin unit testing for inserting food item:\n\n");
+//$obj->showUsers();
+//echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
 // $username = "Jeremy"; //$_POST['userName'];
@@ -187,16 +159,7 @@ if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein,
     echo nl2br("Failed.\n");
 }
 
-$obj->showUsers();
+//$obj->showUsers();
 
 ?>
 
-<html>
-
-<head>
-    <title>
-        insertFood
-    </title>
-</head>
-
-</html>
