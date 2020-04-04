@@ -32,6 +32,7 @@
 		566D1A762404376A00B14361 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A752404376A00B14361 /* CreateProfileViewController.swift */; };
 		566D1A782404378400B14361 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A772404378400B14361 /* MenuViewController.swift */; };
 		566D1A842408B0D700B14361 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A832408B0D700B14361 /* MenuTableViewCell.swift */; };
+		56D34B9E2438CB45001698CC /* MealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D34B9D2438CB45001698CC /* MealTimeViewController.swift */; };
 		56F5C916243142470075B7C7 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F5C915243142470075B7C7 /* UserProfileViewController.swift */; };
 		56F5C91824314A540075B7C7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F5C91724314A540075B7C7 /* SettingsViewController.swift */; };
 		9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344934124033CA500EB1B0D /* ApiRequest.swift */; };
@@ -90,6 +91,7 @@
 		566D1A752404376A00B14361 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		566D1A772404378400B14361 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		566D1A832408B0D700B14361 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		56D34B9D2438CB45001698CC /* MealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeViewController.swift; sourceTree = "<group>"; };
 		56F5C915243142470075B7C7 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		56F5C91724314A540075B7C7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9344934124033CA500EB1B0D /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				9344934224033CA500EB1B0D /* api_test.playground */,
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
+				56D34B9D2438CB45001698CC /* MealTimeViewController.swift */,
 			);
 			path = BoilerBite;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				566D1A4D2401AD8700B14361 /* MainViewController.swift in Sources */,
 				9344934524033CAE00EB1B0D /* DataStructures.swift in Sources */,
 				566D1A782404378400B14361 /* MenuViewController.swift in Sources */,
+				56D34B9E2438CB45001698CC /* MealTimeViewController.swift in Sources */,
 				566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */,
 				9344934B242DAA7D00EB1B0D /* ResidentialMenusController.swift in Sources */,
 				935BCC732431F36B00F9BADC /* MainMenuViewController.swift in Sources */,
