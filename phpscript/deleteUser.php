@@ -11,7 +11,7 @@ class  insertTable
 
     const DB_PASS = 'bb307';
 
-    
+
 
     private $pdo = null;
 
@@ -37,7 +37,7 @@ class  insertTable
      * the function will print out corresponding fields and exits.    
      */
 
-    function removeUser($username, $pass) : Int
+    function removeUser($username, $pass): Int
     {
         $WRONG_PASS = 0;
 
@@ -93,6 +93,12 @@ class  insertTable
 
                 // Delete user from progress
                 $sql = "DELETE FROM progress WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
+
+                // Delete user from meal
+                $sql = "DELETE FROM meal WHERE userName = :name";
                 $delete = $this->pdo->prepare($sql);
                 $delete->bindValue(':name', $username);
                 $delete->execute();
@@ -157,7 +163,7 @@ $CONNECTION_ERR = -1;
 $value = $obj->removeUser($username, $pass);
 if ($value == $DELETED) {
     echo nl2br("User deleted.\n");
-} else if ($value == $NO_USER){
+} else if ($value == $NO_USER) {
     echo nl2br("User not in database.\n");
 } else if ($value == $WRONG_PASS) {
     echo nl2br("Incorrect password\n");

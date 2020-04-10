@@ -98,7 +98,7 @@ class  insertTable
             //echo nl2br("user found.\n\n");
         }
 
-        //Insert value into array to 
+        //Insert value into array
         $task = array(
             ':name' => $username,
             ':food' => $food,
@@ -160,6 +160,3 @@ if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein,
 }
 
 //$obj->showUsers();
-
-?>
-
