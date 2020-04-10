@@ -837,7 +837,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="L1f-Q7-b09">
-                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="141"/>
+                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="282"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="tjt-rY-GkG"/>
                                 </constraints>
@@ -851,7 +851,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 am - 2:00 pm " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btb-LH-1Nu">
-                                <rect key="frame" x="19" y="185" width="200" height="27"/>
+                                <rect key="frame" x="19" y="326" width="200" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -859,7 +859,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-E7-32V">
-                                <rect key="frame" x="21" y="228" width="325" height="477"/>
+                                <rect key="frame" x="21" y="369" width="325" height="336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Menu Cell" textLabel="3Za-cI-Dbi" detailTextLabel="A8a-r5-uAv" style="IBUITableViewCellStyleSubtitle" id="Ysa-1X-Hax" customClass="MenuTableViewCell" customModule="BoilerBite" customModuleProvider="target">
@@ -1400,7 +1400,7 @@
         <!--Nutrition View Controller-->
         <scene sceneID="YUO-dQ-2SI">
             <objects>
-                <viewController id="0jC-7u-DYx" userLabel="Nutrition View Controller" sceneMemberID="viewController">
+                <viewController id="0jC-7u-DYx" userLabel="Nutrition View Controller" customClass="NutritionViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Guv-sn-ET8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1434,13 +1434,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc4-0M-9tS">
                                 <rect key="frame" x="16" y="70" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="qoP-Pr-npA"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fAQ-fS-4Ac">
                                 <rect key="frame" x="16" y="232" width="343" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="7pV-Sr-TpS" detailTextLabel="xqd-t7-1zB" style="IBUITableViewCellStyleSubtitle" id="5yR-Hv-3QF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nutrition Cell" textLabel="7pV-Sr-TpS" detailTextLabel="xqd-t7-1zB" style="IBUITableViewCellStyleSubtitle" id="5yR-Hv-3QF">
                                         <rect key="frame" x="0.0" y="28" width="343" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5yR-Hv-3QF" id="VR7-nk-leE">
@@ -1465,6 +1468,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0jC-7u-DYx" id="v1d-hM-HRt"/>
+                                    <outlet property="delegate" destination="0jC-7u-DYx" id="bgL-Z3-pQK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1486,6 +1493,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e87-JL-hdB"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fAQ-fS-4Ac" id="Rwc-Dx-vc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tZ-vI-ada" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1507,11 +1517,10 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T7k-7t-1vi"/>
         <segue reference="j0G-wN-WaV"/>
         <segue reference="agK-Cd-LIU"/>
         <segue reference="Cwh-ey-aFg"/>
-        <segue reference="U69-tf-jAK"/>
+        <segue reference="qoP-Pr-npA"/>
         <segue reference="RBJ-nK-agt"/>
         <segue reference="9bC-YL-4KN"/>
         <segue reference="MXM-w3-3cX"/>
