@@ -89,7 +89,16 @@ func getCurrentMenu(hall: String) -> Menu? {
 }
 
 func getMeals(hall: String, date: String) -> [String] {
-    return []
+    let menu = getMenu(hall: hall, date: date)
+    let meals = menu!.Meals
+    var meal_names:[String] = []
+    for item in meals {
+        if (item?.Status != "Closed") {
+            meal_names.append(item!.Name)
+        }
+    }
+    
+    return meal_names
 }
 
 func getFirstDayMeals(hall: String) -> [String] {
@@ -103,6 +112,23 @@ func getFirstDayMeals(hall: String) -> [String] {
     }
     
     return meal_names
+}
+
+func getOpenHours(hall: String) -> [String] {
+    return []
+}
+
+func getFirstDayHours(hall: String) -> [Hour] {
+    let menu = getFirstDayMenu(hall: hall)
+    let meals = menu!.Meals
+    var meal_hours:[Hour] = []
+    for item in meals {
+        if (item?.Status != "Closed") {
+            meal_hours.append(item!.Hours!)
+        }
+    }
+    
+    return meal_hours
 }
 
 func getDinner(menu: Menu?) -> Meal? {
