@@ -105,8 +105,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
         
         items = stations[indexPath.section].Items
 //        print(items)
