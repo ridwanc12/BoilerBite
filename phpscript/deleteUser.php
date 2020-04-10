@@ -70,7 +70,7 @@ class  insertTable
                 return $NO_USER;
             }
             // Obtain the hashed version of the provided password
-            //$pass = sha1($pass);
+            $pass = sha1($pass);
             // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
                 // Delete user from profiles
