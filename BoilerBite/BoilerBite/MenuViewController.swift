@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var MenuTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
 
     var items: [Item] = []
@@ -109,9 +109,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
         
         items = stations[indexPath.section].Items
-//        print(items)
         let item = items[indexPath.row]
-//        print(item)
+
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
@@ -128,15 +127,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is NutritionViewController {
+            let vc = segue.destination as? NutritionViewController
+            // items = stations[tableView.indexPathForSelectedRow!.row].Items
+            let item = items[tableView.indexPathForSelectedRow!.row]
+            print(item.Name)
+           // vc?.diningHall = chosenHall
+        }
     }
-    */
 
 }
 
