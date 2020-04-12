@@ -1191,6 +1191,9 @@
                                 <state key="normal" title="breakfast" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="lo6-KF-XOC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iYb-7A-hu3">
                                 <rect key="frame" x="71.91053828731674" y="423" width="229" height="44"/>
@@ -1208,6 +1211,9 @@
                                 <state key="normal" title="late lunch" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="Vaq-mD-9ac"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ooC-fZ-ZPp">
                                 <rect key="frame" x="71.91053828731674" y="544.00000000000023" width="229" height="44"/>
@@ -1215,6 +1221,9 @@
                                 <state key="normal" title="dinner" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="ENY-fU-f4V"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select your meal time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wk-KW-XgX">
                                 <rect key="frame" x="30" y="263" width="205" height="27"/>
@@ -1629,8 +1638,8 @@
         <segue reference="O4y-7l-SDx"/>
         <segue reference="xQf-cx-d3L"/>
         <segue reference="U69-tf-jAK"/>
-        <segue reference="LmW-nD-3DA"/>
-        <segue reference="bo1-yk-fKi"/>
+        <segue reference="ENY-fU-f4V"/>
+        <segue reference="udi-xV-Fqu"/>
         <segue reference="1A1-wO-hVh"/>
         <segue reference="X4G-3S-fwh"/>
     </inferredMetricsTieBreakers>
