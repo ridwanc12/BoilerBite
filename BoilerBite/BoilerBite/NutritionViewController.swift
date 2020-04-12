@@ -13,11 +13,23 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     let itemID = "84835539-119a-4efd-b714-786015923e3c"
-    let items = ["One", "Two", "Three", "Four", "Five"]
-//    let items = getItemNutrition(itemID: itemID)
+//    let items = ["One", "Two", "Three", "Four", "Five"]
+    var nutrition:[NutritionFact] = []
+    var items: [String] = []
+    var values: [Float] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nutrition = getItemNutrition(itemID: itemID)
+        
+        for fact in nutrition {
+            items.append(fact.Name)
+            values.append(fact.Value ?? 0.0)
+        }
+        
+//        print(items)
+//        print(values)
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +41,12 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Nutrition Cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row]
+        if (values[indexPath.row] != 0.0) {
+            cell.detailTextLabel?.text = String(Int(values[indexPath.row]))
+        }
+        else {
+            cell.detailTextLabel?.text = ""
+        }
         return cell
     }
     
