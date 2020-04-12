@@ -28,13 +28,15 @@ class  insertTable
         $this->pdo = null;
     }
 
+
     // Function to show users in table
-    function showUsers($username, $time): String
+    function checkMeal($username, $time): String
     {
         // Execute query to get profiles currently in the table.
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
         $sql = 'SELECT userName,
+                        food_name,
                         total_calorie,
                         date
                     FROM progress
@@ -43,16 +45,36 @@ class  insertTable
         $q->bindValue(':name', $username);
         $q->execute();
         $q->setFetchMode(PDO::FETCH_ASSOC);
-        // Print out values returned by query
+        // Add up all calories of food items eaten on the given day
         $result_Arr = array();
         $temp_Arr = array();
+        $cal = 0;
         while ($user = $q->fetch()) {
             $moment = $user['date'];
             $temp_Arr = $user;
             if ($time == $moment) {
+                $calorie = $user['total_calorie'];
+                $cal += $calorie;
                 array_push($result_Arr, $temp_Arr);
             }
         }
+        $sql = 'SELECT calories_total FROM goals WHERE userName = :name';
+        $q = $this->pdo->prepare($sql);
+        $q->bindValue(':name', $username);
+        $q->execute();
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        if ($user = $q->fetch()) {
+            $goal = $user['calories_total'];
+            $diff = abs($cal - $goal);
+            if ($cal > $goal) {
+                echo nl2br("Over $diff calories.\n");
+            } else {
+                echo nl2br("Under $diff calories.\n");
+            }
+        } else {
+            echo nl2br("No such user\n");
+        }
+        echo nl2br("$cal\n");
         return json_encode($result_Arr);
     }
 } // End of functions
@@ -60,7 +82,9 @@ class  insertTable
 
 // Create new obj to run function
 $obj = new insertTable();
-$file = $obj->showUsers("admini", "2020-03-31");
+$date = date("Y-m-d");
+echo $date;
+$file = $obj->checkMeal("admini", "2020-04-11");
 echo $file;
 
 ?>
@@ -69,7 +93,7 @@ echo $file;
 
 <head>
     <title>
-        check
+        checkMeal
     </title>
 </head>
 
