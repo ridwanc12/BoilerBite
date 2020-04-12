@@ -12,7 +12,9 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     
+    let itemID = "84835539-119a-4efd-b714-786015923e3c"
     let items = ["One", "Two", "Three", "Four", "Five"]
+//    let items = getItemNutrition(itemID: itemID)
     
     override func viewDidLoad() {
         super.viewDidLoad()
