@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     // Outlets for the Delete Account and Logout Button
     
-    
+    // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
 //        showInputDialog()
 //        global_username = "ridwan"
@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController {
         global_password = "Not logged in"
     }
     
+    // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
         global_username = ""
         global_password = ""
@@ -80,7 +81,10 @@ class SettingsViewController: UIViewController {
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
+    // Fucntion for when the "send feedback" button is pressed
+    @IBAction func sendFeedbackButton(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 
