@@ -1427,7 +1427,7 @@
                                 <rect key="frame" x="8" y="51" width="359" height="734"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OGx-Sz-sss">
-                                <rect key="frame" x="206" y="70" width="161" height="282"/>
+                                <rect key="frame" x="206" y="70" width="161" height="141"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
                                 <rect key="frame" x="16" y="138" width="151" height="41"/>
@@ -1635,7 +1635,6 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jWp-Wm-f48"/>
         <segue reference="ULV-Ve-rxy"/>
         <segue reference="ewa-Si-ZKT"/>
         <segue reference="O4y-7l-SDx"/>
