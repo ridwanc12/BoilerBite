@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560AD620244509960098D33E /* SendFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560AD61F244509960098D33E /* SendFeedbackViewController.swift */; };
 		5661A328242BDFA800FC77A0 /* SelectableMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */; };
 		566D1A1623F8E66F00B14361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1523F8E66F00B14361 /* AppDelegate.swift */; };
 		566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D1A1723F8E66F00B14361 /* SceneDelegate.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560AD61F244509960098D33E /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
 		5661A327242BDFA800FC77A0 /* SelectableMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableMenuViewController.swift; sourceTree = "<group>"; };
 		566D1A1223F8E66F00B14361 /* BoilerBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566D1A1523F8E66F00B14361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				56D34B9F2438CE84001698CC /* UpdatePasswordViewController.swift */,
 				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
+				560AD61F244509960098D33E /* SendFeedbackViewController.swift */,
 			);
 			path = BoilerBite;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				9344934324033CA500EB1B0D /* ApiRequest.swift in Sources */,
 				566D1A1823F8E66F00B14361 /* SceneDelegate.swift in Sources */,
 				5661A328242BDFA800FC77A0 /* SelectableMenuViewController.swift in Sources */,
+				560AD620244509960098D33E /* SendFeedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
