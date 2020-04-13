@@ -174,9 +174,9 @@
 				566D1A2023F8E67100B14361 /* LaunchScreen.storyboard */,
 				566D1A2323F8E67100B14361 /* Info.plist */,
 				9344934224033CA500EB1B0D /* api_test.playground */,
-				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				56D34B9D2438CB45001698CC /* MealTimeViewController.swift */,
 				56D34B9F2438CE84001698CC /* UpdatePasswordViewController.swift */,
+				566D1A1E23F8E67100B14361 /* Assets.xcassets */,
 				566D1A4E2401BB8600B14361 /* Fonts */,
 			);
 			path = BoilerBite;

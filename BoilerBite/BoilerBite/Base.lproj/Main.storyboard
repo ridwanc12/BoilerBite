@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xoI-XW-KQ0">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -627,7 +627,7 @@
                                     <constraint firstAttribute="height" constant="45" id="zMf-9d-QdU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="age" textAlignment="center" minimumFontSize="17" background="text-box" translatesAutoresizingMaskIntoConstraints="NO" id="fCc-gZ-7sT">
                                 <rect key="frame" x="71.518985525085554" y="475" width="230" height="45.000000000000455"/>
@@ -657,7 +657,7 @@
                                     <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1294,14 +1294,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="yAo-qh-XIC">
                                 <rect key="frame" x="-76" y="51" width="525" height="710"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-EG-voU">
-                                <rect key="frame" x="228" y="257" width="93" height="27"/>
-                                <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="8"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgD-Cf-I4L">
                                 <rect key="frame" x="33" y="213" width="288" height="49"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
@@ -1310,6 +1302,14 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-EG-voU">
+                                <rect key="frame" x="228" y="257" width="93" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
@@ -1346,7 +1346,7 @@
                                     <constraint firstAttribute="height" constant="45.000000000000455" id="ISI-t1-unh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="new password" textAlignment="center" minimumFontSize="17" background="text-box" translatesAutoresizingMaskIntoConstraints="NO" id="QaD-0c-Y7Y" userLabel="New Password">
                                 <rect key="frame" x="71.333333333333329" y="475" width="230.33333333333337" height="45"/>
@@ -1357,7 +1357,7 @@
                                     <constraint firstAttribute="height" constant="45" id="lCF-bN-zF5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartQuotesType="no" textContentType="new-password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jNy-sj-cL4" userLabel="update_button">
                                 <rect key="frame" x="127" y="637" width="119" height="71"/>
@@ -1410,6 +1410,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2I-x2-4qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2201" y="1569"/>
+        </scene>
+        <!--Send Feedback View Controller-->
+        <scene sceneID="9lH-4V-9MN">
+            <objects>
+                <viewController id="xoI-XW-KQ0" userLabel="Send Feedback View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9hQ-ah-mVk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="YlZ-h1-Gpj">
+                                <rect key="frame" x="-115" y="-51" width="605" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-fW-8F4">
+                                <rect key="frame" x="-75" y="51" width="525" height="710"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-j3-Xll">
+                                <rect key="frame" x="30" y="220" width="288" height="49"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to the developers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cD-x7-poS">
+                                <rect key="frame" x="116" y="265" width="167" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uY2-vr-6vp">
+                                <rect key="frame" x="198" y="71" width="161" height="141"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter feedback" textAlignment="center" minimumFontSize="17" background="square-textbox" translatesAutoresizingMaskIntoConstraints="NO" id="iAa-eo-zYc" userLabel="Username Text">
+                                <rect key="frame" x="74.666666666666671" y="365" width="225.66666666666663" height="225"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lMk-i7-KRO" userLabel="update_button">
+                                <rect key="frame" x="116" y="631" width="142" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="send-button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iAa-eo-zYc" firstAttribute="top" secondItem="5cD-x7-poS" secondAttribute="bottom" constant="73" id="8q4-V6-zVR"/>
+                            <constraint firstItem="5cD-x7-poS" firstAttribute="top" secondItem="uY2-vr-6vp" secondAttribute="bottom" constant="53" id="B2G-1w-mM9"/>
+                            <constraint firstItem="uY2-vr-6vp" firstAttribute="top" secondItem="riu-2g-c48" secondAttribute="top" constant="27" id="Dte-Ua-WVD"/>
+                            <constraint firstItem="8kq-fW-8F4" firstAttribute="leading" secondItem="9hQ-ah-mVk" secondAttribute="leadingMargin" constant="-91" id="FJb-Yk-yye"/>
+                            <constraint firstItem="iAa-eo-zYc" firstAttribute="top" secondItem="Yjq-j3-Xll" secondAttribute="bottom" constant="96" id="Gwu-Gg-Bdo"/>
+                            <constraint firstItem="8kq-fW-8F4" firstAttribute="top" secondItem="riu-2g-c48" secondAttribute="top" constant="7" id="Ktd-hl-cgF"/>
+                            <constraint firstItem="riu-2g-c48" firstAttribute="bottom" secondItem="iAa-eo-zYc" secondAttribute="bottom" constant="188" id="LKy-Fl-66t"/>
+                            <constraint firstItem="8kq-fW-8F4" firstAttribute="centerX" secondItem="YlZ-h1-Gpj" secondAttribute="centerX" id="PkC-Hc-LcN"/>
+                            <constraint firstItem="uY2-vr-6vp" firstAttribute="leading" secondItem="riu-2g-c48" secondAttribute="leading" constant="198" id="Vvv-2b-FCv"/>
+                            <constraint firstItem="iAa-eo-zYc" firstAttribute="leading" secondItem="riu-2g-c48" secondAttribute="leading" constant="74.666666666666686" id="gie-8h-M6G"/>
+                            <constraint firstItem="uY2-vr-6vp" firstAttribute="trailing" secondItem="9hQ-ah-mVk" secondAttribute="trailingMargin" id="h9h-EM-2hs"/>
+                            <constraint firstItem="riu-2g-c48" firstAttribute="trailing" secondItem="Yjq-j3-Xll" secondAttribute="trailing" constant="57" id="j7T-Kl-2WC"/>
+                            <constraint firstItem="Yjq-j3-Xll" firstAttribute="top" secondItem="uY2-vr-6vp" secondAttribute="bottom" constant="8" id="jBd-m6-1dM"/>
+                            <constraint firstItem="Yjq-j3-Xll" firstAttribute="leading" secondItem="riu-2g-c48" secondAttribute="leading" constant="30" id="jxs-sV-W1B"/>
+                            <constraint firstItem="5cD-x7-poS" firstAttribute="leading" secondItem="riu-2g-c48" secondAttribute="leading" constant="116" id="mdU-sf-fbo"/>
+                            <constraint firstItem="8kq-fW-8F4" firstAttribute="centerY" secondItem="YlZ-h1-Gpj" secondAttribute="centerY" id="oQr-1b-7oe"/>
+                            <constraint firstItem="8kq-fW-8F4" firstAttribute="centerX" secondItem="iAa-eo-zYc" secondAttribute="centerX" id="qgo-8a-3Py"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="riu-2g-c48"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JO-nX-Ohu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3280.8000000000002" y="1568.7192118226601"/>
         </scene>
         <!--Nutrition View Controller-->
         <scene sceneID="YUO-dQ-2SI">
@@ -1628,7 +1703,9 @@
         <image name="login-button" width="124" height="71"/>
         <image name="logo" width="132" height="141"/>
         <image name="password" width="229" height="44"/>
+        <image name="send-button" width="197" height="71"/>
         <image name="signup+prompt" width="216" height="15"/>
+        <image name="square-textbox" width="225" height="225"/>
         <image name="text-box" width="229" height="44"/>
         <image name="update-button" width="124" height="71"/>
         <image name="username" width="229" height="44"/>
@@ -1637,7 +1714,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="ULV-Ve-rxy"/>
         <segue reference="ewa-Si-ZKT"/>
-        <segue reference="O4y-7l-SDx"/>
+        <segue reference="agK-Cd-LIU"/>
         <segue reference="xQf-cx-d3L"/>
         <segue reference="U69-tf-jAK"/>
         <segue reference="LmW-nD-3DA"/>
