@@ -12,24 +12,28 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     
-    let itemID = "84835539-119a-4efd-b714-786015923e3c"
+//    let labelsDict:[String: String] = ["Serving Size":"Servings", "Calories":"", "Calories from fat":"", "Total fat":"g", "Saturated fat":"g", "Cholesterol":"mg", "Sodium":"mg", "Total Carbohydrate":"g", "Sugar":"g", "Dietary Fiber":"g", "Protein":"g", "Vitamin A":"% of DV", "Vitamin C":"% of DV", "Calcium":"% of DV", "Iron":"% of DV"]
+    
+    let itemID = "da968774-9381-4a03-ae26-87b765fb80f6"
 //    let items = ["One", "Two", "Three", "Four", "Five"]
     var nutrition:[NutritionFact] = []
     var items: [String] = []
-    var values: [Float] = []
+    var values: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let nutrition = getItemNutrition(itemID: itemID)
         
+        print(nutrition)
+        
         for fact in nutrition {
             items.append(fact.Name)
-            values.append(fact.Value ?? 0.0)
+            values.append(fact.LabelValue ?? fact.DailyValue ?? "")
         }
         
-//        print(items)
-//        print(values)
+        print(items)
+        print(values)
 
         // Do any additional setup after loading the view.
     }
@@ -41,12 +45,8 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Nutrition Cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row]
-        if (values[indexPath.row] != 0.0) {
-            cell.detailTextLabel?.text = String(Int(values[indexPath.row]))
-        }
-        else {
-            cell.detailTextLabel?.text = ""
-        }
+        cell.detailTextLabel?.text = values[indexPath.row]
+        cell.detailTextLabel?.textColor = UIColor.darkGray
         return cell
     }
     
@@ -63,3 +63,24 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
 
 }
 
+//if (values[indexPath.row] != 0.0) {
+//            var value = ""
+//            // Special cases
+//            if (items[indexPath.row] == "Vitamin A") {
+//                value = nutrition[indexPath.row].DailyValue ?? ""
+//            } else if (items[indexPath.row] == "Vitamin C") {
+//                value = String(Int(values[indexPath.row] / 65.0 * 100))
+//            } else if (items[indexPath.row] == "Calcium") {
+//                value = String(Int(values[indexPath.row] / 900.0 * 100))
+//            } else if (items[indexPath.row] == "Iron") {
+//                value = String(Int(values[indexPath.row] / 17.0 * 100))
+//            }
+//            else {
+//                value = String(Int(values[indexPath.row]))
+//            }
+//            // Value and label
+//            cell.detailTextLabel?.text = value + (labelsDict[items[indexPath.row]] ?? "")
+//        }
+//        else {
+//            cell.detailTextLabel?.text = ""
+//        }
