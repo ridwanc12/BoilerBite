@@ -61,9 +61,12 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
 //        let food_name = itemList.first?.value
         print("meal button")
 //        print(food_name!)
+        let response = ""
         for (key, value) in itemList {
             insertFood(name: global_username, food: key, cal_total: value)
+            usleep(2000)
         }
+        print(response)        
 //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }

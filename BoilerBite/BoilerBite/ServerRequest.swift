@@ -84,7 +84,7 @@ func deleteUser(name: String, pass: String) {
 //insertFood(name: "Rid", food: "Protein", cal_total: 1234)
 
 // Function to add food item to progress table
-func insertFood(name: String, food: String, cal_total: Int){
+func insertFood(name: String, food: String, cal_total: Int) -> String {
 //    let name = "Isha"
 //    let pass = "isha"
 //    let cal_total = 0;
@@ -98,10 +98,12 @@ func insertFood(name: String, food: String, cal_total: Int){
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
+    
     let postString = "userName=\(name)&food_name=\(food)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carbs=\(g_carbs)"
+    
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
-    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+    let task = URLSession.shared.dataTask(with: request as URLRequest){
         data, response, error in
 
         if error != nil {
@@ -111,8 +113,10 @@ func insertFood(name: String, food: String, cal_total: Int){
 
         //print("response = \(String(describing: response))")
 
-        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        let response = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
+        print("responseString = \(String(describing: response))")
     }
     task.resume()
+    
+    return "error"
 }

@@ -185,22 +185,22 @@ $obj = new insertTable();
 //echo nl2br("Begin unit testing for inserting food item:\n\n");
 
 //Testing input
-$username = "admini"; //$_POST['userName'];
-$food = "mac"; //$_POST['food_name'];
-$total_cal = "1230"; //$_POST['total_calorie'];
-$cal_fat = "123"; //$_POST['calorie_fat'];
-$g_fat = "123"; //$_POST['gram_fat'];
-$g_protein = "123"; //$_POST['gram_protein'];
-$g_carb = "123"; //$_POST['gram_carbs'];
+// $username = "admini"; //$_POST['userName'];
+// $food = "mac"; //$_POST['food_name'];
+// $total_cal = "1230"; //$_POST['total_calorie'];
+// $cal_fat = "123"; //$_POST['calorie_fat'];
+// $g_fat = "123"; //$_POST['gram_fat'];
+// $g_protein = "123"; //$_POST['gram_protein'];
+// $g_carb = "123"; //$_POST['gram_carbs'];
 // $date = "2020-04-10"; //$_POST['date'];
 
-// $username = $_POST['userName'];
-// $food = $_POST['food_name'];
-// $total_cal = $_POST['total_calorie'];
-// $cal_fat = $_POST['calorie_fat'];
-// $g_fat = $_POST['gram_fat'];
-// $g_protein =  $_POST['gram_protein'];
-// $g_carb = $_POST['gram_carbs'];
+$username = $_POST['userName'];
+$food = $_POST['food_name'];
+$total_cal = $_POST['total_calorie'];
+$cal_fat = $_POST['calorie_fat'];
+$g_fat = $_POST['gram_fat'];
+$g_protein =  $_POST['gram_protein'];
+$g_carb = $_POST['gram_carbs'];
 $date = date("Y-m-d");
 if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo nl2br("Food inserted.\n");

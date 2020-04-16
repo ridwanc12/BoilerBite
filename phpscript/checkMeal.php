@@ -82,9 +82,13 @@ class  insertTable
 
 // Create new obj to run function
 $obj = new insertTable();
+$username = $_POST['userName'];
 $date = date("Y-m-d");
+
+// $username = "admini";
+
 echo $date;
-$file = $obj->checkMeal("admini", "2020-04-11");
+$file = $obj->checkMeal($username, $date);
 echo $file;
 
 ?>
