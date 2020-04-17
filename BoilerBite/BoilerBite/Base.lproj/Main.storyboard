@@ -816,6 +816,7 @@
                     <navigationItem key="navigationItem" id="zcO-X8-f7A"/>
                     <connections>
                         <outlet property="diningHallLabel" destination="iLD-jZ-toW" id="CZq-EU-yVd"/>
+                        <outlet property="hoursLabel" destination="AbO-in-AMl" id="Tag-fe-mBD"/>
                         <outlet property="tableView" destination="tSA-Wo-lGV" id="Ik9-2R-Moy"/>
                     </connections>
                 </viewController>
@@ -1725,12 +1726,13 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YCd-OJ-Zy0"/>
         <segue reference="ULV-Ve-rxy"/>
         <segue reference="b7d-Wu-U7r"/>
         <segue reference="O4y-7l-SDx"/>
         <segue reference="xQf-cx-d3L"/>
         <segue reference="qoP-Pr-npA"/>
-        <segue reference="LmW-nD-3DA"/>
+        <segue reference="RBJ-nK-agt"/>
         <segue reference="8ah-od-bQx"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>

@@ -12,7 +12,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
-
+    @IBOutlet weak var hoursLabel: UILabel!
+    
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
@@ -47,7 +48,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
-//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
+        
+        let opening = String(meals[1].Hours?.StartTime ?? "")
+        let closing = String(meals[1].Hours?.EndTime ?? "")
+        let hoursText = opening + " - " + closing
+        
+        hoursLabel.text = hoursText
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
