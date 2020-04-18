@@ -841,7 +841,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="L1f-Q7-b09">
-                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="282"/>
+                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="141"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="tjt-rY-GkG"/>
                                 </constraints>
@@ -855,7 +855,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 am - 2:00 pm " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btb-LH-1Nu">
-                                <rect key="frame" x="19" y="326" width="200" height="27"/>
+                                <rect key="frame" x="19" y="185" width="200" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -863,7 +863,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-E7-32V">
-                                <rect key="frame" x="21" y="369" width="325" height="336"/>
+                                <rect key="frame" x="21" y="228" width="325" height="477"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Menu Cell" textLabel="3Za-cI-Dbi" detailTextLabel="A8a-r5-uAv" style="IBUITableViewCellStyleSubtitle" id="Ysa-1X-Hax" customClass="MenuTableViewCell" customModule="BoilerBite" customModuleProvider="target">
@@ -1427,7 +1427,7 @@
                                 <rect key="frame" x="-75" y="51" width="525" height="710"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-j3-Xll">
-                                <rect key="frame" x="30" y="361" width="288" height="49"/>
+                                <rect key="frame" x="30" y="220" width="288" height="49"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -1435,7 +1435,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to the developers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cD-x7-poS">
-                                <rect key="frame" x="116" y="406" width="167" height="27"/>
+                                <rect key="frame" x="116" y="265" width="167" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1443,7 +1443,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uY2-vr-6vp">
-                                <rect key="frame" x="198" y="71" width="161" height="282"/>
+                                <rect key="frame" x="198" y="71" width="161" height="141"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter feedback" textAlignment="center" minimumFontSize="17" background="square-textbox" translatesAutoresizingMaskIntoConstraints="NO" id="iAa-eo-zYc" userLabel="Username Text">
                                 <rect key="frame" x="74.666666666666671" y="365" width="225.66666666666663" height="225"/>
@@ -1451,7 +1451,7 @@
                                     <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lMk-i7-KRO" userLabel="update_button">
                                 <rect key="frame" x="116" y="631" width="142" height="71"/>
@@ -1499,6 +1499,135 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JO-nX-Ohu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3280.8000000000002" y="1568.7192118226601"/>
+        </scene>
+        <!--Goals View Controller-->
+        <scene sceneID="jVq-r9-8uK">
+            <objects>
+                <viewController id="bgO-yi-aa4" userLabel="Goals View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PU9-Xf-E15">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" id="BTu-p2-AR5">
+                                <rect key="frame" x="-115" y="-51" width="605" height="914"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_rect" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-G8-mG6">
+                                <rect key="frame" x="8" y="39" width="359" height="734"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SXW-QU-fdH">
+                                <rect key="frame" x="198" y="73" width="161" height="141"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWG-da-8vP">
+                                <rect key="frame" x="29" y="212" width="183" height="41"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="today's intake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd9-kR-9VN">
+                                <rect key="frame" x="29" y="342" width="148" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEp-a0-g05">
+                                <rect key="frame" x="248" y="392" width="59" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-Rz-Lku">
+                                <rect key="frame" x="76" y="392" width="155" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's snapshot" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-lG-OTc">
+                                <rect key="frame" x="48" y="258" width="164" height="27"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-B9-C9r">
+                                <rect key="frame" x="31" y="451" width="110" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1F-LM-RFT">
+                                <rect key="frame" x="29" y="64" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Geo-nc-7MD" userLabel="button">
+                                <rect key="frame" x="67" y="392" width="240" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="text-box-clear">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Y4-Hx-QtK" userLabel="button">
+                                <rect key="frame" x="67" y="500" width="240" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="text-box-clear">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="total calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR9-6X-25P">
+                                <rect key="frame" x="77" y="500" width="155" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L2-Rq-h6J">
+                                <rect key="frame" x="248" y="500" width="59" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="New Account"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="8"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uqL-G8-mG6" firstAttribute="centerX" secondItem="BTu-p2-AR5" secondAttribute="centerX" id="1Jy-Vt-91V"/>
+                            <constraint firstItem="nwT-lG-OTc" firstAttribute="leading" secondItem="HO4-ad-iE0" secondAttribute="leading" constant="48" id="1sk-iq-Naq"/>
+                            <constraint firstItem="SXW-QU-fdH" firstAttribute="trailing" secondItem="PU9-Xf-E15" secondAttribute="trailingMargin" id="4Ox-so-8Kk"/>
+                            <constraint firstItem="SXW-QU-fdH" firstAttribute="leading" secondItem="HO4-ad-iE0" secondAttribute="leading" constant="198" id="8Md-B0-0fO"/>
+                            <constraint firstItem="nwT-lG-OTc" firstAttribute="top" secondItem="MWG-da-8vP" secondAttribute="bottom" constant="5" id="GtF-Cb-2X6"/>
+                            <constraint firstItem="uqL-G8-mG6" firstAttribute="leading" secondItem="HO4-ad-iE0" secondAttribute="leading" constant="8" id="Je2-Ph-al5"/>
+                            <constraint firstItem="uqL-G8-mG6" firstAttribute="centerY" secondItem="BTu-p2-AR5" secondAttribute="centerY" id="cQe-Ia-T0u"/>
+                            <constraint firstItem="SXW-QU-fdH" firstAttribute="top" secondItem="HO4-ad-iE0" secondAttribute="top" constant="29" id="idi-ea-kUl"/>
+                            <constraint firstItem="HO4-ad-iE0" firstAttribute="bottom" secondItem="nwT-lG-OTc" secondAttribute="bottom" constant="493" id="o7q-wq-iWo"/>
+                            <constraint firstItem="nwT-lG-OTc" firstAttribute="trailing" secondItem="MWG-da-8vP" secondAttribute="trailing" id="oud-Qd-gNl"/>
+                            <constraint firstItem="HO4-ad-iE0" firstAttribute="bottom" secondItem="uqL-G8-mG6" secondAttribute="bottom" constant="5" id="vDB-Ir-G7l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HO4-ad-iE0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtA-1g-0ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4173.6000000000004" y="1568.7192118226601"/>
         </scene>
         <!--Nutrition View Controller-->
         <scene sceneID="YUO-dQ-2SI">
@@ -1721,15 +1850,15 @@
         <image name="signup+prompt" width="216" height="15"/>
         <image name="square-textbox" width="225" height="225"/>
         <image name="text-box" width="229" height="44"/>
+        <image name="text-box-clear" width="237" height="29"/>
         <image name="update-button" width="124" height="71"/>
         <image name="username" width="229" height="44"/>
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YCd-OJ-Zy0"/>
-        <segue reference="ULV-Ve-rxy"/>
+        <segue reference="K5f-8V-oix"/>
         <segue reference="b7d-Wu-U7r"/>
-        <segue reference="O4y-7l-SDx"/>
+        <segue reference="C7p-Iv-4X7"/>
         <segue reference="xQf-cx-d3L"/>
         <segue reference="qoP-Pr-npA"/>
         <segue reference="RBJ-nK-agt"/>
