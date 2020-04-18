@@ -387,6 +387,9 @@
                                 <state key="normal" title="goals" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bgO-yi-aa4" kind="presentation" modalPresentationStyle="fullScreen" id="N6J-bz-zzu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qZX-Va-Ufk">
                                 <rect key="frame" x="71.91053828731674" y="544.00000000000023" width="228.99999999999989" height="43.999999999999886"/>
@@ -1562,7 +1565,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="your goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-B9-C9r">
-                                <rect key="frame" x="31" y="451" width="110" height="27"/>
+                                <rect key="frame" x="31" y="453" width="110" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
@@ -1574,6 +1577,9 @@
                                 <rect key="frame" x="29" y="64" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="uOr-6Z-Bew"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Geo-nc-7MD" userLabel="button">
                                 <rect key="frame" x="67" y="392" width="240" height="40"/>
@@ -1856,13 +1862,13 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K5f-8V-oix"/>
-        <segue reference="b7d-Wu-U7r"/>
-        <segue reference="C7p-Iv-4X7"/>
+        <segue reference="ULV-Ve-rxy"/>
+        <segue reference="ewa-Si-ZKT"/>
+        <segue reference="U10-p6-8x8"/>
         <segue reference="xQf-cx-d3L"/>
         <segue reference="qoP-Pr-npA"/>
         <segue reference="RBJ-nK-agt"/>
-        <segue reference="8ah-od-bQx"/>
+        <segue reference="uOr-6Z-Bew"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>
