@@ -21,6 +21,9 @@ class GoalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Changing all Labels to a Dark Grey color
+        // Label.textColor = UIColor.darkGray
 
         // Do any additional setup after loading the view.
     }
