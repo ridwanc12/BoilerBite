@@ -1506,7 +1506,7 @@
         <!--Goals View Controller-->
         <scene sceneID="jVq-r9-8uK">
             <objects>
-                <viewController id="bgO-yi-aa4" userLabel="Goals View Controller" sceneMemberID="viewController">
+                <viewController id="bgO-yi-aa4" userLabel="Goals View Controller" customClass="GoalsViewController" customModule="BoilerBite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PU9-Xf-E15">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1730,6 +1730,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HO4-ad-iE0"/>
                     </view>
+                    <connections>
+                        <outlet property="breakfast_cal" destination="AEp-a0-g05" id="iUZ-6e-aP7"/>
+                        <outlet property="dinner_cal" destination="y3a-zO-OfN" id="HKc-RP-W05"/>
+                        <outlet property="late_lunch_cal" destination="hMP-Hf-eTf" id="Mhz-re-3ii"/>
+                        <outlet property="lunch_cal" destination="uf8-MS-IOa" id="Mv0-YU-C2I"/>
+                        <outlet property="total_daily_cal" destination="6lw-AK-PXx" id="B9D-hQ-Q5i"/>
+                        <outlet property="total_goals_cal" destination="0L2-Rq-h6J" id="lDg-vo-von"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtA-1g-0ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
