@@ -49,8 +49,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
         
-        let opening = String(meals[1].Hours?.StartTime ?? "")
-        let closing = String(meals[1].Hours?.EndTime ?? "")
+        
+        
+        let temp1 = String(meals[1].Hours?.StartTime ?? "")
+        let opening = convertTime(time: temp1)
+        
+        let temp2 = String(describing: meals[1].Hours?.EndTime ?? "")
+        let closing = convertTime(time: temp2)
+        
         let hoursText = opening + " - " + closing
         
         hoursLabel.text = hoursText
@@ -58,6 +64,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
+    }
+    
+    func convertTime(time: String) -> String {
+        let dateIn = DateFormatter()
+        dateIn.dateFormat = "HH:mm:ss"
+        dateIn.locale = Locale(identifier: "en_US_POSIX")
+        let date = dateIn.date(from: time)
+        let dateOut = DateFormatter()
+        dateOut.dateFormat = "h:mm a"
+        return dateOut.string(from: date!)
     }
     
     // Helper function for counting number of items due to ambiguousness of count() function
