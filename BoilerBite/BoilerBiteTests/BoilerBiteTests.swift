@@ -435,4 +435,25 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertEqual(stringHours, "[nil, nil, nil, Optional(Hour(StartTime: 16:00:00, EndTime: 20:00:00))]")
         
     }
+    
+    func testMealsWeekday() {
+        // Meals for Windsor 01-13-2020
+        let meals = getMeals(hall: "windsor", date: "2020-01-13")
+        print(meals)
+        let expected = """
+["Lunch", "Late Lunch", "Dinner"]
+"""
+        XCTAssertEqual(String(describing: meals), expected)
+    }
+    
+    func testMealsWeekend() {
+        // Meals for Windsor 01-18-2020
+        let meals = getMeals(hall: "windsor", date: "2020-01-18")
+        print(meals)
+        let expected = """
+["Dinner"]
+"""
+        
+        XCTAssertEqual(String(describing: meals), expected)
+    }
 }
