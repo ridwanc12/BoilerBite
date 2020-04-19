@@ -17,6 +17,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    var meal_num: Int = 1
     
     var diningHall: String = "earhart"
     
@@ -44,17 +45,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Earhart doesn't serve this Meal
 //        stations = meals[3].Stations as! [Station]
         
-        stations = meals[1].Stations as! [Station]
+        stations = meals[meal_num].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
         
-        
-        
-        let temp1 = String(meals[1].Hours?.StartTime ?? "")
+        let temp1 = String(meals[meal_num].Hours?.StartTime ?? "")
         let opening = convertTime(time: temp1)
         
-        let temp2 = String(describing: meals[1].Hours?.EndTime ?? "")
+        let temp2 = String(describing: meals[meal_num].Hours?.EndTime ?? "")
         let closing = convertTime(time: temp2)
         
         let hoursText = opening + " - " + closing
