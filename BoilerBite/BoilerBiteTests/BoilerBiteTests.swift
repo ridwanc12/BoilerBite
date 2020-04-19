@@ -35,21 +35,6 @@ class BoilerBiteTests: XCTestCase {
 //        }
     }
     
-    func testDiningHours() {
-        // Menu for Windsor 01-13-2020
-        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
-        
-        XCTAssertNotNil(testMenu)
-        
-        let diningHours = getDiningHours(menu: testMenu)
-        let stringHours = String(describing: diningHours)
-        
-        print(diningHours)
-        
-        XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
-        
-    }
-    
     func testBLDHours() {
         // Menu for Windsor 01-13-2020
         let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
@@ -76,21 +61,6 @@ class BoilerBiteTests: XCTestCase {
         print(LLHours)
         
         XCTAssertEqual(stringHours, "[Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00))]")
-    }
-    
-    func testWeekendHours() {
-        // Menu for Windsor 01-13-2020
-        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
-        
-        XCTAssertNotNil(testMenu)
-        
-        let diningHours = getDiningHours(menu: testMenu)
-        let stringHours = String(describing: diningHours)
-        
-        print(diningHours)
-        
-        XCTAssertEqual(stringHours, "[nil, nil, nil, Optional(Hour(StartTime: 16:00:00, EndTime: 20:00:00))]")
-        
     }
     
     func testMenuWindsorDay1() {
@@ -435,5 +405,34 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let nutritionString = "[NutritionFact(Name: Serving Size, Value: -1.0, LabelValue: 5 per Serving, DailyValue: , Ordinal: 0), NutritionFact(Name: Calories, Value: 270.5204, LabelValue: 271, DailyValue: , Ordinal: 1), NutritionFact(Name: Calories from fat, Value: -1.0, LabelValue: 153, DailyValue: , Ordinal: 2), NutritionFact(Name: Total fat, Value: 16.9868, LabelValue: 17g, DailyValue: 26%, Ordinal: 3), NutritionFact(Name: Saturated fat, Value: 2.3163, LabelValue: 2.5g, DailyValue: 12%, Ordinal: 4), NutritionFact(Name: Cholesterol, Value: 24.9915, LabelValue: 25mg, DailyValue: 8%, Ordinal: 5), NutritionFact(Name: Sodium, Value: 99.964, LabelValue: 100mg, DailyValue: 4%, Ordinal: 6), NutritionFact(Name: Total Carbohydrate, Value: 22.4924, LabelValue: 22g, DailyValue: 7%, Ordinal: 7), NutritionFact(Name: Sugar, Value: 0.0, LabelValue: 0g, DailyValue: , Ordinal: 8), NutritionFact(Name: Dietary Fiber, Value: 0.8327, LabelValue: less than 1 g, DailyValue: , Ordinal: 9), NutritionFact(Name: Protein, Value: 7.4975, LabelValue: 7g, DailyValue: 7%, Ordinal: 10), NutritionFact(Name: Vitamin A, Value: 166.6074, LabelValue: , DailyValue: 6%, Ordinal: 11), NutritionFact(Name: Vitamin C, Value: 0.0, LabelValue: , DailyValue: 0%, Ordinal: 12), NutritionFact(Name: Calcium, Value: 58.3122, LabelValue: , DailyValue: 6%, Ordinal: 13), NutritionFact(Name: Iron, Value: 1.0493, LabelValue: , DailyValue: 6%, Ordinal: 14)]"
         
         XCTAssertEqual(String(describing: nutrition), nutritionString)
+    }
+    
+    func testDiningHoursWeekday() {
+        // Menu for Windsor 01-13-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let diningHours = getDiningHours(menu: testMenu)
+        let stringHours = String(describing: diningHours)
+        
+        print(diningHours)
+        
+        XCTAssertEqual(stringHours, "[nil, Optional(Hour(StartTime: 10:00:00, EndTime: 14:00:00)), Optional(Hour(StartTime: 14:00:00, EndTime: 17:00:00)), Optional(Hour(StartTime: 17:00:00, EndTime: 21:00:00))]")
+    }
+    
+    func testDiningHoursWeekend() {
+        // Menu for Windsor 01-18-2020
+        let testMenu = getMenu(hall: "windsor", date: "2020-01-18")
+        
+        XCTAssertNotNil(testMenu)
+        
+        let diningHours = getDiningHours(menu: testMenu)
+        let stringHours = String(describing: diningHours)
+        
+        print(diningHours)
+        
+        XCTAssertEqual(stringHours, "[nil, nil, nil, Optional(Hour(StartTime: 16:00:00, EndTime: 20:00:00))]")
+        
     }
 }
