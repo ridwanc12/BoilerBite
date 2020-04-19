@@ -134,7 +134,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         //  print(item)
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
-            let calories = String(getItemCalories(itemID: item.ID))
+        let calories = String(getItemCalories(itemID: item.ID))
 
         //  print(calories)
         if (calories != "-1" && calories != "0") {

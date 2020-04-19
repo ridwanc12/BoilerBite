@@ -10,9 +10,10 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var MenuTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
-
+    @IBOutlet weak var hoursLabel: UILabel!
+    
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
@@ -47,7 +48,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
-//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
+        
+        let opening = String(meals[1].Hours?.StartTime ?? "")
+        let closing = String(meals[1].Hours?.EndTime ?? "")
+        let hoursText = opening + " - " + closing
+        
+        hoursLabel.text = hoursText
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
@@ -105,13 +111,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
         
         items = stations[indexPath.section].Items
-//        print(items)
         let item = items[indexPath.row]
-//        print(item)
+
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
@@ -128,15 +133,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is NutritionViewController {
+            let vc = segue.destination as? NutritionViewController
+            // items = stations[tableView.indexPathForSelectedRow!.row].Items
+            let item = items[tableView.indexPathForSelectedRow!.row]
+            print(item.Name)
+           // vc?.diningHall = chosenHall
+        }
     }
-    */
 
 }
 
