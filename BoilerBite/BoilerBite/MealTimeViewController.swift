@@ -9,11 +9,47 @@
 import UIKit
 
 class MealTimeViewController: UIViewController {
-
+    
+    let image = UIImage(named:"text-box")
+    
+    @IBOutlet weak var stackview: UIStackView!
+    
+    // Sample Array of Buttons
+    let array = ["Button1", "Button2", "Button3", "Button4"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor(white: 0.25, alpha: 1.0)
+        // view.addSubview(makeButtonWithText(text: "Button 1"))
+        
+        // Creating the Buttons
+        for item in array {
+           stackview.addArrangedSubview(makeButtonWithText(text: item))
+        }
+        
+    }
+    
+    // Make a button with the String passed in
+    func makeButtonWithText(text:String) -> UIButton {
+        let myButton = UIButton(type: UIButton.ButtonType.system)
+        myButton.frame = CGRect(x: 72, y: 360, width: 230, height: 45)
+        myButton.setTitle(text, for: UIControl.State.normal)
+        myButton.setTitleColor(UIColor.lightGray, for: UIControl.State.normal)
+        myButton.setBackgroundImage(image, for: UIControl.State.normal)
+        
+        //Assign a target (i.e. action) to the button
+        myButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside
+        )
+        
+        return myButton
+    }
+    
+    //MARK: - Actions and Selectors
+    @IBAction func buttonPressed(sender:UIButton) {
+        
     }
     
 
