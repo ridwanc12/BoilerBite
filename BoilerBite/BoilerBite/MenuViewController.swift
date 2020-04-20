@@ -10,6 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
@@ -154,11 +155,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let vc = segue.destination as? NutritionViewController
             // items = stations[tableView.indexPathForSelectedRow!.row].Items
             let item = items[tableView.indexPathForSelectedRow!.row]
-            print(item.Name)
-           // vc?.diningHall = chosenHall
+//            print(item.Name)
+            vc?.itemID = item.ID
             vc?.diningHall = diningHall
             vc?.mealTime = mealTime
-            
+        }
+        else if segue.destination is MealTimeViewController {
+            let vc = segue.destination as? MealTimeViewController
+            vc?.diningHall = diningHall
+            vc?.mealTimes = getFirstDayMeals(hall: diningHall)
         }
     }
 
