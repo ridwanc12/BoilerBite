@@ -42,6 +42,10 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
         items.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 49 // height for every row
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Nutrition Cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row]
