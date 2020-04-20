@@ -15,6 +15,9 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
     
+    var diningHall: String = "earhart"
+    var mealTime: String = "lunch"
+    
     // Var to store the running total
     var totalcalories = 0
     var itemList: [String: Int] = [:]
@@ -32,8 +35,8 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Menu for current day Earhart for testing
-        let testMenu = getFirstDayMenu(hall: "earhart")
+        // Menu for current day for the given dining hall for testing
+        let testMenu = getFirstDayMenu(hall: diningHall)
 
         // All meals
         meals = testMenu!.Meals as! [Meal]

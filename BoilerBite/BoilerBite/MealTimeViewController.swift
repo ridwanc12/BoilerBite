@@ -17,7 +17,7 @@ class MealTimeViewController: UIViewController {
     var diningHall: String = "earhart";
     
     // Sample Array of Buttons
-    let array = ["Button1", "Button2", "Button3", "Button4"]
+    let array = ["Button1", "Button2", "Button3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,11 @@ class MealTimeViewController: UIViewController {
         if segue.identifier == "MealTimeSegue" {
             if segue.destination is MenuViewController {
                 let vc = segue.destination as? MenuViewController
+                vc?.diningHall = diningHall
+                vc?.mealTime = "lunch"
+            }
+            else if segue.destination is SelectableMenuViewController {
+                let vc = segue.destination as? SelectableMenuViewController
                 vc?.diningHall = diningHall
                 vc?.mealTime = "lunch"
             }
