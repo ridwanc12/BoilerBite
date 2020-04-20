@@ -15,9 +15,10 @@ class MealTimeViewController: UIViewController {
     @IBOutlet weak var stackview: UIStackView!
     
     var diningHall: String = "earhart";
+    var chosenMealTime: String = "lunch"
     
     // Sample Array of Buttons
-    let array = ["Button1", "Button2", "Button3"]
+    var mealTimes = ["Breakfast", "Lunch", "Late Lunch", "Dinner"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,11 @@ class MealTimeViewController: UIViewController {
         // view.addSubview(makeButtonWithText(text: "Button 1"))
         
         // Creating the Buttons
-        for item in array {
+        for item in mealTimes {
            stackview.addArrangedSubview(makeButtonWithText(text: item))
         }
+        
+//        print(mealTimes)
         
     }
     
@@ -63,12 +66,12 @@ class MealTimeViewController: UIViewController {
             if segue.destination is MenuViewController {
                 let vc = segue.destination as? MenuViewController
                 vc?.diningHall = diningHall
-                vc?.mealTime = "lunch"
+                vc?.mealTime = chosenMealTime
             }
             else if segue.destination is SelectableMenuViewController {
                 let vc = segue.destination as? SelectableMenuViewController
                 vc?.diningHall = diningHall
-                vc?.mealTime = "lunch"
+                vc?.mealTime = chosenMealTime
             }
         }
         
