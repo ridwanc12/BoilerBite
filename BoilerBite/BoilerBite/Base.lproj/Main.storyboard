@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHO-tF-Ifk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -368,7 +368,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="ewa-Si-ZKT"/>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="wWF-Sl-gah"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3SI-5X-fBk">
@@ -378,7 +378,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="ULV-Ve-rxy"/>
+                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="fdd-Ut-I0N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3FF-cT-W6u">
@@ -472,7 +472,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonEarhart:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="igD-LM-EZB"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="d9h-Ni-4aC"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="aI2-wL-ToD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fwv-G0-n6D" userLabel="ford">
@@ -483,7 +483,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonFord:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="F0h-VC-cpn"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="BMr-r3-3YJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZLm-G6-ofk" userLabel="hillenbrand">
@@ -494,7 +493,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonHillenbrand:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="Gzx-ks-PVp"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="JcX-fG-Q0E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Mg-jy-L3h" userLabel="wiley">
@@ -505,7 +503,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWiley:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="hTt-ZX-bOr"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="j0n-al-1j2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
@@ -516,7 +513,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWindsor:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="3Kf-D8-zA1"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="U69-tf-jAK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
@@ -537,7 +533,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="b7d-Wu-U7r"/>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="dIX-q3-sAB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -563,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ek6-8M-i40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="117"/>
+            <point key="canvasLocation" x="2201" y="117"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="rqS-zh-h1l">
@@ -906,7 +902,7 @@
                                 <rect key="frame" x="21" y="71" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="Cwh-ey-aFg"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="tvw-bf-UXF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="32c-pM-iKp" userLabel="create_button">
@@ -986,7 +982,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5Qo-tK-luH" kind="presentation" modalPresentationStyle="fullScreen" id="4ey-8T-Wph"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="hnE-Jy-Cbg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mZV-c6-l6E" userLabel="ford">
@@ -1033,7 +1029,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="K5f-8V-oix"/>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="zZV-46-FQR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1054,7 +1050,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NrG-WM-hd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="816"/>
+            <point key="canvasLocation" x="2201" y="816"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qWF-vH-BAI">
@@ -1213,7 +1209,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="LmW-nD-3DA"/>
+                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="E1h-9c-lOF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5CP-i5-xi6">
@@ -1253,7 +1249,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="udi-xV-Fqu"/>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="eEq-yL-xEq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1280,7 +1276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yak-HX-SUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="117"/>
+            <point key="canvasLocation" x="3218" y="117"/>
         </scene>
         <!--Update Password-->
         <scene sceneID="ANi-Oq-oTD">
@@ -1792,7 +1788,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ingredients" adjustsFontForContentSizeCategory="YES" id="7c2-UA-PrL">
-                                    <rect key="frame" x="0.0" y="149.66666666666666" width="343" height="49.666666666666657"/>
+                                    <rect key="frame" x="0.0" y="149.66666666666669" width="343" height="49.666666666666643"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1893,7 +1889,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="xQf-cx-d3L"/>
+                                    <segue destination="5Qo-tK-luH" kind="presentation" modalPresentationStyle="fullScreen" id="QEe-7A-04g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8iu-g6-Vuf">
@@ -1933,7 +1929,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="Jli-UR-bbW"/>
+                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="24S-xa-hrC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1960,7 +1956,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLX-42-o3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2201" y="816"/>
+            <point key="canvasLocation" x="3217" y="816"/>
         </scene>
     </scenes>
     <resources>
@@ -1981,13 +1977,12 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ULV-Ve-rxy"/>
-        <segue reference="ewa-Si-ZKT"/>
-        <segue reference="C7p-Iv-4X7"/>
-        <segue reference="Cwh-ey-aFg"/>
-        <segue reference="qoP-Pr-npA"/>
-        <segue reference="RBJ-nK-agt"/>
-        <segue reference="uOr-6Z-Bew"/>
+        <segue reference="hnE-Jy-Cbg"/>
+        <segue reference="U10-p6-8x8"/>
+        <segue reference="24S-xa-hrC"/>
+        <segue reference="E1h-9c-lOF"/>
+        <segue reference="wWF-Sl-gah"/>
+        <segue reference="zZV-46-FQR"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>
