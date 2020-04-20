@@ -18,6 +18,21 @@ class SettingsViewController: UIViewController {
 //        global_username = "ridwan"
 //        global_password = "ridwan"
         let incorrect_pass = global_password + global_username
+        let alert = UIAlertController(title: "Delete User", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Password"
+        })
+
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
+
+            if let pass = alert.textFields?.first?.text {
+                print("Password is: \(pass)")
+            }
+        }))
+
+        self.present(alert, animated: true)
         
         deleteUser(name: global_username, pass: incorrect_pass)
         sleep(1)
