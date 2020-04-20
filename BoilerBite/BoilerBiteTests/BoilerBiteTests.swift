@@ -373,6 +373,8 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let nutritionString = "[NutritionFact(Name: Serving Size, Value: -1.0, LabelValue: Serving, DailyValue: , Ordinal: 0), NutritionFact(Name: Calories, Value: 350.689, LabelValue: 351, DailyValue: , Ordinal: 1), NutritionFact(Name: Calories from fat, Value: -1.0, LabelValue: 216, DailyValue: , Ordinal: 2), NutritionFact(Name: Total fat, Value: 23.8546, LabelValue: 24g, DailyValue: 37%, Ordinal: 3), NutritionFact(Name: Saturated fat, Value: 12.7221, LabelValue: 13g, DailyValue: 64%, Ordinal: 4), NutritionFact(Name: Cholesterol, Value: 131.9648, LabelValue: 130mg, DailyValue: 44%, Ordinal: 5), NutritionFact(Name: Sodium, Value: 717.7431, LabelValue: 720mg, DailyValue: 30%, Ordinal: 6), NutritionFact(Name: Total Carbohydrate, Value: 22.1732, LabelValue: 22g, DailyValue: 7%, Ordinal: 7), NutritionFact(Name: Sugar, Value: 4.387, LabelValue: 4g, DailyValue: , Ordinal: 8), NutritionFact(Name: Dietary Fiber, Value: 0.7912, LabelValue: less than 1 g, DailyValue: , Ordinal: 9), NutritionFact(Name: Protein, Value: 13.347, LabelValue: 13g, DailyValue: 13%, Ordinal: 10), NutritionFact(Name: Vitamin A, Value: 736.9079, LabelValue: , DailyValue: 25%, Ordinal: 11), NutritionFact(Name: Vitamin C, Value: 10.564, LabelValue: , DailyValue: 20%, Ordinal: 12), NutritionFact(Name: Calcium, Value: 391.4596, LabelValue: , DailyValue: 40%, Ordinal: 13), NutritionFact(Name: Iron, Value: 1.251, LabelValue: , DailyValue: 6%, Ordinal: 14)]"
         
         XCTAssertEqual(String(describing: nutrition), nutritionString)
+        
+        XCTAssertEqual(String(describing: type(of: nutrition)), "Array<NutritionFact>")
     }
     
     func testWindsorMenuWeekendFirstItemNutrition() {
@@ -405,6 +407,8 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         let nutritionString = "[NutritionFact(Name: Serving Size, Value: -1.0, LabelValue: 5 per Serving, DailyValue: , Ordinal: 0), NutritionFact(Name: Calories, Value: 270.5204, LabelValue: 271, DailyValue: , Ordinal: 1), NutritionFact(Name: Calories from fat, Value: -1.0, LabelValue: 153, DailyValue: , Ordinal: 2), NutritionFact(Name: Total fat, Value: 16.9868, LabelValue: 17g, DailyValue: 26%, Ordinal: 3), NutritionFact(Name: Saturated fat, Value: 2.3163, LabelValue: 2.5g, DailyValue: 12%, Ordinal: 4), NutritionFact(Name: Cholesterol, Value: 24.9915, LabelValue: 25mg, DailyValue: 8%, Ordinal: 5), NutritionFact(Name: Sodium, Value: 99.964, LabelValue: 100mg, DailyValue: 4%, Ordinal: 6), NutritionFact(Name: Total Carbohydrate, Value: 22.4924, LabelValue: 22g, DailyValue: 7%, Ordinal: 7), NutritionFact(Name: Sugar, Value: 0.0, LabelValue: 0g, DailyValue: , Ordinal: 8), NutritionFact(Name: Dietary Fiber, Value: 0.8327, LabelValue: less than 1 g, DailyValue: , Ordinal: 9), NutritionFact(Name: Protein, Value: 7.4975, LabelValue: 7g, DailyValue: 7%, Ordinal: 10), NutritionFact(Name: Vitamin A, Value: 166.6074, LabelValue: , DailyValue: 6%, Ordinal: 11), NutritionFact(Name: Vitamin C, Value: 0.0, LabelValue: , DailyValue: 0%, Ordinal: 12), NutritionFact(Name: Calcium, Value: 58.3122, LabelValue: , DailyValue: 6%, Ordinal: 13), NutritionFact(Name: Iron, Value: 1.0493, LabelValue: , DailyValue: 6%, Ordinal: 14)]"
         
         XCTAssertEqual(String(describing: nutrition), nutritionString)
+        
+        XCTAssertEqual(String(describing: type(of: nutrition)), "Array<NutritionFact>")
     }
     
     func testDiningHoursWeekday() {
