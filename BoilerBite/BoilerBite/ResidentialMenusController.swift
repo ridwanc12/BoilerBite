@@ -41,6 +41,7 @@ class ResidentialMenusController: UIViewController {
         {
             let vc = segue.destination as? MealTimeViewController
             vc?.diningHall = chosenHall
+            vc?.mealTimes = getFirstDayMeals(hall: chosenHall)
         }
     }
 }
