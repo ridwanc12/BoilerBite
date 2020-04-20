@@ -10,6 +10,8 @@ import UIKit
 
 class SelectableMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var diningHallLabel: UILabel!
+    
     @IBOutlet weak var createMealButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,6 +39,12 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        diningHallLabel?.text = diningHall.capitalizingFirstLetter()
+        diningHallLabel?.sizeToFit()
+        diningHallLabel?.adjustsFontSizeToFitWidth = true
+        diningHallLabel?.minimumScaleFactor = 0.5
+        
         // Menu for current day for the given dining hall for testing
         let testMenu = getFirstDayMenu(hall: diningHall)
 

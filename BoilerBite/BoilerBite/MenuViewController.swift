@@ -34,6 +34,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
         
         diningHallLabel?.text = diningHall.capitalizingFirstLetter()
+        diningHallLabel?.sizeToFit()
+        diningHallLabel?.adjustsFontSizeToFitWidth = true
+        diningHallLabel?.minimumScaleFactor = 0.5
         
         // Menu for current day Earhart for testing
         let testMenu = getFirstDayMenu(hall: diningHall)
@@ -183,11 +186,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 }
 
 extension String {
-       func capitalizingFirstLetter() -> String {
-           return prefix(1).capitalized + dropFirst()
-       }
-
-       mutating func capitalizeFirstLetter() {
-           self = self.capitalizingFirstLetter()
-       }
+   func capitalizingFirstLetter() -> String {
+       return prefix(1).capitalized + dropFirst()
    }
+
+   mutating func capitalizeFirstLetter() {
+       self = self.capitalizingFirstLetter()
+   }
+}

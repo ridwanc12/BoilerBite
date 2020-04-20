@@ -13,6 +13,7 @@ class MealTimeViewController: UIViewController {
     let image = UIImage(named:"text-box")
     
     @IBOutlet weak var stackview: UIStackView!
+    @IBOutlet weak var mealTimeLabel: UILabel!
     
     var diningHall: String = "earhart";
     var chosenMealTime: String = "Lunch"
@@ -32,6 +33,8 @@ class MealTimeViewController: UIViewController {
         for item in mealTimes {
            stackview.addArrangedSubview(makeButtonWithText(text: item))
         }
+        
+        mealTimeLabel.text = diningHall.capitalizingFirstLetter()
         
 //        print(mealTimes)
         
