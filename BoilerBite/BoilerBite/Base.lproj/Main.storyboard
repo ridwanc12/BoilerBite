@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cwV-2a-5LK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHO-tF-Ifk">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -483,6 +483,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonFord:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="F0h-VC-cpn"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="e9o-Ic-D4n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZLm-G6-ofk" userLabel="hillenbrand">
@@ -493,6 +494,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonHillenbrand:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="Gzx-ks-PVp"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="yXr-Ix-0hb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Mg-jy-L3h" userLabel="wiley">
@@ -503,6 +505,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWiley:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="hTt-ZX-bOr"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="YAE-MF-Z73"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
@@ -513,6 +516,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWindsor:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="3Kf-D8-zA1"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="7wO-In-OKS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
@@ -1764,7 +1768,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ingredients" adjustsFontForContentSizeCategory="YES" id="7c2-UA-PrL">
-                                    <rect key="frame" x="0.0" y="149.66666666666666" width="343" height="49.666666666666657"/>
+                                    <rect key="frame" x="0.0" y="149.66666666666669" width="343" height="49.666666666666643"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1954,7 +1958,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hnE-Jy-Cbg"/>
-        <segue reference="aI2-wL-ToD"/>
+        <segue reference="7wO-In-OKS"/>
         <segue reference="U10-p6-8x8"/>
         <segue reference="fdd-Ut-I0N"/>
         <segue reference="DqN-Ih-BMD"/>

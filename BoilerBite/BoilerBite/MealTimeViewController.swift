@@ -14,6 +14,8 @@ class MealTimeViewController: UIViewController {
     
     @IBOutlet weak var stackview: UIStackView!
     
+    var diningHall: String = "";
+    
     // Sample Array of Buttons
     let array = ["Button1", "Button2", "Button3", "Button4"]
     
@@ -57,10 +59,14 @@ class MealTimeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is MenuViewController {
-            let vc = segue.destination as? MenuViewController
-            vc?.diningHall = "earhart"
+        if segue.identifier == "MealTimeSegue" {
+            if segue.destination is MenuViewController {
+                let vc = segue.destination as? MenuViewController
+                vc?.diningHall = diningHall
+                vc?.mealTime = "lunch"
+            }
         }
+        
         
     }
 

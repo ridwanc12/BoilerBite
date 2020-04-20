@@ -19,7 +19,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var stations: [Station] = []
     var meal_num: Int = 1
     
-    var diningHall: String = "earhart"
+    var diningHall: String = ""
+    var mealTime: String = "lunch"
     
     let sectionHeight = 27
     
