@@ -19,7 +19,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var stations: [Station] = []
     var meal_num: Int = 1
     
-    var diningHall: String = ""
+    var diningHall: String = "earhart"
     var mealTime: String = "lunch"
     
     let sectionHeight = 27
@@ -156,6 +156,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let item = items[tableView.indexPathForSelectedRow!.row]
             print(item.Name)
            // vc?.diningHall = chosenHall
+            vc?.diningHall = diningHall
+            vc?.mealTime = mealTime
+            
         }
     }
 

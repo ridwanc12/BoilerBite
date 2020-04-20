@@ -14,7 +14,7 @@ class MealTimeViewController: UIViewController {
     
     @IBOutlet weak var stackview: UIStackView!
     
-    var diningHall: String = "";
+    var diningHall: String = "earhart";
     
     // Sample Array of Buttons
     let array = ["Button1", "Button2", "Button3", "Button4"]
