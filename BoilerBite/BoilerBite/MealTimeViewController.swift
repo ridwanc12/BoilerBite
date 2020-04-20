@@ -37,30 +37,31 @@ class MealTimeViewController: UIViewController {
         let myButton = UIButton(type: UIButton.ButtonType.system)
         myButton.frame = CGRect(x: 72, y: 360, width: 230, height: 45)
         myButton.setTitle(text, for: UIControl.State.normal)
-        myButton.setTitleColor(UIColor.lightGray, for: UIControl.State.normal)
+        myButton.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
         myButton.setBackgroundImage(image, for: UIControl.State.normal)
         
         //Assign a target (i.e. action) to the button
-        myButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside
-        )
-        
+        myButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return myButton
     }
     
     //MARK: - Actions and Selectors
     @IBAction func buttonPressed(sender:UIButton) {
-        
+        self.performSegue(withIdentifier: "MealTimeSegue", sender: self)
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.destination is MenuViewController {
+            let vc = segue.destination as? MenuViewController
+            vc?.diningHall = "earhart"
+        }
+        
     }
-    */
 
 }
