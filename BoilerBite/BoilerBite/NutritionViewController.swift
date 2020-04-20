@@ -10,6 +10,8 @@ import UIKit
 
 class NutritionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var itemNameLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableFooter: UITextView!
     
@@ -29,6 +31,12 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         let item = getItem(itemID: itemID)
+        
+        itemNameLabel.text = item.Name
+        itemNameLabel?.sizeToFit()
+        itemNameLabel?.adjustsFontSizeToFitWidth = true
+        itemNameLabel?.minimumScaleFactor = 0.5
+        
         if (item.Nutrition != nil) {
             nutrition = item.Nutrition!
         }

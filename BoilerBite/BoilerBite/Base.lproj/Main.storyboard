@@ -1749,12 +1749,12 @@
                                 <rect key="frame" x="8" y="51" width="359" height="734"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OGx-Sz-sss">
-                                <rect key="frame" x="206" y="70" width="161" height="141"/>
+                                <rect key="frame" x="235" y="70" width="132" height="141"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
-                                <rect key="frame" x="16" y="138" width="151" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition Info: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
+                                <rect key="frame" x="16" y="138" width="180" height="32.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
@@ -1762,7 +1762,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-Ab-fxJ">
                                 <rect key="frame" x="16" y="181" width="188" height="41"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
@@ -1838,6 +1838,7 @@
                         <viewLayoutGuide key="safeArea" id="e87-JL-hdB"/>
                     </view>
                     <connections>
+                        <outlet property="itemNameLabel" destination="LN5-Ab-fxJ" id="w9c-qu-hug"/>
                         <outlet property="tableFooter" destination="7c2-UA-PrL" id="Jjl-qm-9QZ"/>
                         <outlet property="tableView" destination="fAQ-fS-4Ac" id="Rwc-Dx-vc3"/>
                     </connections>
@@ -1952,7 +1953,7 @@
         <segue reference="ICj-Sl-rAf"/>
         <segue reference="U10-p6-8x8"/>
         <segue reference="24S-xa-hrC"/>
-        <segue reference="DqN-Ih-BMD"/>
+        <segue reference="qoP-Pr-npA"/>
         <segue reference="eEq-yL-xEq"/>
         <segue reference="0E4-5U-m3p"/>
         <segue reference="MXM-w3-3cX"/>
