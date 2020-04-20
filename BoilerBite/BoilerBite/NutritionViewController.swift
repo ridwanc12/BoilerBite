@@ -11,6 +11,7 @@ import UIKit
 class NutritionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableFooter: UITextView!
     
 //    let labelsDict:[String: String] = ["Serving Size":"Servings", "Calories":"", "Calories from fat":"", "Total fat":"g", "Saturated fat":"g", "Cholesterol":"mg", "Sodium":"mg", "Total Carbohydrate":"g", "Sugar":"g", "Dietary Fiber":"g", "Protein":"g", "Vitamin A":"% of DV", "Vitamin C":"% of DV", "Calcium":"% of DV", "Iron":"% of DV"]
     
@@ -27,7 +28,15 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nutrition = getItemNutrition(itemID: itemID)
+        let item = getItem(itemID: itemID)
+        if (item.Nutrition != nil) {
+            nutrition = item.Nutrition!
+        }
+        else {
+            tableFooter.text = "No nutritional info is available for this item"
+            adjustUITextViewHeight(arg: tableFooter)
+            return
+        }
         
 //        print(nutrition)
         
@@ -35,6 +44,39 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
             items.append(fact.Name)
             values.append(fact.LabelValue ?? fact.DailyValue ?? "")
         }
+        
+        var cumulative_string = ""
+        
+        var allergens_present = false
+        allergens_append: if (item.Allergens != nil) {
+            let pruned_allergens = pruneAllergens(allergens: item.Allergens!)
+            if (pruned_allergens.isEmpty) {
+                break allergens_append
+            }
+            cumulative_string.append("\n")
+            cumulative_string.append("Allergens: \n")
+            for (index, allergen) in pruned_allergens.enumerated() {
+                cumulative_string.append(allergen)
+                if (index != pruned_allergens.endIndex - 1) {
+                    cumulative_string.append(", ")
+                }
+            }
+            cumulative_string.append("\n")
+            allergens_present = true
+        }
+        
+        if (item.Ingredients != nil) {
+            if (allergens_present) {
+                cumulative_string.append("\n")
+            }
+            cumulative_string.append("Ingredients: \n")
+            cumulative_string.append(item.Ingredients!)
+            cumulative_string.append("\n")
+        }
+        
+        tableFooter.text = cumulative_string
+        
+        adjustUITextViewHeight(arg: tableFooter)
         
 //        print(items)
 //        print(values)
@@ -56,6 +98,24 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
         cell.detailTextLabel?.text = values[indexPath.row]
         cell.detailTextLabel?.textColor = UIColor.darkGray
         return cell
+    }
+    
+    func pruneAllergens(allergens: [Allergen]) -> [String] {
+        var pruned_allergens:[String] = []
+        for allergen in allergens {
+            if (allergen.Value) {
+                pruned_allergens.append(allergen.Name)
+            }
+        }
+        
+        return pruned_allergens
+    }
+    
+    func adjustUITextViewHeight(arg : UITextView)
+    {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
     }
     
 

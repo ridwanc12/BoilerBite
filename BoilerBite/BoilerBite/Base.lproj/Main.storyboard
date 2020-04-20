@@ -818,7 +818,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="zcO-X8-f7A"/>
                     <connections>
-                        <outlet property="backButton" destination="XWw-Le-DNK" id="wwh-kv-bbA"/>
                         <outlet property="diningHallLabel" destination="iLD-jZ-toW" id="CZq-EU-yVd"/>
                         <outlet property="hoursLabel" destination="AbO-in-AMl" id="Tag-fe-mBD"/>
                         <outlet property="tableView" destination="tSA-Wo-lGV" id="Ik9-2R-Moy"/>
@@ -1777,16 +1776,8 @@
                                 <rect key="frame" x="16" y="232" width="343" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Allergens" adjustsFontForContentSizeCategory="YES" id="mqb-aP-zGz">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="49.666666666666657"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                                <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ingredients" adjustsFontForContentSizeCategory="YES" id="7c2-UA-PrL">
-                                    <rect key="frame" x="0.0" y="149.66666666666669" width="343" height="49.666666666666643"/>
+                                <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Allergens and Ingredients" adjustsFontForContentSizeCategory="YES" selectable="NO" id="7c2-UA-PrL">
+                                    <rect key="frame" x="0.0" y="100" width="343" height="420"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1795,7 +1786,7 @@
                                 </textView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nutrition Cell" textLabel="7pV-Sr-TpS" detailTextLabel="xqd-t7-1zB" style="IBUITableViewCellStyleValue1" id="5yR-Hv-3QF">
-                                        <rect key="frame" x="0.0" y="77.666666666666657" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5yR-Hv-3QF" id="VR7-nk-leE">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -1845,6 +1836,7 @@
                         <viewLayoutGuide key="safeArea" id="e87-JL-hdB"/>
                     </view>
                     <connections>
+                        <outlet property="tableFooter" destination="7c2-UA-PrL" id="Jjl-qm-9QZ"/>
                         <outlet property="tableView" destination="fAQ-fS-4Ac" id="Rwc-Dx-vc3"/>
                     </connections>
                 </viewController>

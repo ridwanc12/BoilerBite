@@ -10,7 +10,6 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
@@ -21,7 +20,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var meal_num: Int = 1
     
     var diningHall: String = "earhart"
-    var mealTime: String = "lunch"
+    var mealTime: String = "Lunch"
     
     let sectionHeight = 27
     
@@ -46,6 +45,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Earhart doesn't serve this Meal
 //        stations = meals[3].Stations as! [Station]
+//        print (mealTime)
+        switch mealTime {
+        case "Breakfast":
+            meal_num = 0
+        case "Lunch":
+            meal_num = 1
+        case "Late Lunch":
+            meal_num = 2
+        case "Dinner":
+            meal_num = 3
+        default:
+            meal_num = 1
+        }
+//        print(meal_num)
         
         stations = meals[meal_num].Stations as! [Station]
         if (stations.isEmpty) {
@@ -153,7 +166,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is NutritionViewController {
             let vc = segue.destination as? NutritionViewController
-            // items = stations[tableView.indexPathForSelectedRow!.row].Items
+            let items = stations[tableView.indexPathForSelectedRow!.section].Items
             let item = items[tableView.indexPathForSelectedRow!.row]
 //            print(item.Name)
             vc?.itemID = item.ID

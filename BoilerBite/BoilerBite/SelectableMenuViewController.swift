@@ -16,9 +16,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var totalLabel: UILabel!
     
     var diningHall: String = "earhart"
-    var mealTime: String = "lunch"
-    
-    var storeMealTimes: [String] = []
+    var mealTime: String = "Lunch"
     
     // Var to store the running total
     var totalcalories = 0
@@ -32,6 +30,8 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    
+    var meal_num: Int = 1
 
     let sectionHeight = 27
     
@@ -47,8 +47,21 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
                 
         // Earhart doesn't serve this Meal
         //        stations = meals[3].Stations as! [Station]
+        
+        switch mealTime {
+        case "Breakfast":
+            meal_num = 0
+        case "Lunch":
+            meal_num = 1
+        case "Late Lunch":
+            meal_num = 2
+        case "Dinner":
+            meal_num = 3
+        default:
+            meal_num = 1
+        }
                 
-        stations = meals[1].Stations as! [Station]
+        stations = meals[meal_num].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }

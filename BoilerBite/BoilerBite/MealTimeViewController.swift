@@ -15,7 +15,7 @@ class MealTimeViewController: UIViewController {
     @IBOutlet weak var stackview: UIStackView!
     
     var diningHall: String = "earhart";
-    var chosenMealTime: String = "lunch"
+    var chosenMealTime: String = "Lunch"
     
     // Sample Array of Buttons
     var mealTimes = ["Breakfast", "Lunch", "Late Lunch", "Dinner"]
@@ -52,6 +52,8 @@ class MealTimeViewController: UIViewController {
     
     //MARK: - Actions and Selectors
     @IBAction func buttonPressed(sender:UIButton) {
+//        print(sender.title(for: .normal))
+        chosenMealTime = sender.title(for: .normal)!
         self.performSegue(withIdentifier: "MealTimeSegue", sender: self)
     }
     

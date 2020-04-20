@@ -236,7 +236,7 @@ func getItemCalories(itemID: String) -> Int {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
         let nutrition = itemDetails?.Nutrition
         if (nutrition != nil) {
-            calories = (itemDetails?.Nutrition![1].Value)!
+            calories = Float(((itemDetails?.Nutrition![1].LabelValue)!))!
         }
         else {
             calories = -1
