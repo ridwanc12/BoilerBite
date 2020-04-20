@@ -14,7 +14,7 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     
 //    let labelsDict:[String: String] = ["Serving Size":"Servings", "Calories":"", "Calories from fat":"", "Total fat":"g", "Saturated fat":"g", "Cholesterol":"mg", "Sodium":"mg", "Total Carbohydrate":"g", "Sugar":"g", "Dietary Fiber":"g", "Protein":"g", "Vitamin A":"% of DV", "Vitamin C":"% of DV", "Calcium":"% of DV", "Iron":"% of DV"]
     
-    let itemID = "da968774-9381-4a03-ae26-87b765fb80f6"
+    var itemID = "da968774-9381-4a03-ae26-87b765fb80f6"
 //    let items = ["One", "Two", "Three", "Four", "Five"]
     var nutrition:[NutritionFact] = []
     var items: [String] = []
@@ -29,15 +29,15 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
         
         let nutrition = getItemNutrition(itemID: itemID)
         
-        print(nutrition)
+//        print(nutrition)
         
         for fact in nutrition {
             items.append(fact.Name)
             values.append(fact.LabelValue ?? fact.DailyValue ?? "")
         }
         
-        print(items)
-        print(values)
+//        print(items)
+//        print(values)
 
         // Do any additional setup after loading the view.
     }
