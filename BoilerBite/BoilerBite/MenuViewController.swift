@@ -10,14 +10,17 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var MenuTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var diningHallLabel: UILabel!
-
+    @IBOutlet weak var hoursLabel: UILabel!
+    
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    var meal_num: Int = 1
     
     var diningHall: String = "earhart"
+    var mealTime: String = "Lunch"
     
     let sectionHeight = 27
     
@@ -31,6 +34,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
         
         diningHallLabel?.text = diningHall.capitalizingFirstLetter()
+        diningHallLabel?.sizeToFit()
+        diningHallLabel?.adjustsFontSizeToFitWidth = true
+        diningHallLabel?.minimumScaleFactor = 0.5
         
         // Menu for current day Earhart for testing
         let testMenu = getFirstDayMenu(hall: diningHall)
@@ -42,16 +48,49 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Earhart doesn't serve this Meal
 //        stations = meals[3].Stations as! [Station]
+//        print (mealTime)
+        switch mealTime {
+        case "Breakfast":
+            meal_num = 0
+        case "Lunch":
+            meal_num = 1
+        case "Late Lunch":
+            meal_num = 2
+        case "Dinner":
+            meal_num = 3
+        default:
+            meal_num = 1
+        }
+//        print(meal_num)
         
-        stations = meals[1].Stations as! [Station]
+        stations = meals[meal_num].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
-//>>>>>>> dfa6e1da56a1b6228cf5d926aa7f7e523755f196
+        
+        let temp1 = String(meals[meal_num].Hours?.StartTime ?? "")
+        let opening = convertTime(time: temp1)
+        
+        let temp2 = String(describing: meals[meal_num].Hours?.EndTime ?? "")
+        let closing = convertTime(time: temp2)
+        
+        let hoursText = opening + " - " + closing
+        
+        hoursLabel.text = hoursText
         
 //        print(getItemCalories(itemID: "84835539-119a-4efd-b714-786015923e3c"))
 //        items = (testMenu?.Meals[1]?.Stations[0]?.Items.map{$0.Name})!
         // Do any additional setup after loading the view.
+    }
+    
+    func convertTime(time: String) -> String {
+        let dateIn = DateFormatter()
+        dateIn.dateFormat = "HH:mm:ss"
+        dateIn.locale = Locale(identifier: "en_US_POSIX")
+        let date = dateIn.date(from: time)
+        let dateOut = DateFormatter()
+        dateOut.dateFormat = "h:mm a"
+        return dateOut.string(from: date!)
     }
     
     // Helper function for counting number of items due to ambiguousness of count() function
@@ -105,13 +144,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Menu Cell", for: indexPath)
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Menu Cell")
         
         items = stations[indexPath.section].Items
-//        print(items)
         let item = items[indexPath.row]
-//        print(item)
+
         cell.textLabel?.text = (item.Name).trimmingCharacters(in: .whitespaces)
         cell.textLabel?.numberOfLines = 0
         let calories = String(getItemCalories(itemID: item.ID))
@@ -128,24 +166,31 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is NutritionViewController {
+            let vc = segue.destination as? NutritionViewController
+            let items = stations[tableView.indexPathForSelectedRow!.section].Items
+            let item = items[tableView.indexPathForSelectedRow!.row]
+//            print(item.Name)
+            vc?.itemID = item.ID
+            vc?.diningHall = diningHall
+            vc?.mealTime = mealTime
+        }
+        else if segue.destination is MealTimeViewController {
+            let vc = segue.destination as? MealTimeViewController
+            vc?.diningHall = diningHall
+            vc?.mealTimes = getFirstDayMeals(hall: diningHall)
+        }
     }
-    */
 
 }
 
 extension String {
-       func capitalizingFirstLetter() -> String {
-           return prefix(1).capitalized + dropFirst()
-       }
-
-       mutating func capitalizeFirstLetter() {
-           self = self.capitalizingFirstLetter()
-       }
+   func capitalizingFirstLetter() -> String {
+       return prefix(1).capitalized + dropFirst()
    }
+
+   mutating func capitalizeFirstLetter() {
+       self = self.capitalizingFirstLetter()
+   }
+}

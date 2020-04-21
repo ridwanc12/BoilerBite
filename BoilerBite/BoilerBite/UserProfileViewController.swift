@@ -44,6 +44,7 @@ class UserProfileViewController: UIViewController , UITextFieldDelegate{
     // Outlet for the Update Button
     @IBOutlet weak var updateButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         heightText.delegate = self

@@ -88,6 +88,49 @@ func getCurrentMenu(hall: String) -> Menu? {
     return(menu)
 }
 
+func getMeals(hall: String, date: String) -> [String] {
+    let menu = getMenu(hall: hall, date: date)
+    let meals = menu!.Meals
+    var meal_names:[String] = []
+    for item in meals {
+        if (item?.Status != "Closed") {
+            meal_names.append(item!.Name)
+        }
+    }
+    
+    return meal_names
+}
+
+func getFirstDayMeals(hall: String) -> [String] {
+    let menu = getFirstDayMenu(hall: hall)
+    let meals = menu!.Meals
+    var meal_names:[String] = []
+    for item in meals {
+        if (item?.Status != "Closed") {
+            meal_names.append(item!.Name)
+        }
+    }
+    
+    return meal_names
+}
+
+func getOpenHours(hall: String) -> [String] {
+    return []
+}
+
+func getFirstDayHours(hall: String) -> [Hour] {
+    let menu = getFirstDayMenu(hall: hall)
+    let meals = menu!.Meals
+    var meal_hours:[Hour] = []
+    for item in meals {
+        if (item?.Status != "Closed") {
+            meal_hours.append(item!.Hours!)
+        }
+    }
+    
+    return meal_hours
+}
+
 func getDinner(menu: Menu?) -> Meal? {
     for meal in menu!.Meals {
         if (meal?.Name != nil) {
@@ -193,7 +236,7 @@ func getItemCalories(itemID: String) -> Int {
         itemDetails = try JSONDecoder().decode(Item.self,from: data!)
         let nutrition = itemDetails?.Nutrition
         if (nutrition != nil) {
-            calories = (itemDetails?.Nutrition![1].Value)!
+            calories = Float(((itemDetails?.Nutrition![1].LabelValue)!))!
         }
         else {
             calories = -1
@@ -209,6 +252,38 @@ func getItemCalories(itemID: String) -> Int {
     semaphore.wait()
     
     return(Int(calories))
+}
+
+func getItemNutrition(itemID: String) -> [NutritionFact] {
+    let address = "https://api.hfs.purdue.edu/menus/v2/items/" + itemID
+    let requestLocation = URL(string: address)
+    
+    var itemDetails: Item?
+    var nutritionFinal: [NutritionFact] = []
+    
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: requestLocation!) { (data, response, error) in
+    do {
+        itemDetails = try JSONDecoder().decode(Item.self,from: data!)
+        let nutrition = itemDetails?.Nutrition
+        if (nutrition != nil) {
+            nutritionFinal = itemDetails!.Nutrition!
+        }
+        else {
+//            nutritionFinal = []
+        }
+        semaphore.signal()
+    } catch {
+        print("There was an error in the item api request")
+        print(error)
+    }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return(nutritionFinal)
 }
 
 // URL for example meal request
