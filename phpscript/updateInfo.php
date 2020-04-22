@@ -187,8 +187,40 @@ $obj->showUsers();
 echo nl2br("Begin Unit test for updating Profile:\n\n");
 
 $username = 'Rid';
-$height = '180';
-$weight = '130';
+$height = '-160';
+$weight = '140';
+$age = '20';
+echo nl2br("Testing when height is negative:
+                Height: $height, Weight: $weight, Age: $age\n");
+$obj->updateWholeRow($username, $height, $weight, $age);
+
+$username = 'Rid';
+$height = '160';
+$weight = '-140';
+$age = '20';
+echo nl2br("Testing when weight is negative:
+                Height: $height, Weight: $weight, Age: $age\n");
+$obj->updateWholeRow($username, $height, $weight, $age);
+
+$username = 'Rid';
+$height = '160';
+$weight = '140';
+$age = '-20';
+echo nl2br("Testing when age is negative:
+                Height: $height, Weight: $weight, Age: $age\n");
+$obj->updateWholeRow($username, $height, $weight, $age);
+
+$username = 'Rid';
+$height = '-160';
+$weight = '-140';
+$age = '-20';
+echo nl2br("Testing when all values are negative:
+                Height: $height, Weight: $weight, Age: $age\n");
+$obj->updateWholeRow($username, $height, $weight, $age);
+
+$username = 'Rid';
+$height = '160';
+$weight = '100';
 $age = '20';
 echo nl2br("Testing when all values are valid:
                 Height: $height, Weight: $weight, Age: $age\n");
