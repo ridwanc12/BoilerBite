@@ -90,7 +90,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         var s = "gg"
         for (key, value) in itemList {
             insertFood(name: global_username, food: key, cal_total: value) {(output) in
-                s = output
+                self.alert(s: output)
             }
             usleep(2000)
         }

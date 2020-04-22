@@ -2053,17 +2053,4 @@
         <image name="username" width="229" height="44"/>
         <image name="white_rect" width="325" height="647"/>
     </resources>
-<<<<<<< HEAD
-=======
-    <inferredMetricsTieBreakers>
-        <segue reference="tvw-bf-UXF"/>
-        <segue reference="ICj-Sl-rAf"/>
-        <segue reference="O4y-7l-SDx"/>
-        <segue reference="24S-xa-hrC"/>
-        <segue reference="qoP-Pr-npA"/>
-        <segue reference="eEq-yL-xEq"/>
-        <segue reference="uOr-6Z-Bew"/>
-        <segue reference="MXM-w3-3cX"/>
-    </inferredMetricsTieBreakers>
->>>>>>> 517714feb9cf2f856efea3dce23fc4c401750183
 </document>
