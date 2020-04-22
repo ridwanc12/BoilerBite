@@ -16,15 +16,15 @@ var global_weight: Int = 0
 var global_age: Int = 0
 var global_calories: Int = 0
 
-func insertUser(name: String, mail: String, pass: String){
+func checkMeal(name: String){
 //    let name = "Isha"
 //    let mail = "isha@gmail.com"
 //    let pass = "isha"
-    let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
+    let link = "https://boilerbite.000webhostapp.com/php/checkMeal.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
-    let postString = "userName=\(name)&userEmail=\(mail)&pass=\(pass)"
+    let postString = "userName=\(name)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
@@ -44,7 +44,7 @@ func insertUser(name: String, mail: String, pass: String){
 }
 
 // Function to test php script to delete user from database
-func deleteUser(name: String, pass: String) {
+func deleteUser(name: String, pass: String, completionBlock: @escaping (String) -> Void) {
 //    let name = "Isha"
 //    let pass = "isha"
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
@@ -53,7 +53,6 @@ func deleteUser(name: String, pass: String) {
     // Send values to php script
     let postString = "userName=\(name)&pass=\(pass)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
-    
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
@@ -65,13 +64,13 @@ func deleteUser(name: String, pass: String) {
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
         let response = String(describing: responseString)
-        print(response)
+        //print(response)
         if (response.contains("User not in database.")) {
-            print("No such user")
+            completionBlock("User is not in database!")
         } else if (response.contains("password")){
-            print("Incorrect password")
+            completionBlock("Incorrect password")
         } else {
-            print("User deleted")
+            completionBlock("User deleted!")
         }
         //print("responseString = ")
     }
@@ -84,7 +83,7 @@ func deleteUser(name: String, pass: String) {
 //insertFood(name: "Rid", food: "Protein", cal_total: 1234)
 
 // Function to add food item to progress table
-func insertFood(name: String, food: String, cal_total: Int) -> String {
+func insertFood(name: String, food: String, cal_total: Int, completionBlock: @escaping (String) -> Void){
 //    let name = "Isha"
 //    let pass = "isha"
 //    let cal_total = 0;
@@ -110,13 +109,15 @@ func insertFood(name: String, food: String, cal_total: Int) -> String {
             //print(error)
             return
         }
+        
 
         //print("response = \(String(describing: response))")
 
         let response = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)! as String
-        print("responseString = \(String(describing: response))")
+        
+        completionBlock(response)
     }
     task.resume()
-    
-    return "error"
 }
+
+

@@ -22,22 +22,55 @@ class SettingsViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
             alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Password"
-        })
-
+                textField.placeholder = "Password"
+            })
+        var s = ""
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
 
             if let pass = alert.textFields?.first?.text {
                 print("Password is: \(pass)")
+                deleteUser(name: global_username, pass: global_password) {(output) in
+                    switch (output) {
+                    case("User is not in database!") :
+                        s = "User not in database"
+                        break
+                    case("Incorrect password") :
+                        s = "Incorrect password"
+                        break
+                    case("User deleted!") :
+                        s = "User deleted"
+                        break
+                    default:
+                        s = "ERROR"
+                    }
+//                    if (output == "User is not in database!") {
+//                        s = "User not in database"
+//                        innerAlert = UIAlertController(title: nil, message: s, preferredStyle: .alert)
+//                    } else if (output == "User not in database.")
+//                    {
+//                        s = "User not in database."
+//                    } else if (output == "User deleted!")
+//                    {
+//                        s = "User deleted!"
+//                    } else {
+//                        print(output)
+//                    }
+                    
+                }
+                let innerAlert = UIAlertController(title: "Delete User", message: s, preferredStyle: .alert)
+                innerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                self.present(innerAlert, animated: true, completion: nil)
+//                innerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+//                self.present(innerAlert, animated: true, completion: nil)
+                print(s)
+                print("Delete action performed")
             }
         }))
 
         self.present(alert, animated: true)
         
-        deleteUser(name: global_username, pass: incorrect_pass)
-        sleep(1)
-        deleteUser(name: global_username, pass: global_password)
-        print("Delete action performed")
+        
+        
         global_username = "Not logged in"
         global_password = "Not logged in"
     }

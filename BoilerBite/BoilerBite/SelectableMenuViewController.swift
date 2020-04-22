@@ -34,6 +34,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         // Menu for current day Earhart for testing
         let testMenu = getFirstDayMenu(hall: "earhart")
+        definesPresentationContext = true
 
         // All meals
         meals = testMenu!.Meals as! [Meal]
@@ -61,16 +62,26 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
 //        let food_name = itemList.first?.value
         print("meal button")
 //        print(food_name!)
-        let response = ""
+        var s = "gg"
         for (key, value) in itemList {
-            insertFood(name: global_username, food: key, cal_total: value)
+            insertFood(name: global_username, food: key, cal_total: value) {(output) in
+                s = output
+            }
             usleep(2000)
         }
-        print(response)        
+        print(s)
+        //alert(s: s)
 //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }
-      
+    
+    func alert(s: String) {
+        let alert = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
     
     // Helper function for counting number of items due to ambiguousness of count() function
     func countItems(items: [Item]) -> Int {
