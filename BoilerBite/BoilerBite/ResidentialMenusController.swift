@@ -37,10 +37,11 @@ class ResidentialMenusController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.destination is MenuViewController
+        if segue.destination is MealTimeViewController
         {
-            let vc = segue.destination as? MenuViewController
+            let vc = segue.destination as? MealTimeViewController
             vc?.diningHall = chosenHall
+            vc?.mealTimes = getFirstDayMeals(hall: chosenHall)
         }
     }
 }

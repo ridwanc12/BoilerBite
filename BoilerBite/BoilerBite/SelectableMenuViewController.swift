@@ -10,10 +10,15 @@ import UIKit
 
 class SelectableMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var diningHallLabel: UILabel!
+    
     @IBOutlet weak var createMealButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
+    
+    var diningHall: String = "earhart"
+    var mealTime: String = "Lunch"
     
     // Var to store the running total
     var totalcalories = 0
@@ -27,14 +32,21 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     var items: [Item] = []
     var meals: [Meal] = []
     var stations: [Station] = []
+    
+    var meal_num: Int = 1
 
     let sectionHeight = 27
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Menu for current day Earhart for testing
-        let testMenu = getFirstDayMenu(hall: "earhart")
-        definesPresentationContext = true
+        
+        diningHallLabel?.text = diningHall.capitalizingFirstLetter()
+        diningHallLabel?.sizeToFit()
+        diningHallLabel?.adjustsFontSizeToFitWidth = true
+        diningHallLabel?.minimumScaleFactor = 0.5
+        
+        // Menu for current day for the given dining hall for testing
+        let testMenu = getFirstDayMenu(hall: diningHall)
 
         // All meals
         meals = testMenu!.Meals as! [Meal]
@@ -43,8 +55,21 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
                 
         // Earhart doesn't serve this Meal
         //        stations = meals[3].Stations as! [Station]
+        
+        switch mealTime {
+        case "Breakfast":
+            meal_num = 0
+        case "Lunch":
+            meal_num = 1
+        case "Late Lunch":
+            meal_num = 2
+        case "Dinner":
+            meal_num = 3
+        default:
+            meal_num = 1
+        }
                 
-        stations = meals[1].Stations as! [Station]
+        stations = meals[meal_num].Stations as! [Station]
         if (stations.isEmpty) {
             stations.append(Station(Name: "This dining court does not serve this meal", Items: []))
         }
@@ -212,14 +237,17 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         totalLabel.textColor = UIColor.darkGray
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is MealTimeViewController {
+            let vc = segue.destination as? MealTimeViewController
+            vc?.diningHall = diningHall
+            vc?.mealTimes = getFirstDayMeals(hall: diningHall)
+        }
     }
-    */
+    
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yHO-tF-Ifk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -368,7 +368,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="ewa-Si-ZKT"/>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="wWF-Sl-gah"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3SI-5X-fBk">
@@ -378,7 +378,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="ULV-Ve-rxy"/>
+                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="fdd-Ut-I0N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3FF-cT-W6u">
@@ -472,7 +472,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonEarhart:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="igD-LM-EZB"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="d9h-Ni-4aC"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="aI2-wL-ToD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fwv-G0-n6D" userLabel="ford">
@@ -483,7 +483,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonFord:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="F0h-VC-cpn"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="BMr-r3-3YJ"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="e9o-Ic-D4n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZLm-G6-ofk" userLabel="hillenbrand">
@@ -494,7 +494,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonHillenbrand:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="Gzx-ks-PVp"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="JcX-fG-Q0E"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="yXr-Ix-0hb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Mg-jy-L3h" userLabel="wiley">
@@ -505,7 +505,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWiley:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="hTt-ZX-bOr"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="j0n-al-1j2"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="YAE-MF-Z73"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew2-rq-kMK" userLabel="windsor">
@@ -516,7 +516,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonWindsor:" destination="yHO-tF-Ifk" eventType="touchUpInside" id="3Kf-D8-zA1"/>
-                                    <segue destination="7jh-bY-THA" kind="presentation" modalPresentationStyle="fullScreen" id="U69-tf-jAK"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="7wO-In-OKS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-we-5p4">
@@ -537,7 +537,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="b7d-Wu-U7r"/>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="dIX-q3-sAB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -563,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ek6-8M-i40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="117"/>
+            <point key="canvasLocation" x="2201" y="117"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="rqS-zh-h1l">
@@ -780,7 +780,7 @@
                                 <rect key="frame" x="16" y="76" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="RBJ-nK-agt"/>
+                                    <segue destination="cwV-2a-5LK" kind="presentation" modalPresentationStyle="fullScreen" id="ICj-Sl-rAf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earhart" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-jZ-toW">
@@ -825,7 +825,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sS-Bn-tqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4175" y="117"/>
+            <point key="canvasLocation" x="4173.6000000000004" y="116.74876847290641"/>
         </scene>
         <!--Selectable Menus View Controller-->
         <scene sceneID="jEw-1p-e5p">
@@ -906,7 +906,7 @@
                                 <rect key="frame" x="21" y="71" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="Cwh-ey-aFg"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="tvw-bf-UXF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="32c-pM-iKp" userLabel="create_button">
@@ -947,6 +947,7 @@
                     </view>
                     <connections>
                         <outlet property="createMealButton" destination="32c-pM-iKp" id="PPS-OO-5pT"/>
+                        <outlet property="diningHallLabel" destination="WHW-UO-SoI" id="hsg-aE-8is"/>
                         <outlet property="tableView" destination="LFe-E7-32V" id="spZ-K0-OiF"/>
                         <outlet property="totalLabel" destination="sC5-wS-HDR" id="Hfv-qr-6fc"/>
                     </connections>
@@ -986,7 +987,8 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5Qo-tK-luH" kind="presentation" modalPresentationStyle="fullScreen" id="4ey-8T-Wph"/>
+                                    <action selector="buttonEarhart:" destination="B3m-ts-tyc" eventType="touchUpInside" id="kIC-mK-jNK"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="zH9-QD-cKg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mZV-c6-l6E" userLabel="ford">
@@ -995,6 +997,10 @@
                                 <state key="normal" title="ford" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonFord:" destination="B3m-ts-tyc" eventType="touchUpInside" id="dhN-Sx-bRy"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="u2Y-QD-1pk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vxy-bP-9ie" userLabel="hillenbrand">
                                 <rect key="frame" x="71.91053828731674" y="483" width="229" height="44.000000000000114"/>
@@ -1002,6 +1008,10 @@
                                 <state key="normal" title="hillenbrand" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonHillenbrand:" destination="B3m-ts-tyc" eventType="touchUpInside" id="R2c-al-Sfn"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="CKy-R9-Ykp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5tE-CH-eMw" userLabel="wiley">
                                 <rect key="frame" x="71" y="544" width="229" height="44"/>
@@ -1009,6 +1019,10 @@
                                 <state key="normal" title="wiley" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonWiley:" destination="B3m-ts-tyc" eventType="touchUpInside" id="vVh-AM-Tvv"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="eEa-3m-8In"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wev-Mo-8pO" userLabel="windsor">
                                 <rect key="frame" x="71" y="607" width="229" height="44"/>
@@ -1016,6 +1030,10 @@
                                 <state key="normal" title="windsor" backgroundImage="text-box">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonWindsor:" destination="B3m-ts-tyc" eventType="touchUpInside" id="F0y-zC-jAV"/>
+                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="DGV-58-s0d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's menus" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-hI-4fH">
                                 <rect key="frame" x="198" y="267" width="140" height="27"/>
@@ -1033,7 +1051,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Ghp-5S-ksQ" kind="presentation" modalPresentationStyle="fullScreen" id="K5f-8V-oix"/>
+                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="zZV-46-FQR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1054,7 +1072,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NrG-WM-hd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="816"/>
+            <point key="canvasLocation" x="2201" y="816"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qWF-vH-BAI">
@@ -1195,41 +1213,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="AKK-UA-Whb">
                                 <rect key="frame" x="227" y="77" width="132" height="141"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="141" id="O19-Au-5BZ"/>
-                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r5i-pY-o3i">
-                                <rect key="frame" x="71.91053828731674" y="360" width="228.99999999999989" height="43.999999999999957"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="breakfast" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iYb-7A-hu3">
-                                <rect key="frame" x="71.91053828731674" y="423" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="lunch" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="LmW-nD-3DA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5CP-i5-xi6">
-                                <rect key="frame" x="71.91053828731674" y="484" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="late lunch" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ooC-fZ-ZPp">
-                                <rect key="frame" x="71.91053828731674" y="544.00000000000023" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="dinner" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select your meal time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wk-KW-XgX">
                                 <rect key="frame" x="30" y="263" width="205" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
@@ -1239,48 +1223,59 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srF-44-wMO">
-                                <rect key="frame" x="56" y="219" width="194" height="45"/>
+                                <rect key="frame" x="56" y="219" width="194" height="40.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mT8-6n-5fS">
+                                <rect key="frame" x="85" y="377" width="208" height="248"/>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-8d-gBh">
                                 <rect key="frame" x="22" y="77" width="35" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="TQX-iE-ayy"/>
+                                    <constraint firstAttribute="width" constant="35" id="0a9-DE-IfH"/>
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="udi-xV-Fqu"/>
+                                    <segue destination="yHO-tF-Ifk" kind="presentation" modalPresentationStyle="fullScreen" id="eEq-yL-xEq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Dlx-8d-gBh" firstAttribute="top" secondItem="AKK-UA-Whb" secondAttribute="top" id="1NZ-9Y-IQk"/>
-                            <constraint firstItem="srF-44-wMO" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="56" id="8aL-IT-0g8"/>
-                            <constraint firstItem="Hb8-Ps-LUx" firstAttribute="trailing" secondItem="srF-44-wMO" secondAttribute="trailing" constant="125" id="CQL-9V-j3e"/>
-                            <constraint firstItem="AKK-UA-Whb" firstAttribute="top" secondItem="Hb8-Ps-LUx" secondAttribute="top" constant="33" id="LPB-7P-GYp"/>
-                            <constraint firstItem="Dlx-8d-gBh" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="22" id="QRe-9U-ZUi"/>
-                            <constraint firstItem="r5i-pY-o3i" firstAttribute="top" secondItem="srF-44-wMO" secondAttribute="bottom" constant="96" id="S5T-bN-noY"/>
-                            <constraint firstItem="7wk-KW-XgX" firstAttribute="leading" secondItem="77u-7d-I96" secondAttribute="leadingMargin" constant="14" id="Yy9-fT-1Gj"/>
-                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="top" secondItem="Hb8-Ps-LUx" secondAttribute="top" constant="20" id="Z7g-2k-mcD"/>
-                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="centerX" secondItem="mk1-Ty-C0e" secondAttribute="centerX" id="Zx6-5R-1gg"/>
-                            <constraint firstItem="srF-44-wMO" firstAttribute="top" secondItem="AKK-UA-Whb" secondAttribute="bottom" constant="1" id="cyM-LK-wQO"/>
-                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="bottom" secondItem="Hb8-Ps-LUx" secondAttribute="bottom" id="eBt-65-ErT"/>
-                            <constraint firstItem="AKK-UA-Whb" firstAttribute="trailing" secondItem="77u-7d-I96" secondAttribute="trailingMargin" id="gI3-fl-2gy"/>
-                            <constraint firstItem="r5i-pY-o3i" firstAttribute="top" secondItem="7wk-KW-XgX" secondAttribute="bottom" constant="70" id="pyb-gx-UY9"/>
-                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" id="uUn-vX-e6K"/>
+                            <constraint firstItem="7wk-KW-XgX" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="30" id="4Po-kc-M8G"/>
+                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="centerX" secondItem="mk1-Ty-C0e" secondAttribute="centerX" id="6fg-h7-Xpt"/>
+                            <constraint firstItem="Dlx-8d-gBh" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="22" id="Am9-uT-xuY"/>
+                            <constraint firstItem="mT8-6n-5fS" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="85" id="Cbh-e1-rvg"/>
+                            <constraint firstItem="srF-44-wMO" firstAttribute="top" secondItem="AKK-UA-Whb" secondAttribute="bottom" constant="1" id="DVA-jp-wpE"/>
+                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="bottom" secondItem="Hb8-Ps-LUx" secondAttribute="bottom" id="E0M-xW-VJy"/>
+                            <constraint firstItem="Hb8-Ps-LUx" firstAttribute="bottom" secondItem="mT8-6n-5fS" secondAttribute="bottom" constant="153" id="FEQ-dl-mnX"/>
+                            <constraint firstItem="AKK-UA-Whb" firstAttribute="trailing" secondItem="77u-7d-I96" secondAttribute="trailingMargin" id="GjE-z7-9DS"/>
+                            <constraint firstItem="Hb8-Ps-LUx" firstAttribute="trailing" secondItem="srF-44-wMO" secondAttribute="trailing" constant="125" id="RKf-bI-9nq"/>
+                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" id="c7a-8z-cfy"/>
+                            <constraint firstItem="7wk-KW-XgX" firstAttribute="top" secondItem="srF-44-wMO" secondAttribute="bottom" constant="3.3333333333333144" id="eKG-km-ku6"/>
+                            <constraint firstItem="CRr-N2-0Ke" firstAttribute="top" secondItem="Hb8-Ps-LUx" secondAttribute="top" constant="20" id="hzO-hb-Czh"/>
+                            <constraint firstItem="Hb8-Ps-LUx" firstAttribute="trailing" secondItem="mT8-6n-5fS" secondAttribute="trailing" constant="82" id="mFq-B0-ay1"/>
+                            <constraint firstItem="mT8-6n-5fS" firstAttribute="top" secondItem="7wk-KW-XgX" secondAttribute="bottom" constant="87" id="sdZ-ly-qXL"/>
+                            <constraint firstItem="srF-44-wMO" firstAttribute="leading" secondItem="Hb8-Ps-LUx" secondAttribute="leading" constant="56" id="t06-Dq-9Hv"/>
+                            <constraint firstItem="Dlx-8d-gBh" firstAttribute="top" secondItem="AKK-UA-Whb" secondAttribute="top" id="uyA-Yx-aXm"/>
+                            <constraint firstItem="Dlx-8d-gBh" firstAttribute="top" secondItem="Hb8-Ps-LUx" secondAttribute="top" constant="33" id="wlo-a0-6bp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hb8-Ps-LUx"/>
                     </view>
                     <navigationItem key="navigationItem" id="zxZ-yV-ket"/>
+                    <connections>
+                        <outlet property="mealTimeLabel" destination="srF-44-wMO" id="mLr-yR-L4r"/>
+                        <outlet property="stackview" destination="mT8-6n-5fS" id="t2X-IJ-CwO"/>
+                        <segue destination="7jh-bY-THA" kind="presentation" identifier="MealTimeSegue" modalPresentationStyle="fullScreen" id="DqN-Ih-BMD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yak-HX-SUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="117"/>
+            <point key="canvasLocation" x="3216.8000000000002" y="116.74876847290641"/>
         </scene>
         <!--Update Password-->
         <scene sceneID="ANi-Oq-oTD">
@@ -1754,12 +1749,12 @@
                                 <rect key="frame" x="8" y="51" width="359" height="734"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OGx-Sz-sss">
-                                <rect key="frame" x="206" y="70" width="161" height="141"/>
+                                <rect key="frame" x="235" y="70" width="132" height="141"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
-                                <rect key="frame" x="16" y="138" width="151" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition Info: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
+                                <rect key="frame" x="16" y="138" width="180" height="32.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
@@ -1767,7 +1762,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-Ab-fxJ">
                                 <rect key="frame" x="16" y="181" width="188" height="41"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="8"/>
@@ -1783,6 +1778,14 @@
                                 <rect key="frame" x="16" y="232" width="343" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Allergens and Ingredients" adjustsFontForContentSizeCategory="YES" selectable="NO" id="7c2-UA-PrL">
+                                    <rect key="frame" x="0.0" y="100" width="343" height="420"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nutrition Cell" textLabel="7pV-Sr-TpS" detailTextLabel="xqd-t7-1zB" style="IBUITableViewCellStyleValue1" id="5yR-Hv-3QF">
                                         <rect key="frame" x="0.0" y="28" width="343" height="43.666667938232422"/>
@@ -1835,6 +1838,8 @@
                         <viewLayoutGuide key="safeArea" id="e87-JL-hdB"/>
                     </view>
                     <connections>
+                        <outlet property="itemNameLabel" destination="LN5-Ab-fxJ" id="w9c-qu-hug"/>
+                        <outlet property="tableFooter" destination="7c2-UA-PrL" id="Jjl-qm-9QZ"/>
                         <outlet property="tableView" destination="fAQ-fS-4Ac" id="Rwc-Dx-vc3"/>
                     </connections>
                 </viewController>
@@ -1863,37 +1868,6 @@
                                     <constraint firstAttribute="height" constant="141" id="DcX-dv-7GP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxq-qN-llc">
-                                <rect key="frame" x="71.91053828731674" y="360" width="228.99999999999989" height="43.999999999999957"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="breakfast" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uJl-Tw-HgL">
-                                <rect key="frame" x="71.91053828731674" y="423" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="lunch" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="xQf-cx-d3L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8iu-g6-Vuf">
-                                <rect key="frame" x="71.91053828731674" y="484" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="late lunch" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g6q-XQ-fd2">
-                                <rect key="frame" x="71.91053828731674" y="544.00000000000023" width="229" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="dinner" backgroundImage="text-box">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select your meal time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAN-ce-Muc">
                                 <rect key="frame" x="30" y="263" width="205" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
@@ -1903,7 +1877,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYk-6r-6QV">
-                                <rect key="frame" x="56" y="219" width="194" height="45"/>
+                                <rect key="frame" x="56" y="219" width="194" height="40.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -1917,9 +1891,12 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="sIb-zm-i3w" kind="presentation" modalPresentationStyle="fullScreen" id="Jli-UR-bbW"/>
+                                    <segue destination="B3m-ts-tyc" kind="presentation" modalPresentationStyle="fullScreen" id="24S-xa-hrC"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bT0-et-pfl">
+                                <rect key="frame" x="85" y="377" width="208" height="248"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1930,9 +1907,12 @@
                             <constraint firstItem="qxM-Bb-Ujl" firstAttribute="trailing" secondItem="6DZ-Hb-oTp" secondAttribute="trailingMargin" id="9XG-dY-rud"/>
                             <constraint firstItem="e3g-gF-SCd" firstAttribute="trailing" secondItem="gYk-6r-6QV" secondAttribute="trailing" constant="125" id="Hsp-nE-pBz"/>
                             <constraint firstItem="NRQ-Wl-vdB" firstAttribute="top" secondItem="qxM-Bb-Ujl" secondAttribute="top" id="LV1-XP-dMp"/>
-                            <constraint firstItem="zxq-qN-llc" firstAttribute="top" secondItem="hAN-ce-Muc" secondAttribute="bottom" constant="70" id="TY7-lH-nWG"/>
+                            <constraint firstItem="bT0-et-pfl" firstAttribute="leading" secondItem="e3g-gF-SCd" secondAttribute="leading" constant="85" id="QjV-NN-Vvf"/>
                             <constraint firstItem="gYk-6r-6QV" firstAttribute="top" secondItem="qxM-Bb-Ujl" secondAttribute="bottom" constant="1" id="UT4-N3-feo"/>
-                            <constraint firstItem="zxq-qN-llc" firstAttribute="top" secondItem="gYk-6r-6QV" secondAttribute="bottom" constant="96" id="lw8-Iw-7hV"/>
+                            <constraint firstItem="e3g-gF-SCd" firstAttribute="trailing" secondItem="bT0-et-pfl" secondAttribute="trailing" constant="82" id="Zou-eH-F2a"/>
+                            <constraint firstItem="e3g-gF-SCd" firstAttribute="bottom" secondItem="bT0-et-pfl" secondAttribute="bottom" constant="153" id="cdD-0o-SVY"/>
+                            <constraint firstItem="bT0-et-pfl" firstAttribute="top" secondItem="6DZ-Hb-oTp" secondAttribute="top" constant="377" id="egy-Ci-CZR"/>
+                            <constraint firstItem="bT0-et-pfl" firstAttribute="top" secondItem="hAN-ce-Muc" secondAttribute="bottom" constant="87" id="m8x-XB-mOi"/>
                             <constraint firstItem="zGP-Ww-TFS" firstAttribute="centerX" secondItem="tds-wO-Ven" secondAttribute="centerX" id="mhn-7J-rdn"/>
                             <constraint firstItem="zGP-Ww-TFS" firstAttribute="leading" secondItem="e3g-gF-SCd" secondAttribute="leading" id="pft-ZD-2ss"/>
                             <constraint firstItem="hAN-ce-Muc" firstAttribute="leading" secondItem="6DZ-Hb-oTp" secondAttribute="leadingMargin" constant="14" id="rQp-oq-Cta"/>
@@ -1941,10 +1921,14 @@
                         <viewLayoutGuide key="safeArea" id="e3g-gF-SCd"/>
                     </view>
                     <navigationItem key="navigationItem" id="J2q-9y-FHl"/>
+                    <connections>
+                        <outlet property="stackview" destination="bT0-et-pfl" id="bh9-my-0as"/>
+                        <segue destination="5Qo-tK-luH" kind="presentation" identifier="MealTimeSegue" modalPresentationStyle="fullScreen" id="31W-n7-NVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLX-42-o3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2201" y="816"/>
+            <point key="canvasLocation" x="3217" y="816"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1974,4 +1958,17 @@
         <image name="username" width="229" height="44"/>
         <image name="white_rect" width="325" height="647"/>
     </resources>
+<<<<<<< HEAD
+=======
+    <inferredMetricsTieBreakers>
+        <segue reference="tvw-bf-UXF"/>
+        <segue reference="ICj-Sl-rAf"/>
+        <segue reference="U10-p6-8x8"/>
+        <segue reference="24S-xa-hrC"/>
+        <segue reference="qoP-Pr-npA"/>
+        <segue reference="eEq-yL-xEq"/>
+        <segue reference="0E4-5U-m3p"/>
+        <segue reference="MXM-w3-3cX"/>
+    </inferredMetricsTieBreakers>
+>>>>>>> 517714feb9cf2f856efea3dce23fc4c401750183
 </document>
