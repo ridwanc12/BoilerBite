@@ -17,14 +17,24 @@ class SettingsViewController: UIViewController {
 //        showInputDialog()
 //        global_username = "ridwan"
 //        global_password = "ridwan"
-        let incorrect_pass = global_password + global_username
-        
-        deleteUser(name: global_username, pass: incorrect_pass)
+        //var s = "lol"
         sleep(1)
-        deleteUser(name: global_username, pass: global_password)
-        print("Delete action performed")
+        showInputDialog()
+        //print("Delete action performed")
         global_username = "Not logged in"
         global_password = "Not logged in"
+    }
+    func alert(s: String) {
+        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // Fucntion for when the "logout" button is pressed
@@ -36,15 +46,16 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let s = checkProgress(name: "jeremy")
+        print(s)
         
         // Do any additional setup after loading the view.
     }
     
-    func showInputDialog() {
+    func showInputDialog(){
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
         let alertController = UIAlertController(title: "Enter login information", message: "Enter your username and password", preferredStyle: .alert)
-        
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
             
@@ -56,11 +67,12 @@ class SettingsViewController: UIViewController {
             if (username! != "" && password! != "") {
                 print(username!)
                 print(password!)
+                let s = deleteUser(name: username!, pass: password!)
+                self.alert(s: s)
             }
             else {
                 print("nay")
             }
-            
         }
         
         //the cancel action doing nothing
