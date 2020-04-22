@@ -612,7 +612,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your  account" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mup-gL-8Sb">
-                                <rect key="frame" x="63" y="256" width="131" height="27"/>
+                                <rect key="frame" x="63" y="256" width="132" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="obU-m6-WNu"/>
@@ -1810,11 +1810,17 @@
                         <viewLayoutGuide key="safeArea" id="HO4-ad-iE0"/>
                     </view>
                     <connections>
+                        <outlet property="bLabel" destination="5oh-Rz-Lku" id="Pr3-xv-3cs"/>
                         <outlet property="breakfast_cal" destination="AEp-a0-g05" id="iUZ-6e-aP7"/>
+                        <outlet property="dLabel" destination="bGL-ZW-qzc" id="3xL-cc-BMg"/>
                         <outlet property="dinner_cal" destination="y3a-zO-OfN" id="HKc-RP-W05"/>
+                        <outlet property="goalcLabel" destination="JR9-6X-25P" id="KP5-08-cgK"/>
+                        <outlet property="lLabel" destination="VAD-bK-uP0" id="fu9-nT-HH8"/>
                         <outlet property="late_lunch_cal" destination="hMP-Hf-eTf" id="Mhz-re-3ii"/>
+                        <outlet property="llLabel" destination="3ZE-nU-4PH" id="pIo-Pm-Sr2"/>
                         <outlet property="lunch_cal" destination="uf8-MS-IOa" id="Mv0-YU-C2I"/>
-                        <outlet property="total_daily_cal" destination="6lw-AK-PXx" id="B9D-hQ-Q5i"/>
+                        <outlet property="tcalLabel" destination="6lw-AK-PXx" id="lyD-27-wbt"/>
+                        <outlet property="total_daily_cal" destination="8kE-K4-cBI" id="IKV-Xz-Top"/>
                         <outlet property="total_goals_cal" destination="0L2-Rq-h6J" id="lDg-vo-von"/>
                     </connections>
                 </viewController>
