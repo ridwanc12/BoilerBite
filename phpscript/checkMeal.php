@@ -65,12 +65,13 @@ class  insertTable
         $q->setFetchMode(PDO::FETCH_ASSOC);
         if ($user = $q->fetch()) {
             $goal = $user['calories_total'];
-            $diff = abs($cal - $goal);
-            if ($cal > $goal) {
-                echo "Over $diff calories.";
-            } else {
-                echo "Under $diff calories.";
-            }
+            // $diff = abs($cal - $goal);
+            // if ($cal > $goal) {
+            //     echo "Over $diff calories.";
+            // } else {
+            //     echo "Under $diff calories.";
+            // }
+            echo "$cal/$goal";
         } else {
             echo nl2br("No such user");
         }
@@ -83,7 +84,7 @@ class  insertTable
 // Create new obj to run function
 $obj = new insertTable();
 $username = $_POST['userName'];
-$date = "2020-04-13";
+$date = "2020-04-10";
 //$date = date("Y-m-d");
 
 // $username = "admini";

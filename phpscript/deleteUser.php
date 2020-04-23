@@ -66,11 +66,11 @@ class  insertTable
                 //echo "$holder";
             } else {
                 // Return function since query returned nothing
-                echo nl2br("\nNo such user.\n");
+                //echo nl2br("\nNo such user.\n");
                 return $NO_USER;
             }
             // Obtain the hashed version of the provided password
-            //$pass = sha1($pass);
+            $pass = sha1($pass);
             // Compare password from database and provided password, delete user if passwords match
             if (!strcmp($holder, $pass)) {
                 // Delete user from profiles
@@ -97,7 +97,7 @@ class  insertTable
                 $delete->bindValue(':name', $username);
                 $delete->execute();
             } else {
-                echo nl2br("Incorrect password.");
+                //echo nl2br("Incorrect password.");
                 return $WRONG_PASS;
             }
         } catch (PDOException $e) {
@@ -156,24 +156,14 @@ $CONNECTION_ERR = -1;
 
 $value = $obj->removeUser($username, $pass);
 if ($value == $DELETED) {
-    echo nl2br("User deleted.\n");
+    echo "User deleted.";
 } else if ($value == $NO_USER){
-    echo nl2br("User not in database.\n");
+    echo "User not in database.";
 } else if ($value == $WRONG_PASS) {
-    echo nl2br("Incorrect password\n");
+    echo "Incorrect password";
 } else {
     echo ("Connection error.");
 }
 
 //$obj->showUsers();
 ?>
-
-<html>
-
-<head>
-    <title>
-        deleteUser
-    </title>
-</head>
-
-</html>
