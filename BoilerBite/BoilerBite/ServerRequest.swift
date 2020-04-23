@@ -16,11 +16,14 @@ var global_weight: Int = 0
 var global_age: Int = 0
 var global_calories: Int = 0
 
-func checkProgress(name: String) -> String{
+func checkProgress(name: String) -> [String]{
 //    let name = "Isha"
 //    let mail = "isha@gmail.com"
 //    let pass = "isha"
-    let link = "https://boilerbite.000webhostapp.com/php/checkMeal.php"
+    let name = "Jeremy"
+    //        let date = "2020-04-23"
+                
+    let link = "https://boilerbite.000webhostapp.com/php/mealsProgress.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
@@ -28,10 +31,9 @@ func checkProgress(name: String) -> String{
     request.httpBody = postString.data(using: String.Encoding.utf8)
     var s = "ERROR"
     let semaphore = DispatchSemaphore(value: 0)
-    
+                
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
-
         if error != nil {
             //print(error)
             return
@@ -43,7 +45,8 @@ func checkProgress(name: String) -> String{
     }
     task.resume()
     semaphore.wait()
-    return s
+    let res = s.components(separatedBy: " ")
+    return res
 }
 
 // Function to test php script to delete user from database
@@ -189,13 +192,10 @@ func get_meal (date: String) {
         print(String(describing: error))
         return
       }
-       //print(String(data: data, encoding: .utf8)!)
-       //print("data is ovverated")
-       //print(String(data:data))
+       
      let str = String(data: data, encoding: .utf8)
         
-     //print(str);
-        //str.spit
+     
         let arr = str?.split(separator: " ")
         print(arr![0]);
         
@@ -207,19 +207,7 @@ func get_meal (date: String) {
             print(temp[0]);
             print(temp[1]);
         }
-        //print(arr![1]);
-        //print(arr![2]);
-        //print(arr![3]);
-        //print(arr![4]);
-        //global_username = username
-        //global_email = arr![1];
-        //let a = String(arr![2]);
-        //let b = String(arr![3]);
-        //let c = String(arr![4]);
         
-        //global_height = Int(a)!
-        //global_weight = Int(b)!
-        //global_age = Int(c)!;
         
      semaphore.signal()
     }

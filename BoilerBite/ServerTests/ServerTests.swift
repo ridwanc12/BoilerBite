@@ -21,42 +21,36 @@ class ServerTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let name = "jeremy"
-        let pass = "jeremy"
-        let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
-        let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
-        request.httpMethod = "POST"
-        // Send values to php script
-        let postString = "userName=\(name)&pass=\(pass)"
-        request.httpBody = postString.data(using: String.Encoding.utf8)
-        var s = "ERROR"
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            data, response, error in
+        let name = "Jeremy"
+//        let date = "2020-04-23"
+            
+            let link = "https://boilerbite.000webhostapp.com/php/mealsProgress.php"
+            let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+            request.httpMethod = "POST"
+            // Send values to php script
+            let postString = "userName=\(name)"
+            request.httpBody = postString.data(using: String.Encoding.utf8)
+            var s = "ERROR"
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                data, response, error in
 
-            if error != nil {
-                //print(error)
-                return
+                if error != nil {
+                    //print(error)
+                    return
+                }
+                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                //print("responseString = \(String(describing: responseString))")
+                s = String(describing: responseString!)
+                semaphore.signal()
             }
-
-            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
-            let response = String(describing: responseString!)
-            print(response)
-            if (response.contains("User not in database.")) {
-                s = "No such user"
-            } else if (response.contains("password")){
-                s = "Incorrect password"
-            } else {
-                s = "User deleted"
-            }
-            semaphore.signal()
-            //print("responseString = ")
-        }
-        task.resume()
-        semaphore.wait()
-
+            task.resume()
+            semaphore.wait()
         print(s)
+        
+
+        
     }
 
     func testPerformanceExample() throws {

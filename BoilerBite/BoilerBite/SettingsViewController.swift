@@ -14,8 +14,40 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
-        showInputDialog()
-        //print("Delete action performed")
+        let alertController = UIAlertController(title: "Enter login information", message: "Enter your password", preferredStyle: .alert)
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+            
+            //getting the input values from user
+            let password = alertController.textFields?[0].text
+            if (password! != "") {
+                print(global_username)
+                print(password!)
+                let s = deleteUser(name: global_username, pass: password!)
+                self.alert(s: s)
+                global_username = "Not logged in"
+                global_password = "Not logged in"
+            }
+            else {
+                print("nay")
+            }
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
+            textField.placeholder = "Enter password"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
         
     }
     func alert(s: String) {
@@ -45,31 +77,27 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-//        let s = checkProgress(name: "admini")
-//        alert(s: s)
-    }
-    
-    func showInputDialog(){
+    func showInputDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "Enter login information", message: "Enter your password", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enter login information", message: "Enter your username and password", preferredStyle: .alert)
+        
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
             
             //getting the input values from user
-            let password = alertController.textFields?[0].text
-            if (password! != "") {
-                print(global_username)
+            let username = alertController.textFields?[0].text
+            let password = alertController.textFields?[1].text
+            
+            
+            if (username! != "" && password! != "") {
+                print(username!)
                 print(password!)
-                let s = deleteUser(name: global_username, pass: password!)
-                self.alert(s: s)
-                global_username = "Not logged in"
-                global_password = "Not logged in"
             }
             else {
                 print("nay")
             }
+            
         }
         
         //the cancel action doing nothing
@@ -77,8 +105,10 @@ class SettingsViewController: UIViewController {
         
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
-            textField.isSecureTextEntry = true
-            textField.placeholder = "Enter password"
+            textField.placeholder = "Enter Username"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter Password"
         }
         
         //adding the action to dialogbox
