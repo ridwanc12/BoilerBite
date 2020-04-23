@@ -22,8 +22,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $meal = isset($_GET['meal']) ? $_GET['meal'] : '';
     $meal = !empty($_GET['meal']) ? $_GET['meal'] : '';
 
-    $date = isset($_GET['date']) ? $_GET['date'] : '';
-    $date = !empty($_GET['date']) ? $_GET['date'] : '';
+    $tz = 'America/New_York';
+    $tz_obj = new DateTimeZone($tz);
+    $today = new DateTime("now", $tz_obj);
+    $date = $today->format('Y-m-d');
     
     $userId = 145;
     //including the db operation file
