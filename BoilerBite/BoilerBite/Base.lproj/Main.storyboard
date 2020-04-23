@@ -2017,6 +2017,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J2q-9y-FHl"/>
                     <connections>
+                        <outlet property="mealTimeLabel" destination="gYk-6r-6QV" id="VPg-fp-4Lo"/>
                         <outlet property="stackview" destination="bT0-et-pfl" id="bh9-my-0as"/>
                         <segue destination="5Qo-tK-luH" kind="presentation" identifier="MealTimeSegue" modalPresentationStyle="fullScreen" id="31W-n7-NVg"/>
                     </connections>
@@ -2054,13 +2055,13 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tvw-bf-UXF"/>
-        <segue reference="ICj-Sl-rAf"/>
+        <segue reference="CKy-R9-Ykp"/>
+        <segue reference="7wO-In-OKS"/>
         <segue reference="O4y-7l-SDx"/>
         <segue reference="24S-xa-hrC"/>
-        <segue reference="qoP-Pr-npA"/>
+        <segue reference="DqN-Ih-BMD"/>
         <segue reference="eEq-yL-xEq"/>
-        <segue reference="uOr-6Z-Bew"/>
+        <segue reference="zZV-46-FQR"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>
