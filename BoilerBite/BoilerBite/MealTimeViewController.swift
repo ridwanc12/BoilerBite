@@ -34,7 +34,7 @@ class MealTimeViewController: UIViewController {
            stackview.addArrangedSubview(makeButtonWithText(text: item))
         }
         
-        mealTimeLabel.text = diningHall.capitalizingFirstLetter()
+        mealTimeLabel?.text = diningHall.capitalizingFirstLetter()
         
 //        print(mealTimes)
         
