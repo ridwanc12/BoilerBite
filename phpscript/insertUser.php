@@ -70,12 +70,12 @@ class  insertTable
         }
 
         // Hash the password.
-        //$passwrd = sha1($pass);
+        $passwrd = sha1($pass);
         // Insert values into array to be executed
         $task = array(
             ':username' => $username,
             ':email' => $email,
-            ':pass' => $pass
+            ':pass' => $passwrd
         );
         // SQL query to inert values into profiles
         $sql = 'INSERT INTO profiles (
@@ -87,7 +87,7 @@ class  insertTable
                       :username,
                       :email,
                       :pass
-                  );';
+                  )';
         // Prepare and execute sql query
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
@@ -110,7 +110,7 @@ class  insertTable
                     )
                     VALUES (
                         :name
-                    );';
+                    )';
         $q = $this->pdo->prepare($sql);
 
         return $q->execute($task);

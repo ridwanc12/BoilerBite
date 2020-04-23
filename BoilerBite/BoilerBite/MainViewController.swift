@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        insertUser(name: "emma", mail: "emma", pass: "emma")
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
+        passwordField.isSecureTextEntry = true
         
         // Testing dining hours functions in main
 //        diningHoursExample()

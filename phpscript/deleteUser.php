@@ -148,8 +148,8 @@ $obj = new insertTable();
 //$obj->showUsers();
 
 // Get values from ios application
-$username = "Jeremy"; //$_POST['userName'];
-$pass = "jeremy"; //$_POST['pass'];
+// $username = "Jeremy"; //$_POST['userName'];
+// $pass = "jeremy"; //$_POST['pass'];
 
 $username = $_POST['userName'];
 $pass = $_POST['pass'];

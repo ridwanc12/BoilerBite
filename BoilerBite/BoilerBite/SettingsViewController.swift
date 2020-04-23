@@ -79,6 +79,7 @@ class SettingsViewController: UIViewController {
         
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
             textField.placeholder = "Enter password"
         }
         

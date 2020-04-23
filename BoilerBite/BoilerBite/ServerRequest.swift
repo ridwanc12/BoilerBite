@@ -50,6 +50,7 @@ func checkProgress(name: String) -> String{
 func deleteUser(name: String, pass: String) -> String {
 //    let name = "Isha"
 //    let pass = "isha"
+    print(name)
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
