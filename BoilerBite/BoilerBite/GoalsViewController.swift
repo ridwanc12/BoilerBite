@@ -28,6 +28,19 @@ class GoalsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func alert(s: String) {
+        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
