@@ -101,10 +101,12 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         print("meal button")
 //        print(food_name!)
         var s = "ERROR"
+        var total = 0
         for (key, value) in itemList {
             s = insertFood(name: global_username, food: key, cal_total: value)
+            total = total + value
         }
-//        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        insert_items(total_calories: total, meal: mealTime)
         alert(s: s)
         totalcalories = 0
     }

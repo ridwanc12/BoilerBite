@@ -84,6 +84,7 @@ class  insertTable
 // Create new obj to run function
 $obj = new insertTable();
 $username = $_POST['userName'];
+$username = "Jeremy";
 $tz = 'America/New_York';
 $tz_obj = new DateTimeZone($tz);
 $today = new DateTime("now", $tz_obj);
