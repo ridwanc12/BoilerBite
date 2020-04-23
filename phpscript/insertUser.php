@@ -70,7 +70,7 @@ class  insertTable
         }
 
         // Hash the password.
-        $passwrd = sha1($pass);
+        //$passwrd = sha1($pass);
         // Insert values into array to be executed
         $task = array(
             ':username' => $username,

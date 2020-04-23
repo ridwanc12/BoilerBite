@@ -18,20 +18,33 @@ $date = !empty($_GET['date']) ? $_GET['date'] : '';
 //this key will store an array iteself
 //$response['teams'] = array();
 
+//print "de";
+
 //creating object of class DbOperation
 $db = new DbOperation();
 
 //getting the teams using the function we created
+$teams_count = $db->getcalTeams($teamName, $date);
 $teams = $db->getcalTeams($teamName, $date);
 
 //looping through all the teams.
-$team = $teams->fetch_assoc();
+$cnt = 0;
+while($te = $teams_count->fetch_assoc()) {
+    $cnt++;
+}
+
+$e = $cnt;
+print " ". $e . " ";
+
+while($team = $teams->fetch_assoc()) {
+    //print "here";
     //creating a temporary array
     $temp = array();
 
     $temp['total_calorie'] = $team['total_calorie'];
+    $temp['meal'] = $team['meal'];
 
-//displaying the array in json format
-print $temp['total_calorie'];
+    print $temp['total_calorie'].",".$temp['meal']." ";
+}
 
 //echo json_encode($temp);

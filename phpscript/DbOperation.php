@@ -60,10 +60,12 @@ class DbOperation
         return $result;
     }
     public function getcalTeams($teamName, $date) {
+        //print "de";
         $stmt = $this->conn->prepare("SELECT * FROM meal WHERE (date = '$date' and userName = '$teamName') ");
         //print "info";
         $stmt->execute();
         $result = $stmt->get_result();
+        //print "de";
         return $result;
     }
 
