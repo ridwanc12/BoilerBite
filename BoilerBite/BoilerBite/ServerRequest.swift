@@ -116,3 +116,99 @@ func insertFood(name: String, food: String, cal_total: Int){
     }
     task.resume()
 }
+
+func insert_items(total_calories:Int, meal:String) {
+    // date except in form yyyy/mm/dd
+    
+    print("cl: " ,total_calories)
+    print("meal: ", meal)
+    
+    let semaphore = DispatchSemaphore (value: 0)
+    //var arg = 0
+    //let username: String = usernameField.text ?? ""
+    //let password: String = passwordField.text ?? ""
+    
+    // user changed to username
+    
+    //print("hashpass2 : ", password)
+    let date = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    let current_date = dateFormatter.string(from: date)
+    print("current_date-->",current_date)
+    //let te = String(current_date)
+    //let fin_date = Int(te)
+    
+    let urlString = String(format: "http://boilerbite.000webhostapp.com/php/meal_insert.php?userName=%@&calories_total=%@&meal=%@&date=%@", global_username, String(total_calories), meal, current_date);
+    var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+    
+    request.httpMethod = "POST"
+
+    //global_username = username
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+        return
+      }
+      //print(String(data: data, encoding: .utf8)!)
+      print(String(data: data, encoding: .utf8)!)
+      semaphore.signal()
+    }
+    task.resume()
+    semaphore.wait()
+    //return arg
+}
+
+func get_meal (date: String) {
+    
+    print("date: ", date)
+    
+    let semaphore = DispatchSemaphore (value: 0)
+    let urlString = String(format: "http://boilerbite.000webhostapp.com/php/getcalorie.php?userName=%@&date=%@", global_username, date);
+    var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+    request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    request.httpMethod = "POST"
+    
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+        return
+      }
+       //print(String(data: data, encoding: .utf8)!)
+       //print("data is ovverated")
+       //print(String(data:data))
+     let str = String(data: data, encoding: .utf8)
+        
+     //print(str);
+        //str.spit
+        let arr = str?.split(separator: " ")
+        print(arr![0]);
+        
+        let length = Int(arr![1])
+        var i = 0;
+        while(i < length!) {
+            i = i + 2;
+            let temp = (arr![i]).split(separator: ",")
+            print(temp[0]);
+            print(temp[1]);
+        }
+        //print(arr![1]);
+        //print(arr![2]);
+        //print(arr![3]);
+        //print(arr![4]);
+        //global_username = username
+        //global_email = arr![1];
+        //let a = String(arr![2]);
+        //let b = String(arr![3]);
+        //let c = String(arr![4]);
+        
+        //global_height = Int(a)!
+        //global_weight = Int(b)!
+        //global_age = Int(c)!;
+        
+     semaphore.signal()
+    }
+    task.resume()
+    semaphore.wait()
+}
