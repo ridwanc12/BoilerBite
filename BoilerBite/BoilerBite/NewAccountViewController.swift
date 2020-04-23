@@ -25,6 +25,7 @@ class NewAccountViewController: UIViewController {
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
+        passwordField.isSecureTextEntry = true
         firstnameField.delegate = self
         heightField.delegate = self
         weightField.delegate = self

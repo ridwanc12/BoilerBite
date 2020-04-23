@@ -10,6 +10,13 @@ import UIKit
 
 class UserProfileViewController: UIViewController , UITextFieldDelegate{
     
+    //Labels
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    
+    
     // Outlet for the Name (First Last) displayed at the top of the screen
     // Which should be updated to show the name of the current user
     @IBOutlet weak var nameLabel: UILabel! {
@@ -23,21 +30,25 @@ class UserProfileViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var heightText: UITextField! {
         didSet {
             heightText.text = String(global_height)
+            heightText.textColor = UIColor.darkGray
         }
     }
     @IBOutlet weak var weightText: UITextField! {
         didSet {
             weightText.text = String(global_weight)
+            weightText.textColor = UIColor.darkGray
         }
     }
     @IBOutlet weak var ageText: UITextField! {
         didSet {
             ageText.text = String(global_age)
+            ageText.textColor = UIColor.darkGray
         }
     }
     @IBOutlet weak var caloriesText: UITextField! {
         didSet {
             caloriesText.text = String(global_calories)
+            caloriesText.textColor = UIColor.darkGray
         }
     }
     
@@ -51,6 +62,11 @@ class UserProfileViewController: UIViewController , UITextFieldDelegate{
         weightText.delegate = self
         ageText.delegate = self
         caloriesText.delegate = self
+        
+        heightLabel.textColor = UIColor.darkGray
+        weightLabel.textColor = UIColor.darkGray
+        ageLabel.textColor = UIColor.darkGray
+        caloriesLabel.textColor = UIColor.darkGray
 
         // Do any additional setup after loading the view.
     }

@@ -10,20 +10,41 @@ import UIKit
 
 class GoalsViewController: UIViewController {
     
+    // UI Label Outlets for the show labels
+    @IBOutlet weak var bLabel: UILabel!
+    @IBOutlet weak var lLabel: UILabel!
+    @IBOutlet weak var llLabel: UILabel!
+    @IBOutlet weak var dLabel: UILabel!
+    @IBOutlet weak var tcalLabel: UILabel!
+    @IBOutlet weak var goalcLabel: UILabel!
+    
+    
     // UI Label Outlets to display the calories on the screen
     @IBOutlet weak var breakfast_cal: UILabel!
     @IBOutlet weak var lunch_cal: UILabel!
     @IBOutlet weak var late_lunch_cal: UILabel!
     @IBOutlet weak var dinner_cal: UILabel!
     @IBOutlet weak var total_daily_cal: UILabel!
-    
     @IBOutlet weak var total_goals_cal: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Changing all Labels to a Dark Grey color
-        // Label.textColor = UIColor.darkGray
+        bLabel.textColor = UIColor.darkGray
+        lLabel.textColor = UIColor.darkGray
+        llLabel.textColor = UIColor.darkGray
+        dLabel.textColor = UIColor.darkGray
+        tcalLabel.textColor = UIColor.darkGray
+        goalcLabel.textColor = UIColor.darkGray
+        
+        breakfast_cal.textColor = UIColor.darkGray
+        breakfast_cal.text = "lololool"
+        lunch_cal.textColor = UIColor.darkGray
+        late_lunch_cal.textColor = UIColor.darkGray
+        dinner_cal.textColor = UIColor.darkGray
+        total_daily_cal.textColor = UIColor.darkGray
+        total_goals_cal.textColor = UIColor.darkGray
 
         // Do any additional setup after loading the view.
     }

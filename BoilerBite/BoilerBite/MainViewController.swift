@@ -252,7 +252,6 @@ class MainViewController: UIViewController {
            print("data is ovverated")
            //print(String(data:data))
             let str = String(data: data, encoding: .utf8)
-            print("printing:" , str)
             if(str == "\n\n1") {
               print("llllloooolllll")
                 arg = 1
@@ -263,6 +262,51 @@ class MainViewController: UIViewController {
         semaphore.wait()
         return arg;
     }
+    
+    func getStuff(userName: String) {
+        let semaphore = DispatchSemaphore (value: 0)
+        let urlString = String(format: "https://boilerbite.000webhostapp.com/php/getteams.php?userName=%@", userName);
+        var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+          
+         
+           //print(String(data: data, encoding: .utf8)!)
+           //print("data is ovverated")
+           //print(String(data:data))
+         let str = String(data: data, encoding: .utf8)
+            
+         // print(str);
+            //str.spit
+            let arr = str?.split(separator: " ")
+            print(arr![0]);
+            print(arr![1]);
+            print(arr![2]);
+            print(arr![3]);
+            print(arr![4]);
+            //global_username = username
+            //global_email = arr![1];
+            let a = String(arr![2]);
+            let b = String(arr![3]);
+            let c = String(arr![4]);
+            
+            global_height = Int(a)!
+            global_weight = Int(b)!
+            global_age = Int(c)!;
+            
+         semaphore.signal()
+        }
+        task.resume()
+        semaphore.wait()
+    }
+
     
     /*
     func databaseRequest3() {

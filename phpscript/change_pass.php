@@ -24,7 +24,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $db = new change_DbOperation(); // change this and 27
 
     //inserting values
-    if($db->change_createteam($username, $password)){
+    $pass = sha1($password);
+    if($db->change_createteam($username, $pass)){
         $response['error']=false;
         $response['message']='Team added successfully';
     }else{
