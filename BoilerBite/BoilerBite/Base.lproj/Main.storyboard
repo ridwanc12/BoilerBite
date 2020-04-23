@@ -1451,7 +1451,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="update-button"/>
                                 <connections>
-                                    <action selector="updateTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="e5q-9r-gR9"/>
+                                    <action selector="buttonTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="qqu-3b-BTz"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" identifier="successChange" modalPresentationStyle="fullScreen" id="Mna-fF-axD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2047,14 +2048,13 @@
         <image name="white_rect" width="325" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T7k-7t-1vi"/>
         <segue reference="CKy-R9-Ykp"/>
         <segue reference="7wO-In-OKS"/>
-        <segue reference="agK-Cd-LIU"/>
+        <segue reference="Mna-fF-axD"/>
         <segue reference="24S-xa-hrC"/>
         <segue reference="DqN-Ih-BMD"/>
         <segue reference="eEq-yL-xEq"/>
-        <segue reference="zZV-46-FQR"/>
+        <segue reference="bo1-yk-fKi"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>

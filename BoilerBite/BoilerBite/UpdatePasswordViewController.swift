@@ -65,7 +65,7 @@ class UpdatePasswordViewController: UIViewController {
      @IBOutlet weak var updateButton: UIButton!
      
      
-     @IBAction func updateTapped(_ sender: UIButton) {
+     @IBAction func buttonTapped(_ sender: UIButton) {
          
          let password: String = newPasswordText.text ?? ""
          let old_password: String = currentPasswordText.text ?? ""
@@ -111,18 +111,17 @@ class UpdatePasswordViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }
-        
-         print("password: " ,password)
-         if flag == 0 {
-            update_pass(password: password)
-            global_password = password
-         }
-         
-        //global_password = password
+             print("password: " ,password)
+             if flag == 0 {
+                update_pass(password: password)
+                global_password = password
+             }
+             
+            //global_password = password
 
-         updateButton.addTarget(self, action: #selector(loadData), for: .touchUpInside)
-//        self.performSegue(withIdentifier: "successChange", sender: self)
-         //reload();
+             updateButton.addTarget(self, action: #selector(loadData), for: .touchUpInside)
+            self.performSegue(withIdentifier: "successChange", sender: self)
+             //reload();
      }
      
      override func viewDidLoad() {
