@@ -14,13 +14,9 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
-//        global_password = "ridwan"
-        //var s = "lol"
-        sleep(1)
         showInputDialog()
         //print("Delete action performed")
-//        global_username = "Not logged in"
-//        global_password = "Not logged in"
+        
     }
     func alert(s: String) {
         let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
@@ -68,6 +64,8 @@ class SettingsViewController: UIViewController {
                 print(password!)
                 let s = deleteUser(name: global_username, pass: password!)
                 self.alert(s: s)
+                global_username = "Not logged in"
+                global_password = "Not logged in"
             }
             else {
                 print("nay")

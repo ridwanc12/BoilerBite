@@ -39,6 +39,7 @@ class GoalsViewController: UIViewController {
         goalcLabel.textColor = UIColor.darkGray
         
         breakfast_cal.textColor = UIColor.darkGray
+        breakfast_cal.text = "lololool"
         lunch_cal.textColor = UIColor.darkGray
         late_lunch_cal.textColor = UIColor.darkGray
         dinner_cal.textColor = UIColor.darkGray
