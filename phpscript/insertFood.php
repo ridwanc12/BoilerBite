@@ -130,6 +130,11 @@ class  insertTable
         //$id = $this->findID($username);
 
         //echo nl2br("$id\n");
+        $tz = 'America/New_York';
+        $tz_obj = new DateTimeZone($tz);
+        $today = new DateTime("now", $tz_obj);
+        $date = $today->format('Y-m-d');
+
 
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
         $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
@@ -155,7 +160,8 @@ class  insertTable
             ':cal_fat' => $calorie_fat,
             ':g_fat' => $gram_fat,
             ':g_protein' => $gram_protein,
-            ':g_carbs' => $gram_carbs
+            ':g_carbs' => $gram_carbs,
+            ':date' => $date
         );
         $sql = 'INSERT INTO progress (
                         userName,
@@ -164,7 +170,8 @@ class  insertTable
                         calorie_fat,
                         gram_fat,
                         gram_protein,
-                        gram_carbs
+                        gram_carbs,
+                        date
                         )
                         VALUES (
                             :name,
@@ -173,7 +180,8 @@ class  insertTable
                             :cal_fat,
                             :g_fat,
                             :g_protein,
-                            :g_carbs
+                            :g_carbs,
+                            :date
                         )';
         $q = $this->pdo->prepare($sql);
         return $q->execute($task);
@@ -184,24 +192,27 @@ $obj = new insertTable();
 //$obj->showUsers();
 //echo nl2br("Begin unit testing for inserting food item:\n\n");
 
-//Testing input
-// $username = "admini"; //$_POST['userName'];
-// $food = "mac"; //$_POST['food_name'];
-// $total_cal = "1230"; //$_POST['total_calorie'];
-// $cal_fat = "123"; //$_POST['calorie_fat'];
-// $g_fat = "123"; //$_POST['gram_fat'];
-// $g_protein = "123"; //$_POST['gram_protein'];
-// $g_carb = "123"; //$_POST['gram_carbs'];
-// $date = "2020-04-10"; //$_POST['date'];
+// Testing input
 
-$username = $_POST['userName'];
-$food = $_POST['food_name'];
-$total_cal = $_POST['total_calorie'];
-$cal_fat = $_POST['calorie_fat'];
-$g_fat = $_POST['gram_fat'];
-$g_protein =  $_POST['gram_protein'];
-$g_carb = $_POST['gram_carbs'];
-$date = date("Y-m-d");
+$username = "admini"; //$_POST['userName'];
+$food = "mac"; //$_POST['food_name'];
+$total_cal = "1230"; //$_POST['total_calorie'];
+$cal_fat = "123"; //$_POST['calorie_fat'];
+$g_fat = "123"; //$_POST['gram_fat'];
+$g_protein = "123"; //$_POST['gram_protein'];
+$g_carb = "123"; //$_POST['gram_carbs'];
+
+$tz = 'America/New_York';
+$tz_obj = new DateTimeZone($tz);
+$today = new DateTime("now", $tz_obj);
+$date = $today->format('Y-m-d');
+// $username = $_POST['userName'];
+// $food = $_POST['food_name'];
+// $total_cal = $_POST['total_calorie'];
+// $cal_fat = $_POST['calorie_fat'];
+// $g_fat = $_POST['gram_fat'];
+// $g_protein =  $_POST['gram_protein'];
+// $g_carb = $_POST['gram_carbs'];
 if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
     echo nl2br("Food inserted.\n");
     $obj->checkMeal($username, $date);
