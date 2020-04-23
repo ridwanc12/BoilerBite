@@ -96,6 +96,12 @@ class  insertTable
                 $delete = $this->pdo->prepare($sql);
                 $delete->bindValue(':name', $username);
                 $delete->execute();
+
+                // Delete user from meal
+                $sql = "DELETE FROM meal WHERE userName = :name";
+                $delete = $this->pdo->prepare($sql);
+                $delete->bindValue(':name', $username);
+                $delete->execute();
             } else {
                 //echo nl2br("Incorrect password.");
                 return $WRONG_PASS;

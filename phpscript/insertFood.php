@@ -94,15 +94,15 @@ class  insertTable
             $goal = $user['calories_total'];
             if ($cal > $goal) {
                 $diff = abs($cal - $goal);
-                echo nl2br("Over $diff calories\n");
+                echo "Over $diff calories";
             } else {
                 $diff = abs($cal - $goal);
-                echo nl2br("Under $diff calories\n");
+                echo "Under $diff calories";
             }
         } else {
-            echo nl2br("No such user\n");
+            //echo nl2br("No such user\n");
         }
-        echo nl2br("$cal\n");
+        //echo nl2br("$cal\n");
     }
 
     /* 
@@ -123,7 +123,7 @@ class  insertTable
         // Check if $calories_total is non-negative.
         // If negative, print message and exit().
         if ($total_calorie < 0) {
-            echo nl2br("Please make sure the input is non-negative.\n");
+            //echo nl2br("Please make sure the input is non-negative.\n");
             return 0;
         }
         // Check if user is in the database
@@ -194,30 +194,30 @@ $obj = new insertTable();
 
 // Testing input
 
-$username = "admini"; //$_POST['userName'];
-$food = "mac"; //$_POST['food_name'];
-$total_cal = "1230"; //$_POST['total_calorie'];
-$cal_fat = "123"; //$_POST['calorie_fat'];
-$g_fat = "123"; //$_POST['gram_fat'];
-$g_protein = "123"; //$_POST['gram_protein'];
-$g_carb = "123"; //$_POST['gram_carbs'];
+// $username = "admini"; //$_POST['userName'];
+// $food = "mac"; //$_POST['food_name'];
+// $total_cal = "1230"; //$_POST['total_calorie'];
+// $cal_fat = "123"; //$_POST['calorie_fat'];
+// $g_fat = "123"; //$_POST['gram_fat'];
+// $g_protein = "123"; //$_POST['gram_protein'];
+// $g_carb = "123"; //$_POST['gram_carbs'];
 
 $tz = 'America/New_York';
 $tz_obj = new DateTimeZone($tz);
 $today = new DateTime("now", $tz_obj);
 $date = $today->format('Y-m-d');
-// $username = $_POST['userName'];
-// $food = $_POST['food_name'];
-// $total_cal = $_POST['total_calorie'];
-// $cal_fat = $_POST['calorie_fat'];
-// $g_fat = $_POST['gram_fat'];
-// $g_protein =  $_POST['gram_protein'];
-// $g_carb = $_POST['gram_carbs'];
+$username = $_POST['userName'];
+$food = $_POST['food_name'];
+$total_cal = $_POST['total_calorie'];
+$cal_fat = $_POST['calorie_fat'];
+$g_fat = $_POST['gram_fat'];
+$g_protein =  $_POST['gram_protein'];
+$g_carb = $_POST['gram_carbs'];
 if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein, $g_carb)) {
-    echo nl2br("Food inserted.\n");
+    //echo nl2br("Food inserted.\n");
     $obj->checkMeal($username, $date);
 } else {
-    echo nl2br("Failed.\n");
+    echo "Failed.";
 }
 
 //$obj->showUsers();
