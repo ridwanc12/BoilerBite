@@ -39,15 +39,19 @@ class SettingsViewController: UIViewController {
     @IBAction func logoutButton(_ sender: UIButton) {
         global_username = ""
         global_password = ""
+//        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
+//        alert(s: s)
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let s = checkProgress(name: "admini")
-        print(s)
-        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        let s = checkProgress(name: "admini")
+//        alert(s: s)
     }
     
     func showInputDialog(){
@@ -88,6 +92,8 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "send feedback" button is pressed
     @IBAction func sendFeedbackButton(_ sender: UIButton) {
+        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
+        alert(s: s)
     }
     /*
     // MARK: - Navigation

@@ -121,7 +121,7 @@ func insertFood(name: String, food: String, cal_total: Int) -> String{
         //print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
         semaphore.signal()
     }
