@@ -90,6 +90,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         for (key, value) in itemList {
             insertFood(name: global_username, food: key, cal_total: value)
         }
+        insert_items(total_calories: totalcalories, meal: mealTime)
 //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }
