@@ -14,15 +14,13 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
-//        showInputDialog()
-//        global_username = "ridwan"
 //        global_password = "ridwan"
         //var s = "lol"
         sleep(1)
         showInputDialog()
         //print("Delete action performed")
-        global_username = "Not logged in"
-        global_password = "Not logged in"
+//        global_username = "Not logged in"
+//        global_password = "Not logged in"
     }
     func alert(s: String) {
         let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
@@ -46,7 +44,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let s = checkProgress(name: "jeremy")
+        let s = checkProgress(name: "admini")
         print(s)
         
         // Do any additional setup after loading the view.
@@ -55,19 +53,16 @@ class SettingsViewController: UIViewController {
     func showInputDialog(){
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "Enter login information", message: "Enter your username and password", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enter login information", message: "Enter your password", preferredStyle: .alert)
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
             
             //getting the input values from user
-            let username = alertController.textFields?[0].text
-            let password = alertController.textFields?[1].text
-            
-            
-            if (username! != "" && password! != "") {
-                print(username!)
+            let password = alertController.textFields?[0].text
+            if (password! != "") {
+                print(global_username)
                 print(password!)
-                let s = deleteUser(name: username!, pass: password!)
+                let s = deleteUser(name: global_username, pass: password!)
                 self.alert(s: s)
             }
             else {
@@ -80,10 +75,7 @@ class SettingsViewController: UIViewController {
         
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
-            textField.placeholder = "Enter Username"
-        }
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Enter Password"
+            textField.placeholder = "Enter password"
         }
         
         //adding the action to dialogbox

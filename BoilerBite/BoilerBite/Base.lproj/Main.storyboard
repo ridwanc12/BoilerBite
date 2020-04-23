@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIb-zm-i3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1779,7 +1779,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Allergens and Ingredients" adjustsFontForContentSizeCategory="YES" selectable="NO" id="7c2-UA-PrL">
-                                    <rect key="frame" x="0.0" y="100" width="343" height="420"/>
+                                    <rect key="frame" x="0.0" y="99.666667938232422" width="343" height="420"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1788,10 +1788,10 @@
                                 </textView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nutrition Cell" textLabel="7pV-Sr-TpS" detailTextLabel="xqd-t7-1zB" style="IBUITableViewCellStyleValue1" id="5yR-Hv-3QF">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5yR-Hv-3QF" id="VR7-nk-leE">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7pV-Sr-TpS">
@@ -1931,6 +1931,16 @@
             <point key="canvasLocation" x="3217" y="816"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tvw-bf-UXF"/>
+        <segue reference="ICj-Sl-rAf"/>
+        <segue reference="U10-p6-8x8"/>
+        <segue reference="fdd-Ut-I0N"/>
+        <segue reference="qoP-Pr-npA"/>
+        <segue reference="wWF-Sl-gah"/>
+        <segue reference="bo1-yk-fKi"/>
+        <segue reference="1A1-wO-hVh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bg" width="375" height="812"/>
         <image name="create-button" width="124" height="71"/>
@@ -1948,14 +1958,4 @@
         <image name="username" width="229" height="44"/>
         <image name="white_rect" width="325" height="647"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="tvw-bf-UXF"/>
-        <segue reference="ICj-Sl-rAf"/>
-        <segue reference="U10-p6-8x8"/>
-        <segue reference="24S-xa-hrC"/>
-        <segue reference="qoP-Pr-npA"/>
-        <segue reference="eEq-yL-xEq"/>
-        <segue reference="0E4-5U-m3p"/>
-        <segue reference="MXM-w3-3cX"/>
-    </inferredMetricsTieBreakers>
 </document>

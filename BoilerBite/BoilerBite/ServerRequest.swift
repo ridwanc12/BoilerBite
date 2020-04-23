@@ -36,9 +36,6 @@ func checkProgress(name: String) -> String{
             //print(error)
             return
         }
-
-        //print("response = \(String(describing: response))")
-
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
@@ -59,7 +56,7 @@ func deleteUser(name: String, pass: String) -> String {
     // Send values to php script
     let postString = "userName=\(name)&pass=\(pass)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
-    var s :String?
+    var s = "ERROR"
     let semaphore = DispatchSemaphore(value: 0)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
@@ -71,7 +68,7 @@ func deleteUser(name: String, pass: String) -> String {
         }
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
-        let response = String(describing: responseString)
+        let response = String(describing: responseString!)
         print(response)
         if (response.contains("User not in database.")) {
             s = "No such user"
@@ -86,7 +83,7 @@ func deleteUser(name: String, pass: String) -> String {
     task.resume()
     semaphore.wait()
 
-    return s ?? "ERROR"
+    return s
 }
 
 // Can use functions like the following
@@ -125,7 +122,7 @@ func insertFood(name: String, food: String, cal_total: Int) -> String{
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         print("responseString = \(String(describing: responseString))")
-        s = String(describing: responseString)
+        s = String(describing: responseString!)
         semaphore.signal()
     }
     task.resume()

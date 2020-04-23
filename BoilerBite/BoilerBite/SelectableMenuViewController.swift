@@ -81,16 +81,31 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
 
     }
     
+    func alert(s: String) {
+        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // Function for the Create Button
     @IBAction func createMealButton(_ sender: Any) {
 //        global_username = "test1"
 //        let food_name = itemList.first?.value
         print("meal button")
 //        print(food_name!)
+        var s = "ERROR"
         for (key, value) in itemList {
-            insertFood(name: global_username, food: key, cal_total: value)
+            s = insertFood(name: global_username, food: key, cal_total: value)
         }
 //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        alert(s: s)
         totalcalories = 0
     }
       
