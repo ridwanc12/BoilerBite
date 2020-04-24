@@ -15,6 +15,5 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        getStuff(userName: global_username);
     }
 }
