@@ -460,4 +460,43 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         
         XCTAssertEqual(String(describing: meals), expected)
     }
+    
+    func deleteUser(){
+        let name = "Jeremy"
+        let pass = "jeremy"
+        let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
+        let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+        request.httpMethod = "POST"
+        // Send values to php script
+        let postString = "userName=\(name)&pass=\(pass)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        var s = "ERROR"
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+
+            if error != nil {
+                //print(error)
+                return
+            }
+
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
+            let response = String(describing: responseString!)
+            print(response)
+            if (response.contains("User not in database.")) {
+                s = "No such user"
+            } else if (response.contains("password")){
+                s = "Incorrect password"
+            } else {
+                s = "User deleted"
+            }
+            semaphore.signal()
+            //print("responseString = ")
+        }
+        task.resume()
+        semaphore.wait()
+
+        print(s)
+    }
 }

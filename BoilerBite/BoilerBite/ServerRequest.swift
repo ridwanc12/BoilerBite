@@ -16,44 +16,52 @@ var global_weight: Int = 0
 var global_age: Int = 0
 var global_calories: Int = 0
 
-func insertUser(name: String, mail: String, pass: String){
+func checkProgress(name: String) -> [String]{
 //    let name = "Isha"
 //    let mail = "isha@gmail.com"
 //    let pass = "isha"
-    let link = "https://boilerbite.000webhostapp.com/php/insertUser.php"
+    //let name = "Jeremy"
+    //        let date = "2020-04-23"
+                
+    let link = "https://boilerbite.000webhostapp.com/php/mealsProgress.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
-    let postString = "userName=\(name)&userEmail=\(mail)&pass=\(pass)"
+    let postString = "userName=\(name)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
-    
+    var s = "ERROR"
+    let semaphore = DispatchSemaphore(value: 0)
+                
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
-
         if error != nil {
             //print(error)
             return
         }
-
-        //print("response = \(String(describing: response))")
-
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        //print("responseString = \(String(describing: responseString))")
+        s = String(describing: responseString!)
+        semaphore.signal()
     }
     task.resume()
+    semaphore.wait()
+    let res = s.components(separatedBy: " ")
+    return res
 }
 
 // Function to test php script to delete user from database
-func deleteUser(name: String, pass: String) {
+func deleteUser(name: String, pass: String) -> String {
 //    let name = "Isha"
 //    let pass = "isha"
+    print(name)
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
     let postString = "userName=\(name)&pass=\(pass)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
-    
+    var s = "ERROR"
+    let semaphore = DispatchSemaphore(value: 0)
     
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
@@ -64,19 +72,22 @@ func deleteUser(name: String, pass: String) {
         }
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as String?
-        let response = String(describing: responseString)
+        let response = String(describing: responseString!)
         print(response)
         if (response.contains("User not in database.")) {
-            print("No such user")
+            s = "No such user"
         } else if (response.contains("password")){
-            print("Incorrect password")
+            s = "Incorrect password"
         } else {
-            print("User deleted")
+            s = "User deleted"
         }
+        semaphore.signal()
         //print("responseString = ")
     }
     task.resume()
-    
+    semaphore.wait()
+
+    return s
 }
 
 // Can use functions like the following
@@ -84,7 +95,7 @@ func deleteUser(name: String, pass: String) {
 //insertFood(name: "Rid", food: "Protein", cal_total: 1234)
 
 // Function to add food item to progress table
-func insertFood(name: String, food: String, cal_total: Int){
+func insertFood(name: String, food: String, cal_total: Int) -> String{
 //    let name = "Isha"
 //    let pass = "isha"
 //    let cal_total = 0;
@@ -98,6 +109,8 @@ func insertFood(name: String, food: String, cal_total: Int){
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
     // Send values to php script
+    var s = "ERROR"
+    let semaphore = DispatchSemaphore(value: 0)
     let postString = "userName=\(name)&food_name=\(food)&total_calorie=\(cal_total)&calorie_fat=\(cal_fat)&gram_fat=\(g_fat)&gram_protein=\(g_protein)&gram_carbs=\(g_carbs)"
     request.httpBody = postString.data(using: String.Encoding.utf8)
     
@@ -112,9 +125,45 @@ func insertFood(name: String, food: String, cal_total: Int){
         //print("response = \(String(describing: response))")
 
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        print("responseString = \(String(describing: responseString))")
+        //print("responseString = \(String(describing: responseString))")
+        s = String(describing: responseString!)
+        semaphore.signal()
+        print(s)
     }
     task.resume()
+    semaphore.wait()
+    return s
+}
+
+func check() -> String{
+//    let name = "Isha"
+//    let pass = "isha"
+//    let cal_total = 0;
+    let link = "https://boilerbite.000webhostapp.com/php/check.php"
+    
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    // Send values to php script
+    var s = "ERROR"
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        //print("response = \(String(describing: response))")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        //print("responseString = \(String(describing: responseString))")
+        s = String(describing: responseString!)
+        semaphore.signal()
+    }
+    task.resume()
+    semaphore.wait()
+    return s
 }
 
 func insert_items(total_calories:Int, meal:String) {
@@ -175,13 +224,10 @@ func get_meal (date: String) {
         print(String(describing: error))
         return
       }
-       //print(String(data: data, encoding: .utf8)!)
-       //print("data is ovverated")
-       //print(String(data:data))
+       
      let str = String(data: data, encoding: .utf8)
         
-     //print(str);
-        //str.spit
+     
         let arr = str?.split(separator: " ")
         print(arr![0]);
         
@@ -193,19 +239,7 @@ func get_meal (date: String) {
             print(temp[0]);
             print(temp[1]);
         }
-        //print(arr![1]);
-        //print(arr![2]);
-        //print(arr![3]);
-        //print(arr![4]);
-        //global_username = username
-        //global_email = arr![1];
-        //let a = String(arr![2]);
-        //let b = String(arr![3]);
-        //let c = String(arr![4]);
         
-        //global_height = Int(a)!
-        //global_weight = Int(b)!
-        //global_age = Int(c)!;
         
      semaphore.signal()
     }
