@@ -215,12 +215,12 @@ class MainViewController: UIViewController {
               
              
                print(String(data: data, encoding: .utf8)!)
-               print("data is ovverated")
+               //print("data is ovverated")
                //print(String(data:data))
                 let str = String(data: data, encoding: .utf8)
-                print("printing:" , str)
+                //print("printing:" , str)
                 if(str == "\n\n1") {
-                  print("llllloooolllll")
+                  //print("llllloooolllll")
                     arg = 1
                 }
               semaphore.signal()
@@ -252,7 +252,7 @@ class MainViewController: UIViewController {
            //print(String(data:data))
          let str = String(data: data, encoding: .utf8)
             
-         print(str);
+         // print(str);
             //str.spit
             let arr = str?.split(separator: " ")
             print(arr![0]);

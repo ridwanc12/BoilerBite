@@ -588,7 +588,7 @@
                                 <rect key="frame" x="7" y="-28" width="360" height="891"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-Lj-xkF">
-                                <rect key="frame" x="212" y="72" width="161" height="282"/>
+                                <rect key="frame" x="212" y="72" width="161" height="141"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="ZD2-ly-iZG"/>
                                 </constraints>
@@ -794,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IN-8g-b2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="1568.7192118226601"/>
+            <point key="canvasLocation" x="1230" y="1569"/>
         </scene>
         <!--Windsor Late Lunch Individual Menu-->
         <scene sceneID="eaj-IB-iRo">
@@ -933,7 +933,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="L1f-Q7-b09">
-                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="282"/>
+                                <rect key="frame" x="195.66666666666663" y="71" width="161" height="141"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="tjt-rY-GkG"/>
                                 </constraints>
@@ -947,7 +947,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 am - 2:00 pm " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btb-LH-1Nu">
-                                <rect key="frame" x="19" y="326" width="200" height="27"/>
+                                <rect key="frame" x="19" y="185" width="200" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -955,7 +955,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-E7-32V">
-                                <rect key="frame" x="21" y="369" width="325" height="336"/>
+                                <rect key="frame" x="21" y="228" width="325" height="477"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Menu Cell" textLabel="3Za-cI-Dbi" detailTextLabel="A8a-r5-uAv" style="IBUITableViewCellStyleSubtitle" id="Ysa-1X-Hax" customClass="MenuTableViewCell" customModule="BoilerBite" customModuleProvider="target">
@@ -1511,7 +1511,7 @@
                                 <rect key="frame" x="-75" y="51" width="525" height="710"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-j3-Xll">
-                                <rect key="frame" x="30" y="361" width="288" height="40.666666666666686"/>
+                                <rect key="frame" x="30" y="220" width="288" height="40.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -1519,7 +1519,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to the developers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cD-x7-poS">
-                                <rect key="frame" x="116" y="406" width="167" height="27"/>
+                                <rect key="frame" x="116" y="265" width="167" height="27"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1527,7 +1527,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uY2-vr-6vp">
-                                <rect key="frame" x="198" y="71" width="161" height="282"/>
+                                <rect key="frame" x="198" y="71" width="161" height="141"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter feedback" textAlignment="center" minimumFontSize="17" background="square-textbox" translatesAutoresizingMaskIntoConstraints="NO" id="iAa-eo-zYc" userLabel="Feedback Text">
                                 <rect key="frame" x="74.666666666666671" y="365" width="225.66666666666663" height="225"/>
@@ -1601,7 +1601,7 @@
                                 <rect key="frame" x="8" y="39" width="359" height="734"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SXW-QU-fdH">
-                                <rect key="frame" x="198" y="73" width="161" height="282"/>
+                                <rect key="frame" x="198" y="73" width="161" height="141"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Goals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWG-da-8vP">
                                 <rect key="frame" x="29" y="212" width="183" height="41"/>
@@ -2050,7 +2050,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="CKy-R9-Ykp"/>
         <segue reference="7wO-In-OKS"/>
-        <segue reference="Mna-fF-axD"/>
+        <segue reference="O4y-7l-SDx"/>
         <segue reference="24S-xa-hrC"/>
         <segue reference="DqN-Ih-BMD"/>
         <segue reference="eEq-yL-xEq"/>
