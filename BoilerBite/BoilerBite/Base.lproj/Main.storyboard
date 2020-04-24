@@ -715,7 +715,7 @@
                                 <state key="normal" image="update-button"/>
                                 <connections>
                                     <action selector="updateTapped:" destination="IOJ-pw-yiK" eventType="touchUpInside" id="aFN-aX-2zg"/>
-                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="lcQ-fv-IgZ"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" modalPresentationStyle="fullScreen" id="Idx-c8-4Z8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-Cd7" userLabel="calories">
@@ -2050,7 +2050,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="CKy-R9-Ykp"/>
         <segue reference="7wO-In-OKS"/>
-        <segue reference="O4y-7l-SDx"/>
+        <segue reference="Idx-c8-4Z8"/>
         <segue reference="24S-xa-hrC"/>
         <segue reference="DqN-Ih-BMD"/>
         <segue reference="eEq-yL-xEq"/>

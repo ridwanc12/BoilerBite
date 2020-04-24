@@ -166,16 +166,7 @@ func update_calories(username: String, calories: Int) {
         return
       }
       print(String(data: data, encoding: .utf8)!)
-      //print(String(data: data, encoding: .utf8)!)
-      //print("data is ovverated")
-      //print(String(data:data))
-       //let str = String(data: data, encoding: .utf8)
-       //print("printing:" , str)
-       //if(str == "\n\n1") {
-         //print("llllloooolllll")
-           //arg = 1
-       //}
-      //semaphore.signal()
+      semaphore.signal()
     }
     task.resume()
     semaphore.wait()
