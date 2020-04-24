@@ -85,6 +85,7 @@ class  insertTable
         } else {
             echo nl2br("No such user");
         }
+        $cal = $breakfast + $lunch + $late_lunch + $dinner;
         $s =  "$breakfast $lunch $late_lunch $dinner $cal $goal";
         //echo nl2br("$cal\n");
         return $s;

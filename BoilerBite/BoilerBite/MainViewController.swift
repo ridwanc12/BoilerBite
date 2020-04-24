@@ -220,9 +220,9 @@ class MainViewController: UIViewController {
                print(String(data: data, encoding: .utf8)!)
                //print("data is ovverated")
                //print(String(data:data))
-                let str = String(data: data, encoding: .utf8)
+                let str = String(data: data, encoding: .utf8)!
                 //print("printing:" , str)
-                if(str == "\n\n1") {
+                if(str.last == "1") {
                   //print("llllloooolllll")
                     arg = 1
                 }
