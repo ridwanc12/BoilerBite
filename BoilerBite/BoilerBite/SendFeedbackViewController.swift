@@ -15,7 +15,7 @@ class SendFeedbackViewController: UIViewController {
     
     // Function for when the "Send" button is pressed
     @IBAction func sendTapped(_ sender: UIButton) {
-        let feedback: String = feedbackText.text ?? ""
+        var feedback: String = feedbackText.text ?? ""
         send_feedback(feedback: feedback)
     }
     
@@ -39,8 +39,9 @@ class SendFeedbackViewController: UIViewController {
         //let userr:String = String(global_username ?? "0") ?? "ss"
         //let calories: Int = Int(caloriesField.text ?? "0") ?? 0
         
-        
-        let urlString = String(format: "http://boilerbite.000webhostapp.com/php/mail.php?feedback=%@", feedback)
+        let originalString = String(format: "http://boilerbite.000webhostapp.com/php/mail.php?feedback=%@", feedback)
+        let urlString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        let urlString = String(format: "http://boilerbite.000webhostapp.com/php/mail.php?feedback=%@", feedback)
         /*
          var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
          */

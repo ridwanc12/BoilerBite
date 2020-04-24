@@ -31,6 +31,7 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         let item = getItem(itemID: itemID)
+        print(itemID)
         
         itemNameLabel.text = item.Name
         itemNameLabel?.sizeToFit()
