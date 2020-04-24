@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     echo sha1($memberCount);
     $memberCount = $memberCount . "salt";
     $memberCount = sha1($memberCount);
-    echo "\n " . $memberCount;
+    echo "\n " . $memberCount . " ";
     if($db->createTeam($teamName,$memberCount)){
         $response['error']=false;
         $response['message']='login successful';
