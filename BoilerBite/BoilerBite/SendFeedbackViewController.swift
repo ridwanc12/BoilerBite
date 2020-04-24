@@ -8,20 +8,20 @@
 
 import UIKit
 
-class SendFeedbackViewController: UIViewController {
+class SendFeedbackViewController: UIViewController, UITextFieldDelegate {
     
     // Text field for Send Feedback
     @IBOutlet weak var feedbackText: UITextField!
     
     // Function for when the "Send" button is pressed
     @IBAction func sendTapped(_ sender: UIButton) {
-        var feedback: String = feedbackText.text ?? ""
+        let feedback: String = feedbackText.text ?? ""
         send_feedback(feedback: feedback)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        feedbackText.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -65,7 +65,11 @@ class SendFeedbackViewController: UIViewController {
         semaphore.wait()
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
