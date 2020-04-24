@@ -13,9 +13,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
@@ -32,6 +33,30 @@ class MainViewController: UIViewController {
         
         //databaseRequest4(user: username, password: password) // prev was "" ""
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: self.view.window)
+    }
+    
+    @objc func handleKeyboardDidShow(_ notification: Notification) {
+        self.view.frame.origin.y -= 100
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//            self.view.frame.origin.y -= keyboardHeight
+//        }
+    }
+    
+    @objc func handleKeyboardDidHide(_ notification: Notification) {
+        self.view.frame.origin.y += 170
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//            self.view.frame.origin.y -= keyboardHeight
+//        }
+    }
+    
     
     func diningHoursExample() {
         // Menu for Windsor 01-13-2020
