@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         $response['error']=true;
         $response['message']='login unsuccessful';
-        $res = 1;
+        $res = 0;
     }
 
 }else{
