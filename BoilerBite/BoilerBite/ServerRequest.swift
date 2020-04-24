@@ -128,6 +128,38 @@ func insertFood(name: String, food: String, cal_total: Int) -> String{
         //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
         semaphore.signal()
+        print(s)
+    }
+    task.resume()
+    semaphore.wait()
+    return s
+}
+
+func check() -> String{
+//    let name = "Isha"
+//    let pass = "isha"
+//    let cal_total = 0;
+    let link = "https://boilerbite.000webhostapp.com/php/check.php"
+    
+    let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
+    // Send values to php script
+    var s = "ERROR"
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+        data, response, error in
+
+        if error != nil {
+            //print(error)
+            return
+        }
+
+        //print("response = \(String(describing: response))")
+
+        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        //print("responseString = \(String(describing: responseString))")
+        s = String(describing: responseString!)
+        semaphore.signal()
     }
     task.resume()
     semaphore.wait()

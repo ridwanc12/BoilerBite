@@ -61,7 +61,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             meal_num = 0
         case "Lunch":
             meal_num = 1
-        case "Late Lunch":
+        case "Late_Lunch":
             meal_num = 2
         case "Dinner":
             meal_num = 3
@@ -106,7 +106,11 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             s = insertFood(name: global_username, food: key, cal_total: value)
             total = total + value
         }
-        insert_items(total_calories: total, meal: mealTime)
+        var meal = mealTime
+        if (meal == "Late Lunch") {
+            meal = "Late_Lunch"
+        }
+        insert_items(total_calories: total, meal: meal)
         alert(s: s)
         totalcalories = 0
     }
