@@ -55,13 +55,20 @@ class SettingsViewController: UIViewController {
     func alert(s: String) {
         let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
         
-        //the confirm action taking the inputs
-        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "postDelete", sender: nil)
-        })
+        if (s == "User deleted") {
+            let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.performSegue(withIdentifier: "postDelete", sender: nil)
+            })
+            //adding the action to dialogbox
+            alertController.addAction(confirmAction)
+        } else {
+            let confirmAction = UIAlertAction(title: "OK", style: .default)
+            //adding the action to dialogbox
+            alertController.addAction(confirmAction)
+        }
         
-        //adding the action to dialogbox
-        alertController.addAction(confirmAction)
+//        //adding the action to dialogbox
+//        alertController.addAction(confirmAction)
         
         
         //finally presenting the dialog box
