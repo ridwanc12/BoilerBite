@@ -41,11 +41,11 @@ class NewAccountViewController: UIViewController {
     }
     
     @objc func handleKeyboardDidShow(_ notification: Notification) {
-        self.view.frame.origin.y -= 100
+        self.view.frame.origin.y -= 50
     }
     
     @objc func handleKeyboardDidHide(_ notification: Notification) {
-        self.view.frame.origin.y += 180
+        self.view.frame.origin.y += 50
     }
     
     // Action function for when the Create button is pressed
