@@ -119,7 +119,7 @@ class MainViewController: UIViewController {
             global_username = username
             global_password = password
             
-            getStuff(userName: username);
+            //getStuff(userName: username);
         }
                
                if arg == 0 {
@@ -192,7 +192,8 @@ class MainViewController: UIViewController {
             
             print("username: ", user)
             print("password: ", password)
-            
+            global_username = user
+            global_password = password
             let semaphore = DispatchSemaphore (value: 0)
             
             var arg = 0;

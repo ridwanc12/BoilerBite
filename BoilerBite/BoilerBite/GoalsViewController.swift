@@ -39,6 +39,7 @@ class GoalsViewController: UIViewController {
         goalcLabel.textColor = UIColor.darkGray
         // progress[breakfast lunch late_lunch dinner total goal]
         let progress = checkProgress(name: global_username)
+        print(global_username)
         print(progress)
         print(check())
         

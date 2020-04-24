@@ -111,7 +111,8 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             mealTime = "Late_Lunch"
         }
         insert_items(total_calories: totalcalories, meal: mealTime)
-//        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        alert(s: s)
+        //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }
       

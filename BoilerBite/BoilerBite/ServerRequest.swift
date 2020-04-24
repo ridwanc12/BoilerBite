@@ -20,7 +20,7 @@ func checkProgress(name: String) -> [String]{
 //    let name = "Isha"
 //    let mail = "isha@gmail.com"
 //    let pass = "isha"
-    let name = "Jeremy"
+    //let name = "Jeremy"
     //        let date = "2020-04-23"
                 
     let link = "https://boilerbite.000webhostapp.com/php/mealsProgress.php"
