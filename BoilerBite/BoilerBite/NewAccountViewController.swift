@@ -201,7 +201,7 @@ func databaseRequest_signup(username: String, firstname: String, lastname: Strin
       print("data is ovverated")
       //print(String(data:data))
        let str = String(data: data, encoding: .utf8)
-        print("printing:" , str)
+        //print("printing:" , str)
        if(str == "\n\n1") {
          print("llllloooolllll")
            arg = 1
