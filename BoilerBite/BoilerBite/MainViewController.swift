@@ -15,10 +15,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        insertUser(name: "emma", mail: "emma", pass: "emma")
-//        sleep(2)
-//        insertFood(name: "Ian", food: "Protein", cal_total: 1324)
-//        deleteUser(name: "qwertyu", pass: "qwertyu")
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
@@ -28,11 +24,6 @@ class MainViewController: UIViewController {
         
         // Testing meal and item requests functions in main
 //        mealRequest()
-        
-//        databaseRequest()
-//        databaseRequest2()
-        //let username: String = usernameField.text ?? ""
-        //let password: String = passwordField.text ?? ""
         
         //print(username)
         //print(password)
@@ -94,6 +85,9 @@ class MainViewController: UIViewController {
         
         var flag = 0
         
+        print("username: ", username)
+        print("password: ", password)
+        
         if username.count < 6 || username.count > 12 {
             flag = 1;
             let alert = UIAlertController(title: "Error" , message: "Length should be between 6 and 12", preferredStyle: .alert)
@@ -122,45 +116,46 @@ class MainViewController: UIViewController {
             arg = databaseRequest4(user: username, password: password) // added by uc
             global_username = username
             global_password = password
+            
+            getStuff(userName: username);
         }
+               
+               if arg == 0 {
+                   flag = 1;
+                   let alert = UIAlertController(title: "Error" , message: "Wrong password or username", preferredStyle: .alert)
+                   
+                   let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                       print("Wrong password or username")
+                   }
+                   
+                   alert.addAction(action)
+                   present(alert, animated: true, completion: nil)
+               }
+               
+               /*
+               if username.count < 6 || password.count < 6 {
+                   let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too short!", preferredStyle: .alert)
+                   
+                   let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                       print("Username or Password too Short")
+                   }
+                   
+                   alert.addAction(action)
+                   present(alert, animated: true, completion: nil)
+               }
+               if username.count > 12 || password.count > 12{
+                   let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too long!", preferredStyle: .alert)
+                   
+                   let action = UIAlertAction(title: "OK" , style: .default) { (action) in
+                       print("Username or Password too Long")
+                   }
+                   
+                   alert.addAction(action)
+                   present(alert, animated: true, completion: nil)
+               }
         
-        if arg == 0 {
-            flag = 1;
-            let alert = UIAlertController(title: "Error" , message: "Wrong password or username", preferredStyle: .alert)
-            
-            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
-                print("Wrong password or username")
-            }
-            
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
-        
-        /*
-        if username.count < 6 || password.count < 6 {
-            let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too short!", preferredStyle: .alert)
-            
-            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
-                print("Username or Password too Short")
-            }
-            
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
-        if username.count > 12 || password.count > 12{
-            let alert = UIAlertController(title: "Username or Password Incorrect" , message: "Username/Password too long!", preferredStyle: .alert)
-            
-            let action = UIAlertAction(title: "OK" , style: .default) { (action) in
-                print("Username or Password too Long")
-            }
-            
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
- 
-        */
-        
-        
+               */
+               
         
     }
     
@@ -191,76 +186,52 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func databaseRequest4(user: String, password: String) -> Int {
-        let semaphore = DispatchSemaphore (value: 0)
-        
-        var arg = 0;
-        //let username: String = usernameField.text ?? ""
-        //let password: String = passwordField.text ?? ""
-        
-        // user changed to username
-        
-        //let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
-        
-        let urlString = String(format: "https://boilerbite.000webhostapp.com/php/createteam.php?userName=%@&hashPass=%@", user, password);
-        var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        request.httpMethod = "POST"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            return
-          }
-          /*do {
-              if let json = try JSONSerialization.jsonObject(with: data) as? [String: String], let name = json["name"] {
-                  //print("name = \(name)")   // if everything is good, you'll see "William"
-              }
-          } catch let parseError {
-              print("parsing error: \(parseError)")
-              //let responseString = String(data: data, encoding: .utf8)
-              //print("raw response: \(responseString)")
-          }*/
+        func databaseRequest4(user: String, password: String) -> Int {
             
-            /*do{
-                if let jsonData=try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
-                    print(jsonData)
-                    let success=jsonData.value(forKey: "success") as! Bool
-                    if success{
-                        print("login succeded")
-                        //request_completed(true)
-                        return
-                     }else{
-                        print("login failed")
-                        //request_completed(false)
-                        return
-                    }
-                }else{
-                    print("could not parse json")
-                    //request_completed(false)
+            print("username: ", user)
+            print("password: ", password)
+            
+            let semaphore = DispatchSemaphore (value: 0)
+            
+            var arg = 0;
+            //let username: String = usernameField.text ?? ""
+            //let password: String = passwordField.text ?? ""
+            
+            // user changed to username
+            
+            //let urlString = String(format: "http://10.192.122.81/MyWebService/api/createteam.php?name=%@&member=%@", user, password)  // might have to change the use
+            
+            let urlString = String(format: "https://boilerbite.000webhostapp.com/php/createteam.php?userName=%@&hashPass=%@", user, password);
+            var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+            request.httpMethod = "POST"
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+              guard let data = data else {
+                print(String(describing: error))
+                return
+              }
+              
+             
+               print(String(data: data, encoding: .utf8)!)
+               print("data is ovverated")
+               //print(String(data:data))
+                let str = String(data: data, encoding: .utf8)
+                print("printing:" , str)
+                if(str == "\n\n1") {
+                  print("llllloooolllll")
+                    arg = 1
                 }
-            }catch{
-                print("request failed")
-                //request_completed(false)
+              semaphore.signal()
             }
- */
-         
-           print(String(data: data, encoding: .utf8)!)
-           print("data is ovverated")
-           //print(String(data:data))
-            let str = String(data: data, encoding: .utf8)
-            if(str == "\n\n1") {
-              print("llllloooolllll")
-                arg = 1
-            }
-          semaphore.signal()
+            task.resume()
+            semaphore.wait()
+            return arg;
         }
-        task.resume()
-        semaphore.wait()
-        return arg;
+
     }
-    
+
     func getStuff(userName: String) {
         let semaphore = DispatchSemaphore (value: 0)
         let urlString = String(format: "https://boilerbite.000webhostapp.com/php/getteams.php?userName=%@", userName);
@@ -281,7 +252,7 @@ class MainViewController: UIViewController {
            //print(String(data:data))
          let str = String(data: data, encoding: .utf8)
             
-         // print(str);
+         print(str);
             //str.spit
             let arr = str?.split(separator: " ")
             print(arr![0]);
@@ -289,15 +260,24 @@ class MainViewController: UIViewController {
             print(arr![2]);
             print(arr![3]);
             print(arr![4]);
+            print(arr![5]);
             //global_username = username
             //global_email = arr![1];
             let a = String(arr![2]);
             let b = String(arr![3]);
             let c = String(arr![4]);
+            let d = String(arr![5]);
             
             global_height = Int(a)!
             global_weight = Int(b)!
             global_age = Int(c)!;
+            global_calories = Int(d)!;
+            
+            print("height: ", global_height);
+            print("weight: ", global_weight);
+            print("age: ", global_age);
+            print("calories: ", global_calories);
+
             
          semaphore.signal()
         }
@@ -305,170 +285,11 @@ class MainViewController: UIViewController {
         semaphore.wait()
     }
 
-    
-    /*
-    func databaseRequest3() {
-        let url = URL(string: "http://10.192.122.81/MyWebService/api/createteam.php")!
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
 
-        components.queryItems = [
-            URLQueryItem(name: "name", value: "uday"),
-            URLQueryItem(name: "member", value: "L")
-        ]
-
-        let query = components.url!.query
+    extension MainViewController : UITextFieldDelegate {
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = Data(query!.utf8)
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-
-            guard error == nil else {
-                return
-            }
-
-            guard let data = data else {
-                return
-            }
-
-            do {
-                //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    // handle json...
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        })
-        task.resume()
-    }
-    
-    func databaseRequest2() {
-            //declare parameter as a dictionary which contains string as key and value combination. considering inputs are valid
-
-        let parameters = ["name": "uday", "member": 69] as [String : Any]
-
-        //create the url with URL
-        let url = URL(string: "http://10.192.122.81/MyWebService/api/createteam.php")! //change the url
-
-        //create the session object
-        let session = URLSession.shared
-
-        //now create the URLRequest object using the url object
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST" //set http method as POST
-
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
-        } catch let error {
-            print(error.localizedDescription)
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
         }
-
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-        //create dataTask using the session object to send data to the server
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-
-            guard error == nil else {
-                return
-            }
-
-            guard let data = data else {
-                return
-            }
-
-            do {
-                //create json object from data
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    print(json)
-                    // handle json...
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        })
-        task.resume()
     }
-    
-    func databaseRequest() {
-        //created NSURL
-                //let requestURL = NSURL(string: URL_SAVE_TEAM)
-                
-                //creating NSMutableURLRequest
-                let request = NSMutableURLRequest()
-                
-                //setting the method to post
-                request.httpMethod = "POST"
-                
-                //getting values from text fields
-        //        let username = textFieldName.text
-        //        let password = textFieldMember.text
-                let username = "uday"
-                let password = "password"
-                
-                // name = username, memeberCount=password
-                //creating the post parameter by concatenating the keys and values from text field
-                let postParameters = "username="+username+"&password="+password;
-                
-                //adding the parameters to request body
-                request.httpBody = postParameters.data(using: String.Encoding.utf8)
-                
-                
-                //creating a task to send the post request
-                let task = URLSession.shared.dataTask(with: request as URLRequest){
-                    data, response, error in
-                    
-                    if error != nil{
-                        print("error is \(String(describing: error))")
-                        return;
-                    }
-                
-                    //parsing the response
-                    do {
-                        //converting resonse to NSDictionary
-                        let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                        
-                        //parsing the json
-                        if let parseJSON = myJSON {
-                            
-                            //creating a string
-                            var msg : String!
-                            
-                            //getting the json response
-                            msg = parseJSON["message"] as! String?
-                            
-                            //printing the response
-                            print(msg!)
-                            
-                        }
-                    } catch {
-                        print(error)
-                    }
-                    
-                }
-                //executing the task
-                task.resume()
-    }
-    */
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension MainViewController : UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
