@@ -41,11 +41,11 @@ class NewAccountViewController: UIViewController {
     }
     
     @objc func handleKeyboardDidShow(_ notification: Notification) {
-        self.view.frame.origin.y -= 100
+        self.view.frame.origin.y -= 50
     }
     
     @objc func handleKeyboardDidHide(_ notification: Notification) {
-        self.view.frame.origin.y += 180
+        self.view.frame.origin.y += 50
     }
     
     // Action function for when the Create button is pressed
@@ -201,7 +201,7 @@ func databaseRequest_signup(username: String, firstname: String, lastname: Strin
       print("data is ovverated")
       //print(String(data:data))
        let str = String(data: data, encoding: .utf8)
-        print("printing:" , str)
+        //print("printing:" , str)
        if(str == "\n\n1") {
          print("llllloooolllll")
            arg = 1
