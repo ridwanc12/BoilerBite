@@ -160,10 +160,10 @@ class  insertTable
 
 // Create new obj to run function
 $obj = new insertTable();
-$file = $obj->showUsers();
-echo $file;
-// echo "Connected to file ser online. ";
-// echo "PHP script executed from hosting service.";
+// $file = $obj->showUsers();
+// echo $file;
+echo "Connected to file ser online. ";
+echo "PHP script executed online by swift funcion.";
 // Unit Test: All Values Equal to 0
 /*$username = 'Jeremy';
     $email = 'jeremy@gamil.com';
@@ -183,13 +183,3 @@ echo $file;
 //$obj->showUsers(); 
 
 ?>
-
-<html>
-
-<head>
-    <title>
-        check
-    </title>
-</head>
-
-</html>

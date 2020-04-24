@@ -57,6 +57,7 @@ class  checkUser {
         $passFromUser = $result['hashPass'];
 
         // Get hashed password from function input.
+        $pass = $pass + "salt";
         $passwrd = sha1($pass);
         
         // Check provided password against password in database

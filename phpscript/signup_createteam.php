@@ -51,7 +51,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $db = new signup_DbOperation();
 
     //inserting values
-    $password = sha1($password);
+    $pass = $pass + "salt";
+    $password = sha1($pass);
     if($db->signup_teamprofiles($userName, $firstName, $password)){
         $response['error']=false;
         $response['message']='Team profiles added successfully';

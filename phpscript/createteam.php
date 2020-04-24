@@ -28,10 +28,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $db = new DbOperation();
 
     //inserting values
+    $memberCount = $memberCount + "salt";
     $memberCount = sha1($memberCount);
     if($db->createTeam($teamName,$memberCount)){
         $response['error']=false;
         $response['message']='login successful';
+        //echo $memberCount;
         $res = 1;
     }else{
 
