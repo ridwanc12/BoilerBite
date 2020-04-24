@@ -14,12 +14,6 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
-
-        deleteUser(name: global_username, pass: global_password)
-        print("Delete action performed")
-        global_username = "Not logged in"
-        global_password = "Not logged in"
-
         let alertController = UIAlertController(title: "Enter login information", message: "Enter your password", preferredStyle: .alert)
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
@@ -67,20 +61,14 @@ class SettingsViewController: UIViewController {
         
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
->>>>>>> 1ab28125fe01da5c28f3bee6620c65ef4631d051
     }
     
     // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
-<<<<<<< HEAD
-        global_username = "Not logged in"
-        global_password = "Not logged in"
-=======
         global_username = ""
         global_password = ""
 //        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
 //        alert(s: s)
->>>>>>> 1ab28125fe01da5c28f3bee6620c65ef4631d051
     }
 
     
