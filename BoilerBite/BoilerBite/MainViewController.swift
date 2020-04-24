@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func handleKeyboardDidHide(_ notification: Notification) {
-        self.view.frame.origin.y += 170
+        self.view.frame.origin.y += 180
 //        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
 //            let keyboardRectangle = keyboardFrame.cgRectValue
 //            let keyboardHeight = keyboardRectangle.height
