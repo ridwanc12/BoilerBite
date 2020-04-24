@@ -123,6 +123,18 @@ class UserProfileViewController: UIViewController , UITextFieldDelegate{
         
     }
     
+    // Hide the Number Pad when clicked on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        heightText.resignFirstResponder()
+        weightText.resignFirstResponder()
+        ageText.resignFirstResponder()
+        caloriesText.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation
@@ -189,3 +201,4 @@ func update_calories(username: String, calories: Int) {
     semaphore.wait()
     //return arg
 }
+
