@@ -69,10 +69,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         let temp1 = String(meals[meal_num].Hours?.StartTime ?? "")
+        print(temp1)
         let opening = convertTime(time: temp1)
+        print(opening)
         
         let temp2 = String(describing: meals[meal_num].Hours?.EndTime ?? "")
+        print(temp2)
         let closing = convertTime(time: temp2)
+        print(closing)
         
         let hoursText = opening + " - " + closing
         

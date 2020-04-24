@@ -52,7 +52,9 @@ class GoalsViewController: UIViewController {
         dinner_cal.textColor = UIColor.darkGray
         dinner_cal.text = progress[3]
         total_daily_cal.textColor = UIColor.darkGray
-        total_daily_cal.text = progress[4]
+        let total_calories = Int(progress[0])! + Int(progress[1])! + Int(progress[2])! + Int(progress[3])!
+        total_daily_cal.text = String(total_calories)
+//        total_daily_cal.text = progress[4]
         total_goals_cal.textColor = UIColor.darkGray
         total_goals_cal.text = progress[5]
 

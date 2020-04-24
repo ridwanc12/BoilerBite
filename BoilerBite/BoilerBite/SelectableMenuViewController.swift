@@ -82,10 +82,13 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func alert(s: String) {
+        // Acceptance criteria number 2 (user story 1)
         let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
         
         //the confirm action taking the inputs
-        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "postCreate", sender: nil)
+        })
         
         //adding the action to dialogbox
         alertController.addAction(confirmAction)
@@ -111,9 +114,12 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             mealTime = "Late_Lunch"
         }
         insert_items(total_calories: totalcalories, meal: mealTime)
+        totalcalories = 0
         alert(s: s)
         //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
-        totalcalories = 0
+        
+        let timeinterval = "2020-04-24"
+        get_meal(date: timeinterval)
     }
       
     

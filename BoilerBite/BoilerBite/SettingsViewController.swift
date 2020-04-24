@@ -25,8 +25,10 @@ class SettingsViewController: UIViewController {
                 print(password!)
                 let s = deleteUser(name: global_username, pass: password!)
                 self.alert(s: s)
-                global_username = "Not logged in"
-                global_password = "Not logged in"
+                if (s == "User deleted") {
+                    global_username = "Not logged in"
+                    global_password = "Not logged in"
+                }
             }
             else {
                 print("nay")
@@ -54,10 +56,13 @@ class SettingsViewController: UIViewController {
         let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
         
         //the confirm action taking the inputs
-        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "postDelete", sender: nil)
+        })
         
         //adding the action to dialogbox
         alertController.addAction(confirmAction)
+        
         
         //finally presenting the dialog box
         self.present(alertController, animated: true, completion: nil)
@@ -74,6 +79,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getStuff(userName: global_username);
         // Do any additional setup after loading the view.
     }
     

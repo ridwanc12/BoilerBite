@@ -20,6 +20,8 @@ class NewAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
         // Getting the username and password entered
@@ -31,6 +33,19 @@ class NewAccountViewController: UIViewController {
         weightField.delegate = self
         ageField.delegate = self
     
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: self.view.window)
+    }
+    
+    @objc func handleKeyboardDidShow(_ notification: Notification) {
+        self.view.frame.origin.y -= 100
+    }
+    
+    @objc func handleKeyboardDidHide(_ notification: Notification) {
+        self.view.frame.origin.y += 180
     }
     
     // Action function for when the Create button is pressed

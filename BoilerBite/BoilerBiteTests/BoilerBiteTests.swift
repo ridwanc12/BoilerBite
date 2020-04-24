@@ -281,6 +281,7 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertEqual(String(describing: type(of: ingredients)), "String")
     }
     
+    // User story 7 tests
     func testWindsorMenuFirstItemAllergens() {
         // Menu for Windsor 01-13-2020
         let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
@@ -411,6 +412,7 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         XCTAssertEqual(String(describing: type(of: nutrition)), "Array<NutritionFact>")
     }
     
+    // User story 8 unit tests
     func testDiningHoursWeekday() {
         // Menu for Windsor 01-13-2020
         let testMenu = getMenu(hall: "windsor", date: "2020-01-13")
@@ -440,12 +442,13 @@ Item(ID: 84835539-119a-4efd-b714-786015923e3c, Name: Greek Saganaki Gluten Free,
         
     }
     
+    // Unit tests for user story 10
     func testMealsWeekday() {
         // Meals for Windsor 01-13-2020
-        let meals = getMeals(hall: "windsor", date: "2020-01-13")
+        let meals = getMeals(hall: "ford", date: "2020-01-13")
         print(meals)
         let expected = """
-["Lunch", "Late Lunch", "Dinner"]
+["Breakfast", "Lunch", "Late Lunch", "Dinner"]
 """
         XCTAssertEqual(String(describing: meals), expected)
     }
