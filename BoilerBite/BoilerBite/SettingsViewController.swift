@@ -14,29 +14,78 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "delete" button is pressed
     @IBAction func deleteButton(_ sender: UIButton) {
-//        showInputDialog()
-//        global_username = "ridwan"
-//        global_password = "ridwan"
-//        let incorrect_pass = global_password + global_username
-        
-//        deleteUser(name: global_username, pass: incorrect_pass)
-//        sleep(1)
+
         deleteUser(name: global_username, pass: global_password)
         print("Delete action performed")
         global_username = "Not logged in"
         global_password = "Not logged in"
+
+        let alertController = UIAlertController(title: "Enter login information", message: "Enter your password", preferredStyle: .alert)
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+            
+            //getting the input values from user
+            let password = alertController.textFields?[0].text
+            if (password! != "") {
+                print(global_username)
+                print(password!)
+                let s = deleteUser(name: global_username, pass: password!)
+                self.alert(s: s)
+                global_username = "Not logged in"
+                global_password = "Not logged in"
+            }
+            else {
+                print("nay")
+            }
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.isSecureTextEntry = true
+            textField.placeholder = "Enter password"
+        }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    func alert(s: String) {
+        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+>>>>>>> 1ab28125fe01da5c28f3bee6620c65ef4631d051
     }
     
     // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
+<<<<<<< HEAD
         global_username = "Not logged in"
         global_password = "Not logged in"
+=======
+        global_username = ""
+        global_password = ""
+//        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
+//        alert(s: s)
+>>>>>>> 1ab28125fe01da5c28f3bee6620c65ef4631d051
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -84,6 +133,8 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "send feedback" button is pressed
     @IBAction func sendFeedbackButton(_ sender: UIButton) {
+        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
+        alert(s: s)
     }
     /*
     // MARK: - Navigation

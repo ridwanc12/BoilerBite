@@ -61,7 +61,7 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
             meal_num = 0
         case "Lunch":
             meal_num = 1
-        case "Late Lunch":
+        case "Late_Lunch":
             meal_num = 2
         case "Dinner":
             meal_num = 3
@@ -81,20 +81,38 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
 
     }
     
+    func alert(s: String) {
+        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "OK", style: .default)
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // Function for the Create Button
     @IBAction func createMealButton(_ sender: Any) {
 //        global_username = "test1"
 //        let food_name = itemList.first?.value
         print("meal button")
 //        print(food_name!)
+        var s = "ERROR"
+        var total = 0
         for (key, value) in itemList {
-            insertFood(name: global_username, food: key, cal_total: value)
+            s = insertFood(name: global_username, food: key, cal_total: value)
+            total = total + value
         }
+        
         if (mealTime == "Late Lunch") {
             mealTime = "Late_Lunch"
         }
         insert_items(total_calories: totalcalories, meal: mealTime)
-//        insertFood(name: global_username, food: "test", cal_total: totalcalories)
+        alert(s: s)
+        //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
         totalcalories = 0
     }
       

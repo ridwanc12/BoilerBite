@@ -13,11 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self
+        passwordField.isSecureTextEntry = true
         
         // Testing dining hours functions in main
 //        diningHoursExample()
@@ -117,7 +119,7 @@ class MainViewController: UIViewController {
             global_username = username
             global_password = password
             
-            getStuff(userName: username);
+            //getStuff(userName: username);
         }
                
                if arg == 0 {
@@ -190,7 +192,8 @@ class MainViewController: UIViewController {
             
             print("username: ", user)
             print("password: ", password)
-            
+            global_username = user
+            global_password = password
             let semaphore = DispatchSemaphore (value: 0)
             
             var arg = 0;
