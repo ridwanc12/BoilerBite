@@ -53,26 +53,38 @@ class SettingsViewController: UIViewController {
         
     }
     func alert(s: String) {
-        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
-        
-        if (s == "User deleted") {
+        if (s == "No such user"){
+            let alertController = UIAlertController(title: "How'd you even get here?", message: "Wait. That's illegal.", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.performSegue(withIdentifier: "postDelete", sender: nil)
-            })
-            //adding the action to dialogbox
+            })            //adding the action to dialogbox
             alertController.addAction(confirmAction)
-        } else {
-            let confirmAction = UIAlertAction(title: "OK", style: .default)
-            //adding the action to dialogbox
-            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+
+        }else {
+            let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+            
+            if (s == "User deleted") {
+                let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.performSegue(withIdentifier: "postDelete", sender: nil)
+                })
+                //adding the action to dialogbox
+                alertController.addAction(confirmAction)
+            }
+            else {
+                let confirmAction = UIAlertAction(title: "OK", style: .default)
+                //adding the action to dialogbox
+                alertController.addAction(confirmAction)
+            }
+            self.present(alertController, animated: true, completion: nil)
+
         }
-        
 //        //adding the action to dialogbox
 //        alertController.addAction(confirmAction)
         
         
         //finally presenting the dialog box
-        self.present(alertController, animated: true, completion: nil)
+//        self.present(alertController, animated: true, completion: nil)
     }
     
     // Fucntion for when the "logout" button is pressed
