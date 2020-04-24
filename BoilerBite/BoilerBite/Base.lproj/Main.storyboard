@@ -132,7 +132,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQW-OY-Nt8">
-                                <rect key="frame" x="16" y="62" width="35" height="30"/>
+                                <rect key="frame" x="16" y="134" width="35" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="wUm-8L-q4P"/>
                                 </constraints>
@@ -202,7 +202,7 @@
                             <constraint firstItem="jWr-9K-LVS" firstAttribute="top" secondItem="mkO-ED-W9F" secondAttribute="top" constant="7" id="0CH-0f-gng"/>
                             <constraint firstItem="Apm-BR-rm8" firstAttribute="leading" secondItem="mkO-ED-W9F" secondAttribute="leading" constant="28" id="1x2-2v-6jx"/>
                             <constraint firstItem="jWr-9K-LVS" firstAttribute="centerX" secondItem="V2t-ai-vBt" secondAttribute="centerX" id="3PI-5B-dlV"/>
-                            <constraint firstItem="qQW-OY-Nt8" firstAttribute="top" secondItem="mkO-ED-W9F" secondAttribute="top" constant="18" id="4Ry-k0-SOM"/>
+                            <constraint firstItem="qQW-OY-Nt8" firstAttribute="top" secondItem="mkO-ED-W9F" secondAttribute="top" constant="90" id="4Ry-k0-SOM"/>
                             <constraint firstItem="jWr-9K-LVS" firstAttribute="centerY" secondItem="Ae0-tX-L9D" secondAttribute="centerY" id="6fJ-2o-drJ"/>
                             <constraint firstItem="wWL-Ce-Hpm" firstAttribute="leading" secondItem="mkO-ED-W9F" secondAttribute="leading" constant="162" id="6jh-sR-ynS"/>
                             <constraint firstItem="JEW-lS-w9U" firstAttribute="leading" secondItem="mkO-ED-W9F" secondAttribute="leading" constant="86" id="8IF-z5-J5k"/>
