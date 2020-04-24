@@ -123,13 +123,6 @@ func update_info(username: String, height: Int, weight: Int, age: Int) {
     print("username: " ,username)
     print("height: " ,height)
     let semaphore = DispatchSemaphore (value: 0)
-    //var arg = 0
-    //let username: String = usernameField.text ?? ""
-    //let password: String = passwordField.text ?? ""
-    
-    // user changed to username
-    
-    //print("hashpass2 : ", password)
     
     let urlString = String(format: "http://boilerbite.000webhostapp.com/php/update_info.php?userName=%@&height=%@&weight=%@&age=%@", username, String(height), String(weight), String(age))
     var request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
@@ -143,20 +136,10 @@ func update_info(username: String, height: Int, weight: Int, age: Int) {
         return
       }
       print(String(data: data, encoding: .utf8)!)
-      print(String(data: data, encoding: .utf8)!)
-      //print("data is ovverated")
-      //print(String(data:data))
-       //let str = String(data: data, encoding: .utf8)
-       //print("printing:" , str)
-       //if(str == "\n\n1") {
-       //  print("llllloooolllll")
-       // /   arg = 1
-       //}
       semaphore.signal()
     }
     task.resume()
     semaphore.wait()
-    //return arg
 }
 
 func update_calories(username: String, calories: Int) {
@@ -183,16 +166,7 @@ func update_calories(username: String, calories: Int) {
         return
       }
       print(String(data: data, encoding: .utf8)!)
-      //print(String(data: data, encoding: .utf8)!)
-      //print("data is ovverated")
-      //print(String(data:data))
-       //let str = String(data: data, encoding: .utf8)
-       //print("printing:" , str)
-       //if(str == "\n\n1") {
-         //print("llllloooolllll")
-           //arg = 1
-       //}
-      //semaphore.signal()
+      semaphore.signal()
     }
     task.resume()
     semaphore.wait()

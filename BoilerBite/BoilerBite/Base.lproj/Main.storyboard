@@ -715,7 +715,7 @@
                                 <state key="normal" image="update-button"/>
                                 <connections>
                                     <action selector="updateTapped:" destination="IOJ-pw-yiK" eventType="touchUpInside" id="aFN-aX-2zg"/>
-                                    <segue destination="IOJ-pw-yiK" kind="presentation" modalPresentationStyle="fullScreen" id="lcQ-fv-IgZ"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" modalPresentationStyle="fullScreen" id="Idx-c8-4Z8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-2d-Cd7" userLabel="calories">
@@ -794,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IN-8g-b2a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="1568.7192118226601"/>
+            <point key="canvasLocation" x="1230" y="1569"/>
         </scene>
         <!--Windsor Late Lunch Individual Menu-->
         <scene sceneID="eaj-IB-iRo">
@@ -1451,8 +1451,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="update-button"/>
                                 <connections>
-                                    <action selector="updateTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="e5q-9r-gR9"/>
-                                    <segue destination="zO6-85-c3g" kind="presentation" modalPresentationStyle="fullScreen" id="fMJ-iq-eM5"/>
+                                    <action selector="buttonTapped:" destination="zO6-85-c3g" eventType="touchUpInside" id="qqu-3b-BTz"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" identifier="successChange" modalPresentationStyle="fullScreen" id="Mna-fF-axD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1540,9 +1540,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lMk-i7-KRO" userLabel="update_button">
                                 <rect key="frame" x="116" y="631" width="142" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="send-button"/>
                                 <connections>
                                     <action selector="sendTapped:" destination="xoI-XW-KQ0" eventType="touchUpInside" id="ScN-Tu-fwB"/>
+                                    <segue destination="e40-1h-wAX" kind="presentation" modalPresentationStyle="fullScreen" id="zj7-av-gpv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-1r-8re">
@@ -2058,11 +2060,11 @@
     <inferredMetricsTieBreakers>
         <segue reference="CKy-R9-Ykp"/>
         <segue reference="7wO-In-OKS"/>
-        <segue reference="agK-Cd-LIU"/>
+        <segue reference="Idx-c8-4Z8"/>
         <segue reference="24S-xa-hrC"/>
         <segue reference="DqN-Ih-BMD"/>
         <segue reference="eEq-yL-xEq"/>
-        <segue reference="zZV-46-FQR"/>
+        <segue reference="bo1-yk-fKi"/>
         <segue reference="MXM-w3-3cX"/>
     </inferredMetricsTieBreakers>
 </document>
