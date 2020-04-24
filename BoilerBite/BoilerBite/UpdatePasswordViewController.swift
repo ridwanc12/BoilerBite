@@ -91,6 +91,7 @@
 
          // Do any additional setup after loading the view.
      }
+
      
      func update_pass(password: String) {
          // print("username: " ,password)
@@ -126,5 +127,13 @@
      */
 
  }
+
+extension UpdatePasswordViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 

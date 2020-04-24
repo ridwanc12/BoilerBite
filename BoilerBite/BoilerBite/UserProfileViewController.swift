@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController , UITextFieldDelegate{
+class UserProfileViewController: UIViewController , UITextFieldDelegate {
     
     //Labels
     @IBOutlet weak var heightLabel: UILabel!
