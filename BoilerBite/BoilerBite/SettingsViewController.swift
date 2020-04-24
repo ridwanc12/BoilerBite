@@ -121,8 +121,6 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "send feedback" button is pressed
     @IBAction func sendFeedbackButton(_ sender: UIButton) {
-        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
-        alert(s: s)
     }
     /*
     // MARK: - Navigation
