@@ -1180,7 +1180,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="714"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-45-kdk">
-                                <rect key="frame" x="95" y="375" width="152" height="40"/>
+                                <rect key="frame" x="95" y="234" width="152" height="40"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -1188,7 +1188,7 @@
                                 <size key="shadowOffset" width="2" height="8"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3YG-K3-LIF">
-                                <rect key="frame" x="95" y="77" width="264" height="282"/>
+                                <rect key="frame" x="227" y="77" width="132" height="141"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y34-af-JkU">
                                 <rect key="frame" x="18" y="79" width="35" height="30"/>
@@ -1851,10 +1851,10 @@
                                 <rect key="frame" x="8" y="51" width="359" height="734"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OGx-Sz-sss">
-                                <rect key="frame" x="150.66666666666663" y="70" width="216.33333333333337" height="282"/>
+                                <rect key="frame" x="235" y="70" width="132" height="141"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition Info: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-Qw-2Fj">
-                                <rect key="frame" x="16" y="138" width="95.666666666666671" height="32.333333333333343"/>
+                                <rect key="frame" x="16" y="138" width="180" height="32.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" label="New Account"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -2058,7 +2058,7 @@
         <segue reference="fdd-Ut-I0N"/>
         <segue reference="qoP-Pr-npA"/>
         <segue reference="wWF-Sl-gah"/>
-        <segue reference="9bC-YL-4KN"/>
+        <segue reference="bo1-yk-fKi"/>
         <segue reference="1A1-wO-hVh"/>
         <segue reference="vaV-9r-od0"/>
     </inferredMetricsTieBreakers>
