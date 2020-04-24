@@ -10,8 +10,14 @@
  import UIKit
 
  class UpdatePasswordViewController: UIViewController {
+    
+    var user = global_username
 
-     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel! {
+        didSet {
+           nameLabel.text = "\(user)"
+        }
+    }
      @IBOutlet weak var usernameText: UITextField!
      @IBOutlet weak var currentPasswordText: UITextField!
      @IBOutlet weak var newPasswordText: UITextField!
