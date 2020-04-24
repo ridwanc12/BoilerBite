@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $db = new DbOperation();
 
     //inserting values
-    $memberCount = $memberCount + "salt";
+    $memberCount = $memberCount . "salt";
     $memberCount = sha1($memberCount);
     if($db->createTeam($teamName,$memberCount)){
         $response['error']=false;
