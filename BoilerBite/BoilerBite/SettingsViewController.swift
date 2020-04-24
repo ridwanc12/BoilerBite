@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
 //        showInputDialog()
 //        global_username = "ridwan"
 //        global_password = "ridwan"
-        let incorrect_pass = global_password + global_username
+//        let incorrect_pass = global_password + global_username
         
 //        deleteUser(name: global_username, pass: incorrect_pass)
 //        sleep(1)
