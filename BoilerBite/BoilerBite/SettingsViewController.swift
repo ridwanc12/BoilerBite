@@ -19,8 +19,8 @@ class SettingsViewController: UIViewController {
 //        global_password = "ridwan"
         let incorrect_pass = global_password + global_username
         
-        deleteUser(name: global_username, pass: incorrect_pass)
-        sleep(1)
+//        deleteUser(name: global_username, pass: incorrect_pass)
+//        sleep(1)
         deleteUser(name: global_username, pass: global_password)
         print("Delete action performed")
         global_username = "Not logged in"
@@ -29,8 +29,8 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
-        global_username = ""
-        global_password = ""
+        global_username = "Not logged in"
+        global_password = "Not logged in"
     }
 
     
