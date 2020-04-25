@@ -99,10 +99,6 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     
     // Function for the Create Button
     @IBAction func createMealButton(_ sender: Any) {
-//        global_username = "test1"
-//        let food_name = itemList.first?.value
-        print("meal button")
-//        print(food_name!)
         var s = "ERROR"
         var total = 0
         for (key, value) in itemList {
@@ -116,10 +112,6 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
         insert_items(total_calories: totalcalories, meal: mealTime)
         totalcalories = 0
         alert(s: s)
-        //        insertFood(name: global_username, food: "test", cal_total: totalcalories)
-        
-        let timeinterval = "2020-04-24"
-        get_meal(date: timeinterval)
     }
       
     

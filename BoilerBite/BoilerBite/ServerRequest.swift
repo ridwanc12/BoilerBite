@@ -17,12 +17,6 @@ var global_age: Int = 0
 var global_calories: Int = 0
 
 func checkProgress(name: String) -> [String]{
-//    let name = "Isha"
-//    let mail = "isha@gmail.com"
-//    let pass = "isha"
-    //let name = "Jeremy"
-    //        let date = "2020-04-23"
-                
     let link = "https://boilerbite.000webhostapp.com/php/mealsProgress.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
     request.httpMethod = "POST"
@@ -35,11 +29,9 @@ func checkProgress(name: String) -> [String]{
     let task = URLSession.shared.dataTask(with: request as URLRequest) {
         data, response, error in
         if error != nil {
-            //print(error)
             return
         }
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
         semaphore.signal()
     }
@@ -51,8 +43,6 @@ func checkProgress(name: String) -> [String]{
 
 // Function to test php script to delete user from database
 func deleteUser(name: String, pass: String) -> String {
-//    let name = "Isha"
-//    let pass = "isha"
     print(name)
     let link = "https://boilerbite.000webhostapp.com/php/deleteUser.php"
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
@@ -67,7 +57,6 @@ func deleteUser(name: String, pass: String) -> String {
         data, response, error in
 
         if error != nil {
-            //print(error)
             return
         }
 
@@ -82,7 +71,6 @@ func deleteUser(name: String, pass: String) -> String {
             s = "User deleted"
         }
         semaphore.signal()
-        //print("responseString = ")
     }
     task.resume()
     semaphore.wait()
@@ -90,15 +78,8 @@ func deleteUser(name: String, pass: String) -> String {
     return s
 }
 
-// Can use functions like the following
-//insertUser(name: "Rid", mail: "rid", pass: "rid")
-//insertFood(name: "Rid", food: "Protein", cal_total: 1234)
-
 // Function to add food item to progress table
 func insertFood(name: String, food: String, cal_total: Int) -> String{
-//    let name = "Isha"
-//    let pass = "isha"
-//    let cal_total = 0;
     let link = "https://boilerbite.000webhostapp.com/php/insertFood.php"
     
     let cal_fat = 0;
@@ -118,14 +99,10 @@ func insertFood(name: String, food: String, cal_total: Int) -> String{
         data, response, error in
 
         if error != nil {
-            //print(error)
             return
         }
 
-        //print("response = \(String(describing: response))")
-
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
         semaphore.signal()
         print(s)
@@ -136,9 +113,7 @@ func insertFood(name: String, food: String, cal_total: Int) -> String{
 }
 
 func check() -> String{
-//    let name = "Isha"
-//    let pass = "isha"
-//    let cal_total = 0;
+
     let link = "https://boilerbite.000webhostapp.com/php/check.php"
     
     let request = NSMutableURLRequest(url: NSURL(string: link)! as URL)
@@ -150,14 +125,10 @@ func check() -> String{
         data, response, error in
 
         if error != nil {
-            //print(error)
             return
         }
 
-        //print("response = \(String(describing: response))")
-
         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        //print("responseString = \(String(describing: responseString))")
         s = String(describing: responseString!)
         semaphore.signal()
     }

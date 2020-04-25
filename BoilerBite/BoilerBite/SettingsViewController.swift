@@ -79,20 +79,13 @@ class SettingsViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
 
         }
-//        //adding the action to dialogbox
-//        alertController.addAction(confirmAction)
-        
-        
-        //finally presenting the dialog box
-//        self.present(alertController, animated: true, completion: nil)
     }
     
     // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
         global_username = ""
         global_password = ""
-//        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
-//        alert(s: s)
+
     }
 
     
