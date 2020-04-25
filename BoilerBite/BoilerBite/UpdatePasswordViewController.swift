@@ -9,7 +9,7 @@
 
  import UIKit
 
- class UpdatePasswordViewController: UIViewController {
+ class UpdatePasswordViewController: UIViewController, UITextFieldDelegate {
     
     var user = global_username
 
@@ -85,12 +85,27 @@
         updateButton.addTarget(self, action: #selector(loadData), for: .touchUpInside)
         
      }
+    
      
      override func viewDidLoad() {
          super.viewDidLoad()
-
+        usernameText.delegate = self
+        currentPasswordText.delegate = self
+        newPasswordText.delegate = self
          // Do any additional setup after loading the view.
      }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        usernameText.resignFirstResponder()
+        currentPasswordText.resignFirstResponder()
+        newPasswordText.resignFirstResponder()
+    }
+
      
      func update_pass(password: String) {
          // print("username: " ,password)
@@ -126,5 +141,6 @@
      */
 
  }
+
 
 
