@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Getting the username and password entered
         usernameField.delegate = self
+        usernameField.keyboardType = UIKeyboardType.asciiCapable;
         passwordField.delegate = self
         passwordField.isSecureTextEntry = true
         

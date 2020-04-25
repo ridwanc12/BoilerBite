@@ -87,7 +87,6 @@ class  insertTable
         }
         $cal = $breakfast + $lunch + $late_lunch + $dinner;
         $s =  "$breakfast $lunch $late_lunch $dinner $cal $goal";
-        //echo nl2br("$cal\n");
         return $s;
     }
 } // End of functions
@@ -101,11 +100,7 @@ $tz = 'America/New_York';
 $tz_obj = new DateTimeZone($tz);
 $today = new DateTime("now", $tz_obj);
 $date = $today->format('Y-m-d');
-//$date = date("Y-m-d");
 
-//$username = "Jeremy";
-
-//echo $date;
 $file = $obj->checkMeal($username, $date);
 echo $file;
 

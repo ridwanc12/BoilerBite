@@ -28,34 +28,6 @@ class  insertTable
         $this->pdo = null;
     }
 
-    // Function to show users in table
-    function showUsers(): void
-    {
-        // Execute query to get profiles currently in the table.
-        $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
-        $pdo = new PDO($conStr, self::DB_USER, self::DB_PASS);
-        $sql = 'SELECT  total_calorie,
-                        food_name,
-                        date
-                    FROM progress';
-        $q = $pdo->query($sql);
-        $q->setFetchMode(PDO::FETCH_ASSOC);
-        // Print out values returned by query
-        $flag = 0;
-        while ($user = $q->fetch()) {
-            $holder = $user['total_calorie'];
-            echo nl2br("Calories Total: $holder, ");
-            $holder = $user['food_name'];
-            echo nl2br("Food: $holder, ");
-            $holder = $user['date'];
-            echo nl2br("Time: $holder\n\n");
-            $flag = 1;
-        }
-        if ($flag == 0) {
-            //echo nl2br("No users in the database.\n\n");
-        }
-    }
-
     function checkMeal($username, $time)
     {
         $conStr = sprintf("mysql:host=%s;dbname=%s", self::DB_HOST, self::DB_NAME);
@@ -219,5 +191,3 @@ if ($obj->insertFood($username, $food, $total_cal, $cal_fat, $g_fat, $g_protein,
 } else {
     echo "Failed.";
 }
-
-//$obj->showUsers();

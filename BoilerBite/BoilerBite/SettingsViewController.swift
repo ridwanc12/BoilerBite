@@ -53,27 +53,39 @@ class SettingsViewController: UIViewController {
         
     }
     func alert(s: String) {
-        let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
-        
-        //the confirm action taking the inputs
-        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "postDelete", sender: nil)
-        })
-        
-        //adding the action to dialogbox
-        alertController.addAction(confirmAction)
-        
-        
-        //finally presenting the dialog box
-        self.present(alertController, animated: true, completion: nil)
+        if (s == "No such user"){
+            let alertController = UIAlertController(title: "How'd you even get here?", message: "Wait. That's illegal.", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.performSegue(withIdentifier: "postDelete", sender: nil)
+            })            //adding the action to dialogbox
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+
+        }else {
+            let alertController = UIAlertController(title: "Message", message: s, preferredStyle: .alert)
+            
+            if (s == "User deleted") {
+                let confirmAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.performSegue(withIdentifier: "postDelete", sender: nil)
+                })
+                //adding the action to dialogbox
+                alertController.addAction(confirmAction)
+            }
+            else {
+                let confirmAction = UIAlertAction(title: "OK", style: .default)
+                //adding the action to dialogbox
+                alertController.addAction(confirmAction)
+            }
+            self.present(alertController, animated: true, completion: nil)
+
+        }
     }
     
     // Fucntion for when the "logout" button is pressed
     @IBAction func logoutButton(_ sender: UIButton) {
         global_username = ""
         global_password = ""
-//        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
-//        alert(s: s)
+
     }
 
     
@@ -127,8 +139,6 @@ class SettingsViewController: UIViewController {
     
     // Fucntion for when the "send feedback" button is pressed
     @IBAction func sendFeedbackButton(_ sender: UIButton) {
-        let s = insertFood(name: "admini", food: "Mac", cal_total: 1234)
-        alert(s: s)
     }
     /*
     // MARK: - Navigation

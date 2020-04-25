@@ -63,10 +63,8 @@ class  insertTable
             if ($pass_result) {
                 // Store result into $holder to check with password provided
                 $holder = $pass_result['hashPass'];
-                //echo "$holder";
             } else {
                 // Return function since query returned nothing
-                //echo nl2br("\nNo such user.\n");
                 return $NO_USER;
             }
             // Obtain the hashed version of the provided password
@@ -104,11 +102,9 @@ class  insertTable
                 $delete->bindValue(':name', $username);
                 $delete->execute();
             } else {
-                //echo nl2br("Incorrect password.");
                 return $WRONG_PASS;
             }
         } catch (PDOException $e) {
-            //echo $e->getMessage();
             return $CONNECTION_ERR;
         }
         return $DELETED;
@@ -171,6 +167,4 @@ if ($value == $DELETED) {
 } else {
     echo ("Connection error.");
 }
-
-//$obj->showUsers();
 ?>
