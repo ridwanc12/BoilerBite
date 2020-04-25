@@ -74,7 +74,6 @@ class  insertTable
         } else {
             //echo nl2br("No such user\n");
         }
-        //echo nl2br("$cal\n");
     }
 
     /* 
