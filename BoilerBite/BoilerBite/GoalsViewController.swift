@@ -30,6 +30,8 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         // Changing all Labels to a Dark Grey color
         bLabel.textColor = UIColor.darkGray
         lLabel.textColor = UIColor.darkGray

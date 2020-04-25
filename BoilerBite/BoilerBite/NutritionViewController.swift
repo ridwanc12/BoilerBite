@@ -30,6 +30,8 @@ class NutritionViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         let item = getItem(itemID: itemID)
         print(itemID)
         

@@ -33,6 +33,7 @@ class ResidentialMenusController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        overrideUserInterfaceStyle = .light
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

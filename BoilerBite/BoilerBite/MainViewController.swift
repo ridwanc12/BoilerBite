@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
+        
         // Getting the username and password entered
         usernameField.delegate = self
         passwordField.delegate = self

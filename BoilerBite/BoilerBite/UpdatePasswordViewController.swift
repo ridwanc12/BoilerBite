@@ -89,6 +89,9 @@
      
      override func viewDidLoad() {
          super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
+        
         usernameText.delegate = self
         currentPasswordText.delegate = self
         newPasswordText.delegate = self
