@@ -11,6 +11,7 @@ import UIKit
 class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewDidAppear(_ animated: Bool) {

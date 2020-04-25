@@ -16,6 +16,8 @@ class CreateProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
 
         // Do any additional setup after loading the view.
         // Getting the macros entered

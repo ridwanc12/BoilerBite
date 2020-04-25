@@ -29,6 +29,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
         //let testMenu = getCurrentMenu(hall: "windsor")
 
         //items = (testMenu?.Meals[0]?.Stations[0]!.Items)!
