@@ -40,6 +40,8 @@ class SelectableMenuViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         diningHallLabel?.text = diningHall.capitalizingFirstLetter()
         diningHallLabel?.sizeToFit()
         diningHallLabel?.adjustsFontSizeToFitWidth = true

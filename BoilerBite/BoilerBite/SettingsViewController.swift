@@ -91,6 +91,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         getStuff(userName: global_username);
         // Do any additional setup after loading the view.
     }

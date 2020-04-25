@@ -21,6 +21,7 @@ class SendFeedbackViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         feedbackText.delegate = self
         // Do any additional setup after loading the view.
     }
